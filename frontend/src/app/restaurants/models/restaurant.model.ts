@@ -9,5 +9,4 @@ export interface IRestaurant {
     rating: number;
     availability: boolean;
     typeFood: string;
-
 }
