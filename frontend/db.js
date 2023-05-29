@@ -11,7 +11,7 @@ module.exports = function () {
                 averagePrice: 20,
                 rating: 9,
                 availability: true,
-                typeFood: 'Tipo 1'
+                typeFood: 'Colombiano'
             },
             {
                 id: 2,
@@ -23,7 +23,7 @@ module.exports = function () {
                 averagePrice: 15,
                 rating: 4,
                 availability: true,
-                typeFood: 'Tipo 2'
+                typeFood: 'Italiano'
             },
             {
                 id: 3,
@@ -35,7 +35,7 @@ module.exports = function () {
                 averagePrice: 50,
                 rating: 9,
                 availability: false,
-                typeFood: 'Tipo 1'
+                typeFood: 'Colombiano'
             },
             {
                 id: 4,
@@ -47,7 +47,7 @@ module.exports = function () {
                 averagePrice: 30,
                 rating: 6,
                 availability: false,
-                typeFood: 'Tipo 3'
+                typeFood: 'Asiático'
             },
             {
                 id: 5,
@@ -59,7 +59,7 @@ module.exports = function () {
                 averagePrice: 30,
                 rating: 9,
                 availability: true,
-                typeFood: 'Tipo 3'
+                typeFood: 'Asiático'
             },
             {
                 id: 6,
@@ -71,7 +71,7 @@ module.exports = function () {
                 averagePrice: 20,
                 rating: 8,
                 availability: true,
-                typeFood: 'Tipo 1'
+                typeFood: 'Colombiano'
             },
             {
                 id: 7,
@@ -83,7 +83,7 @@ module.exports = function () {
                 averagePrice: 10,
                 rating: 5,
                 availability: false,
-                typeFood: 'Tipo 2'
+                typeFood: 'Italiano'
             },
             {
                 id: 8,
@@ -95,7 +95,7 @@ module.exports = function () {
                 averagePrice: 25,
                 rating: 7,
                 availability: false,
-                typeFood: 'Tipo 4'
+                typeFood: 'Mediterráneo'
             },
             {
                 id: 9,
@@ -119,7 +119,7 @@ module.exports = function () {
                 averagePrice: 40,
                 rating: 5,
                 availability: true,
-                typeFood: 'Tipo 4'
+                typeFood: 'Mediterráneo'
             },
             {
                 id: 11,
@@ -131,7 +131,7 @@ module.exports = function () {
                 averagePrice: 10,
                 rating: 6,
                 availability: true,
-                typeFood: 'Tipo 1'
+                typeFood: 'Colombiano'
             },
             {
                 id: 12,
@@ -143,7 +143,7 @@ module.exports = function () {
                 averagePrice: 30,
                 rating: 7,
                 availability: false,
-                typeFood: 'Tipo 3'
+                typeFood: 'Asiático'
             },
             {
                 id: 13,
@@ -155,7 +155,7 @@ module.exports = function () {
                 averagePrice: 20,
                 rating: 2,
                 availability: true,
-                typeFood: 'Tipo 2'
+                typeFood: 'Italiano'
             },
             {
                 id: 14,
@@ -167,7 +167,7 @@ module.exports = function () {
                 averagePrice: 100,
                 rating: 8,
                 availability: false,
-                typeFood: 'Tipo 4'
+                typeFood: 'Mediterráneo'
             },
             {
                 id: 15,
@@ -179,7 +179,7 @@ module.exports = function () {
                 averagePrice: 60,
                 rating: 9,
                 availability: true,
-                typeFood: 'Tipo 1'
+                typeFood: 'Colombiano'
             }
         ]
     }
