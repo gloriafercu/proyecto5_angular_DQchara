@@ -1,7 +1,7 @@
 export interface IRestaurant {
     id: number;
     name: string;
-    direction: string;
+    address: string;
     phone: string;
     web: string;
     mail: string;
