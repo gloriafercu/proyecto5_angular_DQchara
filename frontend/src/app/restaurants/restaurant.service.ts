@@ -18,12 +18,12 @@ export class RestaurantService {
   getById(restaurantId: number): Observable<IRestaurant> {
     return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${restaurantId}`);
   }
-  getByRating(rating: number): Observable<IRestaurant> {
-    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${rating}`);
+  getByRating(rating: number): Observable<IRestaurant[]> {
+    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?rating=${rating}`);
 
   }
-  getByTypeFood(typeFood: number): Observable<IRestaurant> {
-    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${typeFood}`);
+  getByTypeFood(typeFood: string): Observable<IRestaurant[]> {
+    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?typeFood=${typeFood}`);
 
   }
 
