@@ -15,4 +15,29 @@ export class RestaurantService {
   getAllRestaurants(): Observable<IRestaurant[]> {
     return this.httpClient.get<IRestaurant[]>(this.urlAPI);
   }
+  getById(restaurantId: number): Observable<IRestaurant> {
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${restaurantId}`);
+  }
+  getByRating(rating: number): Observable<IRestaurant> {
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${rating}`);
+
+  }
+  getByTypeFood(typeFood: number): Observable<IRestaurant> {
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${typeFood}`);
+
+  }
+
+  create(restaurant: IRestaurant): Observable<IRestaurant> {
+    return this.httpClient.post<IRestaurant>(this.urlAPI, restaurant);
+  }
+
+  update(restaurant: IRestaurant): Observable<IRestaurant> {
+    return this.httpClient.put<IRestaurant>(`${this.urlAPI}/${restaurant.restaurantId}`, restaurant);
+  }
+
+  deleteById(restaurantId: number): void {
+    this.httpClient.delete(`${this.urlAPI}/${restaurantId}`);
+  }
+
+
 }
