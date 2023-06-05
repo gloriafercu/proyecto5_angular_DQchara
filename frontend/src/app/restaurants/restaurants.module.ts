@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RestaurantsRoutingModule } from './restaurants-routing.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
@@ -17,7 +20,10 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
     CommonModule,
     RestaurantsRoutingModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatIconModule,
+    MatTableModule,
+    MatGridListModule
   ],
   exports: [
     RestaurantListComponent,

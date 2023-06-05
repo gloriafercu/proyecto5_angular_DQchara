@@ -5,16 +5,15 @@ import { RestaurantListComponent } from './restaurant-list/restaurant-list.compo
 
 const routes: Routes = [
   {
-    path: '', // pagina home / pagina de inicio
+    path: '', 
     component: RestaurantListComponent
   },
   {
-    path: ':restaurantId', //los : son para algo dinamico
+    path: ':restaurantId', 
     component: RestaurantDetailComponent
   },
   {
-    path: '**', redirectTo:'/restaurant-list', pathMatch: 'full' //redireccion para paginas que no existen
-  }
+    path: '**', redirectTo:'/restaurant-list', pathMatch: 'full' }
 ];
 
 @NgModule({

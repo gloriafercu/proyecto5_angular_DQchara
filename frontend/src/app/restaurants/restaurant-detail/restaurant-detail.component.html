@@ -1,1 +1,17 @@
-<p>restaurant-detail works!</p>
+<mat-grid-list cols="3" rowHeight="125px" *ngIf="restaurant">
+     <mat-grid-tile rowspan="2">
+        <div>
+            <h2>Restaurante: {{restaurant.name}}</h2>
+            <p>Dirección: {{restaurant.address}}</p>
+            <p>Teléfono: {{restaurant.phone}}</p>
+            <p>{{restaurant.web}}</p>
+            <p>{{restaurant.mail}}</p>
+        </div>
+    </mat-grid-tile>
+    
+    <mat-grid-tile colspan="3" rowspan="1">
+
+        <p>Todos nuestros Restaurantes estan verificados por un comite de expertos</p>
+
+    </mat-grid-tile>
+</mat-grid-list>
