@@ -9,12 +9,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
+import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 
 
 @NgModule({
   declarations: [
     RestaurantListComponent,
-    RestaurantDetailComponent, 
+    RestaurantDetailComponent,
+    RestaurantFormComponent, 
   ],
   imports: [
     CommonModule,
