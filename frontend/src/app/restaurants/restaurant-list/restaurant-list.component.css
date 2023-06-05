@@ -5,6 +5,7 @@
 mat-list-item.restaurant-list-item {
     height: auto;
     padding: 20px;
+    cursor: pointer;
 }
 
 .mat-divider.mat-divider-inset {

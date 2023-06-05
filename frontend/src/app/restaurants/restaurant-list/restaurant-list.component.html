@@ -1,6 +1,7 @@
 <h1>Listado de restaurantes</h1>
 <mat-list>
-    <mat-list-item *ngFor="let restaurant of restaurants" class="restaurant-list-item">
+    <mat-list-item *ngFor="let restaurant of restaurants" class="restaurant-list-item" 
+    [routerLink]="['/restaurants', restaurant.restaurantId]">
         <h2>{{ restaurant.name }}</h2>
         <p>{{ restaurant.address }}</p>
         <p>{{ restaurant.typeFood }}</p>
