@@ -8,10 +8,10 @@ const routes: Routes = [
 },
 
 {
-  path: '', redirectTo:'books', pathMatch: 'full' // redireccion a pag principal
+  path: '', redirectTo:'restaurants', pathMatch: 'full' // redireccion a pag principal
 },
 {
-  path: '**', redirectTo:'books', pathMatch: 'full' //redireccion para paginas que no existen
+  path: '**', redirectTo:'restaurants', pathMatch: 'full' //redireccion para paginas que no existen
 }
 ];
 
