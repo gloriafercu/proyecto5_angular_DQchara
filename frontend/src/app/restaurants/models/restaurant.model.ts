@@ -2,6 +2,7 @@ export interface IRestaurant {
     id: number;
     name: string;
     address: string;
+    city: string;
     phone: string;
     web: string;
     mail: string;
@@ -9,4 +10,5 @@ export interface IRestaurant {
     rating: number;
     availability: boolean;
     typeFood: string;
+    urlImg: string;
 }

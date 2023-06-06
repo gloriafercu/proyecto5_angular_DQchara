@@ -9,7 +9,6 @@ import { IRestaurant } from '../models/restaurant.model';
 })
 export class RestaurantListComponent implements OnInit {
 
-  displayedColumns: string[]= ['name','address','phone','web','averagePrice','actions'];
 
   restaurants: IRestaurant[] = [];
 

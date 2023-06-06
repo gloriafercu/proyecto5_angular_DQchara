@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RestaurantsRoutingModule } from './restaurants-routing.module';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTableModule } from '@angular/material/table';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule} from '@angular/material/grid-list';
+
 
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
@@ -21,11 +19,9 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
   imports: [
     CommonModule,
     RestaurantsRoutingModule,
-    MatDividerModule,
-    MatListModule,
-    MatIconModule,
-    MatTableModule,
+    MatCardModule,
     MatGridListModule
+   
   ],
   exports: [
     RestaurantListComponent,
