@@ -1,19 +1,16 @@
 <h1>Listado de restaurantes</h1>
-<mat-list>
-    <mat-list-item *ngFor="let restaurant of restaurants" class="restaurant-list-item" 
-    [routerLink]="['/restaurants', restaurant.restaurantId]">
-        <h2>{{ restaurant.name }}</h2>
-        <p>{{ restaurant.address }}</p>
-        <p>{{ restaurant.typeFood }}</p>
-        <div>
-            <span>Precio medio: </span>
-            <span>{{ restaurant.averagePrice }} </span>
-            <span>&#8364;</span>
-        </div>
-        <div>
-            <span>Valoración: </span>
-            <span>{{ restaurant.rating }}</span>
-        </div>
-        <mat-divider [inset]="true"></mat-divider>
-    </mat-list-item>
-</mat-list>
+
+
+<div class="wrapper">
+    <div *ngFor="let restaurant of restaurants" [routerLink]="['/restaurants', restaurant.restaurantId]">
+        <mat-card class="example-card">
+            <img mat-card-image src="{{ restaurant.urlImg }}" alt="foto de {{ restaurant.name }}">
+            <mat-card-content>
+                <h2>{{ restaurant.name }}</h2>
+                <p>{{ restaurant.city }}</p>
+                <p>{{ restaurant.typeFood }}</p>
+                <p>{{ restaurant.rating }}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
