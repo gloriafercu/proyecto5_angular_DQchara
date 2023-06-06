@@ -9,11 +9,11 @@ const routes: Routes = [
     component: RestaurantListComponent
   },
   {
-    path: ':restaurantId', 
+    path: ':id', 
     component: RestaurantDetailComponent
   },
   {
-    path: '**', redirectTo:'/restaurant-list', pathMatch: 'full' }
+    path: '**', redirectTo:'', pathMatch: 'full' }
 ];
 
 @NgModule({

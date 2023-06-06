@@ -6,7 +6,7 @@
         <button mat-button [matMenuTriggerFor]="menu">
             <mat-icon >menu_book</mat-icon></button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Restaurantes</button>
+            <button mat-menu-item [routerLink]="['/restaurants']">Restaurantes</button>
             <button mat-menu-item>Reservar</button>
             <button mat-menu-item>Opiniones</button>
             
