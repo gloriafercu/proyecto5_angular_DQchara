@@ -6,12 +6,34 @@ h1 {
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 50px 150px;
     gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.card-container {
+    cursor: pointer;
+    width: 100%;
+}
+
+.image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
 }
 
 
-.example-card {
-    cursor: pointer;
-    max-width: 300px;
+
+.image-container img {
+    position: absolute;
+    left: -10000%;
+    right: -10000%;
+    top: -10000%;
+    bottom: -10000%;
+    margin: auto auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
 }

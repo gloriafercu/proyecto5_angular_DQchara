@@ -3,8 +3,10 @@
 
 <div class="wrapper">
     <div *ngFor="let restaurant of restaurants" [routerLink]="['/restaurants', restaurant.id]">
-        <mat-card class="example-card">
-            <img mat-card-image src="{{ restaurant.urlImg }}" alt="foto de {{ restaurant.name }}">
+        <mat-card class="card-container">
+            <div class="image-container">
+                <img mat-card-image src="{{ restaurant.urlImg }}" alt="foto de {{ restaurant.name }}">
+            </div>
             <mat-card-content>
                 <h2>{{ restaurant.name }}</h2>
                 <p>{{ restaurant.city }}</p>
