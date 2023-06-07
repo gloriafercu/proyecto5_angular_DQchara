@@ -422,6 +422,111 @@
         }
     ],
     "comments": [
-        {}
+        {
+            "id": 1,
+            "rating": 5,
+            "comment": "Gran atención por parte del camarero y muy buenos precios. La comida estaba muy buena y fueron generosos con los calamares en el bocata. Con la cerveza nos pusieron queso del bueno, cosa que no se ve en todos sitios. Se puede pagar con tarjeta y tienen terraza.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 2,
+            "rating": 5,
+            "comment": "Genial comida casera,todo muy rico y calidad precio no es caro,atención muy buena de la cocinera y un señor mayor(debe ser el dueño)no conocía este restaurante y me sorprendió MUY BIEN",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 3,
+            "rating": 1,
+            "comment": "Servicio pésimo",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 4,
+            "rating": 5,
+            "comment": "Buena atención. Un buen sitio en el barrio para ir, incluso un domingo, podría mejorar el aperitivo y sería mejor, por eso no le doy 5 estrellas.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 3,
+            "rating": 4,
+            "comment": "Me parece un restaurante de barrio pequeño y un poco anticuado lo que mejor tiene es una pequeña terraza a la que de da el sol y se esta magníficamente bien.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 6,
+            "rating": 4,
+            "comment": "De los mejores pan con tomate que he comido y el chaval muy majo. Muy agradecido.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 7,
+            "rating": 4,
+            "comment": "Un restaurante de barrio con una buena terraza y una atención personal.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 8,
+            "rating": 4,
+            "comment": "Bueno,una cerveza movida y encima estaba caliente.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 9,
+            "rating": 5,
+            "comment": "Restaurante de barrio sin pretensiones y para variar no es de chinos. La pareja española que lo lleva son agradables. Buenas tapas y lo mejor pequeña carta de vinos difícil de encontrar en este tipo de bares. Sólo por esto lo visito de vez en cuando.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 10,
+            "rating": 5,
+            "comment": "Restaurante de toda la vida con unos platos geniales. Súper barato .El personal no puede ser más brillante; super educados y comprensivos.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 11,
+            "rating": 5,
+            "comment": "gran servicio siempre me gusta el servicio. muy recomendable. todo el personal es amable con todos..",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 12,
+            "rating": 5,
+            "comment": "Muy buena atención por parte del camarero Alex. Exquisita calidad de platos, pedimos chipirones, costillas de ternera y lubina, de lo mejor que hemos probado. Volveremos seguro!",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 13,
+            "rating": 3,
+            "comment": "Un gran descubrimiento, caímos ahí casi por casualidad por probar algo diferey, y repetiremos seguro, platos de muy buena calidad y muy abundantes",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 14,
+            "rating": 4,
+            "comment": "Fuimos de casualidad y... qué buena suerte. La sopa de fin de mes (pescado/marisco) es extraordinaria y, la chica que nos atendió, un encanto! Riquísimo todo, de verdad.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        },
+        {
+            "id": 15,
+            "rating": 2,
+            "comment": "La atención muy buena. Y la comida riquísima.",
+            "idRestaurante": 1,
+            "idUsuario": 2
+        }
+
     ]
 }

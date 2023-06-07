@@ -1,0 +1,15 @@
+<mat-grid-list cols="3" rowHeight="125px" *ngIf="comment">
+    <mat-grid-tile rowspan="2">
+        <div>
+            <h2>Restaurante: {{restaurant.name}}</h2>
+            <h3>Comentario: {{comments.rating}}</h3>
+            <p>{{comments.comment}}</p>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3" rowspan="1">
+
+        <p>Agradecemos tu colaboración en la creación de un ambiente respetuoso y agradable para todos. ¡Disfruta de tu experiencia!</p>
+
+    </mat-grid-tile>
+</mat-grid-list>

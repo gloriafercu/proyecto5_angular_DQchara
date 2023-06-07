@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { CommentsModule } from './comments/comments.module';
 
 
 
@@ -41,7 +42,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatCardModule,
     MatDividerModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    CommentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
