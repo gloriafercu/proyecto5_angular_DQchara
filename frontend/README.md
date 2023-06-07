@@ -24,7 +24,7 @@ ng generate interface users/models/user --type=model --prefix=I
 ng generate component users/user-detail
 ng generate component users/user-form
 ng generate component users/user-list
-ng generate service services/users/user
+ng generate service users/services/user
 ```
 ## Layout
 

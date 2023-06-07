@@ -14,7 +14,7 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
   declarations: [
     RestaurantListComponent,
     RestaurantDetailComponent,
-    RestaurantFormComponent, 
+    RestaurantFormComponent 
   ],
   imports: [
     CommonModule,
@@ -25,7 +25,8 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
   ],
   exports: [
     RestaurantListComponent,
-    RestaurantDetailComponent
+    RestaurantDetailComponent,
+    RestaurantFormComponent
   ]
 })
 export class RestaurantsModule { }

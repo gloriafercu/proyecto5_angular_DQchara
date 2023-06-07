@@ -6,6 +6,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 
+import { MatGridListModule} from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,13 @@ import { UserListComponent } from './user-list/user-list.component';
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    MatGridListModule
+  ],
+  exports: [
+    UserDetailComponent,
+    UserFormComponent,
+    UserListComponent
   ]
 })
 export class UsersModule { }
