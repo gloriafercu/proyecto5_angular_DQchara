@@ -18,7 +18,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
-import { PaginatePipe } from './pipes/paginate.pipe';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MyCustomPaginatorIntl } from './paginator-es';
+
 
 
 
@@ -44,7 +46,12 @@ import { PaginatePipe } from './pipes/paginate.pipe';
     MatToolbarModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      useClass: MyCustomPaginatorIntl
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
