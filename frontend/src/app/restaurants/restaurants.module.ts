@@ -8,6 +8,7 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
+import { PaginatePipe } from '../pipes/paginate.pipe';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
     RestaurantListComponent,
     RestaurantDetailComponent,
     RestaurantFormComponent, 
+    PaginatePipe
   ],
   imports: [
     CommonModule,

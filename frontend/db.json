@@ -65,7 +65,7 @@
             "web": "http://drupal.org/curabitur/at/ipsum/ac.js",
             "mail": "tride4@baidu.com",
             "averagePrice": 10,
-            "rating": 5,
+            "rating": 5.0,
             "availability": true,
             "typeFood": "India",
             "urlImg": "../../../assets/restaurants_img/img_5.jpg"
@@ -79,7 +79,7 @@
             "web": "https://businessweek.com/penatibus/et/magnis/dis/parturient.png",
             "mail": "gripon5@alexa.com",
             "averagePrice": 100,
-            "rating": 7,
+            "rating": 7.0,
             "availability": true,
             "typeFood": "Asiática",
             "urlImg": "../../../assets/restaurants_img/img_6.jpg"
@@ -107,7 +107,7 @@
             "web": "https://ebay.com/vel.xml",
             "mail": "ktallow6@nymag.com",
             "averagePrice": "€238,90",
-            "rating": 9,
+            "rating": 9.0,
             "availability": false,
             "typeFood": "Italiana",
             "urlImg": "../../../assets/restaurants_img/img_8.jpg"
@@ -121,7 +121,7 @@
             "web": "http://vimeo.com/porttitor/pede/justo/eu/massa.aspx",
             "mail": "fwhistance8@nih.gov",
             "averagePrice": 50,
-            "rating": 8,
+            "rating": 8.0,
             "availability": true,
             "typeFood": "Mediterránea",
             "urlImg": "../../../assets/restaurants_img/img_9.jpg"

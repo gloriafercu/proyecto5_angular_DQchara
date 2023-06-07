@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
 import { IRestaurant } from '../models/restaurant.model';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -10,20 +10,21 @@ import { PageEvent } from '@angular/material/paginator';
 })
 export class RestaurantListComponent implements OnInit {
 
-
-
   restaurants: IRestaurant[] = [];
+
 
   results_length: number = 0;
   page_Size: number = 6;
   page_number: number = 1;
   pageSizeOptions = [3, 9, 18, 30];
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
 
   constructor(private restaurantService: RestaurantService) { }
 
   ngOnInit(): void {
-    this.getAllRestaurants();
+   this.getAllRestaurants();
   }
 
   getAllRestaurants(): void {

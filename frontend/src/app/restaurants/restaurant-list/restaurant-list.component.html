@@ -2,7 +2,7 @@
 
 
 <div class="wrapper">
-    <div *ngFor="let restaurant of restaurants" [routerLink]="['/restaurants', restaurant.id]">
+    <div *ngFor="let restaurant of restaurants | paginate: page_Size: page_number" [routerLink]="['/restaurants', restaurant.id]">
         <mat-card class="card-container">
             <div class="image-container">
                 <img mat-card-image src="{{ restaurant.urlImg }}" alt="foto de {{ restaurant.name }}">
@@ -16,6 +16,8 @@
         </mat-card>
     </div>
 </div>
-<mat-paginator [length]="results_length" [pageSize]="page_Size" [pageSizeOptions]="pageSizeOptions"
+<mat-paginator #paginator [length]="results_length" [pageSize]="page_Size" [pageSizeOptions]="pageSizeOptions"
     (page)="handleEvent($event)" showFirstLastButtons aria-label="Selecciona una página">
 </mat-paginator>
+
+
