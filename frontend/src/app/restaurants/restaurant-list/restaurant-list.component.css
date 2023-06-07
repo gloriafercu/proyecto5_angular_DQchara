@@ -1,15 +1,14 @@
 h1 {
-    margin-top: 30px;
+    margin: 50px 0;
     text-align: center;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 30px;
-    max-width: 1200px;
-    margin: 50px auto;
 }
+
 
 .card-container {
     cursor: pointer;
@@ -23,8 +22,6 @@ h1 {
     position: relative;
 }
 
-
-
 .image-container img {
     position: absolute;
     left: -10000%;
@@ -36,4 +33,35 @@ h1 {
     min-height: 100%;
     -webkit-transform: scale(0.6);
     transform: scale(0.6);
+}
+
+.paginator {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+    .mat-mdc-paginator-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+   
 }
