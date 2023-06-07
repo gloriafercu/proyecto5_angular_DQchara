@@ -1,7 +1,7 @@
 export interface IComment {
     id: number;
     rating: number;
-    comment: string;
+    description: string;
     idRestaurante: number[];
     idUsuario: number[];
 }
