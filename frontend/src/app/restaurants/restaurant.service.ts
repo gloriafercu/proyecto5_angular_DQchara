@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class RestaurantService {
 
-  urlAPI: string = "http://localhost:3000/restaurants";
+  urlAPI: string = "http://localhost:5000/restaurants";
 
   constructor(private httpClient: HttpClient) { }
 

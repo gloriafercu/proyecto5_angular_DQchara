@@ -16,3 +16,6 @@
         </mat-card>
     </div>
 </div>
+<mat-paginator [length]="results_length" [pageSize]="page_Size" [pageSizeOptions]="pageSizeOptions"
+    (page)="handleEvent($event)" showFirstLastButtons aria-label="Selecciona una página">
+</mat-paginator>
