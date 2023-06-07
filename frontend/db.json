@@ -423,5 +423,86 @@
     ],
     "comments": [
         {}
-    ]
+    ],
+    "users":[{
+        "id": 1,
+        "first_name": "Leola",
+        "last_name": "Mellsop",
+        "email": "lmellsop0@gov.uk",
+        "phone": "666 999 111",
+        "userName": "lmellsop0",
+        "avatar": "https://robohash.org/ullamacorrupti.png?size=50x50&set=set1"
+      }, {
+        "id": 2,
+        "first_name": "Clarette",
+        "last_name": "Usher",
+        "email": "cusher1@wiley.com",
+        "phone": "666 999 222",
+        "userName": "cusher1",
+        "avatar": "https://robohash.org/providentexercitationeminventore.png?size=50x50&set=set1"
+      }, {
+        "id": 3,
+        "first_name": "Beatriz",
+        "last_name": "Nelthropp",
+        "email": "bnelthropp2@ow.ly",
+        "phone": "666 999 333",
+        "userName": "bnelthropp2",
+        "avatar": "https://robohash.org/etrationenihil.png?size=50x50&set=set1"
+      }, {
+        "id": 4,
+        "first_name": "Gilemette",
+        "last_name": "Pollastro",
+        "email": "gpollastro3@xrea.com",
+        "phone": "666 999 444",
+        "userName": "gpollastro3",
+        "avatar": "https://robohash.org/voluptatemquoea.png?size=50x50&set=set1"
+      }, {
+        "id": 5,
+        "first_name": "Shaylyn",
+        "last_name": "Gianneschi",
+        "email": "sgianneschi4@gnu.org",
+        "phone": "666 999 555",
+        "userName": "sgianneschi4",
+        "avatar": "https://robohash.org/recusandaeetquia.png?size=50x50&set=set1"
+      }, {
+        "id": 6,
+        "first_name": "Jammie",
+        "last_name": "Fortye",
+        "email": "jfortye5@linkedin.com",
+        "phone": "666 999 666",
+        "userName": "jfortye5",
+        "avatar": "https://robohash.org/velsintvoluptatem.png?size=50x50&set=set1"
+      }, {
+        "id": 7,
+        "first_name": "Ford",
+        "last_name": "Hackley",
+        "email": "fhackley6@stanford.edu",
+        "phone": "666 999 777",
+        "userName": "fhackley6",
+        "avatar": "https://robohash.org/maioresametet.png?size=50x50&set=set1"
+      }, {
+        "id": 8,
+        "first_name": "Perri",
+        "last_name": "Enrdigo",
+        "email": "penrdigo7@hp.com",
+        "phone": "666 999 888",
+        "userName": "penrdigo7",
+        "avatar": "https://robohash.org/errorsintpossimus.png?size=50x50&set=set1"
+      }, {
+        "id": 9,
+        "first_name": "Gabriell",
+        "last_name": "Brainsby",
+        "email": "gbrainsby8@accuweather.com",
+        "phone": "666 999 999",
+        "userName": "gbrainsby8",
+        "avatar": "https://robohash.org/quosestdicta.png?size=50x50&set=set1"
+      }, {
+        "id": 10,
+        "first_name": "Fairfax",
+        "last_name": "Cole",
+        "email": "fcole9@paypal.com",
+        "phone": "666 999 000",
+        "userName": "fcole9",
+        "avatar": "https://robohash.org/numquamautemcommodi.png?size=50x50&set=set1"
+      }]
 }
