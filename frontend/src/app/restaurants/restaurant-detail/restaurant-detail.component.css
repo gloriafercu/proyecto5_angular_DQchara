@@ -1,3 +1,16 @@
-mat-grid-tile div{
-    text-align: center;
-  }
+mat-grid-tile div {
+  text-align: center;
+}
+
+.container-detail {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr;
+}
+
+.container-cover {
+  display: grid;
+  grid-row-start:1;
+  grid-row-end:3;
+}
+
