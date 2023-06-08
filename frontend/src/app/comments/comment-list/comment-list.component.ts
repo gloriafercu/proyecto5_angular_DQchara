@@ -10,18 +10,20 @@ import { Router } from '@angular/router';
 })
 export class CommentListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'comment', 'actions'];
   comments: IComment[] = [];
+  displayedColumns: string[] = ['id', 'description', 'actions'];
 
+
+  
   constructor(private commentService: CommentService,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.commentService.findAll().subscribe(data => this.comments = data); //getById o findById??
+    this.commentService.findAll().subscribe(data => this.comments = data); 
   }
 
   view(comment: IComment) {
-    this.router.navigate(['/comments', comment.id]); 
+    this.router.navigate(['/comments', comment.id]);
   }
 
 }

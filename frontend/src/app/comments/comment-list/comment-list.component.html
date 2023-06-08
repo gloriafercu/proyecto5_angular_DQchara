@@ -8,9 +8,9 @@
         <td mat-cell *matCellDef="let comment">{{ comment.id }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="comment">
+    <ng-container matColumnDef="description">
         <th mat-header-cell *matHeaderCellDef>Comentario:</th>
-        <td mat-cell *matCellDef="let comment">{{ comment.comment | limitLongText:15}}</td>
+        <td mat-cell *matCellDef="let comment">{{ comment.description}}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
