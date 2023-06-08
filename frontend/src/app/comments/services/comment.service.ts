@@ -8,7 +8,7 @@ import { IComment } from '../models/comment.model';
 })
 export class CommentService {
 
-  urlAPI: string = "http://localhost:3000/restaurants";
+  urlAPI: string = "http://localhost:5000/restaurants";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -33,9 +33,4 @@ export class CommentService {
   findAll(): Observable<IComment[]> {
     return this.httpClient.get<IComment[]>(this.urlAPI);
   }
-
-  // findById(id: number): Observable<IComment> {
-  //   return this.httpClient.get<IComment>(`${this.urlAPI}/${id}`);
-  // }
-
 }
