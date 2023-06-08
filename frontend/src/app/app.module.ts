@@ -21,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
+import { BooksModule } from './books/books.module';
 
 
 
@@ -46,7 +47,8 @@ import { MyCustomPaginatorIntl } from './paginator-es';
     MatDividerModule,
     MatToolbarModule,
     MatMenuModule,
-    CommentsModule
+    CommentsModule,
+    BooksModule
   ],
   providers: [
     {

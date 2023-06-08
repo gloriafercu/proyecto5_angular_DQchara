@@ -42,3 +42,11 @@ ng generate component layout/navbar
 ng generate component layout/footer
 ```
 
+## Módulo: Reservas
+```
+ng generate module books --routing --module app.module
+ng generate component books/book-list
+ng generate component books/book-detail
+ng generate component books/book-form
+ng generate interface books/models/book --type=model --prefix=I
+ng generate service books/services/book
