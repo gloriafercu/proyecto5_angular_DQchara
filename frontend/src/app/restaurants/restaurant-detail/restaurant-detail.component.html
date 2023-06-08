@@ -14,10 +14,12 @@
                 <p>{{ restaurant.web }}</p>
                 <p>{{ restaurant.mail }}</p>
             </div>
+           
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="3" rowspan="1">
-            <p>Todos nuestros Restaurantes estan verificados por un comite de expertos</p>
-        </mat-grid-tile>
     </mat-grid-list>
+    <h3>Opiniones:</h3>
+    <div class="container-comments" *ngFor="let comment of comments ">
+        <p>{{comment.description}}</p>
+    </div>
 </section>

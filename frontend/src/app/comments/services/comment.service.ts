@@ -8,7 +8,7 @@ import { IComment } from '../models/comment.model';
 })
 export class CommentService {
 
-  urlAPI: string = "http://localhost:5000/restaurants";
+  urlAPI: string = "http://localhost:5000/comments";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -30,7 +30,12 @@ export class CommentService {
   deleteById(id: number): void {
     this.httpClient.delete(`${this.urlAPI}/${id}`);
   }
-  findAll(): Observable<IComment[]> {
+  getAll(): Observable<IComment[]> {
     return this.httpClient.get<IComment[]>(this.urlAPI);
+  }
+  
+  getAllRestaurantById(restaurantId: number): Observable<IComment[]> {
+    console.log("getAllRestaurants"+this.httpClient.get<IComment[]>(`${this.urlAPI}?restaurantId=${restaurantId}`))
+    return this.httpClient.get<IComment[]>(`${this.urlAPI}?restaurantId=${restaurantId}`)
   }
 }

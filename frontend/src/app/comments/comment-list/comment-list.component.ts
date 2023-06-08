@@ -19,11 +19,13 @@ export class CommentListComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.commentService.findAll().subscribe(data => this.comments = data); 
+    this.commentService.getAll().subscribe(data => this.comments = data); 
   }
 
   view(comment: IComment) {
     this.router.navigate(['/comments', comment.id]);
   }
+
+  
 
 }

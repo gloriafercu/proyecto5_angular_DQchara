@@ -23,3 +23,7 @@ mat-grid-tile div {
 img {
   height: 250px;
 }
+.container-comments{
+  display: flex;
+  flex-direction: column;
+}
