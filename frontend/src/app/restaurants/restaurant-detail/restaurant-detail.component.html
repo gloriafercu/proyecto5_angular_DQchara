@@ -1,17 +1,23 @@
-<mat-grid-list cols="3" rowHeight="125px" *ngIf="restaurant">
-     <mat-grid-tile rowspan="2">
-        <div>
-            <h2>Restaurante: {{restaurant.name}}</h2>
-            <p>Dirección: {{restaurant.address}}</p>
-            <p>Teléfono: {{restaurant.phone}}</p>
-            <p>{{restaurant.web}}</p>
-            <p>{{restaurant.mail}}</p>
+<section class="container-detail" *ngIf="restaurant">
+    <div class="container-cover">
+        <div class="container-img" *ngFor="let img of restaurant.images ">
+            <img src="{{ img }}" alt="foto del restaurante {{ restaurant.name }}">
         </div>
-    </mat-grid-tile>
-    
-    <mat-grid-tile colspan="3" rowspan="1">
+    </div>
 
-        <p>Todos nuestros Restaurantes estan verificados por un comite de expertos</p>
+    <mat-grid-list cols="3" rowHeight="125px">
+        <mat-grid-tile rowspan="2">
+            <div>
+                <h2>Restaurante: {{ restaurant.name }}</h2>
+                <p>Dirección: {{ restaurant.address }}</p>
+                <p>Teléfono: {{ restaurant.phone }}</p>
+                <p>{{ restaurant.web }}</p>
+                <p>{{ restaurant.mail }}</p>
+            </div>
+        </mat-grid-tile>
 
-    </mat-grid-tile>
-</mat-grid-list>
+        <mat-grid-tile colspan="3" rowspan="1">
+            <p>Todos nuestros Restaurantes estan verificados por un comite de expertos</p>
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>
