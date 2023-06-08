@@ -13,21 +13,11 @@
             "availability": false,
             "typeFood": "Mediterránea",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_1.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_01.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_31.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_32.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_33.jpg"
-                }
+                "../assets/restaurants_img/img_1.jpg",
+                "../assets/restaurants_img/rest_01.jpg",
+                "../assets/restaurants_img/img_31.jpg",
+                "../assets/restaurants_img/img_32.jpg",
+                "../assets/restaurants_img/img_33.jpg"
             ]
         },
         {
@@ -43,21 +33,11 @@
             "availability": false,
             "typeFood": "Colombiano",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_2.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_02.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_34.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_35.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_36.jpg"
-                }
+                "../assets/restaurants_img/img_2.jpg",
+                "../assets/restaurants_img/rest_02.jpg",
+                "../assets/restaurants_img/img_34.jpg",
+                "../assets/restaurants_img/img_35.jpg",
+                "../assets/restaurants_img/img_36.jpg"
             ]
         },
         {
@@ -73,21 +53,11 @@
             "availability": false,
             "typeFood": "Italiana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_3.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_03.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_37.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_38.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_39.jpg"
-                }
+                "../assets/restaurants_img/img_3.jpg",
+                "../assets/restaurants_img/rest_03.jpg",
+                "../assets/restaurants_img/img_37.jpg",
+                "../assets/restaurants_img/img_38.jpg",
+                "../assets/restaurants_img/img_39.jpg"
             ]
         },
         {
@@ -103,21 +73,11 @@
             "availability": true,
             "typeFood": "Mediterránea",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_4.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_04.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_40.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_41.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_42.jpg"
-                }
+                "../assets/restaurants_img/img_4.jpg",
+                "../assets/restaurants_img/rest_04.jpg",
+                "../assets/restaurants_img/img_40.jpg",
+                "../assets/restaurants_img/img_41.jpg",
+                "../assets/restaurants_img/img_42.jpg"
             ]
         },
         {
@@ -133,21 +93,11 @@
             "availability": true,
             "typeFood": "India",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_5.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_05.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_43.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_44.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_45.jpg"
-                }
+                "../assets/restaurants_img/img_5.jpg",
+                "../assets/restaurants_img/rest_05.jpg",
+                "../assets/restaurants_img/img_43.jpg",
+                "../assets/restaurants_img/img_44.jpg",
+                "../assets/restaurants_img/img_45.jpg"
             ]
         },
         {
@@ -163,21 +113,11 @@
             "availability": true,
             "typeFood": "Asiática",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_6.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_06.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_46.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_47.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_48.jpg"
-                }
+                "../assets/restaurants_img/img_6.jpg",
+                "../assets/restaurants_img/rest_06.jpg",
+                "../assets/restaurants_img/img_46.jpg",
+                "../assets/restaurants_img/img_47.jpg",
+                "../assets/restaurants_img/img_48.jpg"
             ]
         },
         {
@@ -193,21 +133,11 @@
             "availability": true,
             "typeFood": "Mexicana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_7.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_07.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_49.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_50.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_51.jpg"
-                }
+                "../assets/restaurants_img/img_7.jpg",
+                "../assets/restaurants_img/rest_07.jpg",
+                "../assets/restaurants_img/img_49.jpg",
+                "../assets/restaurants_img/img_50.jpg",
+                "../assets/restaurants_img/img_51.jpg"
             ]
         },
         {
@@ -223,21 +153,11 @@
             "availability": false,
             "typeFood": "Italiana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_8.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_08.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_52.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_53.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_54.jpg"
-                }
+                "../assets/restaurants_img/img_8.jpg",
+                "../assets/restaurants_img/rest_08.jpg",
+                "../assets/restaurants_img/img_52.jpg",
+                "../assets/restaurants_img/img_53.jpg",
+                "../assets/restaurants_img/img_54.jpg"
             ]
         },
         {
@@ -253,21 +173,11 @@
             "availability": true,
             "typeFood": "Mediterránea",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_9.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_09.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_41.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_32.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_37.jpg"
-                }
+                "../assets/restaurants_img/img_9.jpg",
+                "../assets/restaurants_img/rest_09.jpg",
+                "../assets/restaurants_img/img_41.jpg",
+                "../assets/restaurants_img/img_32.jpg",
+                "../assets/restaurants_img/rest_37.jpg"
             ]
         },
         {
@@ -283,21 +193,11 @@
             "availability": false,
             "typeFood": "Mediterránea",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_10.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_10.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_31.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_32.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_13.jpg"
-                }
+                "../assets/restaurants_img/img_10.jpg",
+                "../assets/restaurants_img/rest_10.jpg",
+                "../assets/restaurants_img/rest_31.jpg",
+                "../assets/restaurants_img/img_32.jpg",
+                "../assets/restaurants_img/img_13.jpg"
             ]
         },
         {
@@ -313,21 +213,11 @@
             "availability": true,
             "typeFood": "Mexicana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_11.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_11.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_21.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_35.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_54.jpg"
-                }
+                "../assets/restaurants_img/img_11.jpg",
+                "../assets/restaurants_img/rest_11.jpg",
+                "../assets/restaurants_img/img_21.jpg",
+                "../assets/restaurants_img/rest_35.jpg",
+                "../assets/restaurants_img/img_54.jpg"
             ]
         },
         {
@@ -343,21 +233,11 @@
             "availability": false,
             "typeFood": "Asiática",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_12.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_12.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_31.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_32.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_33.jpg"
-                }
+                "../assets/restaurants_img/img_12.jpg",
+                "../assets/restaurants_img/rest_12.jpg",
+                "../assets/restaurants_img/img_31.jpg",
+                "../assets/restaurants_img/img_32.jpg",
+                "../assets/restaurants_img/img_33.jpg"
             ]
         },
         {
@@ -373,21 +253,11 @@
             "availability": false,
             "typeFood": "Venezolana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_13.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_13.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_24.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_25.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_25.jpg"
-                }
+                "../assets/restaurants_img/img_13.jpg",
+                "../assets/restaurants_img/rest_13.jpg",
+                "../assets/restaurants_img/img_24.jpg",
+                "../assets/restaurants_img/img_25.jpg",
+                "../assets/restaurants_img/rest_25.jpg"
             ]
         },
         {
@@ -403,21 +273,11 @@
             "availability": false,
             "typeFood": "China",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_14.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_14.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_34.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_10.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_15.jpg"
-                }
+                "../assets/restaurants_img/img_14.jpg",
+                "../assets/restaurants_img/rest_14.jpg",
+                "../assets/restaurants_img/img_34.jpg",
+                "../assets/restaurants_img/img_10.jpg",
+                "../assets/restaurants_img/rest_15.jpg"
             ]
         },
         {
@@ -433,21 +293,11 @@
             "availability": false,
             "typeFood": "Venezolana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_15.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_15.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_01.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_06.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_33.jpg"
-                }
+                "../assets/restaurants_img/img_15.jpg",
+                "../assets/restaurants_img/rest_15.jpg",
+                "../assets/restaurants_img/img_01.jpg",
+                "../assets/restaurants_img/img_06.jpg",
+                "../assets/restaurants_img/rest_33.jpg"
             ]
         },
         {
@@ -463,21 +313,11 @@
             "availability": true,
             "typeFood": "Brasileña",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_16.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_16.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_33.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_12.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_19.jpg"
-                }
+                "../assets/restaurants_img/img_16.jpg",
+                "../assets/restaurants_img/rest_16.jpg",
+                "../assets/restaurants_img/rest_33.jpg",
+                "../assets/restaurants_img/img_12.jpg",
+                "../assets/restaurants_img/rest_19.jpg"
             ]
         },
         {
@@ -493,21 +333,11 @@
             "availability": true,
             "typeFood": "Mexicana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_17.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_17.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_31.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_01.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_23.jpg"
-                }
+                "../assets/restaurants_img/img_17.jpg",
+                "../assets/restaurants_img/rest_17.jpg",
+                "../assets/restaurants_img/img_31.jpg",
+                "../assets/restaurants_img/rest_01.jpg",
+                "../assets/restaurants_img/img_23.jpg"
             ]
         },
         {
@@ -523,21 +353,11 @@
             "availability": false,
             "typeFood": "Italiana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_18.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_18.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_1.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_32.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_25.jpg"
-                }
+                "../assets/restaurants_img/img_18.jpg",
+                "../assets/restaurants_img/rest_18.jpg",
+                "../assets/restaurants_img/img_1.jpg",
+                "../assets/restaurants_img/rest_32.jpg",
+                "../assets/restaurants_img/rest_25.jpg"
             ]
         },
         {
@@ -553,21 +373,11 @@
             "availability": false,
             "typeFood": "Árabe",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_19.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_19.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_8.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_29.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_9.jpg"
-                }
+                "../assets/restaurants_img/img_19.jpg",
+                "../assets/restaurants_img/rest_19.jpg",
+                "../assets/restaurants_img/img_8.jpg",
+                "../assets/restaurants_img/rest_29.jpg",
+                "../assets/restaurants_img/img_9.jpg"
             ]
         },
         {
@@ -583,21 +393,11 @@
             "availability": true,
             "typeFood": "Japonesa",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_20.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_20.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_11.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_52.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_46.jpg"
-                }
+                "../assets/restaurants_img/img_20.jpg",
+                "../assets/restaurants_img/rest_20.jpg",
+                "../assets/restaurants_img/img_11.jpg",
+                "../assets/restaurants_img/img_52.jpg",
+                "../assets/restaurants_img/img_46.jpg"
             ]
         },
         {
@@ -613,21 +413,11 @@
             "availability": true,
             "typeFood": "Española",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_21.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_21.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_27.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_23.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_52.jpg"
-                }
+                "../assets/restaurants_img/img_21.jpg",
+                "../assets/restaurants_img/rest_21.jpg",
+                "../assets/restaurants_img/img_27.jpg",
+                "../assets/restaurants_img/img_23.jpg",
+                "../assets/restaurants_img/img_52.jpg"
             ]
         },
         {
@@ -643,21 +433,11 @@
             "availability": false,
             "typeFood": "Mexicana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_22.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_22.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_35.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_07.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_02.jpg"
-                }
+                "../assets/restaurants_img/img_22.jpg",
+                "../assets/restaurants_img/rest_22.jpg",
+                "../assets/restaurants_img/img_35.jpg",
+                "../assets/restaurants_img/rest_07.jpg",
+                "../assets/restaurants_img/rest_02.jpg"
             ]
         },
         {
@@ -673,21 +453,11 @@
             "availability": true,
             "typeFood": "Italiana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_23.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_23.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_16.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_26.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_03.jpg"
-                }
+                "../assets/restaurants_img/img_23.jpg",
+                "../assets/restaurants_img/rest_23.jpg",
+                "../assets/restaurants_img/img_16.jpg",
+                "../assets/restaurants_img/img_26.jpg",
+                "../assets/restaurants_img/rest_03.jpg"
             ]
         },
         {
@@ -703,21 +473,11 @@
             "availability": false,
             "typeFood": "China",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_24.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_24.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_51.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_34.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_13.jpg"
-                }
+                "../assets/restaurants_img/img_24.jpg",
+                "../assets/restaurants_img/rest_24.jpg",
+                "../assets/restaurants_img/img_51.jpg",
+                "../assets/restaurants_img/img_34.jpg",
+                "../assets/restaurants_img/rest_13.jpg"
             ]
         },
         {
@@ -733,21 +493,11 @@
             "availability": true,
             "typeFood": "China",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_25.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_25.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_31.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_29.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_05.jpg"
-                }
+                "../assets/restaurants_img/img_25.jpg",
+                "../assets/restaurants_img/rest_25.jpg",
+                "../assets/restaurants_img/img_31.jpg",
+                "../assets/restaurants_img/img_29.jpg",
+                "../assets/restaurants_img/rest_05.jpg"
             ]
         },
         {
@@ -763,21 +513,11 @@
             "availability": true,
             "typeFood": "Española",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_26.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_26.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_36.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_28.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_37.jpg"
-                }
+                "../assets/restaurants_img/img_26.jpg",
+                "../assets/restaurants_img/rest_26.jpg",
+                "../assets/restaurants_img/rest_36.jpg",
+                "../assets/restaurants_img/img_28.jpg",
+                "../assets/restaurants_img/rest_37.jpg"
             ]
         },
         {
@@ -793,21 +533,11 @@
             "availability": true,
             "typeFood": "Árabe",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_27.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_27.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_13.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_17.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_47.jpg"
-                }
+                "../assets/restaurants_img/img_27.jpg",
+                "../assets/restaurants_img/rest_27.jpg",
+                "../assets/restaurants_img/img_13.jpg",
+                "../assets/restaurants_img/img_17.jpg",
+                "../assets/restaurants_img/img_47.jpg"
             ]
         },
         {
@@ -823,21 +553,11 @@
             "availability": true,
             "typeFood": "Española",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_28.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_28.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_01.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_32.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_18.jpg"
-                }
+                "../assets/restaurants_img/img_28.jpg",
+                "../assets/restaurants_img/rest_28.jpg",
+                "../assets/restaurants_img/rest_01.jpg",
+                "../assets/restaurants_img/img_32.jpg",
+                "../assets/restaurants_img/rest_18.jpg"
             ]
         },
         {
@@ -853,21 +573,11 @@
             "availability": true,
             "typeFood": "Brasileña",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_29.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_29.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_31.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_19.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_33.jpg"
-                }
+                "../assets/restaurants_img/img_29.jpg",
+                "../assets/restaurants_img/rest_29.jpg",
+                "../assets/restaurants_img/rest_31.jpg",
+                "../assets/restaurants_img/img_19.jpg",
+                "../assets/restaurants_img/img_33.jpg"
             ]
         },
         {
@@ -883,21 +593,11 @@
             "availability": false,
             "typeFood": "Italiana",
             "images": [
-                {
-                    "img": "../assets/restaurants_img/img_30.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/rest_30.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_1.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_10.jpg"
-                },
-                {
-                    "img": "../assets/restaurants_img/img_20.jpg"
-                }
+                "../assets/restaurants_img/img_30.jpg",
+                "../assets/restaurants_img/rest_30.jpg",
+                "../assets/restaurants_img/img_1.jpg",
+                "../assets/restaurants_img/img_10.jpg",
+                "../assets/restaurants_img/img_20.jpg"
             ]
         }
     ],

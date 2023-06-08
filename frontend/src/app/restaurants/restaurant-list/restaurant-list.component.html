@@ -5,8 +5,8 @@
     <div *ngFor="let restaurant of restaurants | paginate: page_Size: page_number"
         [routerLink]="['/restaurants', restaurant.id]">
         <mat-card class="card-container">
-            <div class="image-container" >
-                <img  mat-card-image src="{{restaurant.images[0].img}}" alt="foto de {{ restaurant.name }}">
+            <div class="image-container">
+                <img mat-card-image src="{{ restaurant.images[0] }}" alt="foto de {{ restaurant.name }}">
             </div>
             <mat-card-content>
                 <h2>{{ restaurant.name }}</h2>

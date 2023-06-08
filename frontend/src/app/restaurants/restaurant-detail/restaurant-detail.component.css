@@ -4,13 +4,22 @@ mat-grid-tile div {
 
 .container-detail {
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
 .container-cover {
   display: grid;
-  grid-row-start:1;
-  grid-row-end:3;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
 }
 
+.container-img:nth-child(1) {
+  display: grid;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+img {
+  height: 250px;
+}
