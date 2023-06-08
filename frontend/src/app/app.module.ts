@@ -19,6 +19,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommentsModule } from './comments/comments.module';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MyCustomPaginatorIntl } from './paginator-es';
+
 
 
 
@@ -45,7 +48,12 @@ import { CommentsModule } from './comments/comments.module';
     MatMenuModule,
     CommentsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      useClass: MyCustomPaginatorIntl
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,6 +12,7 @@ ng generate module restaurants --routing --module app.module
 ng generate interface restaurants/models/restaurant --type=model --prefix=I
 ng generate component restaurants/restaurant-list
 ng generate component restaurants/restaurant-detail
+ng generate component restaurants/restaurant-form
 ng generate service restaurants/restaurant
 ```
 
@@ -20,6 +21,10 @@ ng generate service restaurants/restaurant
 ```
 ng generate module users --routing --module app.module
 ng generate interface users/models/user --type=model --prefix=I
+ng generate component users/user-detail
+ng generate component users/user-form
+ng generate component users/user-list
+ng generate service users/services/user
 ```
 ## Módulo: comments
 ```
