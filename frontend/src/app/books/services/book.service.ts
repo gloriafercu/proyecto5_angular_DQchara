@@ -11,7 +11,7 @@ export class BookService {
     throw new Error('Method not implemented.');
   }
 
-  url: string = "http://localhost:5000/books"
+  urlAPI: string = "http://localhost:5000/books"
 
   constructor(private httpClient: HttpClient) { }
 
