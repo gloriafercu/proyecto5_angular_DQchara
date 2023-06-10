@@ -44,9 +44,9 @@ ng generate component layout/footer
 
 ## Módulo: Reservas
 ```
-ng generate module books --routing --module app.module
-ng generate component books/book-list
-ng generate component books/book-detail
-ng generate component books/book-form
-ng generate interface books/models/book --type=model --prefix=I
-ng generate service books/services/book
+ng generate module bookings --routing --module app.module
+ng generate component bookings/booking-list
+ng generate component bookings/booking-detail
+ng generate component bookings/booking-form
+ng generate interface bookings/models/booking --type=model --prefix=I
+ng generate service bookings/services/booking
