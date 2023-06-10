@@ -21,7 +21,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
-import { BooksModule } from './books/books.module';
 import { BookingsModule } from './bookings/bookings.module';
 
 
@@ -49,7 +48,6 @@ import { BookingsModule } from './bookings/bookings.module';
     MatToolbarModule,
     MatMenuModule,
     CommentsModule,
-    BooksModule,
     BookingsModule
   ],
   providers: [
