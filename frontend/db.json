@@ -810,5 +810,46 @@
         "phone": "666 999 000",
         "userName": "fcole9",
         "avatar": "https://robohash.org/numquamautemcommodi.png?size=50x50&set=set1"
+      }],
+      "bookinks":[{
+        "id": 1,
+        "bookingDate": "11/9/2022",
+        "bookingTime": "13:30",
+        "userId": 2,
+        "restaurantId": 3,
+        "availability": true,
+        "peopleNumber": 4
+      }, {
+        "id": 2,
+        "bookingDate": "5/10/2023",
+        "bookingTime": "13:11",
+        "userId":5,
+        "restaurantId": 1,
+        "availability": false,
+        "peopleNumber":6
+      }, {
+        "id": 3,
+        "bookingDate": "1/5/2023",
+        "bookingTime": "8:19",
+        "userId":6,
+        "restaurantId": 5,
+        "availability": false,
+        "peopleNumber": 2
+      }, {
+        "id": 4,
+        "bookingDate": "12/25/2022",
+        "bookingTime": "6:48",
+        "userId": 6,
+        "restaurantId": 11,
+        "availability": false,
+        "peopleNumber": 5
+      }, {
+        "id": 5,
+        "bookingDate": "2/2/2023",
+        "bookingTime": "1:52",
+        "userId": 7,
+        "restaurantId": 13,
+        "availability": false,
+        "peopleNumber": 3
       }]
 }

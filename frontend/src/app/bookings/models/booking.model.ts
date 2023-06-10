@@ -1,7 +1,7 @@
 export interface IBooking {
     id: number;
-    bookDate: Date;
-    bookTime: string[];
+    bookingDate: Date;
+    bookingTime: string[];
     userId: number;
     restaurantId: number;
     availability: boolean;
