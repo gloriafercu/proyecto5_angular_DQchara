@@ -14,12 +14,13 @@
                 <p>{{ restaurant.web }}</p>
                 <p>{{ restaurant.mail }}</p>
             </div>
-           
+
         </mat-grid-tile>
 
     </mat-grid-list>
     <h3>Opiniones:</h3>
     <div class="container-comments" *ngFor="let comment of comments ">
         <p>{{comment.description}}</p>
+        <p>Id usuario: {{comment.userId}}</p>
     </div>
 </section>

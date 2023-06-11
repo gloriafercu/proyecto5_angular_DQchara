@@ -13,7 +13,7 @@ import { IComment } from 'src/app/comments/models/comment.model';
 export class RestaurantDetailComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
-  comments:IComment[]= []
+  comments: IComment[] = []
 
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
@@ -26,7 +26,8 @@ export class RestaurantDetailComponent implements OnInit {
       const id = parseInt(idString, 10);
       console.log(id)
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
-      this.commentService.getAllRestaurantById(id).subscribe(data => this.comments= data);
+      this.commentService.getAllCommentsByrestaurantId(id).subscribe(data => this.comments = data);
+      this.commentService.getAllUSersByComments(id).subscribe(data => this.comments = data);
 
     });
   }
