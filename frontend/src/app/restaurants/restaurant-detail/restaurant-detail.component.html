@@ -1,25 +1,71 @@
 <section class="container-detail" *ngIf="restaurant">
-    <div class="container-cover">
+    <section class="container-cover">
         <div class="container-img" *ngFor="let img of restaurant.images ">
             <img src="{{ img }}" alt="foto del restaurante {{ restaurant.name }}">
         </div>
-    </div>
+    </section>
 
-    <mat-grid-list cols="3" rowHeight="125px">
-        <mat-grid-tile rowspan="2">
-            <div>
-                <h2>Restaurante: {{ restaurant.name }}</h2>
-                <p>Dirección: {{ restaurant.address }}</p>
-                <p>Teléfono: {{ restaurant.phone }}</p>
-                <p>{{ restaurant.web }}</p>
-                <p>{{ restaurant.mail }}</p>
-            </div>
-           
-        </mat-grid-tile>
+    <h2>Restaurante: {{ restaurant.name }}</h2>
 
-    </mat-grid-list>
-    <h3>Opiniones:</h3>
-    <div class="container-comments" *ngFor="let comment of comments ">
-        <p>{{comment.description}}</p>
-    </div>
+    <mat-tab-group class="container-tab-group">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">
+                    info
+                </mat-icon>
+                Información
+            </ng-template>
+            <mat-grid-list cols="3" rowHeight="125px" class="container-info">
+                <mat-grid-tile rowspan="3">
+                    <div>
+
+                        <p>Dirección: {{ restaurant.address }}</p>
+                        <p>Teléfono: {{ restaurant.phone }}</p>
+                        <p>{{ restaurant.web }}</p>
+                        <p>{{ restaurant.mail }}</p>
+                    </div>
+
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">
+                    reviews
+                </mat-icon>
+                Opiniones
+            </ng-template>
+
+
+            <mat-list role="list" class="container-comments">
+                <mat-list-item role="listitem" *ngFor="let comment of comments" class="listItem">
+
+                    <div matListItemTitle class="content-avatar">
+                        <img matListItemAvatar class="avatar-img"
+                            src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="usuario">
+                        <div class="comment-user">
+                            <span matLine class="user-name">Usuario</span>
+                            <span matLine class="date">11 Junio 2023</span>
+                        </div>
+                    </div>
+                    <div matListItemTitle>
+                        <p matListItemLine class="description">{{ comment.description }}</p>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+
+
+
+
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">
+                    calendar_month
+                </mat-icon>
+                Reservas
+            </ng-template>
+            Reservas
+        </mat-tab>
+    </mat-tab-group>
 </section>
