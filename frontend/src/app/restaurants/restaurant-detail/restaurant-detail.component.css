@@ -61,7 +61,7 @@ mat-grid-tile div {
   flex-direction: row;
 }
 
-.comment-user {
+.content-user {
   display: flex;
   flex-direction: column;
 }
@@ -69,7 +69,7 @@ mat-grid-tile div {
 .avatar-img {
   width: 48px;
   height: 48px;
-  border-radius: 42px;
+  border-radius: 50%;
   margin-right: 12px;
 }
 
@@ -128,6 +128,4 @@ mat-grid-tile div {
     max-width: 1200px;
     margin: 0 auto;
   }
-
-
 }
