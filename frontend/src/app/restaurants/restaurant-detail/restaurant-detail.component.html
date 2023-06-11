@@ -5,21 +5,28 @@
         </div>
     </div>
 
-    <mat-grid-list cols="3" rowHeight="125px">
-        <mat-grid-tile rowspan="2">
-            <div>
-                <h2>Restaurante: {{ restaurant.name }}</h2>
-                <p>Dirección: {{ restaurant.address }}</p>
-                <p>Teléfono: {{ restaurant.phone }}</p>
-                <p>{{ restaurant.web }}</p>
-                <p>{{ restaurant.mail }}</p>
-            </div>
-           
-        </mat-grid-tile>
+    <mat-tab-group>
+        <mat-tab label="Información">
+            <mat-grid-list cols="3" rowHeight="125px">
+                <mat-grid-tile rowspan="2">
+                    <div>
+                        <h2>Restaurante: {{ restaurant.name }}</h2>
+                        <p>Dirección: {{ restaurant.address }}</p>
+                        <p>Teléfono: {{ restaurant.phone }}</p>
+                        <p>{{ restaurant.web }}</p>
+                        <p>{{ restaurant.mail }}</p>
+                    </div>
 
-    </mat-grid-list>
-    <h3>Opiniones:</h3>
-    <div class="container-comments" *ngFor="let comment of comments ">
-        <p>{{comment.description}}</p>
-    </div>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </mat-tab>
+        <mat-tab label="Opiniones">
+            <h3>Opiniones:</h3>
+            <div class="container-comments" *ngFor="let comment of comments ">
+                <p>{{comment.description}}</p>
+            </div>
+        </mat-tab>
+        <mat-tab label="Reservar"> Reservar </mat-tab>
+    </mat-tab-group>
 </section>
