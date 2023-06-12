@@ -22,5 +22,6 @@
     <div class="container-comments" *ngFor="let comment of comments ">
         <p>{{comment.description}}</p>
         <p>Id usuario: {{comment.userId}}</p>
+        <p *ngIf="user">{{user.firstName}}</p>
     </div>
 </section>
