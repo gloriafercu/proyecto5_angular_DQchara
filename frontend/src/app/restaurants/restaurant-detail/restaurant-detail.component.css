@@ -85,6 +85,35 @@ mat-grid-tile div {
   margin-left: 50px;
 }
 
+.icon-info {
+  display: flex;
+  font-size: 1.2em;
+  line-height: 2em;
+
+}
+
+.icon-info mat-icon {
+  padding-right: 20px;
+  color: #FF9F1C;
+}
+
+.container-info {
+  display: flex;
+
+
+}
+
+mat-grid-title div {
+  display: flex;
+}
+
+::ng-deep mat-grid-tile .mat-grid-tile-content {
+  position: relative;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
 .card-item {
   padding: 20px 20px 10px;
   margin-bottom: 20px;
