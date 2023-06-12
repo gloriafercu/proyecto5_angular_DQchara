@@ -15,8 +15,8 @@
                 </mat-icon>
                 Información
             </ng-template>
-            <mat-grid-list cols="3" rowHeight="125px" class="container-info">
-                <mat-grid-tile rowspan="3">
+            <mat-grid-list cols="3" rowHeight="225px" class="container-info">
+                <mat-grid-tile colspan="3">
                     <div>
 
                         <p>Dirección: {{ restaurant.address }}</p>
@@ -40,6 +40,16 @@
             <div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
                 No hay opiniones disponibles en este momento.
             </div>
+            <div *ngIf="comments.length > 0" class="restaurant-overview-header">
+                <span class="icon">
+                    <mat-icon>star</mat-icon>
+                    {{ restaurant.rating }}
+                </span>
+                <span class="icon">
+                    <mat-icon>mode_comment</mat-icon>
+                    {{ comments.length}} opiniones
+                </span>
+            </div>
 
             <section class="container-comments">
                 <mat-card *ngFor="let comment of comments" class="card-item">
@@ -55,7 +65,7 @@
                             </div>
                             <div class="content-rating">
                                 <mat-icon>star</mat-icon>
-                                <div class="content-rating">{{comment.rating}}</div>
+                                <span>{{comment.rating}}</span>
                             </div>
                         </mat-card-title-group>
                     </mat-card-header>

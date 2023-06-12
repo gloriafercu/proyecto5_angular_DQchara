@@ -50,7 +50,25 @@ mat-grid-tile div {
 .container-comments {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding: 15px 0 20px;
+}
+
+.restaurant-overview-header {
+  display: flex;
+  margin-top: 30px;
+}
+
+.icon mat-icon {
+  padding-right: 10px;
+  color: #FF9F1C;
+  /* color: #2EC4B6; */
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
 }
 
 .card-item {
@@ -90,6 +108,14 @@ mat-grid-tile div {
 
 .content-rating {
   display: flex;
+  align-items: center;
+
+}
+
+.content-rating mat-icon {
+  color: #FF9F1C;
+  padding-right: 5px;
+
 }
 
 .description {
@@ -98,12 +124,6 @@ mat-grid-tile div {
   padding: .5em 0 0 0;
   line-height: 1.5em;
 }
-
-.mat-divider.mat-divider-inset {
-  margin-left: 0;
-  border-top-color: #FFBF69;
-}
-
 
 .mat-mdc-tab-group,
 .mat-mdc-tab-nav-bar {
