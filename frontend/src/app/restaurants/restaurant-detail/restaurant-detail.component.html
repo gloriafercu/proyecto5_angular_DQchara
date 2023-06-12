@@ -4,8 +4,15 @@
             <img src="{{ img }}" alt="foto del restaurante {{ restaurant.name }}">
         </div>
     </section>
+    <section class="container-title-restaurant">
+        <h2 class="title-restaurant">{{ restaurant.name }}</h2>
+        <div class="type-food">
+            <mat-icon>restaurant</mat-icon>
+            <span>{{ restaurant.typeFood }}</span>
+        </div>
+       
+    </section>
 
-    <h2>Restaurante: {{ restaurant.name }}</h2>
 
     <mat-tab-group class="container-tab-group">
         <mat-tab>

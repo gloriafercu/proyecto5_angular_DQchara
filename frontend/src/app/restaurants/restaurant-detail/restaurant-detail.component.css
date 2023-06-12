@@ -47,6 +47,20 @@ mat-grid-tile div {
   margin-right: 10px;
 }
 
+.title-restaurant {
+  font-size: 2.5em;
+}
+
+.type-food {
+  display: flex;
+  font-size: 1.3em;
+}
+
+.type-food mat-icon {
+  padding-right: 10px;
+  color: #FF9F1C;
+}
+
 .container-comments {
   display: flex;
   flex-direction: column;
