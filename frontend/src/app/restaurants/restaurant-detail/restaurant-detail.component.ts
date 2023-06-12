@@ -17,6 +17,7 @@ export class RestaurantDetailComponent implements OnInit {
   restaurant: IRestaurant | undefined;
   comments: IComment[] = []
   user: IUser | undefined
+  comment:IComment|undefined
 
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
@@ -28,13 +29,10 @@ export class RestaurantDetailComponent implements OnInit {
       const idString = params['id'];
       if (!idString) return;
       const id = parseInt(idString, 10);
-      console.log(id)
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
-      this.commentService.getAllCommentsByrestaurantId(id).subscribe(data => {
-        this.comments = data        
-        this.userService.getById(id).subscribe(data => this.user = data)
-        })
+      this.commentService.getAllCommentsByrestaurantId(id).subscribe(data => { this.comments = data })
+      this.userService.getById(this.comment.userId).subscribe(data => this.user = data)
+    });
+  };
+}
 
-      });
-    };
-  }

@@ -22,6 +22,14 @@
     <div class="container-comments" *ngFor="let comment of comments ">
         <p>{{comment.description}}</p>
         <p>Id usuario: {{comment.userId}}</p>
-        <p *ngIf="user">{{user.firstName}}</p>
+        <mat-list *ngIf="user">
+            <mat-list-item>
+                <div matListItemTitle>
+                    <a [routerLink]="['/users', user.id]">
+                        {{user.fullName}}
+                    </a>
+                </div>
+            </mat-list-item>
+        </mat-list>
     </div>
 </section>
