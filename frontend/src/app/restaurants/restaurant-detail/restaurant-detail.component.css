@@ -54,6 +54,9 @@ mat-grid-tile div {
   flex-direction: column;
 }
 
+.listItem {
+  padding: 30px 20px 10px;
+}
 
 .comment-detail {
   display: flex;
@@ -73,13 +76,12 @@ mat-grid-tile div {
   margin-right: 12px;
 }
 
-.content-avatar {
+.container-avatar {
   display: flex;
+  width: 100%;
 }
 
-.listItem {
-  padding: 10px 10px 30px;
-}
+
 
 .date {
   color: grey;
@@ -87,12 +89,22 @@ mat-grid-tile div {
   line-height: 1em;
 }
 
+.content-rating {
+  display: flex;
+}
+
 .description {
   white-space: normal;
   font-size: 1em;
   padding: .5em 0 0 0;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
+
+.mat-divider.mat-divider-inset {
+  margin-left: 0;
+  border-top-color: #FFBF69;
+}
+
 
 .mat-mdc-tab-group,
 .mat-mdc-tab-nav-bar {

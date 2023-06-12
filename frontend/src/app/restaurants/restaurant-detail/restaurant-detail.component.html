@@ -36,21 +36,30 @@
                 Opiniones
             </ng-template>
 
+            <div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
+                No hay opiniones disponibles en este momento.
+            </div>
 
             <mat-list role="list" class="container-comments">
                 <mat-list-item role="listitem" *ngFor="let comment of comments" class="listItem">
-                    <div matListItemTitle class="content-avatar">
-                        <img matListItemAvatar class="avatar-img"
-                            src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="usuario">
-                        <div class="content-user">
-                            <span matLine class="username">Usuario</span>
-                            <span matLine class="date">11 Junio 2023</span>
+                    <div matListItemTitle class="comment-detail">
+                        <div class="container-avatar">
+                            <img matListItemAvatar class="avatar-img"
+                                src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="usuario">
+                            <div class="content-user">
+                                <span matLine class="username">Usuario</span>
+                                <span matLine class="date">11 Junio 2023</span>
+                            </div>
+                        </div>
+                        <div class="content-rating">
+                            <mat-icon>star</mat-icon>
+                            <div class="content-rating">{{comment.rating}}</div>
                         </div>
                     </div>
                     <div matListItemTitle>
                         <p matListItemLine class="description">{{ comment.description }}</p>
                     </div>
-                    <mat-divider></mat-divider>
+                    <mat-divider [inset]="true"></mat-divider>
                 </mat-list-item>
             </mat-list>
 
