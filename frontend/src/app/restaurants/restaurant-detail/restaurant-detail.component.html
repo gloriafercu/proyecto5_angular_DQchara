@@ -28,6 +28,7 @@
                 </mat-grid-tile>
             </mat-grid-list>
         </mat-tab>
+
         <mat-tab>
             <ng-template mat-tab-label>
                 <mat-icon class="tab-icon">
@@ -40,33 +41,31 @@
                 No hay opiniones disponibles en este momento.
             </div>
 
-            <mat-list role="list" class="container-comments">
-                <mat-list-item role="listitem" *ngFor="let comment of comments" class="listItem">
-                    <div matListItemTitle class="comment-detail">
-                        <div class="container-avatar">
-                            <img matListItemAvatar class="avatar-img"
-                                src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="usuario">
-                            <div class="content-user">
-                                <span matLine class="username">Usuario</span>
-                                <span matLine class="date">11 Junio 2023</span>
+            <section class="container-comments">
+                <mat-card *ngFor="let comment of comments" class="card-item">
+                    <mat-card-header>
+                        <mat-card-title-group>
+                            <div class="container-data-user">
+                                <img class="avatar-img" src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                                    alt="avatar">
+                                <div class="content-user">
+                                    <mat-card-title>Usuario</mat-card-title>
+                                    <mat-card-subtitle>11 Junio 2023</mat-card-subtitle>
+                                </div>
                             </div>
-                        </div>
-                        <div class="content-rating">
-                            <mat-icon>star</mat-icon>
-                            <div class="content-rating">{{comment.rating}}</div>
-                        </div>
-                    </div>
-                    <div matListItemTitle>
-                        <p matListItemLine class="description">{{ comment.description }}</p>
-                    </div>
-                    <mat-divider [inset]="true"></mat-divider>
-                </mat-list-item>
-            </mat-list>
-
-
-
-
+                            <div class="content-rating">
+                                <mat-icon>star</mat-icon>
+                                <div class="content-rating">{{comment.rating}}</div>
+                            </div>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="description">{{comment.description}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </section>
         </mat-tab>
+
         <mat-tab>
             <ng-template mat-tab-label>
                 <mat-icon class="tab-icon">
