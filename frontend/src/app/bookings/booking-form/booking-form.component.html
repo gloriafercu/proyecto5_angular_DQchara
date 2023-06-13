@@ -1,1 +1,38 @@
-<p>booking-form works!</p>
+<form [formGroup]="bookingForm" (ngSubmit)="save()">
+
+<mat-form-field>
+  <mat-label>Número de Personas*</mat-label>
+  <mat-select formControlName="peopleNumber">
+    <mat-option value="primary">2 personas</mat-option>
+    <mat-option value="primary">3 personas</mat-option>
+    <mat-option value="primary">4 personas</mat-option>
+    <mat-option value="primary">5 personas</mat-option>
+    <mat-option value="primary">6 personas</mat-option>
+  </mat-select>
+  <p>*Para más personas reserva por teléfono</p>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Seleccionar hora</mat-label>
+  <mat-select formControlName="bookingTime" name="bookingTime">
+  <mat-option *ngFor="let time of times" [value]="time">
+      {{time}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Elige día y mes</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="bookingDate" >
+  <mat-hint>DD/MM/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<button mat-fab extended type="submit" [disabled]="bookingForm.invalid">
+  <mat-icon>send</mat-icon>
+  Enviar
+</button>
+
+
+</form>

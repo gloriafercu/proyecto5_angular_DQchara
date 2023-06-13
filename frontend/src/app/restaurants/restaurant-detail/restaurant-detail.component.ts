@@ -15,9 +15,13 @@ export class RestaurantDetailComponent implements OnInit {
   restaurant: IRestaurant | undefined;
   comments:IComment[]= []
 
+  times: string[] = ["13:00","14:00","15:00","19:00","20:00","21:00","22:00"]
+
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
     private commentService: CommentService) { };
+
+    
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params => {
