@@ -31,7 +31,6 @@ export class RestaurantDetailComponent implements OnInit {
       const id = parseInt(idString, 10);
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
       this.commentService.getAllCommentsByrestaurantId(id).subscribe(data => { this.comments = data })
-      this.userService.getById(this.comment.userId).subscribe(data => this.user = data)
     });
   };
 }
