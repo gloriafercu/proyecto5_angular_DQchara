@@ -40,5 +40,23 @@ ng generate service comments/services/comment
 ```
 ng generate component layout/navbar
 ng generate component layout/footer
-```
+
+## Presentaciones
+
+Tiempo maximo: 20-25min
+1. Titulo Nombre y logo del proyecto
+2. Tematica y objetivo
+3. Equipo
+4. Tecnologia
+ * Diagrama de arquitetura : http://cloud.google.com/blog/topics/developers-practitioners/introducing-google-cloud-architecture-diagramming-tool
+ *tecnologías de desarollo: vscode,angular,nest,mysql,js,ts,css,html
+ *Tecnologías colaborativas: Github , Trello, Teams, whatsapp
+ *Mostrar el repositorio de Github
+ *Captura de trello
+ 5.Demo(10min)
+ 6.conclusiones
+ 7. Desarollo futuros
+ 8.Aprendizajes obtenidos
+ 9.Linkedin 
+
 
