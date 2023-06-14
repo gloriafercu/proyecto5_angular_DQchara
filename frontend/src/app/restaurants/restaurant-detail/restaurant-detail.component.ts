@@ -24,10 +24,8 @@ export class RestaurantDetailComponent implements OnInit {
       const idString = params['id']; // extraer id de la dirección
       if (!idString) return; // comprueba si el id existe
       const id = parseInt(idString, 10);
-      console.log(id)
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
-      this.commentService.getAllRestaurantById(id).subscribe(data => this.comments= data);
-
+      this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => this.comments= data);
     });
   }
 

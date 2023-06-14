@@ -1,33 +1,118 @@
 <section class="container-detail" *ngIf="restaurant">
-    <div class="container-cover">
+    <section class="container-cover">
         <div class="container-img" *ngFor="let img of restaurant.images ">
             <img src="{{ img }}" alt="foto del restaurante {{ restaurant.name }}">
         </div>
-    </div>
+    </section>
 
-    <mat-grid-list cols="3" rowHeight="125px">
-        <mat-grid-tile rowspan="2">
-            <div>
-                <h2>Restaurante: {{ restaurant.name }}</h2>
-                <p>Dirección: {{ restaurant.address }}</p>
-                <p>Teléfono: {{ restaurant.phone }}</p>
-                <p>{{ restaurant.web }}</p>
-                <p>{{ restaurant.mail }}</p>
+    <section class="container-title-restaurant">
+        <h2 class="title-restaurant">{{ restaurant.name }}</h2>
+        <div class="type-food">
+            <mat-icon>restaurant</mat-icon>
+            <span>{{ restaurant.typeFood }}</span>
+        </div>
+    </section>
+
+
+    <mat-tab-group class="container-tab-group">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">
+                    info
+                </mat-icon>
+                Información
+            </ng-template>
+            <mat-grid-list cols="3" rowHeight="225px" class="container-info">
+                <mat-grid-tile colspan="3">
+                    <div>
+                        <div class="icon-info">
+                            <mat-icon>location_on</mat-icon>
+                            <span>{{ restaurant.address }}</span>
+                        </div>
+                        <div class="icon-info">
+                            <mat-icon>phone</mat-icon>
+                            <span>{{ restaurant.phone }}</span>
+                        </div>
+                        <div class="icon-info">
+                            <mat-icon>link</mat-icon>
+                            <a href="{{ restaurant.web }}">
+                                <span>{{ restaurant.web }}</span>
+                            </a>
+
+                        </div>
+                        <div class="icon-info">
+                            <mat-icon>mail</mat-icon>
+                            <span>{{ restaurant.mail }}</span>
+                        </div>
+                    </div>
+
+                </mat-grid-tile>
+            </mat-grid-list>
+
+
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">
+                    reviews
+                </mat-icon>
+                Opiniones
+            </ng-template>
+
+            <div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
+                No hay opiniones disponibles en este momento.
             </div>
-           
-        </mat-grid-tile>
+            <div *ngIf="comments.length > 0" class="restaurant-overview-header">
+                <span class="icon">
+                    <mat-icon>star</mat-icon>
+                    {{ restaurant.rating }}
+                </span>
+                <span class="icon">
+                    <mat-icon>mode_comment</mat-icon>
+                    {{ comments.length}} opiniones
+                </span>
+            </div>
 
-    </mat-grid-list>
-    <h3>Opiniones:</h3>
-    <div class="container-comments" *ngFor="let comment of comments ">
-        <p>{{comment.description}}</p>
-    </div>
+            <section class="container-comments">
+                <mat-card *ngFor="let comment of comments" class="card-item">
+                    <mat-card-header>
+                        <mat-card-title-group>
+                            <div class="container-data-user">
+                                <img class="avatar-img" src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                                    alt="avatar">
+                                <div class="content-user">
+                                    <mat-card-title>Usuario</mat-card-title>
+                                    <mat-card-subtitle>11 Junio 2023</mat-card-subtitle>
+                                </div>
+                            </div>
+                            <div class="content-rating">
+                                <mat-icon>star</mat-icon>
+                                <span>{{comment.rating}}</span>
+                            </div>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="description">{{comment.description}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </section>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="tab-icon">
+                    calendar_month
+                </mat-icon>
+                Reservas
+            </ng-template>
+            Reservas
+            <section>
+                <div class="example-button-row">
+                  <button mat-button>Reservar</button>
+                  <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+                </div>
+              </section>
+        </mat-tab>
+    </mat-tab-group>
 </section>
-
-<br>
-<section>
-    <div class="example-button-row">
-      <button mat-button>Reservar</button>
-      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-    </div>
-  </section>

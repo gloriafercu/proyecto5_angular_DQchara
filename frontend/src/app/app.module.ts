@@ -22,6 +22,7 @@ import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { CoverComponent } from './layout/cover/cover.component';
+import { BookingsModule } from './bookings/bookings.module';
 
 
 
@@ -48,7 +49,8 @@ import { CoverComponent } from './layout/cover/cover.component';
     MatDividerModule,
     MatToolbarModule,
     MatMenuModule,
-    CommentsModule
+    CommentsModule,
+    BookingsModule
   ],
   providers: [
     {
