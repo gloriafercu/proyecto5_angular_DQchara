@@ -1,46 +1,55 @@
-
 <nav>
-    <mat-toolbar class="navbar">
+  <mat-toolbar class="navbar">
 
 
-        <button mat-button [matMenuTriggerFor]="menu">
-            <mat-icon >menu_book</mat-icon></button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/restaurants']">Restaurantes</button>
-            <button mat-menu-item>Reservar</button>
-            <button mat-menu-item>Opiniones</button>
-            
-        </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu_book</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/restaurants']">Restaurantes</button>
+      <button mat-menu-item>Reservar</button>
+      <button mat-menu-item>Opiniones</button>
 
-        <a routerLink="/comments" title="Inicio">
-            <img src="/assets/img/logo.svg" class="logo" alt="logo">
-        </a>
+    </mat-menu>
 
-
+    <a routerLink="/comments" title="Inicio">
+      <img src="/assets/img/logo.svg" class="logo" alt="logo">
+    </a>
 
 
-        
-        <section>
-          <div class="example-button-row">
-            <button mat-button>Iniciar sesión</button>
-            <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-          </div>
-        </section>
-  
-  
-        <section>
-          <div class="example-button-row">
-            <button mat-button>Cerrar sesión</button>
-            <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-          </div>
-        </section>
-
-        
-    </mat-toolbar>
 
 
-    
+
+    <section>
+      <div class="example-button-row">
+        <button mat-button>
+          <mat-icon>
+            account_circle
+          </mat-icon>
+
+          Iniciar sesión
+        </button>
+      </div>
+    </section>
 
 
-      
+    <section>
+      <div class="example-button-row">
+        <button mat-button>
+          <mat-icon>
+            logout
+          </mat-icon>
+          Cerrar sesión
+        </button>
+
+      </div>
+    </section>
+
+
+  </mat-toolbar>
+
+
+
+
+
+
 </nav>
