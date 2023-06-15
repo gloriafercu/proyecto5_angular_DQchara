@@ -1,7 +1,6 @@
 <h1>Listado de restaurantes</h1>
 
-
-<div class="wrapper">
+<section class="wrapper">
     <div *ngFor="let restaurant of restaurants | paginate: page_Size: page_number"
         [routerLink]="['/restaurants', restaurant.id]">
         <mat-card class="card-container">
@@ -16,7 +15,8 @@
             </mat-card-content>
         </mat-card>
     </div>
-</div>
+</section>
+
 <mat-paginator class="paginator" #paginator [length]="results_length" [pageSize]="page_Size"
     [pageSizeOptions]="pageSizeOptions" (page)="handleEvent($event)" showFirstLastButtons
     aria-label="Selecciona una página">

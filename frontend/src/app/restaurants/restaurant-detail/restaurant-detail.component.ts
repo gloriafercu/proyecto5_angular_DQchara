@@ -30,7 +30,7 @@ export class RestaurantDetailComponent implements OnInit {
       if (!idString) return;
       const id = parseInt(idString, 10);
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
-      this.commentService.getAllCommentsByrestaurantId(id).subscribe(data => { this.comments = data })
+      this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => this.comments= data);
     });
   };
 }

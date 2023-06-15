@@ -34,8 +34,7 @@ export class CommentService {
     return this.httpClient.get<IComment[]>(this.urlAPI);
   }
   
-  getAllCommentsByrestaurantId(restaurantId: number): Observable<IComment[]> {
-    console.log("getAllRestaurants"+this.httpClient.get<IComment[]>(`${this.urlAPI}?restaurantId=${restaurantId}`))
+  getAllCommentsByRestaurantId(restaurantId: number): Observable<IComment[]> {
     return this.httpClient.get<IComment[]>(`${this.urlAPI}?restaurantId=${restaurantId}`)
   }
 
