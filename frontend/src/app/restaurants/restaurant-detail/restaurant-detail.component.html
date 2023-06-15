@@ -74,27 +74,26 @@
                 </span>
             </div>
 
-            <section class="container-comments">
-                <mat-card *ngFor="let comment of comments" class="card-item">
-                    <mat-card-header>
-                        <mat-card-title-group *ngFor="let user of users">
-                            <div class="container-data-user" *ngIf="comment.userId === user.id">
-                                <img class="avatar-img" src="{{ user.avatar}}"
-                                    alt="avatar">
-                                <div class="content-user" >
-                                    <mat-card-title >{{user.userName}}</mat-card-title>
+            <section class="container-comments"  class="card-item" >
+                <mat-card *ngFor="let comment of comments">                    
+                    <mat-card-header >
+                        <mat-card-title-group>
+                            <div class="container-data-user" *ngFor="let user of users">
+                                <img class="avatar-img" src="{{ user.avatar }}" alt="{{ user.userName }}">
+                                <div class="content-user">
+                                    <mat-card-title>{{ user.userName }}</mat-card-title>
                                     <mat-card-subtitle>11 Junio 2023</mat-card-subtitle>
                                 </div>
                             </div>
                             
                         </mat-card-title-group>
                     </mat-card-header>
-                    <mat-card-content>
+                    <mat-card-content>  
                         <div class="content-rating">
                             <mat-icon>star</mat-icon>
-                            <span>{{comment.rating}}</span>
-                        </div>
-                        <p class="description">{{comment.description}}</p>
+                            <span>{{ comment.rating }}</span>
+                        </div>  
+                        <p class="description">{{ comment.description }}</p>
                     </mat-card-content>
                 </mat-card>
             </section>

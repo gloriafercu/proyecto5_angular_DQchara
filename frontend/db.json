@@ -858,7 +858,7 @@
             "id": 37,
             "rating": 3,
             "description": "Quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio.",
-            "restaurantId": 7,
+            "restaurantId": 30,
             "userId": 7
         },
         {
@@ -886,7 +886,7 @@
             "id": 41,
             "rating": 1,
             "description": "Nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed.",
-            "restaurantId": 21,
+            "restaurantId": 30,
             "userId": 1
         },
         {
@@ -942,14 +942,14 @@
             "id": 49,
             "rating": 4,
             "description": "Mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id.",
-            "restaurantId": 49,
+            "restaurantId": 18,
             "userId": 9
         },
         {
             "id": 50,
             "rating": 5,
             "description": "Sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis.",
-            "restaurantId": 50,
+            "restaurantId": 20,
             "userId": 5
         }
     ],

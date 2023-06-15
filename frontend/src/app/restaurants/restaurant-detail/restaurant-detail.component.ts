@@ -16,7 +16,9 @@ export class RestaurantDetailComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
   comments: IComment[] = [];
-  users: IUser[] = []
+  users: IUser[] = [];
+  user: IUser | undefined;
+  userId: number | undefined;
 
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
@@ -31,15 +33,31 @@ export class RestaurantDetailComponent implements OnInit {
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
       this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => {
 
-
         console.log('gelAllcommentsrestid desde restaurant detail', data)
         console.log(data[0].userId);
 
-        this.comments = data
-        this.userService.getAllUsers().subscribe(data => {
-          console.log('users:', data);
-          this.users = data
-        })
+        this.comments = data;
+
+        for (let comment of this.comments) {
+
+          console.log('userId', comment.userId);
+
+          this.userId = comment.userId;
+
+          console.log('ids', this.userId);
+
+          this.userService.getById(this.userId).subscribe(data => {
+            
+            console.log('user:', data);
+            this.users.push(data);
+            console.log('users', this.users);
+
+          });
+
+        }
+
+
+
       });
     });
   }
