@@ -21,8 +21,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
-import { CoverComponent } from './layout/cover/cover.component';
 import { BookingsModule } from './bookings/bookings.module';
+import { HeaderViewComponent } from './layout/header-view/header-view.component';
 
 
 
@@ -32,7 +32,7 @@ import { BookingsModule } from './bookings/bookings.module';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    CoverComponent
+    HeaderViewComponent
   ],
   imports: [
     BrowserModule,
