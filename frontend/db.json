@@ -591,7 +591,7 @@
             "averagePrice": 40,
             "rating": 9.3,
             "availability": false,
-            "typeFood": "Italiana",
+            "typeFood": "Africana",
             "images": [
                 "../assets/restaurants_img/img_30.jpg",
                 "../assets/restaurants_img/rest_30.jpg",
