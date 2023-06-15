@@ -106,20 +106,21 @@
                 </mat-icon>
                 Reservas
             </ng-template>
-            <mat-form-field>
-                <mat-label>Seleccionar hora</mat-label>
-                <mat-select formControlName="bookingTime" name="bookingTime">
-                <mat-option *ngFor="let time of times" [value]="time">
-                    {{time}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
+
             Reservas
             <section>
                 <div class="example-button-row">
-                  <button mat-button>Reservar</button>
+                    <button mat-button>Reservar</button>
                 </div>
-              </section>
+            </section>
         </mat-tab>
+        <mat-form-field>
+            <mat-label>Seleccionar hora</mat-label>
+            <mat-select formControlName="bookingTime" name="bookingTime">
+                <mat-option *ngFor="let time of times" [value]="time">
+                    {{time}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </mat-tab-group>
 </section>
