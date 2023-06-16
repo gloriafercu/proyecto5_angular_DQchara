@@ -2,13 +2,11 @@
 
 <mat-form-field>
   <mat-label>Número de Personas*</mat-label>
-  <mat-select formControlName="peopleNumber">
-    <mat-option value="primary">2 personas</mat-option>
-    <mat-option value="primary">3 personas</mat-option>
-    <mat-option value="primary">4 personas</mat-option>
-    <mat-option value="primary">5 personas</mat-option>
-    <mat-option value="primary">6 personas</mat-option>
-  </mat-select>
+  <mat-select formControlName="peopleNumber" name="peopleNumber">
+    <mat-option *ngFor="let num of numPeople" [value]="num">
+        {{num}}
+      </mat-option>
+    </mat-select>
   <p>*Para más personas reserva por teléfono</p>
 </mat-form-field>
 

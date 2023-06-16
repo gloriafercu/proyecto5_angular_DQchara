@@ -6,11 +6,19 @@
     </section>
 
     <section class="container-title-restaurant">
-        <h2 class="title-restaurant">{{ restaurant.name }}</h2>
-        <div class="type-food">
-            <mat-icon>restaurant</mat-icon>
-            <span>{{ restaurant.typeFood }}</span>
+        <div>
+            <h2 class="title-restaurant">{{ restaurant.name }}</h2>
+            <div class="type-food">
+                <mat-icon>restaurant</mat-icon>
+                <span>{{ restaurant.typeFood }}</span>
+            </div>
         </div>
+        <button mat-button class="button">
+            <mat-icon class="tab-icon">
+                calendar_month
+            </mat-icon>
+            Haz tu Reserva
+        </button>
     </section>
 
 
@@ -99,7 +107,7 @@
             </section>
         </mat-tab>
 
-        <mat-tab>
+        <!-- <mat-tab>
             <ng-template mat-tab-label>
                 <mat-icon class="tab-icon">
                     calendar_month
@@ -108,18 +116,11 @@
             </ng-template>
             <section>
                 <div class="example-button-row">
-                    <button mat-button>Reservar</button>
+                    <button mat-button>Haz tu Reserva</button>
                 </div>
             </section>
-            <mat-form-field>
-                <mat-label>Seleccionar hora</mat-label>
-                <mat-select formControlName="bookingTime" name="bookingTime">
-                    <mat-option *ngFor="let time of times" [value]="time">
-                        {{time}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </mat-tab>
+
+        </mat-tab> -->
 
     </mat-tab-group>
 </section>
