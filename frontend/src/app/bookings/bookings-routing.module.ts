@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookingFormComponent } from './booking-form/booking-form.component';
+import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 
 const routes: Routes = [
   {
     path: '',
     component: BookingFormComponent
+  },
+  {
+    path: ':id',
+    component: BookingDetailComponent
   },
   {
     path: '', redirectTo: 'bookings', pathMatch: 'full'
