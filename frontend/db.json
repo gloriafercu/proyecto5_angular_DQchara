@@ -1034,7 +1034,7 @@
         "userName": "fcole9",
         "avatar": "https://robohash.org/numquamautemcommodi.png?size=50x50&set=set1"
       }],
-      "bookinks":[{
+      "bookings":[{
         "id": 1,
         "bookingDate": "11/9/2022",
         "bookingTime": "13:30",
