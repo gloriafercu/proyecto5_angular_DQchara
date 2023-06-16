@@ -101,6 +101,14 @@ mat-grid-tile div {
 
 
 }
+.button{
+  background-color:#FF9F1C;
+  max-width: 450px;
+  color: white;
+  font-size: 1.2em;
+  height: 50px;
+  font-weight: bold;
+}
 
 mat-grid-title div {
   display: flex;
@@ -117,6 +125,12 @@ mat-grid-title div {
   padding: 20px 20px 10px;
   margin-bottom: 20px;
   height: 100%;
+}
+.container-title-restaurant{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
 }
 
 .comment-detail {

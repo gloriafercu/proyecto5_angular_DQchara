@@ -20,10 +20,15 @@ export class RestaurantDetailComponent implements OnInit {
   user: IUser | undefined;
   userId: number | undefined;
 
+  times: string[] = ["13:00","14:00","15:00","19:00","20:00","21:00","22:00"];
+  numPeople: string[] = ["2 personas", "3 personas", "4 personas", "5 personas", "6 personas"];
+
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
     private commentService: CommentService,
     private userService: UserService) { };
+
+    
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params => {

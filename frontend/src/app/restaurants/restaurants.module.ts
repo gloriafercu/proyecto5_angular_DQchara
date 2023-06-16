@@ -8,10 +8,17 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
+
 
 
 @NgModule({
@@ -29,7 +36,13 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
     MatPaginatorModule,
     MatTabsModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatButtonModule
+   
   ],
   exports: [
     RestaurantListComponent,

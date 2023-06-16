@@ -6,11 +6,19 @@
     </section>
 
     <section class="container-title-restaurant">
-        <h2 class="title-restaurant">{{ restaurant.name }}</h2>
-        <div class="type-food">
-            <mat-icon>restaurant</mat-icon>
-            <span>{{ restaurant.typeFood }}</span>
+        <div>
+            <h2 class="title-restaurant">{{ restaurant.name }}</h2>
+            <div class="type-food">
+                <mat-icon>restaurant</mat-icon>
+                <span>{{ restaurant.typeFood }}</span>
+            </div>
         </div>
+        <button mat-button class="button" [routerLink]="['restaurants/bookings']">
+            <mat-icon class="tab-icon">
+                calendar_month
+            </mat-icon>
+            Haz tu Reserva
+        </button>
     </section>
 
 
@@ -99,19 +107,20 @@
             </section>
         </mat-tab>
 
-        <mat-tab>
+        <!-- <mat-tab>
             <ng-template mat-tab-label>
                 <mat-icon class="tab-icon">
                     calendar_month
                 </mat-icon>
                 Reservas
             </ng-template>
-            Reservas
             <section>
                 <div class="example-button-row">
-                  <button mat-button>Reservar</button>
+                    <button mat-button>Haz tu Reserva</button>
                 </div>
-              </section>
-        </mat-tab>
+            </section>
+
+        </mat-tab> -->
+
     </mat-tab-group>
 </section>

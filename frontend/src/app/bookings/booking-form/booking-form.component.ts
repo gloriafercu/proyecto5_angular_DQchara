@@ -18,6 +18,10 @@ export class BookingFormComponent implements OnInit {
   restaurants: IRestaurant[] = [];
   users: IUser[] = [];
 
+  times: string[] = ["13:00", "14:00", "15:00", "19:00", "20:00", "21:00", "22:00"];
+  numPeople: string[] = ["2 personas", "3 personas", "4 personas", "5 personas", "6 personas"];
+  
+
   bookingForm = new FormGroup({
 
     id: new FormControl<number>(0),
