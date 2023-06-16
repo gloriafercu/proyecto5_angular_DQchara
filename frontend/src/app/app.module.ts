@@ -33,6 +33,7 @@ import { HeaderViewComponent } from './layout/header-view/header-view.component'
     NavbarComponent,
     FooterComponent,
     HeaderViewComponent
+
   ],
   imports: [
     BrowserModule,

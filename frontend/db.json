@@ -51,7 +51,7 @@
             "averagePrice": 200,
             "rating": 9.0,
             "availability": false,
-            "typeFood": "Italiana",
+            "typeFood": "Peeruana",
             "images": [
                 "../assets/restaurants_img/img_3.jpg",
                 "../assets/restaurants_img/rest_03.jpg",

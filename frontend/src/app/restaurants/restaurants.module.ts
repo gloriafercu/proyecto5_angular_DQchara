@@ -13,13 +13,13 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
 
-
 @NgModule({
   declarations: [
     RestaurantListComponent,
     RestaurantDetailComponent,
     RestaurantFormComponent,
-    PaginatePipe
+    PaginatePipe,
+
   ],
   imports: [
     CommonModule,
@@ -34,7 +34,8 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
   exports: [
     RestaurantListComponent,
     RestaurantDetailComponent,
-    RestaurantFormComponent
+    RestaurantFormComponent,
+
   ]
 })
 export class RestaurantsModule { }
