@@ -1,7 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookingFormComponent } from './booking-form/booking-form.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'bookings',
+    component: BookingFormComponent
+  },
+  {
+    path: '', redirectTo: 'bookings', pathMatch: 'full'
+  },
+  {
+    path: '**', redirectTo: 'bookings', pathMatch: 'full'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
