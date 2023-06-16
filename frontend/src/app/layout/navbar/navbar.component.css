@@ -3,10 +3,12 @@
   }
 
   .logo{
-    max-width: 200px;
-    color: aquamarine;
+    max-width: 180px;
+    
+ 
   }
   .navbar{
     background-color: #FF9F1C;
     color:white;
+    height: auto;
   }
