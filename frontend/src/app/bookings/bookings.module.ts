@@ -31,6 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule
   ],
   exports: [
+    BookingFormComponent,
+    BookingDetailComponent,
     BookingFormComponent
   ]
 })

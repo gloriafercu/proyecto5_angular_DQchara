@@ -4,7 +4,7 @@ import { BookingFormComponent } from './booking-form/booking-form.component';
 
 const routes: Routes = [
   {
-    path: 'bookings',
+    path: '',
     component: BookingFormComponent
   },
   {
