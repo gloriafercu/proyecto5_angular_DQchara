@@ -4,8 +4,6 @@ import { RestaurantService } from '../restaurant.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/comments/services/comment.service';
 import { IComment } from 'src/app/comments/models/comment.model';
-import { UserService } from 'src/app/users/services/user.service';
-import { IUser } from 'src/app/users/models/user.model';
 
 @Component({
   selector: 'app-restaurant-detail',
@@ -16,9 +14,6 @@ export class RestaurantDetailComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
   comments: IComment[] = [];
-
-  times: string[] = ["13:00", "14:00", "15:00", "19:00", "20:00", "21:00", "22:00"];
-  numPeople: string[] = ["2 personas", "3 personas", "4 personas", "5 personas", "6 personas"];
 
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
