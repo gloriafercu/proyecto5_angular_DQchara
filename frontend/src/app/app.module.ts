@@ -22,7 +22,9 @@ import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
-import { HeaderViewComponent } from './layout/header-view/header-view.component';
+
+import { CoverViewModule } from './cover-view/cover-view.module';
+import { SearchBarComponent } from './cover-view/search-bar/search-bar.component';
 
 
 
@@ -32,7 +34,6 @@ import { HeaderViewComponent } from './layout/header-view/header-view.component'
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HeaderViewComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +42,9 @@ import { HeaderViewComponent } from './layout/header-view/header-view.component'
     HttpClientModule,
     RestaurantsModule,
     UsersModule,
+    CommentsModule,
+    BookingsModule,
+    
     MatTableModule,
     MatButtonModule,
     MatIconModule,
@@ -49,8 +53,6 @@ import { HeaderViewComponent } from './layout/header-view/header-view.component'
     MatDividerModule,
     MatToolbarModule,
     MatMenuModule,
-    CommentsModule,
-    BookingsModule
   ],
   providers: [
     {
