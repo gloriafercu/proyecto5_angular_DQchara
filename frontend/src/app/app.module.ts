@@ -23,12 +23,6 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
 
-import { CoverViewModule } from './cover-view/cover-view.module';
-import { SearchBarComponent } from './cover-view/search-bar/search-bar.component';
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +38,6 @@ import { SearchBarComponent } from './cover-view/search-bar/search-bar.component
     UsersModule,
     CommentsModule,
     BookingsModule,
-    
     MatTableModule,
     MatButtonModule,
     MatIconModule,

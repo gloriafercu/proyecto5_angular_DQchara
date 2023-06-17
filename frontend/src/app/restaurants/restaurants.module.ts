@@ -17,9 +17,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
-import { SearchBarComponent } from '../cover-view/search-bar/search-bar.component';
+import { RestaurantFilterComponent } from './restaurant-filter/restaurant-filter.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
-import { CoverViewModule } from '../cover-view/cover-view.module';
+
 
 
 
@@ -28,11 +28,11 @@ import { CoverViewModule } from '../cover-view/cover-view.module';
     RestaurantListComponent,
     RestaurantDetailComponent,
     RestaurantFormComponent,
-    PaginatePipe
+    PaginatePipe,
+    RestaurantFilterComponent
   ],
   imports: [
     CommonModule,
-    CoverViewModule,
     RestaurantsRoutingModule,
     MatCardModule,
     MatGridListModule,
