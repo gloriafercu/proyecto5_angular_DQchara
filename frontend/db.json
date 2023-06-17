@@ -55,9 +55,9 @@
       "images": [
         "../assets/restaurants_img/img_3.jpg",
         "../assets/restaurants_img/rest_03.jpg",
-        "../assets/restaurants_img/img_37.jpg",
-        "../assets/restaurants_img/img_38.jpg",
-        "../assets/restaurants_img/img_39.jpg"
+        "../assets/restaurants_img/img_19.jpg",
+        "../assets/restaurants_img/img_53.jpg",
+        "../assets/restaurants_img/img_48.jpg"
       ]
     },
     {
@@ -75,7 +75,7 @@
       "images": [
         "../assets/restaurants_img/img_4.jpg",
         "../assets/restaurants_img/rest_04.jpg",
-        "../assets/restaurants_img/img_40.jpg",
+        "../assets/restaurants_img/rest_40.jpg",
         "../assets/restaurants_img/img_41.jpg",
         "../assets/restaurants_img/img_42.jpg"
       ]
@@ -95,7 +95,7 @@
       "images": [
         "../assets/restaurants_img/img_5.jpg",
         "../assets/restaurants_img/rest_05.jpg",
-        "../assets/restaurants_img/img_43.jpg",
+        "../assets/restaurants_img/rest_22.jpg",
         "../assets/restaurants_img/img_44.jpg",
         "../assets/restaurants_img/img_45.jpg"
       ]
@@ -115,9 +115,9 @@
       "images": [
         "../assets/restaurants_img/img_6.jpg",
         "../assets/restaurants_img/rest_06.jpg",
-        "../assets/restaurants_img/img_46.jpg",
-        "../assets/restaurants_img/img_47.jpg",
-        "../assets/restaurants_img/img_48.jpg"
+        "../assets/restaurants_img/img_30.jpg",
+        "../assets/restaurants_img/img_27.jpg",
+        "../assets/restaurants_img/rest_13.jpg"
       ]
     },
     {
@@ -136,7 +136,7 @@
         "../assets/restaurants_img/img_7.jpg",
         "../assets/restaurants_img/rest_07.jpg",
         "../assets/restaurants_img/img_49.jpg",
-        "../assets/restaurants_img/img_50.jpg",
+        "../assets/restaurants_img/img_27.jpg",
         "../assets/restaurants_img/img_51.jpg"
       ]
     },
@@ -155,7 +155,7 @@
       "images": [
         "../assets/restaurants_img/img_8.jpg",
         "../assets/restaurants_img/rest_08.jpg",
-        "../assets/restaurants_img/img_52.jpg",
+        "../assets/restaurants_img/img_42.jpg",
         "../assets/restaurants_img/img_53.jpg",
         "../assets/restaurants_img/img_54.jpg"
       ]
@@ -174,7 +174,7 @@
       "typeFood": "Mediterránea",
       "images": [
         "../assets/restaurants_img/img_9.jpg",
-        "../assets/restaurants_img/rest_09.jpg",
+        "../assets/restaurants_img/rest_33.jpg",
         "../assets/restaurants_img/img_41.jpg",
         "../assets/restaurants_img/img_32.jpg",
         "../assets/restaurants_img/rest_37.jpg"
@@ -213,7 +213,7 @@
       "availability": true,
       "typeFood": "Mexicana",
       "images": [
-        "../assets/restaurants_img/img_11.jpg",
+        "../assets/restaurants_img/rest_30.jpg",
         "../assets/restaurants_img/rest_11.jpg",
         "../assets/restaurants_img/img_21.jpg",
         "../assets/restaurants_img/rest_35.jpg",
@@ -295,8 +295,8 @@
       "images": [
         "../assets/restaurants_img/img_15.jpg",
         "../assets/restaurants_img/rest_15.jpg",
-        "../assets/restaurants_img/img_01.jpg",
-        "../assets/restaurants_img/img_06.jpg",
+        "../assets/restaurants_img/img_1.jpg",
+        "../assets/restaurants_img/img_6.jpg",
         "../assets/restaurants_img/rest_33.jpg"
       ]
     },
@@ -373,7 +373,7 @@
       "availability": false,
       "typeFood": "Árabe",
       "images": [
-        "../assets/restaurants_img/img_19.jpg",
+        "../assets/restaurants_img/rest_40.jpg",
         "../assets/restaurants_img/rest_19.jpg",
         "../assets/restaurants_img/img_8.jpg",
         "../assets/restaurants_img/rest_29.jpg",
@@ -396,8 +396,8 @@
         "../assets/restaurants_img/img_20.jpg",
         "../assets/restaurants_img/rest_20.jpg",
         "../assets/restaurants_img/img_11.jpg",
-        "../assets/restaurants_img/img_52.jpg",
-        "../assets/restaurants_img/img_46.jpg"
+        "../assets/restaurants_img/img_42.jpg",
+        "../assets/restaurants_img/img_26.jpg"
       ]
     },
     {
@@ -417,7 +417,7 @@
         "../assets/restaurants_img/rest_21.jpg",
         "../assets/restaurants_img/img_27.jpg",
         "../assets/restaurants_img/img_23.jpg",
-        "../assets/restaurants_img/img_52.jpg"
+        "../assets/restaurants_img/img_54.jpg"
       ]
     },
     {
@@ -435,7 +435,7 @@
       "images": [
         "../assets/restaurants_img/img_22.jpg",
         "../assets/restaurants_img/rest_22.jpg",
-        "../assets/restaurants_img/img_35.jpg",
+        "../assets/restaurants_img/img_15.jpg",
         "../assets/restaurants_img/rest_07.jpg",
         "../assets/restaurants_img/rest_02.jpg"
       ]
@@ -533,11 +533,11 @@
       "availability": true,
       "typeFood": "Árabe",
       "images": [
-        "../assets/restaurants_img/img_27.jpg",
+        "../assets/restaurants_img/rest_39.jpg",
         "../assets/restaurants_img/rest_27.jpg",
         "../assets/restaurants_img/img_13.jpg",
         "../assets/restaurants_img/img_17.jpg",
-        "../assets/restaurants_img/img_47.jpg"
+        "../assets/restaurants_img/img_48.jpg"
       ]
     },
     {

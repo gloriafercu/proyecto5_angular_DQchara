@@ -18,6 +18,8 @@ export class RestaurantDetailComponent implements OnInit {
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
     private commentService: CommentService) { };
+    
+
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params => {
@@ -27,8 +29,8 @@ export class RestaurantDetailComponent implements OnInit {
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
       this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => this.comments = data);
     });
-
   }
+
 }
 
 

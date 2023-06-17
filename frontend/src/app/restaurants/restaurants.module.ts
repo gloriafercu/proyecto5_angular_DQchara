@@ -21,8 +21,6 @@ import { RestaurantFilterComponent } from './restaurant-filter/restaurant-filter
 import { PaginatePipe } from '../pipes/paginate.pipe';
 
 
-
-
 @NgModule({
   declarations: [
     RestaurantListComponent,
@@ -44,8 +42,8 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
     MatFormFieldModule,
     MatDatepickerModule,
     ReactiveFormsModule,
-    MatButtonModule
-   
+    MatButtonModule,
+
   ],
   exports: [
     RestaurantListComponent,

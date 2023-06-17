@@ -5,43 +5,47 @@ mat-grid-tile div {
 .container-detail {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 500px auto 1fr;
+  grid-template-rows: auto auto auto;
   row-gap: 30px;
 }
 
 .container-cover {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  gap: 10px;
-  margin: 40px 0 20px;
-  height: auto;
-  max-width: 1200px;
+  display: flex;
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: visible;
 }
 
-.container-cover img {
-  box-sizing: border-box;
-  overflow-clip-margin: border-box;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  transform: scale(1);
-  aspect-ratio: 1/1;
+.container-slider {
+  display: flex;
+  overflow-x: auto;
+  width: 1200px;
 }
 
-.container-cover:first-child .container-img img {
+
+.container-img img {
+  height: 400px;
+}
+
+
+/* 
+.container-cover .container-img img {
   aspect-ratio: auto;
+} */
+
+/* .container-img {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 
-
-.container-img {
-  overflow: hidden;
-}
-
-.container-img:first-child {
-  display: grid;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
+.container-img img {
+  flex: 0 0 100%;
+  width: 100%;
+  object-fit: cover;
+  scroll-snap-align: center;
+} */
 
 .tab-icon {
   margin-right: 10px;
@@ -101,8 +105,9 @@ mat-grid-tile div {
 
 
 }
-.button{
-  background-color:#FF9F1C;
+
+.button {
+  background-color: #FF9F1C;
   max-width: 450px;
   color: white;
   font-size: 1.2em;
@@ -126,7 +131,8 @@ mat-grid-title div {
   margin-bottom: 20px;
   height: 100%;
 }
-.container-title-restaurant{
+
+.container-title-restaurant {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
@@ -198,16 +204,65 @@ mat-grid-title div {
   --mat-tab-header-active-hover-indicator-color: #FF9F1C;
 }
 
+.container-title-restaurant,
+.container-tab-group {
+  padding: 0 20px;
+}
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .container-detail {
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .container-title-restaurant,
+  .container-tab-group {
     padding: 0 20px;
   }
+
 }
 
 @media screen and (min-width: 1024px) {
   .container-detail {
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .container-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 500px auto 1fr;
+    row-gap: 30px;
+  }
+
+
+  .container-cover {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 10px;
+    margin: 40px 0 20px;
+    height: auto;
+    max-width: 1200px;
+  }
+
+  .container-cover img {
+    box-sizing: border-box;
+    overflow-clip-margin: border-box;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    aspect-ratio: 1/1;
+  }
+
+  .container-cover:first-child .container-img img {
+    aspect-ratio: auto;
+  }
+
+
+  .container-img {
+    overflow: hidden;
+  }
+
+  .container-img:first-child {
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 3;
   }
 }
