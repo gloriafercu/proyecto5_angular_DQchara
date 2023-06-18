@@ -23,7 +23,8 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
 import { HeaderViewComponent } from './layout/header-view/header-view.component';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -51,7 +52,10 @@ import { HeaderViewComponent } from './layout/header-view/header-view.component'
     MatToolbarModule,
     MatMenuModule,
     CommentsModule,
-    BookingsModule
+    BookingsModule,
+    MatSelectModule,
+    MatFormFieldModule
+    
   ],
   providers: [
     {
