@@ -19,6 +19,8 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 import { RestaurantFilterComponent } from './restaurant-filter/restaurant-filter.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
     MatDatepickerModule,
     ReactiveFormsModule,
     MatButtonModule,
-
+    NgbRatingModule,
+    FontAwesomeModule
   ],
   exports: [
     RestaurantListComponent,

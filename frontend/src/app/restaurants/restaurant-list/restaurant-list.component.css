@@ -1,3 +1,5 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
 h1 {
     margin: 50px 0;
     text-align: center;
@@ -48,6 +50,26 @@ h1 {
     }
 }
 
+/* Rating */
+
+.bi-egg-fill {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    padding-right: 0.1rem;
+    color: #d3d3d3;
+}
+
+.filled {
+    color: #FF9F1C;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -63,5 +85,5 @@ h1 {
         margin: 0 auto;
     }
 
-   
+
 }

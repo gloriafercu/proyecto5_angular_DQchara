@@ -11,7 +11,18 @@
                 <h2>{{ restaurant.name }}</h2>
                 <p>{{ restaurant.city }}</p>
                 <p>{{ restaurant.typeFood }}</p>
-                <p>{{ restaurant.rating }}</p>
+
+                <ng-template #t let-fill="fill">
+                    <i class="bi-egg-fill">
+                        <i *ngIf="fill > 0" class="bi-egg-fill filled" [style.width.%]="fill"></i>
+                    </i>
+                </ng-template>
+
+                <ngb-rating [(rate)]="restaurant.rating" [starTemplate]="t" [readonly]="true" [max]="5"
+                    [ariaValueText]="ariaValueText"></ngb-rating>
+
+                <p>Puntuación: <b>{{ restaurant.rating }}</b></p>
+
             </mat-card-content>
         </mat-card>
     </div>
