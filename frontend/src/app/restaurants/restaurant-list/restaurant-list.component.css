@@ -17,6 +17,20 @@ h1 {
     width: 100%;
 }
 
+.card-content{
+    padding: 25px 20px;
+}
+
+.card-content-icon {
+ display: flex;
+ align-items: center;
+ 
+}
+.card-content-icon mat-icon {
+    color: #FF9F1C;
+    margin-right: 10px;
+}
+
 .image-container {
     width: 100%;
     height: 250px;
@@ -51,6 +65,15 @@ h1 {
 }
 
 /* Rating */
+
+.content-ng-rating {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rating {
+    margin-right: 10px;
+}
 
 .bi-egg-fill {
     position: relative;
