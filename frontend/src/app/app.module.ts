@@ -18,23 +18,18 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule} from '@angular/material/select';
 import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
-import { HeaderViewComponent } from './layout/header-view/header-view.component';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HeaderViewComponent
-
   ],
   imports: [
     BrowserModule,
@@ -43,6 +38,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HttpClientModule,
     RestaurantsModule,
     UsersModule,
+    CommentsModule,
+    BookingsModule,
     MatTableModule,
     MatButtonModule,
     MatIconModule,

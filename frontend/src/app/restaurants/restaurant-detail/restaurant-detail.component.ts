@@ -13,20 +13,26 @@ import { IComment } from 'src/app/comments/models/comment.model';
 export class RestaurantDetailComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
-  comments:IComment[]= []
+  comments: IComment[] = [];
 
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
     private commentService: CommentService) { };
+    
+
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params => {
-      const idString = params['id']; // extraer id de la dirección
+      const idString = params['id']; // extraer id del restaurante de la dirección url
       if (!idString) return; // comprueba si el id existe
       const id = parseInt(idString, 10);
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
-      this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => this.comments= data);
+      this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => this.comments = data);
     });
   }
 
 }
+
+
+
+
