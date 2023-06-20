@@ -23,7 +23,8 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
 import { HeaderViewComponent } from './layout/header-view/header-view.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { LoginModule } from './login/login.module';
 
 
 
@@ -32,7 +33,7 @@ import { HeaderViewComponent } from './layout/header-view/header-view.component'
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HeaderViewComponent
+    HeaderViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +51,9 @@ import { HeaderViewComponent } from './layout/header-view/header-view.component'
     MatToolbarModule,
     MatMenuModule,
     CommentsModule,
-    BookingsModule
+    BookingsModule,
+    MatFormFieldModule,
+    LoginModule
   ],
   providers: [
     {
