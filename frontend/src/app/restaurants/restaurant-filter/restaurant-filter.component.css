@@ -1,0 +1,8 @@
+.cover{ 
+    background-image: url('../../../assets/restaurants_img/img_10.jpg');
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    width: 100%;
+}

@@ -29,6 +29,7 @@ export class RestaurantListComponent implements OnInit {
 
   getAllRestaurants(): void {
     this.restaurantService.getAllRestaurants().subscribe(data => {
+      
         this.restaurants = data;
         this.results_length = this.restaurants.length;
       }
