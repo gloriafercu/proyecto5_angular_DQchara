@@ -1,1 +1,29 @@
-<p>booking-detail works!</p>
+<mat-card>
+    <mat-card-content>Detalle de la reserva</mat-card-content>
+    
+  </mat-card>
+  <mat-card>
+    <mat-card-content>Datos Cliente:</mat-card-content>
+    <p>
+        <strong>Nombre: </strong> <span id="firstName"></span><br>
+        <strong>Apellido:</strong> <span id="lastName"></span><br>
+        <strong>Email:</strong> <span id="email"></span><br>
+        <strong>Teléfono de Contacto:</strong> <span id="phone"></span><br>
+      </p>
+    
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Datos Restaurante</mat-card-title>
+      <p>
+        <strong>Restaurante:</strong> <span id="restaurant.name"></span><br>
+        <strong>Día:</strong> <span id="bookingDate"></span><br>
+        <strong>Hora:</strong> <span id="bookingTime"></span><br>
+      </p>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-button onclick="save()">Confirmar</button>
+      <button mat-button onclick="save()">Actualizar</button>
+      <button mat-button onclick="">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
