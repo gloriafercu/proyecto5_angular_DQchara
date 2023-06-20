@@ -22,12 +22,9 @@ import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
-import { HeaderViewComponent } from './layout/header-view/header-view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { LoginModule } from './login/login.module';
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +39,8 @@ import { LoginModule } from './login/login.module';
     HttpClientModule,
     RestaurantsModule,
     UsersModule,
+    CommentsModule,
+    BookingsModule,
     MatTableModule,
     MatButtonModule,
     MatIconModule,
@@ -54,6 +53,7 @@ import { LoginModule } from './login/login.module';
     BookingsModule,
     MatFormFieldModule,
     LoginModule
+    NgbModule,
   ],
   providers: [
     {

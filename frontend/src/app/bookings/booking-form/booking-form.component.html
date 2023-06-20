@@ -1,1 +1,88 @@
-<p>booking-form works!</p>
+<form [formGroup]="bookingForm" (ngSubmit)="save()">
+
+  <input type="hidden" formControlName="id">
+
+  <!-- ¿¿Quizás haya que hacerlo también con restaurantId y userId?? -->
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="firstName">
+    <mat-error *ngIf="bookingForm.get('firstName')?.invalid && bookingForm.get('firstName')?.touched">Nombre
+      obligatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Apellidos</mat-label>
+    <input matInput formControlName="lastName">
+    <mat-error *ngIf="bookingForm.get('lastName')?.invalid && bookingForm.get('lastName')?.touched">Apellidos
+      obligatorios</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nº de Personas</mat-label>
+    <mat-select formControlName="peopleNumber" name="peopleNumber">
+      <mat-option *ngFor="let num of numPeople" [value]="num">
+        {{ num }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="bookingForm.hasError('required')">Debes elegir el nº de personas</mat-error>
+    <mat-hint>Por favor, elige el nº de personas</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Elige fecha</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="bookingDate">
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> 
+
+  <mat-form-field>
+    <mat-label>Selecciona hora</mat-label>
+    <mat-select formControlName="bookingTime" name="bookingTime">
+      <mat-option *ngFor="let time of times" [value]="time">
+        {{ time }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Teléfono</mat-label>
+    <input matInput formControlName="phone" required>
+    <mat-icon matPrefix>phone</mat-icon>
+    <mat-error *ngIf="bookingForm.get('phone')?.getError('pattern')">
+      El teléfono debe tener 9 dígitos y empezar por 6,7 o 9
+  </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+    <mat-icon matSuffix>email</mat-icon>
+    <mat-hint>Te enviaremos un correo para la verificación.</mat-hint>
+    <mat-error *ngIf="bookingForm.get('email')?.invalid &&
+                      bookingForm.get('email')?.touched &&
+                      bookingForm.get('email')?.getError('required')">
+      Email obligatorio.
+    </mat-error>
+    <mat-error *ngIf="bookingForm.get('email')?.invalid &&
+                      bookingForm.get('email')?.touched &&
+                      bookingForm.get('email')?.getError('email')">
+      Formato email incorrecto.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Observaciones</mat-label>
+    <textarea matInput #message maxlength="300" rows="3" placeholder="Escribe si tienes alguna observación..."
+      formControlName="notes"></textarea>
+    <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
+  </mat-form-field>
+
+  <button mat-fab extended type="submit" [disabled]="bookingForm.invalid">
+    <mat-icon>send</mat-icon>
+    Enviar
+  </button>
+
+
+</form>

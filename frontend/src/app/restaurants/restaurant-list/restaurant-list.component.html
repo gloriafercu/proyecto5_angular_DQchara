@@ -1,4 +1,4 @@
-<h1>Listado de restaurantes</h1>
+<app-restaurant-filter></app-restaurant-filter>
 
 <section class="wrapper">
     <div *ngFor="let restaurant of restaurants | paginate: page_Size: page_number"
@@ -7,11 +7,34 @@
             <div class="image-container">
                 <img mat-card-image src="{{ restaurant.images[0] }}" alt="foto de {{ restaurant.name }}">
             </div>
-            <mat-card-content>
+            <mat-card-content class="card-content">
                 <h2>{{ restaurant.name }}</h2>
-                <p>{{ restaurant.city }}</p>
-                <p>{{ restaurant.typeFood }}</p>
-                <p>{{ restaurant.rating }}</p>
+                <p class="card-content-icon">
+                    <mat-icon>
+                        location_city
+                    </mat-icon>
+                    {{ restaurant.city }}
+                </p>
+                <p class="card-content-icon">
+                    <mat-icon>
+                        restaurant
+                    </mat-icon>
+                    {{ restaurant.typeFood }}
+                </p>
+                <div class="content-ng-rating">
+                    <p class="rating"><b>{{ restaurant.rating }}</b></p>
+                    <ng-template #t let-fill="fill">
+                        <i class="bi-egg-fill">
+                            <i *ngIf="fill > 0" class="bi-egg-fill filled" [style.width.%]="fill"></i>
+                        </i>
+                    </ng-template>
+
+                    <ngb-rating [(rate)]="restaurant.rating" [starTemplate]="t" [readonly]="true" [max]="5"
+                        [ariaValueText]="ariaValueText"></ngb-rating>
+                </div>
+
+
+
             </mat-card-content>
         </mat-card>
     </div>

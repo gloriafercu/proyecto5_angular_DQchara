@@ -15,7 +15,7 @@ import { IUser } from 'src/app/users/models/user.model';
 export class RestaurantDetailComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
-  comments: IComment[] = []
+  comments:  IComment[]  = [];
   user: IUser | undefined
   comment:IComment|undefined
 
@@ -23,15 +23,20 @@ export class RestaurantDetailComponent implements OnInit {
     private restaurantService: RestaurantService,
     private commentService: CommentService,
     private userService: UserService) { };
+    
+
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params => {
-      const idString = params['id'];
-      if (!idString) return;
+      const idString = params['id']; // extraer id del restaurante de la dirección url
+      if (!idString) return; // comprueba si el id existe
       const id = parseInt(idString, 10);
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
-      this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => this.comments= data);
+      this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => this.comments = data);
     });
   };
 }
+
+
+
 
