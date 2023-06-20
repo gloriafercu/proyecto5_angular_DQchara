@@ -1,7 +1,9 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
 import { IRestaurant } from '../models/restaurant.model';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { faSpoon } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-restaurant-list',
@@ -10,8 +12,13 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 export class RestaurantListComponent implements OnInit {
 
+  ariaValueText(current: number, max: number) {
+    return `${current} out of ${max} hearts`;
+  }
+
   restaurants: IRestaurant[] = [];
 
+  faSpoon = faSpoon;
 
   results_length: number = 0;
   page_Size: number = 6;
@@ -19,20 +26,19 @@ export class RestaurantListComponent implements OnInit {
   pageSizeOptions = [3, 9, 18, 30];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  
+
 
   constructor(private restaurantService: RestaurantService) { }
 
   ngOnInit(): void {
-   this.getAllRestaurants();
+    this.getAllRestaurants();
   }
 
   getAllRestaurants(): void {
     this.restaurantService.getAllRestaurants().subscribe(data => {
-      
-        this.restaurants = data;
-        this.results_length = this.restaurants.length;
-      }
+      this.restaurants = data;
+      this.results_length = this.restaurants.length;
+    }
     );
   }
 

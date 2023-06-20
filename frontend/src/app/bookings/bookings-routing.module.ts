@@ -13,6 +13,10 @@ const routes: Routes = [
     component: BookingDetailComponent
   },
   {
+    path: ':id/edit',
+    component: BookingFormComponent
+  },
+  {
     path: '', redirectTo: 'bookings', pathMatch: 'full'
   },
   {
