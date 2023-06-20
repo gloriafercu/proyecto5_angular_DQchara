@@ -30,7 +30,6 @@ import { LoginModule } from './login/login.module';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HeaderViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +51,7 @@ import { LoginModule } from './login/login.module';
     CommentsModule,
     BookingsModule,
     MatFormFieldModule,
-    LoginModule
+    LoginModule,
     NgbModule,
   ],
   providers: [
