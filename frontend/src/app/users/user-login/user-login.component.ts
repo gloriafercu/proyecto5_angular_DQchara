@@ -7,10 +7,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent {
-  
-  userloginForm= new FormGroup({
-    id: new FormControl('', [Validators.required]),
+  hide=true
+  userLoginForm= new FormGroup({
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
   })
+
+  save(): void {}
 }

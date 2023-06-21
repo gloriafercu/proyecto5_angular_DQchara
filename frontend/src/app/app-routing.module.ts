@@ -10,7 +10,10 @@ const routes: Routes = [
     path: 'bookings',
     loadChildren: () => import('./bookings/bookings.module').then(m => m.BookingsModule)
   },
-  
+  {
+    path: 'login',
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  },
   {
     path: '', redirectTo: 'restaurants', pathMatch: 'full' 
   },

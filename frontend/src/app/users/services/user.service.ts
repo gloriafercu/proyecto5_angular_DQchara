@@ -33,6 +33,7 @@ export class UserService {
     this.httpClient.delete(`${this.urlAPI}/${id}`);
   }
 
+  save(): void {}
 
 }
 
