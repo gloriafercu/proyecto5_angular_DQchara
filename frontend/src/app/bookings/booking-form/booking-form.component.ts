@@ -37,9 +37,33 @@ export class BookingFormComponent implements OnInit {
   });
 
 
-  constructor(private bookingService: BookingService, private router: Router) { }
+  constructor(private bookingService: BookingService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      const idString = params['id']; // extraer id de la dirección
+      if (!idString) return; // comprueba si el id existe
+
+      const id = parseInt(idString, 10); // si el id existe parsea el id a número en base decimal
+      this.bookingService.getById(id).subscribe(booking => this.loadBookingForm(booking));
+    });
+  }
+
+  // cargar una reserva en el formulario para editarla
+  loadBookingForm(booking: IBooking): void {
+    this.bookingForm.reset({
+      id: booking.id,
+      firstName: booking.firstName,
+      lastName: booking.lastName,
+      peopleNumber: booking.peopleNumber,
+      bookingTime: booking.bookingTime,
+      bookingDate: booking.bookingDate,
+      notes: booking.notes,
+      phone: booking.phone,
+      email: booking.email
+    });
+
+  }
 
   save(): void {
 
@@ -71,9 +95,7 @@ export class BookingFormComponent implements OnInit {
     if (id === 0)
       this.bookingService.create(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id]));
     else
-      this.bookingService.update(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id]));
-
-
+      this.bookingService.update(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id, 'edit']));
 
   }
 
