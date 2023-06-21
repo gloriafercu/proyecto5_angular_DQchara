@@ -27,9 +27,7 @@ export class BookingService {
    getAll(): Observable<IBooking[]> {
    return this.httpClient.get<IBooking[]>(this.urlAPI);
   }
-  getById(id: number): Observable<IBooking> {
-   return this.httpClient.get<IBooking>(`${this.urlAPI}/${id}`);
-  }
+
  getAllByRestaurantId(restaurantId: number): Observable<IBooking[]> {
     return this.httpClient.get<IBooking[]>(`${this.urlAPI}?restaurantId=${restaurantId}`);
   }
