@@ -24,7 +24,6 @@ import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field'
-import { LoginModule } from './login/login.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +50,6 @@ import { LoginModule } from './login/login.module';
     CommentsModule,
     BookingsModule,
     MatFormFieldModule,
-    LoginModule,
     NgbModule,
   ],
   providers: [
