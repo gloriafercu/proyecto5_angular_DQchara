@@ -1,9 +1,9 @@
 <mat-card>
-    <mat-card-content>Detalle de la reserva</mat-card-content>
+    <mat-card-title>Detalle de la reserva</mat-card-title>
     
   </mat-card>
   <mat-card>
-    <mat-card-content>Datos Cliente:</mat-card-content>
+    <mat-card-title>Datos Cliente:</mat-card-title>
     <p>
         <strong>Nombre: </strong> <span id="firstName">{{booking?.firstName}} </span><br>
         <strong>Apellido:</strong> <span id="lastName">{{booking?.lastName}}</span><br>
@@ -24,7 +24,12 @@
     </mat-card-header>
     <mat-card-actions>
       <button mat-button onclick="save()">Confirmar</button>
-      <button mat-button onclick="save()">Actualizar</button>
+      <button mat-button class="button" [routerLink]="['/bookings', booking?.id, 'edit']">
+        <mat-icon class="tab-icon">
+            edit
+        </mat-icon>
+        Editar reserva
+    </button>
       <button mat-button onclick="">Cancelar</button>
     </mat-card-actions>
   </mat-card>
