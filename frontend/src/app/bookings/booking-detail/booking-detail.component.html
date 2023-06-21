@@ -5,10 +5,10 @@
   <mat-card>
     <mat-card-content>Datos Cliente:</mat-card-content>
     <p>
-        <strong>Nombre: </strong> <span id="firstName"></span><br>
-        <strong>Apellido:</strong> <span id="lastName"></span><br>
-        <strong>Email:</strong> <span id="email"></span><br>
-        <strong>Teléfono de Contacto:</strong> <span id="phone"></span><br>
+        <strong>Nombre: </strong> <span id="firstName">{{booking?.firstName}} </span><br>
+        <strong>Apellido:</strong> <span id="lastName">{{booking?.lastName}}</span><br>
+        <strong>Email:</strong> <span id="email">{{booking?.email}}</span><br>
+        <strong>Teléfono de Contacto:</strong> <span id="phone">{{booking?.phone}}</span><br>
       </p>
     
   </mat-card>
@@ -17,8 +17,9 @@
       <mat-card-title>Datos Restaurante</mat-card-title>
       <p>
         <strong>Restaurante:</strong> <span id="restaurant.name"></span><br>
-        <strong>Día:</strong> <span id="bookingDate"></span><br>
-        <strong>Hora:</strong> <span id="bookingTime"></span><br>
+        <strong>Día:</strong> <span id="bookingDate">{{booking?.bookingDate}}</span><br>
+        <strong>Hora:</strong> <span id="bookingTime">{{booking?.bookingTime}}</span><br>
+        <strong>Para:</strong> <span id="bookingTime">{{booking?.peopleNumber}}</span><br>
       </p>
     </mat-card-header>
     <mat-card-actions>
