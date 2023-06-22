@@ -23,7 +23,7 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { MatFormFieldModule } from '@angular/material/form-field'
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +47,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatDividerModule,
     MatToolbarModule,
     MatMenuModule,
+    CommentsModule,
+    BookingsModule,
+    MatFormFieldModule,
     NgbModule,
   ],
   providers: [

@@ -53,6 +53,9 @@ It works with json-server in https://localhost:5000/restaurants
 
 
 
-
+# Si no funciona por @angular/core o @angular/cli :
+npm install 
+npm install --force
+ng update @angular/cli @angular/core
 
  
