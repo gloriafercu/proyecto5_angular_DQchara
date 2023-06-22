@@ -17,8 +17,29 @@ export class RestaurantListComponent implements OnInit {
   }
 
   restaurants: IRestaurant[] = [];
+  cities: string[] =[
+    "Barcelona",
+    "Cuenca",
+    "León",
+    "Lugo",
+    "Madrid",
+    "Palencia",
+    "Sevilla",
+    "Toledo",
+    "Valencia",
+    "Valladolid"
 
-  faSpoon = faSpoon;
+  ];
+  food: string[]= [
+    "Brasileña",
+    "Española",
+    "India",
+    "Japonesa",
+    "Mexicana"
+  ];
+
+
+
 
   results_length: number = 0;
   page_Size: number = 6;
@@ -40,6 +61,14 @@ export class RestaurantListComponent implements OnInit {
       this.results_length = this.restaurants.length;
     }
     );
+
+  }
+  getByTypeFood(food: string): void {
+
+    this.restaurantService.getByTypeFood(food).subscribe(data => {
+      console.log('food',this.restaurants)
+      this.restaurants = data;
+    });
   }
 
   handleEvent(event: PageEvent) {
