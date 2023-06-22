@@ -7,7 +7,6 @@ import { UserListComponent } from './user-list/user-list.component';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { UserLoginComponent } from './user-login/user-login.component';
-import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,7 +37,6 @@ import { MatListModule } from '@angular/material/list';
     MatSelectModule,
     MatDatepickerModule,
     MatInputModule,
-    MatNativeDateModule,
     MatListModule,
     MatListModule,
     MatIconModule
@@ -48,9 +46,6 @@ import { MatListModule } from '@angular/material/list';
     UserDetailComponent,
     UserListComponent,
     UserLoginComponent
-  ],
-
-  providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }]
+  ]
 })
 export class UsersModule { }

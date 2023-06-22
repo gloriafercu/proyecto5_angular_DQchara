@@ -17,10 +17,10 @@ const routes: Routes = [
     component: UserLoginComponent
   },
   {
-    path: '', redirectTo: 'bookings', pathMatch: 'full'
+    path: '', redirectTo: 'login', pathMatch: 'full'
   },
   {
-    path: '**', redirectTo: 'bookings', pathMatch: 'full'
+    path: '**', redirectTo: 'login', pathMatch: 'full'
   }
 ];
 
