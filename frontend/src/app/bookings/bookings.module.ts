@@ -14,6 +14,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
@@ -36,7 +37,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     MatNativeDateModule,
     MatIconModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   exports: [
     BookingFormComponent,

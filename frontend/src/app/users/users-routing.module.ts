@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 const routes: Routes = [
   {
@@ -9,15 +10,15 @@ const routes: Routes = [
     component: UserLoginComponent
   },
   {
-    path: ':id',
-    component: UserDetailComponent
-  },
-  {
-    path: ':id/edit',
+    path: 'login',
     component: UserLoginComponent
   },
   {
-    path: '', redirectTo: 'login', pathMatch: 'full'
+    path: 'register',
+    component: UserRegisterComponent
+  },
+  {
+    path: '', redirectTo: 'register', pathMatch: 'full'
   },
   {
     path: '**', redirectTo: 'login', pathMatch: 'full'

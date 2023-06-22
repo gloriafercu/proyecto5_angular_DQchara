@@ -99,7 +99,6 @@ export class BookingFormComponent implements OnInit {
         this.router.navigate(['/bookings', booking.id, 'edit']);
         this.router.navigate(['/bookings', booking.id]);
       });
-
   }
 
 

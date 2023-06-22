@@ -18,12 +18,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule} from '@angular/material/select';
 import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
 import { BookingsModule } from './bookings/bookings.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,8 +52,11 @@ import { MatFormFieldModule } from '@angular/material/form-field'
     MatMenuModule,
     CommentsModule,
     BookingsModule,
+    MatSelectModule,
     MatFormFieldModule,
     NgbModule,
+    ReactiveFormsModule,
+
   ],
   providers: [
     {
