@@ -3,7 +3,7 @@
         <mat-label>Tipos de comidas</mat-label>
         <mat-select matNativeControl required>
 
-            <mat-option value="0" (click)="getAllRestaurants()">Todas</mat-option>
+            <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">Todas</mat-option>
 
             <mat-option *ngFor="let typeFood of food" value="{{typeFood}}"
                 (click)="getByTypeFood(typeFood)">{{typeFood}}</mat-option>
@@ -15,7 +15,7 @@
 
         <mat-label>Ciudades</mat-label>
         <mat-select matNativeControl required>
-            <mat-option value="0" (click)="getAllRestaurants()">Todas</mat-option>
+            <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">Todas</mat-option>
 
             <mat-option *ngFor="let city of cities" value="{{city}}" (click)="getByCity(city)">{{city}}</mat-option>
         </mat-select>

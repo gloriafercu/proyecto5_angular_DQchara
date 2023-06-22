@@ -3,6 +3,7 @@ import { RestaurantService } from '../restaurant.service';
 import { IRestaurant } from '../models/restaurant.model';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { faSpoon } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -49,13 +50,14 @@ export class RestaurantListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
-  constructor(private restaurantService: RestaurantService) { }
+  constructor(private restaurantService: RestaurantService, private router: Router ) { }
 
   ngOnInit(): void {
     this.getAllRestaurants();
   }
 
   getAllRestaurants(): void {
+
     this.restaurantService.getAllRestaurants().subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
@@ -64,8 +66,9 @@ export class RestaurantListComponent implements OnInit {
 
   }
   getByTypeFood(food: string): void {
-
+this.router.navigate(['/restaurants/typeFood',food])
     this.restaurantService.getByTypeFood(food).subscribe(data => {
+     
       this.restaurants = data;
       this.results_length = this.restaurants.length;
 
@@ -73,6 +76,7 @@ export class RestaurantListComponent implements OnInit {
     });
   }
   getByCity(city: string): void{
+    this.router.navigate(['/restaurants/city',city])
     this.restaurantService.getByCity(city).subscribe(data=> {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
