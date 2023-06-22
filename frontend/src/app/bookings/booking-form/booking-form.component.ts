@@ -31,7 +31,7 @@ export class BookingFormComponent implements OnInit {
     peopleNumber: new FormControl<string>('', [Validators.required]),
     bookingDate: new FormControl<Date | null>(new Date(), [Validators.required]),
     bookingTime: new FormControl<string>('', [Validators.required]),
-    notes: new FormControl<string>('', [Validators.required, Validators.maxLength(300)]),
+    notes: new FormControl<string>('', [Validators.maxLength(300)]),
     phone: new FormControl<string>('', [Validators.required, Validators.pattern('^[679]{1}[0-9]{8}$')]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
   });
@@ -95,7 +95,10 @@ export class BookingFormComponent implements OnInit {
     if (id === 0)
       this.bookingService.create(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id]));
     else
-      this.bookingService.update(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id, 'edit']));
+      this.bookingService.update(booking).subscribe(booking => {
+        this.router.navigate(['/bookings', booking.id, 'edit']);
+        this.router.navigate(['/bookings', booking.id]);
+      });
 
   }
 

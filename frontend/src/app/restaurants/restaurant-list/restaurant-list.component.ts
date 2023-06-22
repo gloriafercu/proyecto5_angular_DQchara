@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
 import { IRestaurant } from '../models/restaurant.model';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { faSpoon } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -17,8 +16,6 @@ export class RestaurantListComponent implements OnInit {
   }
 
   restaurants: IRestaurant[] = [];
-
-  faSpoon = faSpoon;
 
   results_length: number = 0;
   page_Size: number = 6;
