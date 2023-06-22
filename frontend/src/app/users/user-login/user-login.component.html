@@ -1,0 +1,53 @@
+
+    <div style="float: right;">
+        <button mat-button>
+            <mat-icon>
+                logout
+            </mat-icon>
+            Cerrar sesión
+        </button>
+
+    </div>
+
+
+<div>
+<h1>Accede a tu cuenta</h1>
+<form [formGroup]="userLoginForm" (ngSubmit)="save()">
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error
+            *ngIf="userLoginForm.get('email')?.invalid &&userLoginForm.get('email')?.touched && userLoginForm.get('email')?.getError('required')">
+            Email obligatorio.
+        </mat-error>
+        <mat-error
+            *ngIf="userLoginForm.get('email')?.invalid && userLoginForm.get('email')?.touched && userLoginForm.get('email')?.getError('email')">
+            Formato email incorrecto.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error
+            *ngIf="userLoginForm.get('password')?.invalid && userLoginForm.get('password')?.touched && userLoginForm.get('password')?.getError('required')">
+            Contraseña obligatoria.
+        </mat-error>
+        <mat-error
+            *ngIf="userLoginForm.get('password')?.invalid && userLoginForm.get('password')?.touched && userLoginForm.get('password')?.getError('pattern')">
+            Contraseña debe ser entre 8 y 20 caracteres utilizando letras, números.
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-fab extended type="submit" [disabled]="userLoginForm.invalid" class="button">
+        <mat-icon>send</mat-icon>
+        Enviar
+    </button>
+</form>
+
+</div>
