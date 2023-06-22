@@ -1,19 +1,19 @@
-<mat-card>
-    <mat-card-title>Detalle de la reserva</mat-card-title>
-    
-  </mat-card>
-  <mat-card>
+<section class="container-cards">
+
+  <h2>Detalle de la reserva:</h2>
+
+  <mat-card class="mat-card">
     <mat-card-title>Datos Cliente:</mat-card-title>
     <p>
-        <strong>Nombre: </strong> <span id="firstName">{{booking?.firstName}} </span><br>
-        <strong>Apellido:</strong> <span id="lastName">{{booking?.lastName}}</span><br>
-        <strong>Email:</strong> <span id="email">{{booking?.email}}</span><br>
-        <strong>Teléfono de Contacto:</strong> <span id="phone">{{booking?.phone}}</span><br>
-      </p>
-    
+      <strong>Nombre: </strong> <span id="firstName">{{booking?.firstName}} </span><br>
+      <strong>Apellido: </strong> <span id="lastName">{{booking?.lastName}}</span><br>
+      <strong>Email: </strong> <span id="email">{{booking?.email}}</span><br>
+      <strong>Teléfono de Contacto: </strong> <span id="phone">{{booking?.phone}}</span><br>
+    </p>
+
   </mat-card>
-  <mat-card>
-    <mat-card-header>
+  <mat-card class="mat-card">
+ 
       <mat-card-title>Datos Restaurante</mat-card-title>
       <p>
         <strong>Restaurante:</strong> <span id="restaurant.name"></span><br>
@@ -21,22 +21,22 @@
         <strong>Hora:</strong> <span id="bookingTime">{{booking?.bookingTime}}</span><br>
         <strong>Para:</strong> <span id="bookingTime">{{booking?.peopleNumber}}</span><br>
       </p>
-    </mat-card-header>
+  
     <mat-card-actions>
       <button mat-button class="button" [routerLink]="['/bookings', booking?.id, 'edit']">
         <mat-icon class="tab-icon">
-            edit
+          edit
         </mat-icon>
         Editar reserva
-    </button>
-    
-<!-- <button mat-button class="button" (click)="deleteBooking(booking)">
+      </button>
+
+      <!-- <button mat-button class="button" (click)="deleteBooking(booking)">
     <mat-icon class="tab-icon">
         delete
     </mat-icon>
     Cancelar reserva
 </button> -->
-     
+
     </mat-card-actions>
   </mat-card>
-
+</section>
