@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BookingService } from '../services/booking.service';
+import { RestaurantService } from 'src/app/restaurants/restaurant.service';
 import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
 import { IUser } from 'src/app/users/models/user.model';
 
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { IBooking } from '../models/booking.model';
+
 
 @Component({
   selector: 'app-booking-form',
@@ -37,15 +39,32 @@ export class BookingFormComponent implements OnInit {
   });
 
 
-  constructor(private bookingService: BookingService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private bookingService: BookingService, 
+    private restaurantService: RestaurantService,
+    private router: Router, 
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      const idString = params['id']; // extraer id de la dirección
-      if (!idString) return; // comprueba si el id existe
+      
 
-      const id = parseInt(idString, 10); // si el id existe parsea el id a número en base decimal
-      this.bookingService.getById(id).subscribe(booking => this.loadBookingForm(booking));
+const restaurantIdStr = params['restaurantId'];
+if (!restaurantIdStr) return; // comprueba si el id existe
+
+      const restaurantId = parseInt(restaurantIdStr, 10); // si el id existe parsea el id a número en base decimal
+      this.bookingService.getById(restaurantId).subscribe(booking => this.loadBookingForm(booking));
+      console.log('restaurantId', restaurantId);
+      
+
+      const bookingIdString = params['bookingId']; // extraer id de la dirección
+      if (!bookingIdString) return; // comprueba si el id existe
+      
+      
+
+      const bookingId = parseInt(bookingIdString, 10); // si el id existe parsea el id a número en base decimal
+      console.log('bookingId', bookingId);
+      this.bookingService.getById(bookingId).subscribe(booking => this.loadBookingForm(booking));
     });
   }
 

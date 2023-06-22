@@ -5,7 +5,7 @@ import { BookingDetailComponent } from './booking-detail/booking-detail.componen
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'restaurant/:restaurantId',
     component: BookingFormComponent
   },
   {

@@ -17,7 +17,7 @@
     <mat-card-title>Datos Restaurante</mat-card-title>
     <p>
       <strong>Restaurante:</strong> <span id="restaurant.name"></span><br>
-      <strong>Día:</strong> <span id="bookingDate">{{booking?.bookingDate}}</span><br>
+      <strong>Día:</strong> <span id="bookingDate">{{booking?.bookingDate | date: 'dd/MM/YYYY' }}</span><br>
       <strong>Hora:</strong> <span id="bookingTime">{{booking?.bookingTime}}</span><br>
       <strong>Para:</strong> <span id="bookingTime">{{booking?.peopleNumber}}</span><br>
     </p>

@@ -1,25 +1,20 @@
 <nav>
+
   <mat-toolbar class="navbar">
 
-
     <button mat-button [matMenuTriggerFor]="menu">
-    
       <mat-icon style="font-size: 1.6rem;">menu</mat-icon>
     </button>
+
     <mat-menu #menu="matMenu">
-      <button mat-menu-item [routerLink]="['/restaurants']">Restaurantes</button>
+      <button mat-menu-item routerLink="/restaurants">Restaurantes</button>
       <button mat-menu-item>Reservar</button>
       <button mat-menu-item>Opiniones</button>
-
     </mat-menu>
 
     <a routerLink="/comments" title="Inicio">
       <img src="/assets/img/D_Qchara_logo-transparente.png" class="logo" alt="logo">
     </a>
-
-
-
-
 
     <section>
       <div class="example-button-row">
@@ -27,12 +22,10 @@
           <mat-icon>
             account_circle
           </mat-icon>
-
           Iniciar sesión
         </button>
       </div>
     </section>
-
 
     <section>
       <div class="example-button-row" routerLink="/users/register">
@@ -42,13 +35,9 @@
           </mat-icon>
           Registra tu restaurante
         </button>
-
       </div>
     </section>
 
-  
-
-    
-
   </mat-toolbar>
+
 </nav>

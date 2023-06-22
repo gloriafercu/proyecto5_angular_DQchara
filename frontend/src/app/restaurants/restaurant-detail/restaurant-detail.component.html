@@ -13,7 +13,7 @@
                 <span>{{ restaurant.typeFood }}</span>
             </div>
         </div>
-        <button mat-button class="button" routerLink="/bookings">
+        <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
             <mat-icon class="tab-icon">
                 calendar_month
             </mat-icon>

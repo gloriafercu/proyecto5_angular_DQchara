@@ -3,6 +3,7 @@ mat-grid-tile div {
 }
 
 .container-detail {
+  padding-top: 80px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
