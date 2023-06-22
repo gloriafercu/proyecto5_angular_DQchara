@@ -67,11 +67,16 @@ export class RestaurantListComponent implements OnInit {
 
     this.restaurantService.getByTypeFood(food).subscribe(data => {
       this.restaurants = data;
+      this.results_length = this.restaurants.length;
+
+      
     });
   }
   getByCity(city: string): void{
     this.restaurantService.getByCity(city).subscribe(data=> {
       this.restaurants = data;
+      this.results_length = this.restaurants.length;
+
     })
 
   }
