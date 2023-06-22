@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUser } from '../models/user.model';
+import { IComment } from 'src/app/comments/models/comment.model';
 
 
 @Injectable({
@@ -32,6 +33,7 @@ export class UserService {
     this.httpClient.delete(`${this.urlAPI}/${id}`);
   }
 
+  save(): void {}
 
 }
 

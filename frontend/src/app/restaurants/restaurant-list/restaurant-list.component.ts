@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
 import { IRestaurant } from '../models/restaurant.model';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { faSpoon } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 
@@ -39,9 +38,6 @@ export class RestaurantListComponent implements OnInit {
     "Mexicana"
   ];
 
-
-
-
   results_length: number = 0;
   page_Size: number = 6;
   page_number: number = 1;
@@ -61,10 +57,9 @@ export class RestaurantListComponent implements OnInit {
     this.restaurantService.getAllRestaurants().subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
-    }
-    );
-
+    });
   }
+  
   getByTypeFood(food: string): void {
 this.router.navigate(['/restaurants/typeFood',food])
     this.restaurantService.getByTypeFood(food).subscribe(data => {

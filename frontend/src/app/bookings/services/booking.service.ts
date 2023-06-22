@@ -24,6 +24,23 @@ export class BookingService {
     return this.httpClient.get<IBooking>(`${this.urlAPI}/${id}`);
   }
   
+   getAll(): Observable<IBooking[]> {
+   return this.httpClient.get<IBooking[]>(this.urlAPI);
+  }
+
+ getAllByRestaurantId(restaurantId: number): Observable<IBooking[]> {
+    return this.httpClient.get<IBooking[]>(`${this.urlAPI}?restaurantId=${restaurantId}`);
+  }
+
+  getAllByUserId(userId: number): Observable<IBooking[]> {
+    return this.httpClient.get<IBooking[]>(`${this.urlAPI}?userId=${userId}`);
+  }
+
+
+  
+  deleteById(id: number): Observable<{}> {
+    return this.httpClient.delete(`${this.urlAPI}/${id}`);
+  }
   // getAll(): Observable<IBooking[]> {
   //   return this.httpClient.get<IBooking[]>(this.urlAPI);
   // }
