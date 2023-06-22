@@ -3,7 +3,7 @@
         <mat-label>Tipos de comidas</mat-label>
        <mat-select matNativeControl required>
      
-         <mat-option *ngFor="let typeFood of food" value="{{typeFood}}">{{typeFood}}</mat-option>
+         <mat-option *ngFor="let typeFood of food" value="{{typeFood}}" (click)="getByTypeFood(typeFood)">{{typeFood}}</mat-option>
          
        </mat-select>
      </mat-form-field>

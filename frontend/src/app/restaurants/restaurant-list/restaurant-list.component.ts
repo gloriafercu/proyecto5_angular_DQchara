@@ -66,11 +66,15 @@ export class RestaurantListComponent implements OnInit {
   getByTypeFood(food: string): void {
 
     this.restaurantService.getByTypeFood(food).subscribe(data => {
-      console.log('food',this.restaurants)
       this.restaurants = data;
     });
   }
+  getByCity(city: string): void{
+    this.restaurantService.getByCity(city).subscribe(data=> {
+      this.restaurants = data;
+    })
 
+  }
   handleEvent(event: PageEvent) {
     this.page_Size = event.pageSize;
     this.page_number = event.pageIndex + 1;
