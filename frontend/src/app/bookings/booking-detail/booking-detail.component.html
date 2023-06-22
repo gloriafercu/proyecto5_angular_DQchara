@@ -23,35 +23,20 @@
       </p>
     </mat-card-header>
     <mat-card-actions>
-      <button mat-button onclick="save()">Confirmar</button>
       <button mat-button class="button" [routerLink]="['/bookings', booking?.id, 'edit']">
         <mat-icon class="tab-icon">
             edit
         </mat-icon>
         Editar reserva
     </button>
-      <button mat-button onclick="">Cancelar</button>
-    </mat-card-actions>
-  </mat-card>
-<p>{{ booking?.firstName }}</p>
-<p>{{ booking?.lastName }}</p>
-<p>{{ booking?.bookingDate | date: 'dd/MM/YYYY' }} </p>
-<p>{{ booking?.bookingTime }}</p>
-<p>{{ booking?.peopleNumber }}</p>
-<p>{{ booking?.email }}</p>
-<p>{{ booking?.phone }}</p>
-
-<button mat-button class="button" [routerLink]="['/bookings', booking?.id, 'edit']">
-    <mat-icon class="tab-icon">
-        edit
-    </mat-icon>
-    Editar reserva
-</button>
-
-
+    
 <!-- <button mat-button class="button" (click)="deleteBooking(booking)">
     <mat-icon class="tab-icon">
         delete
     </mat-icon>
     Cancelar reserva
 </button> -->
+     
+    </mat-card-actions>
+  </mat-card>
+
