@@ -18,6 +18,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import {MatCheckboxModule  } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { UserRegisterComponent } from './user-register/user-register.component';
     MatInputModule,
     MatListModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
 
   exports: [

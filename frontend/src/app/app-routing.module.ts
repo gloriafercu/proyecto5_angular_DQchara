@@ -11,13 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./bookings/bookings.module').then(m => m.BookingsModule)
   },
   {
-    path: 'login',
+    path: 'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   },
-  {
-    path: 'register',
-    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
-  },
+  
   {
     path: '', redirectTo: 'restaurants', pathMatch: 'full' 
   },
