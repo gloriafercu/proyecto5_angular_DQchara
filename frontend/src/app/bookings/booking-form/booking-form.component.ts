@@ -37,12 +37,13 @@ export class BookingFormComponent implements OnInit {
     notes: new FormControl<string>('', [Validators.maxLength(300)]),
     phone: new FormControl<string>('', [Validators.required, Validators.pattern('^[679]{1}[0-9]{8}$')]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
+    restaurantId: new FormControl<number>(0)
   });
 
 
   constructor(
-    private bookingService: BookingService, 
-    private router: Router, 
+    private bookingService: BookingService,
+    private router: Router,
     private activatedRoute: ActivatedRoute,
     private restaurantService: RestaurantService) { }
 
@@ -51,13 +52,18 @@ export class BookingFormComponent implements OnInit {
       const idBookingStr = params['bookingId']; // extraer id de la dirección
       if (!idBookingStr) return; // comprueba si el id existe
       const bookingId = parseInt(idBookingStr, 10);
-    console.log('bookingId', bookingId)
+      console.log('bookingId', bookingId)
       const idRestStr = params['restaurantId']; // extraer id de la dirección
       if (!idRestStr) return; // comprueba si el id existe
       const restaurantId = parseInt(idRestStr, 10); // si el id existe parsea el id a número en base decimal
       console.log('restId', restaurantId)
-      
-      this.bookingService.getById(bookingId).subscribe(booking => this.loadBookingForm(booking));
+
+      this.bookingService.getById(bookingId).subscribe(booking => {
+        this.restaurantService.getById(restaurantId).subscribe(data => this.restaurant = data);
+        this.bookin
+        
+        
+        this.loadBookingForm(booking)});
       this.restaurantService.getById(restaurantId).subscribe(data => this.restaurant = data)
     });
   }
@@ -73,7 +79,8 @@ export class BookingFormComponent implements OnInit {
       bookingDate: booking.bookingDate,
       notes: booking.notes,
       phone: booking.phone,
-      email: booking.email
+      email: booking.email,
+      restaurantId: booking.restaurantId
     });
 
   }
@@ -90,6 +97,7 @@ export class BookingFormComponent implements OnInit {
     let notes = this.bookingForm.get('notes')?.value ?? '';
     let phone = this.bookingForm.get('phone')?.value ?? '';
     let email = this.bookingForm.get('email')?.value ?? '';
+    let restaurantId = this.bookingForm.get('restaurantId')?.value ?? 0
 
     let booking: IBooking = {
       id: id,
@@ -100,7 +108,8 @@ export class BookingFormComponent implements OnInit {
       bookingDate: bookingDate,
       notes: notes,
       phone: phone,
-      email: email
+      email: email,
+      restaurantId: restaurantId
     }
 
     console.log(booking);

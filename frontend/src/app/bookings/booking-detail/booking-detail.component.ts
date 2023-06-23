@@ -12,6 +12,7 @@ import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
   styleUrls: ['./booking-detail.component.css']
 })
 export class BookingDetailComponent implements OnInit {
+
   restaurant: IRestaurant | undefined;
   booking: IBooking | undefined;
 
@@ -23,9 +24,8 @@ export class BookingDetailComponent implements OnInit {
       if (!idString) return; // comprueba si el id existe
       const bookingId = parseInt(idString, 10);
       this.bookingService.getById(bookingId).subscribe(data => {
-
         this.booking = data;
-        this.restaurantService.getById(this.booking.id).subscribe(data => this.restaurant = data);
+        this.restaurantService.getById(this.booking.restaurantId).subscribe(data => this.restaurant = data);
       });
     });
   }
