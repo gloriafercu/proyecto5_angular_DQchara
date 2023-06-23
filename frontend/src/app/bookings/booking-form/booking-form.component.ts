@@ -17,6 +17,7 @@ import { IBooking } from '../models/booking.model';
 })
 export class BookingFormComponent implements OnInit {
 
+  restaurant: IRestaurant | undefined;
   restaurants: IRestaurant[] = [];
   users: IUser[] = [];
 
@@ -41,30 +42,23 @@ export class BookingFormComponent implements OnInit {
 
   constructor(
     private bookingService: BookingService, 
-    private restaurantService: RestaurantService,
     private router: Router, 
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private restaurantService: RestaurantService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
+      const idBookingStr = params['bookingId']; // extraer id de la dirección
+      if (!idBookingStr) return; // comprueba si el id existe
+      const bookingId = parseInt(idBookingStr, 10);
+    console.log('bookingId', bookingId)
+      const idRestStr = params['restaurantId']; // extraer id de la dirección
+      if (!idRestStr) return; // comprueba si el id existe
+      const restaurantId = parseInt(idRestStr, 10); // si el id existe parsea el id a número en base decimal
+      console.log('restId', restaurantId)
       
-
-const restaurantIdStr = params['restaurantId'];
-if (!restaurantIdStr) return; // comprueba si el id existe
-
-      const restaurantId = parseInt(restaurantIdStr, 10); // si el id existe parsea el id a número en base decimal
-      this.bookingService.getById(restaurantId).subscribe(booking => this.loadBookingForm(booking));
-      console.log('restaurantId', restaurantId);
-      
-
-      const bookingIdString = params['bookingId']; // extraer id de la dirección
-      if (!bookingIdString) return; // comprueba si el id existe
-      
-      
-
-      const bookingId = parseInt(bookingIdString, 10); // si el id existe parsea el id a número en base decimal
-      console.log('bookingId', bookingId);
       this.bookingService.getById(bookingId).subscribe(booking => this.loadBookingForm(booking));
+      this.restaurantService.getById(restaurantId).subscribe(data => this.restaurant = data)
     });
   }
 
@@ -113,11 +107,11 @@ if (!restaurantIdStr) return; // comprueba si el id existe
 
     if (id === 0)
       this.bookingService.create(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id]));
-    else
-      this.bookingService.update(booking).subscribe(booking => {
-        this.router.navigate(['/bookings', booking.id, 'edit']);
-        this.router.navigate(['/bookings', booking.id]);
-      });
+    // else
+    //   this.bookingService.update(booking).subscribe(booking => {
+    //     this.router.navigate(['/bookings/restaurant', this.restaurant?.id, 'edit']);
+    //     this.router.navigate(['/bookings', booking.id]);
+    //   });
   }
 
 

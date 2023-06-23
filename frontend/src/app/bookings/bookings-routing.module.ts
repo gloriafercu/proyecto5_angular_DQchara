@@ -9,11 +9,11 @@ const routes: Routes = [
     component: BookingFormComponent
   },
   {
-    path: ':id',
+    path: ':bookingId',
     component: BookingDetailComponent
   },
   {
-    path: ':id/edit',
+    path: ':bookingId/edit',
     component: BookingFormComponent
   },
   {

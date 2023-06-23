@@ -8,7 +8,7 @@
       <strong>Nombre: </strong> <span id="firstName">{{booking?.firstName}} </span><br>
       <strong>Apellido: </strong> <span id="lastName">{{booking?.lastName}}</span><br>
       <strong>Email: </strong> <span id="email">{{booking?.email}}</span><br>
-      <strong>Teléfono de Contacto: </strong> <span id="phone">{{booking?.phone}}</span><br>
+      <strong>Teléfono: </strong> <span id="phone">{{booking?.phone}}</span><br>
     </p>
 
   </mat-card>
@@ -16,7 +16,7 @@
 
     <mat-card-title>Datos Restaurante</mat-card-title>
     <p>
-      <strong>Restaurante:</strong> <span id="restaurant.name"></span><br>
+      <strong>Restaurante:</strong> <span id="restaurantName">{{ restaurant?.name }}</span><br>
       <strong>Día:</strong> <span id="bookingDate">{{booking?.bookingDate | date: 'dd/MM/YYYY' }}</span><br>
       <strong>Hora:</strong> <span id="bookingTime">{{booking?.bookingTime}}</span><br>
       <strong>Para:</strong> <span id="bookingTime">{{booking?.peopleNumber}}</span><br>

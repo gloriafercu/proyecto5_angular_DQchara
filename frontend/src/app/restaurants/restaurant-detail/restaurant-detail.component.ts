@@ -4,7 +4,6 @@ import { RestaurantService } from '../restaurant.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/comments/services/comment.service';
 import { IComment } from 'src/app/comments/models/comment.model';
-import { UserService } from 'src/app/users/services/user.service';
 import { IUser } from 'src/app/users/models/user.model';
 
 @Component({
@@ -21,10 +20,8 @@ export class RestaurantDetailComponent implements OnInit {
 
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
-    private commentService: CommentService,
-    private userService: UserService) { };
+    private commentService: CommentService) { };
     
-
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params => {

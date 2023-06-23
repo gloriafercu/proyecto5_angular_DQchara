@@ -3,6 +3,8 @@ import { BookingService } from '../services/booking.service';
 import { IBooking } from '../models/booking.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { RestaurantService } from 'src/app/restaurants/restaurant.service';
+import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
 
 @Component({
   selector: 'app-booking-detail',
@@ -10,17 +12,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./booking-detail.component.css']
 })
 export class BookingDetailComponent implements OnInit {
-
+  restaurant: IRestaurant | undefined;
   booking: IBooking | undefined;
 
-  constructor(private bookingService: BookingService, private activatedRoute: ActivatedRoute, private router: Router, private snackbar: MatSnackBar) { }
+  constructor(private bookingService: BookingService, private restaurantService: RestaurantService, private activatedRoute: ActivatedRoute, private router: Router, private snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      const idString = params['id']; // extraer id del restaurante de la dirección url
+      const idString = params['bookingId']; // extraer id del restaurante de la dirección url
       if (!idString) return; // comprueba si el id existe
-      const id = parseInt(idString, 10);
-      this.bookingService.getById(id).subscribe(data => this.booking = data);
+      const bookingId = parseInt(idString, 10);
+      this.bookingService.getById(bookingId).subscribe(data => {
+
+        this.booking = data;
+        this.restaurantService.getById(this.booking.id).subscribe(data => this.restaurant = data);
+      });
     });
   }
 
@@ -45,5 +51,5 @@ export class BookingDetailComponent implements OnInit {
   // }
 
 
-  
+
 }
