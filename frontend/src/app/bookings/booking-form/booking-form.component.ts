@@ -49,24 +49,29 @@ export class BookingFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      const idBookingStr = params['bookingId']; // extraer id de la dirección
-      if (!idBookingStr) return; // comprueba si el id existe
-      const bookingId = parseInt(idBookingStr, 10);
-      console.log('bookingId', bookingId)
+      // const idBookingStr = params['bookingId']; // extraer id de la dirección
+      // if (!idBookingStr) return; // comprueba si el id existe
+      // const bookingId = parseInt(idBookingStr, 10);
+      // console.log('bookingId', bookingId)
       const idRestStr = params['restaurantId']; // extraer id de la dirección
       if (!idRestStr) return; // comprueba si el id existe
       const restaurantId = parseInt(idRestStr, 10); // si el id existe parsea el id a número en base decimal
-      console.log('restId', restaurantId)
+      console.log('restId', restaurantId);
 
-      this.bookingService.getById(bookingId).subscribe(booking => {
-        this.restaurantService.getById(restaurantId).subscribe(data => this.restaurant = data);
-        // this.bookin
-        
-        
-        this.loadBookingForm(booking)});
-      this.restaurantService.getById(restaurantId).subscribe(data => this.restaurant = data)
+      this.restaurantService.getById(restaurantId).subscribe(data => {
+        this.restaurant = data;
+        console.log('datos restaurant', data)
+      });
+
+      // this.bookingService.getAllByRestaurantId(restaurantId).subscribe(data=> {
+      //   console.log('data getAllbyRestaurantId', data);
+
+      //   // this.loadBookingForm(booking)
+      // });
+
     });
   }
+
 
   // cargar una reserva en el formulario para editarla
   loadBookingForm(booking: IBooking): void {
@@ -97,7 +102,7 @@ export class BookingFormComponent implements OnInit {
     let notes = this.bookingForm.get('notes')?.value ?? '';
     let phone = this.bookingForm.get('phone')?.value ?? '';
     let email = this.bookingForm.get('email')?.value ?? '';
-    let restaurantId = this.bookingForm.get('restaurantId')?.value ?? 0
+    let restaurantId = this.restaurant?.id ?? 0;
 
     let booking: IBooking = {
       id: id,
@@ -109,10 +114,10 @@ export class BookingFormComponent implements OnInit {
       notes: notes,
       phone: phone,
       email: email,
-      restaurantId: restaurantId
+      restaurantId: restaurantId,
     }
 
-    console.log(booking);
+    console.log('save booking', booking);
 
     if (id === 0)
       this.bookingService.create(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id]));
