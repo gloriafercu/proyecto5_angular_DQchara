@@ -38,6 +38,8 @@ export class BookingDetailComponent implements OnInit {
     });
   }
 
+  
+
   // deleteById(id: number) {
   //   this.bookingService.deleteById(id).subscribe({
   //     next: response => {

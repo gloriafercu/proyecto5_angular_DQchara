@@ -18,6 +18,7 @@ import { IBooking } from '../models/booking.model';
 export class BookingFormComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
+  booking: IBooking | undefined;
   restaurants: IRestaurant[] = [];
   users: IUser[] = [];
 
@@ -49,10 +50,7 @@ export class BookingFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      // const idBookingStr = params['bookingId']; // extraer id de la dirección
-      // if (!idBookingStr) return; // comprueba si el id existe
-      // const bookingId = parseInt(idBookingStr, 10);
-      // console.log('bookingId', bookingId)
+
       const idRestStr = params['restaurantId']; // extraer id de la dirección
       if (!idRestStr) return; // comprueba si el id existe
       const restaurantId = parseInt(idRestStr, 10); // si el id existe parsea el id a número en base decimal
@@ -63,25 +61,21 @@ export class BookingFormComponent implements OnInit {
         console.log('datos restaurant', data)
       });
 
-      // this.bookingService.getAllByRestaurantId(restaurantId).subscribe(data=> {
-      //   console.log('data getAllbyRestaurantId', data);
-
-      //   // this.loadBookingForm(booking)
-      // });
-
+      const idBookingStr = params['bookingId']; // extraer id de la dirección
+      if (!idBookingStr) return; // comprueba si el id existe
+      const bookingId = parseInt(idBookingStr, 10);
+      console.log('bookingId', bookingId);
+      this.bookingService.getById(bookingId).subscribe(booking => this.loadBookingForm(booking))
+  
+      
     });
 
-
-  //   const idString = params['id']; // extraer id de la dirección
-  //     if (!idString) return; // comprueba si el id existe
-
-  //     const id = parseInt(idString, 10); // si el id existe parsea el id a número en base decimal
-  //     this.bookingService.getById(id).subscribe(booking => this.loadBookingForm(booking));
- }
+    }
 
 
   // cargar una reserva en el formulario para editarla
   loadBookingForm(booking: IBooking): void {
+    
     this.bookingForm.reset({
       id: booking.id,
       firstName: booking.firstName,

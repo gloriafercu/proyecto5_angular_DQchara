@@ -1239,6 +1239,18 @@
       "phone": "999999990",
       "email": "f@f",
       "restaurantId": 16
+    },
+    {
+      "id": 18,
+      "firstName": "dd",
+      "lastName": "ff",
+      "peopleNumber": "1 persona",
+      "bookingTime": "13:00",
+      "bookingDate": "2023-06-24T20:08:24.141Z",
+      "notes": "",
+      "phone": "667777777",
+      "email": "y@mk",
+      "restaurantId": 2
     }
   ]
 }
