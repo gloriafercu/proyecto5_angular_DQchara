@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RestaurantsRoutingModule } from './restaurants-routing.module';
+import { UsersModule } from '../users/users.module';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -21,6 +22,7 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+
 @NgModule({
   declarations: [
     RestaurantListComponent,
@@ -31,6 +33,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     CommonModule,
     RestaurantsRoutingModule,
+    UsersModule,
     MatCardModule,
     MatGridListModule,
     MatPaginatorModule,

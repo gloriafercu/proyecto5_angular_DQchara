@@ -25,7 +25,7 @@
     justify-content: center;
     gap: 30px;
     width: 100%;
-    height: 80px;
+    height: 100px;
 }
 
 ::ng-deep .container-filter mat-form-field {
@@ -33,9 +33,9 @@
 
 }
 
-::ng-deep .mat-mdc-form-field-subscript-wrapper {
+/* ::ng-deep .mat-mdc-form-field-subscript-wrapper {
     display: none;
-}
+} */
 
 .title-block {
     position: absolute;
@@ -61,10 +61,6 @@
 }
 
 
-
-
-
-
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -73,6 +69,11 @@
     }
 }
 
+.dinamic-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 0 50px 50px;
+}
 
 .wrapper {
     display: grid;

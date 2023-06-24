@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { RestaurantService } from '../restaurant.service';
 import { IRestaurant } from '../models/restaurant.model';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-restaurant-list',
@@ -28,8 +27,8 @@ export class RestaurantListComponent implements OnInit {
     "Toledo",
     "Valencia",
     "Valladolid"
-
   ];
+
   food: string[] = [
     "Brasileña",
     "Española",
@@ -44,9 +43,10 @@ export class RestaurantListComponent implements OnInit {
   pageSizeOptions = [3, 9, 18, 30];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild('dinamicTitle') dinamicTitleInTS!: ElementRef;
 
 
-  constructor(private restaurantService: RestaurantService, private router: Router) { }
+  constructor(private restaurantService: RestaurantService, private router: Router, private renderer2: Renderer2) { }
 
   ngOnInit(): void {
     this.getAllRestaurants();
@@ -56,6 +56,9 @@ export class RestaurantListComponent implements OnInit {
     this.restaurantService.getAllRestaurants().subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
+      const dinamicTitle = this.dinamicTitleInTS.nativeElement;
+      this.renderer2.setProperty(dinamicTitle, 'innerHTML', "Todos los restaurantes");
+
     });
   }
 
@@ -64,7 +67,8 @@ export class RestaurantListComponent implements OnInit {
     this.restaurantService.getByTypeFood(food).subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
-
+      const dinamicTitle = this.dinamicTitleInTS.nativeElement;
+      this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes de comida ${food}`);
 
     });
   }
@@ -74,7 +78,8 @@ export class RestaurantListComponent implements OnInit {
     this.restaurantService.getByCity(city).subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
-
+      const dinamicTitle = this.dinamicTitleInTS.nativeElement;
+      this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes en ${city}`);
     })
   }
 
@@ -83,5 +88,5 @@ export class RestaurantListComponent implements OnInit {
     this.page_number = event.pageIndex + 1;
     this.results_length = event.length;
   }
-  
+
 }

@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/comments/services/comment.service';
 import { IComment } from 'src/app/comments/models/comment.model';
 import { IUser } from 'src/app/users/models/user.model';
+import { UserService } from 'src/app/users/services/user.service';
 
 @Component({
   selector: 'app-restaurant-detail',
@@ -14,14 +15,15 @@ import { IUser } from 'src/app/users/models/user.model';
 export class RestaurantDetailComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
-  comments:  IComment[]  = [];
-  user: IUser | undefined
-  comment:IComment|undefined
+  comments: IComment[] = [];
+  // user: IUser | undefined;
+  comment: IComment | undefined;
 
   constructor(private activedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
-    private commentService: CommentService) { };
-    
+    private commentService: CommentService,
+    private userService: UserService) { };
+
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params => {
@@ -29,7 +31,10 @@ export class RestaurantDetailComponent implements OnInit {
       if (!idString) return; // comprueba si el id existe
       const id = parseInt(idString, 10);
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
+
       this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => this.comments = data);
+     
+      // this.userService.getById(this.comment?.userId!).subscribe(data => this.user = data)
     });
   };
 }

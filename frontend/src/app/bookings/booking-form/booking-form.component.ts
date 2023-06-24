@@ -60,7 +60,7 @@ export class BookingFormComponent implements OnInit {
 
       this.bookingService.getById(bookingId).subscribe(booking => {
         this.restaurantService.getById(restaurantId).subscribe(data => this.restaurant = data);
-        this.bookin
+        // this.bookin
         
         
         this.loadBookingForm(booking)});
