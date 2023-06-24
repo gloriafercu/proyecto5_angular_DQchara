@@ -70,7 +70,14 @@ export class BookingFormComponent implements OnInit {
       // });
 
     });
-  }
+
+
+  //   const idString = params['id']; // extraer id de la dirección
+  //     if (!idString) return; // comprueba si el id existe
+
+  //     const id = parseInt(idString, 10); // si el id existe parsea el id a número en base decimal
+  //     this.bookingService.getById(id).subscribe(booking => this.loadBookingForm(booking));
+ }
 
 
   // cargar una reserva en el formulario para editarla
@@ -121,11 +128,11 @@ export class BookingFormComponent implements OnInit {
 
     if (id === 0)
       this.bookingService.create(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id]));
-    // else
-    //   this.bookingService.update(booking).subscribe(booking => {
-    //     this.router.navigate(['/bookings/restaurant', this.restaurant?.id, 'edit']);
-    //     this.router.navigate(['/bookings', booking.id]);
-    //   });
+    else
+      this.bookingService.update(booking).subscribe(booking => {
+        this.router.navigate(['/bookings/restaurant', this.restaurant?.id, 'edit']);
+        this.router.navigate(['/bookings', booking.id]);
+      });
   }
 
 
