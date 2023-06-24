@@ -1,4 +1,31 @@
-<app-restaurant-filter></app-restaurant-filter>
+<div class="cover">
+    <mat-form-field>
+        <mat-label>Tipos de comidas</mat-label>
+        <mat-select matNativeControl required>
+
+            <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">Todas</mat-option>
+
+            <mat-option *ngFor="let typeFood of food" value="{{typeFood}}"
+                (click)="getByTypeFood(typeFood)">{{typeFood}}</mat-option>
+
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <mat-label>Ciudades</mat-label>
+        <mat-select matNativeControl required>
+            <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">Todas</mat-option>
+
+            <mat-option *ngFor="let city of cities" value="{{city}}" (click)="getByCity(city)">{{city}}</mat-option>
+        </mat-select>
+
+
+    </mat-form-field>
+</div>
+
+
+
 
 <section class="wrapper">
     <div *ngFor="let restaurant of restaurants | paginate: page_Size: page_number"

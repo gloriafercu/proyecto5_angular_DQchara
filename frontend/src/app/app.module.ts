@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule} from '@angular/material/select';
 import { CommentsModule } from './comments/comments.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MyCustomPaginatorIntl } from './paginator-es';
@@ -51,6 +52,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatMenuModule,
     CommentsModule,
     BookingsModule,
+    MatSelectModule,
     MatFormFieldModule,
     NgbModule,
     ReactiveFormsModule,

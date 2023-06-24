@@ -17,11 +17,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
-import { RestaurantFilterComponent } from './restaurant-filter/restaurant-filter.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 
 @NgModule({
   declarations: [
@@ -29,7 +27,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RestaurantDetailComponent,
     RestaurantFormComponent,
     PaginatePipe,
-    RestaurantFilterComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +48,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   exports: [
     RestaurantListComponent,
     RestaurantDetailComponent,
-    RestaurantFormComponent
+    RestaurantFormComponent,
+
   ]
 })
 export class RestaurantsModule { }

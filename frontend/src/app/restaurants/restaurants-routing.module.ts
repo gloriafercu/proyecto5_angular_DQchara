@@ -14,6 +14,14 @@ const routes: Routes = [
     component: RestaurantDetailComponent
   },
   {
+    path: 'typeFood/:typeFood', 
+    component: RestaurantListComponent
+  },
+  {
+    path: 'city/:city', 
+    component: RestaurantListComponent
+  },
+  {
     path: '**', redirectTo:'', pathMatch: 'full' }
 ];
 
