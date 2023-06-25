@@ -9,12 +9,12 @@ const routes: Routes = [
     component: BookingFormComponent
   },
   {
-    path: ':bookingId',
-    component: BookingDetailComponent
-  },
-  {
     path: 'restaurant/:restaurantId/edit',
     component: BookingFormComponent
+  },
+  {
+    path: ':bookingId',
+    component: BookingDetailComponent
   },
   {
     path: '', redirectTo: 'bookings', pathMatch: 'full'

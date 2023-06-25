@@ -51,31 +51,41 @@ export class BookingFormComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
 
-      const idRestStr = params['restaurantId']; // extraer id de la dirección
-      if (!idRestStr) return; // comprueba si el id existe
-      const restaurantId = parseInt(idRestStr, 10); // si el id existe parsea el id a número en base decimal
+
+      const idRestStr = params['restaurantId'];
+      const restaurantId = parseInt(idRestStr, 10);
       console.log('restId', restaurantId);
 
       this.restaurantService.getById(restaurantId).subscribe(data => {
         this.restaurant = data;
-        console.log('datos restaurant', data)
+        console.log('this restaurant en bookForm', data);
       });
 
-      const idBookingStr = params['bookingId']; // extraer id de la dirección
-      if (!idBookingStr) return; // comprueba si el id existe
+
+
+
+
+      const idBookingStr = params['bookingId'];
       const bookingId = parseInt(idBookingStr, 10);
       console.log('bookingId', bookingId);
-      this.bookingService.getById(bookingId).subscribe(booking => this.loadBookingForm(booking))
-  
-      
+
+
+      this.bookingService.getById(bookingId).subscribe(booking => {
+        console.log('booking en loadbooking', booking)
+        this.loadBookingForm(booking)
+      })
+
+
+
+
     });
 
-    }
+  }
 
 
   // cargar una reserva en el formulario para editarla
   loadBookingForm(booking: IBooking): void {
-    
+
     this.bookingForm.reset({
       id: booking.id,
       firstName: booking.firstName,
@@ -121,10 +131,19 @@ export class BookingFormComponent implements OnInit {
     console.log('save booking', booking);
 
     if (id === 0)
-      this.bookingService.create(booking).subscribe(booking => this.router.navigate(['/bookings', booking.id]));
+      this.bookingService.create(booking).subscribe(booking => {
+   
+        this.router.navigate(['/bookings', booking.id]);
+      }
+
+
+
+      );
     else
       this.bookingService.update(booking).subscribe(booking => {
-        this.router.navigate(['/bookings/restaurant', this.restaurant?.id, 'edit']);
+
+        this.router.navigate(['/bookings/restaurant', booking.restaurantId, 'edit']);
+
         this.router.navigate(['/bookings', booking.id]);
       });
   }

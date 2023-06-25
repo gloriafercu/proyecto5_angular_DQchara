@@ -1,6 +1,6 @@
 <form [formGroup]="bookingForm" (ngSubmit)="save()" class="bookingForm">
 
-  <input formControlName="id">
+  <input type="hidden" formControlName="id">
 
   <!-- ¿¿Quizás haya que hacerlo también con restaurantId y userId?? -->
   <div class="name-container" style="margin-bottom: 20px;">

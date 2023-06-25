@@ -4,12 +4,13 @@
 
   <mat-card class="mat-card">
     <mat-card-title>Datos Cliente:</mat-card-title>
-    <p>
-      <strong>Nombre: </strong> <span id="firstName">{{booking?.firstName}} </span><br>
-      <strong>Apellido: </strong> <span id="lastName">{{booking?.lastName}}</span><br>
-      <strong>Email: </strong> <span id="email">{{booking?.email}}</span><br>
-      <strong>Teléfono: </strong> <span id="phone">{{booking?.phone}}</span><br>
-    </p>
+    
+    <p>reserva nº: {{ booking?.id }}</p>
+    <strong>Nombre: </strong> <span id="firstName">{{booking?.firstName}} </span><br>
+    <strong>Apellido: </strong> <span id="lastName">{{booking?.lastName}}</span><br>
+    <strong>Email: </strong> <span id="email">{{booking?.email}}</span><br>
+    <strong>Teléfono: </strong> <span id="phone">{{booking?.phone}}</span><br>
+  
 
   </mat-card>
   <mat-card class="mat-card">
@@ -23,7 +24,7 @@
     </p>
 
     <mat-card-actions>
-      <button mat-button class="button" [routerLink]="['/bookings/restaurant', booking?.id, 'edit']">
+      <button mat-button class="button" [routerLink]="['/bookings/restaurant', booking?.restaurantId, 'edit']">
         <mat-icon class="tab-icon">
           edit
         </mat-icon>
