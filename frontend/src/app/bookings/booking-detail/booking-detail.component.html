@@ -1,44 +1,83 @@
-<section class="container-cards">
+<section class="container-cards" *ngIf="booking">
 
   <h2>Detalle de la reserva:</h2>
 
   <mat-card class="mat-card">
     <mat-card-title>Datos Cliente:</mat-card-title>
-    
-    <p>reserva nº: {{ booking?.id }}</p>
-    <strong>Nombre: </strong> <span id="firstName">{{booking?.firstName}} </span><br>
-    <strong>Apellido: </strong> <span id="lastName">{{booking?.lastName}}</span><br>
-    <strong>Email: </strong> <span id="email">{{booking?.email}}</span><br>
-    <strong>Teléfono: </strong> <span id="phone">{{booking?.phone}}</span><br>
-  
+
+    <p>reserva nº: {{ booking.id }}</p>
+    <strong>Nombre: </strong> <span id="firstName">{{booking.firstName}} </span><br>
+    <strong>Apellido: </strong> <span id="lastName">{{booking.lastName}}</span><br>
+    <strong>Email: </strong> <span id="email">{{booking.email}}</span><br>
+    <strong>Teléfono: </strong> <span id="phone">{{booking.phone}}</span><br>
+
 
   </mat-card>
   <mat-card class="mat-card">
 
     <mat-card-title>Datos Restaurante</mat-card-title>
     <p>
-      <strong>Restaurante:</strong> <span id="restaurantName">{{ restaurant?.name }}</span><br>
-      <strong>Día:</strong> <span id="bookingDate">{{booking?.bookingDate | date: 'dd/MM/YYYY' }}</span><br>
-      <strong>Hora:</strong> <span id="bookingTime">{{booking?.bookingTime}}</span><br>
-      <strong>Para:</strong> <span id="bookingTime">{{booking?.peopleNumber}}</span><br>
+      <strong>Restaurante:</strong><span id="restaurantName">{{ restaurant?.name }}</span><br>
+      <strong>Día:</strong> <span id="bookingDate">{{booking.bookingDate | date: 'dd/MM/YYYY' }}</span><br>
+      <strong>Hora:</strong> <span id="bookingTime">{{booking.bookingTime}}</span><br>
+      <strong>Para:</strong> <span id="bookingTime">{{booking.peopleNumber}}</span><br>
     </p>
 
     <mat-card-actions>
-      <button mat-button class="button" [routerLink]="['/bookings', booking?.id, 'edit']">
+      <button mat-button class="button" [routerLink]="['/bookings', booking.id, 'edit']">
         <mat-icon class="tab-icon">
           edit
         </mat-icon>
         Editar reserva
       </button>
 
-      <!-- <button mat-button class="button" (click)="deleteById(booking?.id)"> -->
-      <!-- <button mat-button class="button" (click)="deleteBooking(booking)">
+      <button mat-button class="button" [routerLink]="['/bookings', booking.id, 'confirm']">
+        <mat-icon class="tab-icon">
+          check
+        </mat-icon>
+        Confirmar reserva
+      </button>
+
+      <!-- <button mat-button class="button" (click)="openModal('0ms', '0ms')">
         <mat-icon class="tab-icon">
           delete
         </mat-icon>
         Cancelar reserva
       </button> -->
 
+
+
+      <!-- <button class="btn btn-outline-primary" (click)="open('autofocus')">
+        <mat-icon class="tab-icon">
+          delete
+        </mat-icon>
+        Cancelar reserva
+      </button>
+       -->
+      <button mat-button class="button" (click)="open(content)">
+        <mat-icon class="tab-icon">
+          delete
+        </mat-icon>
+        Cancelar reserva
+      </button>
+
+
     </mat-card-actions>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-basic-title">Cancelar reserva nº {{booking.id}}</h3>
+        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Desea cancelar su reserva en el restaurante {{ restaurant?.name }}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">No</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c(deleteBooking(booking))">Si</button>
+      </div>
+    </ng-template>
+
+
   </mat-card>
 </section>
