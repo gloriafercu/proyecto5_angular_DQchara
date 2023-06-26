@@ -9,7 +9,7 @@ const routes: Routes = [
     component: BookingFormComponent
   },
   {
-    path: 'restaurant/:restaurantId/edit',
+    path: ':bookingId/edit',
     component: BookingFormComponent
   },
   {

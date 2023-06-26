@@ -50,31 +50,29 @@ export class BookingFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-
-
       const idRestStr = params['restaurantId'];
-      const restaurantId = parseInt(idRestStr, 10);
-      console.log('restId', restaurantId);
-
-      this.restaurantService.getById(restaurantId).subscribe(data => {
-        this.restaurant = data;
-        console.log('this restaurant en bookForm', data);
-      });
-
-
-
-
-
       const idBookingStr = params['bookingId'];
-      const bookingId = parseInt(idBookingStr, 10);
-      console.log('bookingId', bookingId);
+      if (idRestStr) {
 
+        const restaurantId = parseInt(idRestStr, 10);
+        console.log('restId', restaurantId);
 
-      this.bookingService.getById(bookingId).subscribe(booking => {
-        console.log('booking en loadbooking', booking)
-        this.loadBookingForm(booking)
-      })
+        this.restaurantService.getById(restaurantId).subscribe(data => {
+          this.restaurant = data;
+          console.log('this restaurant en bookForm', data);
+        });
+      } 
+      if (idBookingStr){
 
+        const bookingId = parseInt(idBookingStr, 10);
+        console.log('bookingId', bookingId);
+
+        this.bookingService.getById(bookingId).subscribe(booking => {
+          console.log('booking en loadbooking', booking)
+          this.loadBookingForm(booking);
+        });
+
+      }
 
 
 
@@ -132,17 +130,17 @@ export class BookingFormComponent implements OnInit {
 
     if (id === 0)
       this.bookingService.create(booking).subscribe(booking => {
-   
+
         this.router.navigate(['/bookings', booking.id]);
       }
 
 
 
       );
-    else
+    else 
       this.bookingService.update(booking).subscribe(booking => {
 
-        this.router.navigate(['/bookings/restaurant', booking.restaurantId, 'edit']);
+        this.router.navigate(['/bookings', booking.id, '/edit']);
 
         this.router.navigate(['/bookings', booking.id]);
       });
