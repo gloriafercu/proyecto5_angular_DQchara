@@ -31,38 +31,21 @@
         Editar reserva
       </button>
 
-      <button mat-button class="button" [routerLink]="['/bookings', booking.id, 'confirm']">
+      <button mat-button class="button" [routerLink]="['/restaurants']">
         <mat-icon class="tab-icon">
           check
         </mat-icon>
         Confirmar reserva
       </button>
-
-      <!-- <button mat-button class="button" (click)="openModal('0ms', '0ms')">
-        <mat-icon class="tab-icon">
-          delete
-        </mat-icon>
-        Cancelar reserva
-      </button> -->
-
-
-
-      <!-- <button class="btn btn-outline-primary" (click)="open('autofocus')">
-        <mat-icon class="tab-icon">
-          delete
-        </mat-icon>
-        Cancelar reserva
-      </button>
-       -->
       <button mat-button class="button" (click)="open(content)">
         <mat-icon class="tab-icon">
           delete
         </mat-icon>
         Cancelar reserva
       </button>
-
-
     </mat-card-actions>
+
+    <!-- Modal para cancelar reserva -->
 
     <ng-template #content let-c="close" let-d="dismiss">
       <div class="modal-header">

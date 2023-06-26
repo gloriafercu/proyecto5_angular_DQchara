@@ -17,11 +17,6 @@ const routes: Routes = [
     component: BookingDetailComponent
   },
   {
-    path: ':bookingId/confirm',
-    component: BookingDetailComponent
-  },
-
-  {
     path: '', redirectTo: 'bookings', pathMatch: 'full'
   },
   {
