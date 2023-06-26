@@ -5,18 +5,18 @@ import { BookingDetailComponent } from './booking-detail/booking-detail.componen
 
 const routes: Routes = [
   {
-    path: 'restaurant/:id',
+    path: 'restaurant/:restaurantId',
     component: BookingFormComponent
   },
   {
-    path: ':id',
+    path: ':bookingId/edit',
+    component: BookingFormComponent
+  },
+  {
+    path: ':bookingId',
     component: BookingDetailComponent
   },
   
-  {
-    path: ':id/edit',
-    component: BookingFormComponent
-  },
   {
     path: '', redirectTo: 'bookings', pathMatch: 'full'
   },

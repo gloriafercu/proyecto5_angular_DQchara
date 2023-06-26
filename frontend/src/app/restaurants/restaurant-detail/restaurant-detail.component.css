@@ -3,6 +3,7 @@ mat-grid-tile div {
 }
 
 .container-detail {
+  padding-top: 80px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
@@ -35,7 +36,7 @@ mat-grid-tile div {
 }
 
 .type-food mat-icon {
-  padding-right: 10px;
+  padding-right: 35px;
   color: #FF9F1C;
 }
 
@@ -51,7 +52,7 @@ mat-grid-tile div {
 }
 
 .icon mat-icon {
-  padding-right: 10px;
+  padding-right: 35px;
   color: #FF9F1C;
 }
 
@@ -63,14 +64,16 @@ mat-grid-tile div {
 }
 
 .icon-info {
+  padding: 0 30px;
   display: flex;
+  align-items: center;
   font-size: 1.2em;
   line-height: 2em;
 
 }
 
 .icon-info mat-icon {
-  padding-right: 20px;
+  padding-right: 40px;
   color: #FF9F1C;
 }
 
@@ -154,7 +157,7 @@ mat-grid-title div {
 
 .content-rating mat-icon {
   color: #FF9F1C;
-  padding-right: 5px;
+  padding-right: 35px;
 
 }
 
