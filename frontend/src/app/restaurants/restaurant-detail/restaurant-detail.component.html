@@ -1,6 +1,6 @@
 <section class="container-detail" *ngIf="restaurant">
     <section class="container-cover">
-        <div class="container-img" *ngFor="let img of restaurant.images ">
+        <div class="container-img" *ngFor="let img of restaurant.images">
             <img src="{{ img }}" alt="foto del restaurante {{ restaurant.name }}">
         </div>
     </section>
@@ -13,7 +13,7 @@
                 <span>{{ restaurant.typeFood }}</span>
             </div>
         </div>
-        <button mat-button class="button" routerLink="/bookings">
+        <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
             <mat-icon class="tab-icon">
                 calendar_month
             </mat-icon>
@@ -56,8 +56,8 @@
 
                 </mat-grid-tile>
             </mat-grid-list>
-
-
+            <div class="iframe">
+            </div>
         </mat-tab>
 
         <mat-tab>
@@ -96,12 +96,12 @@
                             </div>
                             <div class="content-rating">
                                 <mat-icon>star</mat-icon>
-                                <span>{{comment.rating}}</span>
+                                <span>{{ comment.rating }}</span>
                             </div>
                         </mat-card-title-group>
                     </mat-card-header>
                     <mat-card-content>
-                        <p class="description">{{comment.description}}</p>
+                        <p class="description">{{ comment.description }}</p>
                     </mat-card-content>
                 </mat-card>
             </section>

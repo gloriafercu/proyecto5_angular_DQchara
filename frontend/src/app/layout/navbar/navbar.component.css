@@ -1,14 +1,14 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
+.logo {
+  max-width: 180px;
+}
 
-  .logo{
-    max-width: 180px;
-    
- 
-  }
-  .navbar{
-    background-color: #FF9F1C;
-    color:white;
-    height: auto;
-  }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--primary_color);
+  color: var(--secondary_color);
+  height: auto;
+}

@@ -8,6 +8,7 @@ export interface IBooking {
     notes: string;
     phone: string;
     email: string;
+    restaurantId: number;
 }
 
 // faltarían por meter el userId y el restaurantId
