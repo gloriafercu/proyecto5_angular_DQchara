@@ -8,6 +8,7 @@ import { IUser } from 'src/app/users/models/user.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { IBooking } from '../models/booking.model';
+import { ThisReceiver } from '@angular/compiler';
 
 
 @Component({
@@ -60,7 +61,10 @@ export class BookingFormComponent implements OnInit {
 
       if (idBookingStr) {
         const bookingId = parseInt(idBookingStr, 10);
-        this.bookingService.getById(bookingId).subscribe(booking => this.loadBookingForm(booking));
+        this.bookingService.getById(bookingId).subscribe(booking => {
+          this.loadBookingForm(booking);
+          this.booking = booking;
+        });
       }
 
     });
@@ -96,7 +100,7 @@ export class BookingFormComponent implements OnInit {
     let notes = this.bookingForm.get('notes')?.value ?? '';
     let phone = this.bookingForm.get('phone')?.value ?? '';
     let email = this.bookingForm.get('email')?.value ?? '';
-    let restaurantId = this.restaurant?.id ?? 0;
+    let restaurantId = this.restaurant?.id ?? this.booking?.restaurantId ?? 0;
 
     let booking: IBooking = {
       id: id,
