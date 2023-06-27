@@ -64,7 +64,7 @@ export class BookingDetailComponent implements OnInit {
       {
         data:
           { booking: this.booking, restaurant: this.restaurant },
-        height: 'auto', width: '90%', maxWidth: '450px', maxHeight: '300px',
+        height: 'auto', width: '90%', maxWidth: '400px', maxHeight: '450px'
       });
     this.dialogRef.afterClosed().subscribe(() => {
       console.log('La reserva no ha sido cancelada.');

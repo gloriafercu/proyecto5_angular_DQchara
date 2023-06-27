@@ -56,7 +56,7 @@
       <div mat-dialog-content class="modal_container">
         <div class="modal_confirmation_content">
           <div class="cover_modal">
-            <img src="../../../assets/restaurants_img/confirmation_horizontal.jpg" style="width: 220px;"
+            <img src="../../../assets/restaurants_img/portada.jpg" style="width: 220px;"
               alt="imagen de un restaurante">
           </div>
           <div class="modal_data">
@@ -77,17 +77,17 @@
 
     <!-- Modal para cancelar reserva -->
 
-    <ng-template let-data #myCancelDialog class="modal_confirmation_container">
+    <ng-template let-data #myCancelDialog class="modal_cancelation_container">
       <div class="modal_title">
         <h1 mat-dialog-title>Cancelar reserva #{{data.booking.id}}</h1>
         <button mat-button mat-dialog-close>X</button>
       </div>
-      <div mat-dialog-content>
-        ¿Desea cancelar su reserva en el restaurante {{ data.restaurant?.name }}?
+      <div mat-dialog-content class="dialog-content">
+        ¿Desea cancelar su reserva en el restaurante <strong>{{ data.restaurant?.name }}</strong>?
       </div>
-      <div mat-dialog-actions>
-        <button mat-button mat-dialog-close>No</button>
-        <button mat-button mat-dialog-close cdkFocusInitial (click)="deleteBooking(booking)">Si</button>
+      <div mat-dialog-actions class="button-actions">
+        <button mat-raised-button mat-button color="warn" mat-dialog-close>No</button>
+        <button mat-raised-button mat-button color="primary" mat-dialog-close cdkFocusInitial (click)="deleteBooking(booking)">Si</button>
       </div>
     </ng-template>
 

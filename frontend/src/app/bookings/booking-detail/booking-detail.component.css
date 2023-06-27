@@ -95,3 +95,20 @@
   align-items: center;
   margin-top: 25px;
 }
+
+.button-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.modal_cancelation_container {
+  padding: 15px;
+  background-color: #FF9F1C;
+
+}
+
+.dialog-content {
+  line-height: 1.5px;
+  color: black;
+}

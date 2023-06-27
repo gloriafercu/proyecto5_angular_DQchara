@@ -1537,6 +1537,18 @@
       "phone": "632145678",
       "email": "df@kdjfald",
       "restaurantId": 1
+    },
+    {
+      "id": 48,
+      "firstName": "Gloria",
+      "lastName": "Fernandez",
+      "peopleNumber": "2 personas",
+      "bookingTime": "13:00",
+      "bookingDate": "2023-06-27T22:53:53.338Z",
+      "notes": "Celebración de proyecto final del curso de Angular",
+      "phone": "983250190",
+      "email": "gloria@prueba.com",
+      "restaurantId": 5
     }
   ]
 }
