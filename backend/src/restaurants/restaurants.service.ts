@@ -10,10 +10,30 @@ export class RestaurantsService {
         @InjectRepository(Restaurant) private restaurantRepo: Repository<Restaurant>
     ) {}
 
-    findAll(): Promise<Restaurant[]> {
+    getAll(): Promise<Restaurant[]> {
         return this.restaurantRepo.find();
     }
 
+    getById(id: number): Promise<Restaurant | null> {
+        return this.restaurantRepo.findOne({
+            where: { id: id }
+        });
+    }
+    getALLByCity(city: string): Promise<Restaurant | null> {
+        return this.restaurantRepo.findOne({
+            where: { city: city }
+        });
+    }
+    getAllByTypeFood(typeFood: string): Promise<Restaurant | null> {
+        return this.restaurantRepo.findOne({
+            where: { typeFood: typeFood }
+        });
+    }
+    getAllOrderByAverageDesc(): Promise<Restaurant[]> {
+        return this.restaurantRepo.find({
+            order: { averagePrice: 'DESC' }
+        })
+    }
     async create(restaurant: Restaurant): Promise<Restaurant> {
         try {
             return await this.restaurantRepo.save(restaurant);
