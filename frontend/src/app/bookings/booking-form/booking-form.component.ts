@@ -63,7 +63,7 @@ export class BookingFormComponent implements OnInit {
         const bookingId = parseInt(idBookingStr, 10);
         this.bookingService.getById(bookingId).subscribe(booking => {
           this.loadBookingForm(booking);
-          this.booking = booking;
+          this.booking = booking; // Guarda la reserva para luego recuperar los datos en la edición
         });
       }
 
@@ -116,8 +116,8 @@ export class BookingFormComponent implements OnInit {
     }
 
     if (id === 0)
-      this.bookingService.create(booking).subscribe(booking =>
-        this.router.navigate(['/bookings', booking.id])
+      this.bookingService.create(booking).subscribe(
+        booking => this.router.navigate(['/bookings', booking.id])
       );
     else
       this.bookingService.update(booking).subscribe(booking => {

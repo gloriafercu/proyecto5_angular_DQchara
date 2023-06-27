@@ -16,7 +16,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -38,6 +38,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     MatButtonModule,
     MatSnackBarModule,
     MatCardModule,
+    MatDialogModule
   ],
   exports: [
     BookingFormComponent,
@@ -45,9 +46,6 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
   ],
   providers: [
-    NgbModalConfig, 
-    NgbModal
-  ,
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
   ],
    
