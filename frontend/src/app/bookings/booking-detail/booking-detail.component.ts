@@ -51,7 +51,6 @@ export class BookingDetailComponent implements OnInit {
   deleteBooking(booking: IBooking) {
     this.bookingService.deleteById(booking.id).subscribe({
       next: response => {
-
         console.log(response);
         this.router.navigate(['/restaurants']);
       },
@@ -59,19 +58,12 @@ export class BookingDetailComponent implements OnInit {
         console.log(error);
         this.snackbar.open('Se ha producido un error, inténtelo más tarde', 'Cerrar', { duration: 3000 });
       }
-
     });
-
-    // this.router.navigate(['/bookings/cancel/']);
   }
 
   open(content: any) {
     this.modalService.open(content);
   }
-
-
-
-
 
 }
 
