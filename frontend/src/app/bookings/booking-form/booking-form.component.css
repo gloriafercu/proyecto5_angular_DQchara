@@ -86,7 +86,10 @@
   margin-right: 12px;
 }
 
-
+mat-hint {
+  color: var(--green_color);
+  font-weight: 500;
+}
 
 @media screen and (min-width: 768px) {
 

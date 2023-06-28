@@ -13,14 +13,14 @@
           {{ num }}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="bookingForm.hasError('required')">Debes elegir el nº de personas</mat-error>
-      <mat-hint>Elige nº de personas</mat-hint>
+      <mat-error *ngIf="bookingForm.get('peopleNumber')?.invalid && bookingForm.get('peopleNumber')?.touched">Debes elegir nº personas</mat-error>
+      <mat-hint>Elige nº personas</mat-hint>
     </mat-form-field>
   
     <div class="inputs-container datetime">
       <mat-form-field class="input">
         <mat-label>Elige fecha</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="bookingDate">
+        <input matInput [matDatepicker]="picker" formControlName="bookingDate" [min]="minDate">
         <mat-hint>DD/MM/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -33,7 +33,7 @@
             {{ time }}
           </mat-option>
         </mat-select>
-        <mat-error *ngIf="bookingForm.hasError('required')">Debes elegir una hora</mat-error>
+        <mat-error *ngIf="bookingForm.get('bookingTime')?.invalid && bookingForm.get('bookingTime')?.touched">Debes elegir una hora</mat-error>
       </mat-form-field>
     </div>
   </div>
@@ -60,6 +60,7 @@
       <mat-label>Teléfono</mat-label>
       <input matInput formControlName="phone" required>
       <mat-icon matPrefix class="icon-form">phone</mat-icon>
+      <mat-hint>Tfnos. empiezan: 6, 7 o 9</mat-hint>
       <mat-error *ngIf="bookingForm.get('phone')?.getError('pattern')">
         Formato Tfno. incorrecto
       </mat-error>
