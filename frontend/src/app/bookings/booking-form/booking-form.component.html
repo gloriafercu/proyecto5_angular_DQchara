@@ -1,41 +1,43 @@
 <div class="title-form">
-  <h2>Reserva en {{ restaurant?.name }}</h2>
+  <h2>Formulario de reserva</h2>
 </div>
 
 <form [formGroup]="bookingForm" (ngSubmit)="save()" class="bookingForm">
   <input type="hidden" formControlName="id">
   <!-- ¿¿Quizás haya que hacerlo también con userId?? -->
-  <mat-form-field class="input-people">
-    <mat-label>Nº de Personas</mat-label>
-    <mat-select formControlName="peopleNumber" name="peopleNumber">
-      <mat-option *ngFor="let num of numPeople" [value]="num">
-        {{ num }}
-      </mat-option>
-    </mat-select>
-    <mat-error *ngIf="bookingForm.hasError('required')">Debes elegir el nº de personas</mat-error>
-    <mat-hint>Elige nº de personas</mat-hint>
-  </mat-form-field>
-
-
-  <div class="inputs-container">
-    <mat-form-field class="input">
-      <mat-label>Elige fecha</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="bookingDate">
-      <mat-hint>DD/MM/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
-    <mat-form-field class="input">
-      <mat-label>Selecciona hora</mat-label>
-      <mat-select formControlName="bookingTime" name="bookingTime">
-        <mat-option *ngFor="let time of times" [value]="time">
-          {{ time }}
+  <div class="inputs-data-booking">
+    <mat-form-field class="input-people">
+      <mat-label>Nº de Personas</mat-label>
+      <mat-select formControlName="peopleNumber" name="peopleNumber">
+        <mat-option *ngFor="let num of numPeople" [value]="num">
+          {{ num }}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="bookingForm.hasError('required')">Debes elegir una hora</mat-error>
+      <mat-error *ngIf="bookingForm.hasError('required')">Debes elegir el nº de personas</mat-error>
+      <mat-hint>Elige nº de personas</mat-hint>
     </mat-form-field>
+  
+    <div class="inputs-container datetime">
+      <mat-form-field class="input">
+        <mat-label>Elige fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="bookingDate">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field class="input">
+        <mat-label>Selecciona hora</mat-label>
+        <mat-select formControlName="bookingTime" name="bookingTime">
+          <mat-option *ngFor="let time of times" [value]="time">
+            {{ time }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="bookingForm.hasError('required')">Debes elegir una hora</mat-error>
+      </mat-form-field>
+    </div>
   </div>
+  
 
   <div class="inputs-container">
     <mat-form-field class="input">
@@ -90,7 +92,7 @@
     </mat-form-field>
   
 
-  <button mat-raised-button extended type="submit" [disabled]="bookingForm.invalid" class="button-submit">
+  <button mat-button disabled extended type="submit" [disabled]="bookingForm.invalid" class="button-submit">
     <mat-icon class="icon-form">send</mat-icon>
     Enviar
   </button>

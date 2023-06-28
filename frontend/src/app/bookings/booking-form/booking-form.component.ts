@@ -4,11 +4,10 @@ import { BookingService } from '../services/booking.service';
 import { RestaurantService } from 'src/app/restaurants/restaurant.service';
 import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
 import { IUser } from 'src/app/users/models/user.model';
-
+import { IBooking } from '../models/booking.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { IBooking } from '../models/booking.model';
-import { ThisReceiver } from '@angular/compiler';
+
 
 
 @Component({

@@ -1573,6 +1573,18 @@
       "phone": "665118445",
       "email": "sergi.perez@gmail.es",
       "restaurantId": 3
+    },
+    {
+      "id": 51,
+      "firstName": "FDSF",
+      "lastName": "FSDF",
+      "peopleNumber": "1 persona",
+      "bookingTime": "14:00",
+      "bookingDate": "2023-06-28T21:37:08.174Z",
+      "notes": "",
+      "phone": "987654321",
+      "email": "g@g",
+      "restaurantId": 2
     }
   ]
 }

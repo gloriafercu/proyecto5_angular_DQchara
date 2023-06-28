@@ -1,12 +1,11 @@
 .title-form {
-  padding: 130px 20px 20px;
+  padding: 135px 20px 20px;
   text-align: center;
   max-width: 450px;
   margin: 0 auto;
 
 }
 
-.title-form p,
 .title-form h2 {
   font-size: 28px;
   line-height: 1;
@@ -18,7 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 20px 40px;
+  padding: 0 20px 35px;
   width: 90%;
   max-width: 450px;
 }
@@ -37,6 +36,7 @@
 .inputs-data-booking {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .input-datetime {
@@ -45,7 +45,8 @@
   width: 100%;
 }
 
-.input-people, .input-textarea {
+.input-people,
+.input-textarea {
   width: 100%;
   margin-bottom: 8px;
 }
@@ -56,11 +57,8 @@
   margin-bottom: 8px;
 }
 
-.button-submit:disabled {
-  background-color: var(--light_grey_color);
-}
 .button-submit {
-  background-color:var(--primary_color);
+  background-color: var(--primary_color);
   max-width: 280px;
   width: 100%;
   color: var(--white_color);
@@ -70,13 +68,51 @@
   justify-self: center;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.button-submit:disabled {
+  background-color: rgb(245, 245, 245);
+  color: var(--light_grey_color);
+}
+
 .button-submit .icon-form {
   color: var(--white_color);
-  margin-right: 5px;
+  margin-right: 12px;
 }
 
-.button-submit:disabled .icon-form{
-  color: var(--primary_color);
+.button-submit:disabled .icon-form {
+  color: var(--light_grey_color);
+  margin-right: 12px;
 }
 
+
+
+@media screen and (min-width: 768px) {
+
+  .title-form,
+  .bookingForm {
+    max-width: 700px;
+  }
+
+  .inputs-data-booking {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .input-people {
+    width: 32%;
+  }
+
+  .datetime {
+    width: 66%;
+  }
+
+  .datetime .input {
+    justify-content: flex-start;
+    width: 48.5%;
+  }
+
+}
