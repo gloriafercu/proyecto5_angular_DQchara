@@ -1,8 +1,8 @@
 .button {
-  background-color: #FF9F1C;
+  background-color:var(--primary_color);
   max-width: 280px;
   width: 100%;
-  color: white;
+  color: var(--white_color);
   font-size: 1.2em;
   height: 50px;
   font-weight: bold;
@@ -15,7 +15,7 @@
   background-color: bisque;
   padding: 20px;
   border-radius: 5px;
-  border-color: #FF9F1C;
+  border-color:var(--primary_color);
   margin-bottom: 10px;
   width: 100%;
   display: flex;
@@ -50,6 +50,7 @@
 }
 
 /* Modal de confirmación */
+
 .modal_confirmation_container {
   display: flex;
   flex-direction: column;
@@ -104,11 +105,11 @@
 
 .modal_cancelation_container {
   padding: 15px;
-  background-color: #FF9F1C;
+  background-color:var(--primary_color);
 
 }
 
 .dialog-content {
   line-height: 1.5px;
-  color: black;
+  color: var(--black_color);;
 }

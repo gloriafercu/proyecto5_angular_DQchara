@@ -17,7 +17,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
-import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,7 +26,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
     RestaurantListComponent,
     RestaurantDetailComponent,
-    RestaurantFormComponent,
     PaginatePipe,
   ],
   imports: [
@@ -51,8 +49,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   exports: [
     RestaurantListComponent,
     RestaurantDetailComponent,
-    RestaurantFormComponent,
-
   ]
 })
 export class RestaurantsModule { }

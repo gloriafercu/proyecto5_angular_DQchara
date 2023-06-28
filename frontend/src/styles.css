@@ -3,7 +3,10 @@
 
 :root {
     --primary_color: #FF9F1C;
-    --secondary_color: #FFFFFF;
+    --white_color: #FFFFFF;
+    --green_color: #83a131;
+    --light_grey_color:  #d3d3d3;
+    __black_color: #000;
     --font: Roboto, "Helvetica Neue", sans-serif
 }
 

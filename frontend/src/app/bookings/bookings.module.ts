@@ -43,7 +43,6 @@ import { MatDialogModule } from '@angular/material/dialog';
   exports: [
     BookingFormComponent,
     BookingDetailComponent
-
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
