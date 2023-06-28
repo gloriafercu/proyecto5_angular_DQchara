@@ -1,13 +1,17 @@
-.button{
+form {
+    margin-top: 100px;
+}
+
+.button {
     background-color: orange;
 }
 
 
-mat-form-field{
+mat-form-field {
     display: block;
 }
-h1{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
-

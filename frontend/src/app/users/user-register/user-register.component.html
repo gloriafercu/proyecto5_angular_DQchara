@@ -1,5 +1,5 @@
-<h1>REGISTRO NUEVO USUARIO</h1>
 <form [formGroup]="registerForm" (ngSubmit)="save()">
+    <h1>REGISTRO NUEVO USUARIO</h1>
 
     <mat-form-field>
         <label>Nombre: </label>
@@ -80,14 +80,16 @@
         <input type="file" (change)="uploadFile($event)">
     </mat-form-field>
     <div>
-        <mat-checkbox formControlName="acceptConditions">He leído y acepto los términos y condiciones.</mat-checkbox>
+        <mat-checkbox formControlName="acceptConditions" [(ngModel)]="checked">He leído y acepto los términos y
+            condiciones.</mat-checkbox>
         <mat-error
             *ngIf="registerForm.get('acceptConditions')?.invalid && registerForm.get('acceptConditions')?.touched">
             Es obligatorio aceptar condiciones
         </mat-error>
     </div>
+
     <div>
-        <button type="submit" [disabled]="registerForm.invalid" class="button">
+        <button mat-fab extended type="submit" [disabled]="registerForm.invalid">
             <mat-icon>send</mat-icon>
             Enviar
         </button>
