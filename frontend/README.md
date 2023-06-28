@@ -1,4 +1,4 @@
-# D'Qchara project
+# D'Qchara project frontend
 
 ## Angular material
 
