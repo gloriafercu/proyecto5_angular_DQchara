@@ -26,12 +26,14 @@ import { BookingsModule } from './bookings/bookings.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './layout/about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

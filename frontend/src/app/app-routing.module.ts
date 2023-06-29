@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent } from './layout/about-us/about-us.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,10 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   },
-  
+  {
+    path: 'about-us',
+    component: AboutUsComponent
+},
   {
     path: '', redirectTo: 'restaurants', pathMatch: 'full' 
   },
