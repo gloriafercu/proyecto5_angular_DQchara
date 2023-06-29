@@ -64,7 +64,7 @@ export class BookingDetailComponent implements OnInit {
       {
         data:
           { booking: this.booking, restaurant: this.restaurant },
-        height: 'auto', width: '90%', maxWidth: '400px', maxHeight: '450px'
+        height: '90%', width: '90%', maxWidth: '400px', maxHeight: '300px'
       });
     this.dialogRef.afterClosed().subscribe(() => {
       console.log('La reserva no ha sido cancelada.');
@@ -80,7 +80,8 @@ export class BookingDetailComponent implements OnInit {
         height: 'auto',
         width: '90%',
         maxWidth: '700px',
-        maxHeight: '550px'
+        maxHeight: '550px',
+        panelClass: 'modal_cancelation_container'
       });
     this.dialogRef.afterClosed().subscribe(() => {
       console.log('La reserva fue confirmada.');

@@ -50,22 +50,23 @@
 
     <ng-template let-data #myInfoDialog class="modal_confirmation_container">
       <div class="modal_title">
-        <h2 mat-dialog-title>Confirmación de reserva #{{ data.id }}</h2>
-        <button mat-button mat-dialog-close>X</button>
+        <h2 mat-dialog-title>Confirmación de reserva #{{ data.booking.id }}</h2>
+        <button mat-mini-fab mat-dialog-close class="button-close">
+          <mat-icon>close</mat-icon>
+        </button>
       </div>
       <div mat-dialog-content class="modal_container">
         <div class="modal_confirmation_content">
           <div class="cover_modal">
-            <img src="../../../assets/restaurants_img/portada.jpg" style="width: 220px;"
+            <img src="../../../assets/restaurants_img/confirmacionReserva.jpg" style="width: 220px;"
               alt="imagen de un restaurante">
           </div>
           <div class="modal_data">
-            <h3>Su reserva #{{ data.booking.id }} está confirmada.</h3>
-            <p>Nombre: <strong>{{ data.booking.firstName }} {{ data.booking.lastName }}</strong></p>
-            <h4>Restaurante: <strong>{{ data.restaurant?.name }}</strong></h4>
-            <p>Mesa para: <strong>{{ data.booking.peopleNumber }}.</strong></p>
-            <p>Día: <strong>{{data.booking.bookingDate | date: 'dd/MM/YYYY'}}</strong>, a
-              las <strong>{{data.booking.bookingTime}} horas.</strong></p>
+            <p>Su reserva <span><strong>#{{ data.booking.id }}</strong></span> está confirmada.</p>
+            <p>Nombre: <span><strong>{{ data.booking.firstName }} {{ data.booking.lastName }}</strong></span></p>
+            <p>Restaurante: <span><strong>{{ data.restaurant?.name }}</strong></span></p>
+            <p>Mesa para: <span><strong>{{ data.booking.peopleNumber }}.</strong></span></p>
+            <p>Día: <span><strong>{{data.booking.bookingDate | date: 'dd/MM/YYYY'}}</strong></span>, a las <span><strong>{{data.booking.bookingTime}} horas</strong></span>.</p>
           </div>
         </div>
         <div class="acknowledgment">
@@ -79,15 +80,17 @@
 
     <ng-template let-data #myCancelDialog class="modal_cancelation_container">
       <div class="modal_title">
-        <h1 mat-dialog-title>Cancelar reserva #{{data.booking.id}}</h1>
-        <button mat-button mat-dialog-close>X</button>
+        <h2 mat-dialog-title class="text">Cancelar reserva #{{data.booking.id}}</h2>
+        <button mat-mini-fab mat-dialog-close class="button-close">
+          <mat-icon>close</mat-icon>
+        </button>
       </div>
       <div mat-dialog-content class="dialog-content">
-        ¿Desea cancelar su reserva en el restaurante <strong>{{ data.restaurant?.name }}</strong>?
+        <p class="text">¿Desea cancelar su reserva en el restaurante <strong>{{ data.restaurant?.name }}</strong>?</p>
       </div>
       <div mat-dialog-actions class="button-actions">
         <button mat-raised-button mat-button color="warn" mat-dialog-close>No</button>
-        <button mat-raised-button mat-button color="primary" mat-dialog-close cdkFocusInitial (click)="deleteBooking(booking)">Si</button>
+        <button mat-raised-button mat-button color="accent" mat-dialog-close cdkFocusInitial (click)="deleteBooking(booking)">Si</button>
       </div>
     </ng-template>
 
