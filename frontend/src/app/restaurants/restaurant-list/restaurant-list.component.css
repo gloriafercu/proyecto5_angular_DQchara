@@ -1,6 +1,7 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 /* cover */
+
 .cover {
     background-image: url('../../../assets/restaurants_img/img_55.jpg');
     background-position: center center;
@@ -13,7 +14,7 @@
 
 .cover-filter {
     display: flex;
-    background-color: rgb(131, 161, 49);
+    background-color: var(--green_color);
     height: 80px;
     margin-bottom: 50px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
@@ -23,19 +24,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
     width: 100%;
     height: 100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
+
+.container1{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.container1 .input {
+    width: 28%;
+}
+
+.container1 .input.food {
+    width: 40%;
+}
+
+.container2 {
+    width: 58%;
+}
+.container2 .input {
+    width: 100%;
+}
+
+.container2 .input mat-icon {
+    color: green;
+}
+
+
 
 ::ng-deep .container-filter mat-form-field {
     padding: 0;
 
 }
 
-/* ::ng-deep .mat-mdc-form-field-subscript-wrapper {
-    display: none;
-} */
 
 .title-block {
     position: absolute;
@@ -44,19 +70,19 @@
     width: 30%;
     font-size: 45px;
     line-height: 1.1;
-    color: var(--secondary_color);
+    color: var(--white_color);
 }
 
-::ng-deep .mat-mdc-select-arrow,
-::ng-deep .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label,
-::ng-deep .mat-mdc-form-field.mat-focused.mat-primary .mat-mdc-select-arrow {
+:host ::ng-deep .mat-mdc-select-arrow,
+:host ::ng-deep .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label,
+:host ::ng-deep .mat-mdc-form-field.mat-focused.mat-primary .mat-mdc-select-arrow {
     color: rgb(11, 87, 11);
 }
 
 
 
-::ng-deep .mdc-text-field--filled .mdc-line-ripple,
-::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
+:host ::ng-deep .mdc-text-field--filled .mdc-line-ripple,
+:host ::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
     border-bottom-color: rgb(11, 87, 11);
 }
 
@@ -98,7 +124,7 @@
 }
 
 .card-content-icon mat-icon {
-    color: #FF9F1C;
+    color: var(--primary_color);
     margin-right: 10px;
 }
 
@@ -151,19 +177,16 @@
     display: inline-block;
     font-size: 1rem;
     padding-right: 0.1rem;
-    color: #d3d3d3;
+    color: var(--light_grey_color);
 }
 
 .filled {
-    color: #FF9F1C;
+    color: var(--primary_color);
     overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
 }
-
-
-
 
 
 @media screen and (min-width: 1024px) {

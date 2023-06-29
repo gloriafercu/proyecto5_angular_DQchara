@@ -11,4 +11,4 @@ export interface IBooking {
     restaurantId: number;
 }
 
-// faltarían por meter el userId y el restaurantId
+// TODO: faltaría por meter el userId 

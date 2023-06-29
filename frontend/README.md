@@ -1,4 +1,4 @@
-# D'Qchara project
+# D'Qchara project frontend
 
 ## Angular material
 
@@ -12,7 +12,6 @@ ng generate module restaurants --routing --module app.module
 ng generate interface restaurants/models/restaurant --type=model --prefix=I
 ng generate component restaurants/restaurant-list
 ng generate component restaurants/restaurant-detail
-ng generate component restaurants/restaurant-form
 ng generate service restaurants/restaurant
 ```
 
@@ -35,11 +34,24 @@ ng generate component comments/comment-form
 ng generate interface comments/models/comment --type=model --prefix=I
 ng generate service comments/services/comment
 ```
+
+
+## Módulo: Reservas
+
+```
+ng generate module bookings --routing --module app.module
+ng generate component bookings/booking-detail
+ng generate component bookings/booking-form
+ng generate interface bookings/models/booking --type=model --prefix=I
+ng generate service bookings/services/booking
+```
+
 ## Layout
 
 ```
 ng generate component layout/navbar
 ng generate component layout/footer
+```
 
 ## Presentaciones
 
@@ -59,12 +71,3 @@ Tiempo maximo: 20-25min
  8.Aprendizajes obtenidos
  9.Linkedin 
 
-
-## Módulo: Reservas
-```
-ng generate module bookings --routing --module app.module
-ng generate component bookings/booking-list
-ng generate component bookings/booking-detail
-ng generate component bookings/booking-form
-ng generate interface bookings/models/booking --type=model --prefix=I
-ng generate service bookings/services/booking

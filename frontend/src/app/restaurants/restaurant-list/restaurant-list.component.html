@@ -6,29 +6,53 @@
 
 <section class="cover-filter">
     <div class="container-filter">
-        <mat-form-field>
-            <mat-label>Tipos de comidas</mat-label>
-            <mat-select matNativeControl required>
-                <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
-                    Todas
-                </mat-option>
-                <mat-option *ngFor="let typeFood of food" value="{{typeFood}}" (click)="getByTypeFood(typeFood)">
-                    {{typeFood}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+        <div class="container1">
+            <mat-form-field class="input food">
+                <mat-label>Tipos de comida</mat-label>
+                <mat-select matNativeControl required>
+                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                        Todas
+                    </mat-option>
+                    <mat-option *ngFor="let typeFood of food" value="{{typeFood}}" (click)="getByTypeFood(typeFood)">
+                        {{typeFood}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Ciudades</mat-label>
-            <mat-select matNativeControl required>
-                <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
-                    Todas
-                </mat-option>
-                <mat-option *ngFor="let city of cities" value="{{city}}" (click)="getByCity(city)">
-                    {{city}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+            <mat-form-field class="input">
+                <mat-label>Ciudad</mat-label>
+                <mat-select matNativeControl required>
+                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                        Todas
+                    </mat-option>
+                    <mat-option *ngFor="let city of cities" value="{{city}}" (click)="getByCity(city)">
+                        {{city}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="input">
+                <mat-label>Valoración</mat-label>
+                <mat-select matNativeControl required>
+                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                        Todas
+                    </mat-option>
+                    <mat-option value="1">1</mat-option>
+                    <mat-option value="2">2</mat-option>
+                    <mat-option value="3">3</mat-option>
+                    <mat-option value="4">4</mat-option>
+                    <mat-option value="5">5</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="container2">
+            <mat-form-field class="input">
+                <mat-label>Escribe el nombre del restaurante...</mat-label>
+                <input matInput maxlength="100">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
     </div>
 </section>
 

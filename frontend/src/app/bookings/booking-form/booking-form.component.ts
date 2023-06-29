@@ -4,11 +4,10 @@ import { BookingService } from '../services/booking.service';
 import { RestaurantService } from 'src/app/restaurants/restaurant.service';
 import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
 import { IUser } from 'src/app/users/models/user.model';
-
+import { IBooking } from '../models/booking.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { IBooking } from '../models/booking.model';
-import { ThisReceiver } from '@angular/compiler';
+
 
 
 @Component({
@@ -25,6 +24,7 @@ export class BookingFormComponent implements OnInit {
 
   times: string[] = ["13:00", "14:00", "15:00", "19:00", "20:00", "21:00", "22:00"];
   numPeople: string[] = ["1 persona", "2 personas", "3 personas", "4 personas", "5 personas", "6 personas"];
+  minDate: Date = new Date();
 
 
   bookingForm = new FormGroup({
@@ -63,7 +63,7 @@ export class BookingFormComponent implements OnInit {
         const bookingId = parseInt(idBookingStr, 10);
         this.bookingService.getById(bookingId).subscribe(booking => {
           this.loadBookingForm(booking);
-          this.booking = booking;
+          this.booking = booking; // Guarda la reserva para luego recuperar los datos en la edición
         });
       }
 
@@ -116,8 +116,8 @@ export class BookingFormComponent implements OnInit {
     }
 
     if (id === 0)
-      this.bookingService.create(booking).subscribe(booking =>
-        this.router.navigate(['/bookings', booking.id])
+      this.bookingService.create(booking).subscribe(
+        booking => this.router.navigate(['/bookings', booking.id])
       );
     else
       this.bookingService.update(booking).subscribe(booking => {
