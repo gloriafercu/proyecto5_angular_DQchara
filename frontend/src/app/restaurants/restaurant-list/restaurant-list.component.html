@@ -69,6 +69,7 @@
                 <img mat-card-image src="{{ restaurant.images[0] }}" alt="foto de {{ restaurant.name }}">
             </div>
             <mat-card-content class="card-content">
+                <div class="contain-info-restaurant">
                 <h2>{{ restaurant.name }}</h2>
                 <p class="card-content-icon">
                     <mat-icon>
@@ -82,17 +83,26 @@
                     </mat-icon>
                     {{ restaurant.typeFood }}
                 </p>
-                <div class="content-ng-rating">
-                    <p class="rating"><b>{{ restaurant.rating }}</b></p>
-                    <ng-template #t let-fill="fill">
-                        <i class="bi-egg-fill">
-                            <i *ngIf="fill > 0" class="bi-egg-fill filled" [style.width.%]="fill"></i>
-                        </i>
-                    </ng-template>
+            </div>
+                <div class="contain-button-rating">
+                    <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
+                        <mat-icon class="tab-icon">
+                            calendar_month
+                        </mat-icon>
+                        Reservar
+                    </button>
+                    <div class="content-ng-rating">
+                        <p class="rating"><b>{{ restaurant.rating }}</b></p>
+                        <ng-template #t let-fill="fill">
+                            <i class="bi-egg-fill">
+                                <i *ngIf="fill > 0" class="bi-egg-fill filled" [style.width.%]="fill"></i>
+                            </i>
+                        </ng-template>
 
-                    <ngb-rating [(rate)]="restaurant.rating" [starTemplate]="t" [readonly]="true" [max]="5"
-                        [ariaValueText]="ariaValueText">
-                    </ngb-rating>
+                        <ngb-rating [(rate)]="restaurant.rating" [starTemplate]="t" [readonly]="true" [max]="5"
+                            [ariaValueText]="ariaValueText">
+                        </ngb-rating>
+                    </div>
                 </div>
             </mat-card-content>
         </mat-card>

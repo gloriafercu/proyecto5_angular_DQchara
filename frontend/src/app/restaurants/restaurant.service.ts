@@ -24,10 +24,13 @@ export class RestaurantService {
   }
   getByTypeFood(typeFood: string): Observable<IRestaurant[]> {
     return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?typeFood=${typeFood}`);
- }
- getByCity(city: string): Observable<IRestaurant[]>{
-  return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?city=${city}`);
- }
+  }
+  getByCity(city: string): Observable<IRestaurant[]> {
+    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?city=${city}`);
+  }
+  getAllRestaurantsByName(word: string): Observable<IRestaurant[]> {
+    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?name=${word}`)
+  }
 
   create(restaurant: IRestaurant): Observable<IRestaurant> {
     return this.httpClient.post<IRestaurant>(this.urlAPI, restaurant);

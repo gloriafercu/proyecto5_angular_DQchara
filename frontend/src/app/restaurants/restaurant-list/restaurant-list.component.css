@@ -166,10 +166,15 @@
 .content-ng-rating {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
+
+.content-ng-rating  p {
+    margin: 0 auto;
 }
 
 .rating {
-    margin-right: 10px;
+    padding-right: 6px;
 }
 
 .bi-egg-fill {
@@ -187,6 +192,31 @@
     top: 0;
     left: 0;
 }
+
+.button {
+    background-color:var(--green_color);
+    max-width: 130px;
+    width: 100%;
+    color: var(--white_color);
+    font-size: 1em;
+    height: 40px;
+    font-weight: bold;
+    justify-self: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .contain-button-rating {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+  
+  }
+  .contain-info-restaurant {
+    margin-bottom: 20px;
+  }
 
 
 @media screen and (min-width: 1024px) {
