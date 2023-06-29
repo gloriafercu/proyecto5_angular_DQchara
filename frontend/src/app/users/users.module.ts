@@ -49,7 +49,8 @@ import {MatCheckboxModule  } from '@angular/material/checkbox';
   exports: [
     UserDetailComponent,
     UserListComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserRegisterComponent
   ]
 })
 export class UsersModule { }
