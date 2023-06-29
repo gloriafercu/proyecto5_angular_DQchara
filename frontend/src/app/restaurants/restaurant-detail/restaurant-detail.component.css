@@ -37,7 +37,7 @@ mat-grid-tile div {
 
 .type-food mat-icon {
   padding-right: 35px;
-  color: var(--primary__color);
+  color: var(--primary_color);
 }
 
 .container-comments {
