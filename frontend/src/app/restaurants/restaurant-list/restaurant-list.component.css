@@ -24,10 +24,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
     width: 100%;
     height: 100px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
+
+.container1{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.container1 .input {
+    width: 28%;
+}
+
+.container1 .input.food {
+    width: 40%;
+}
+
+.container2 {
+    width: 58%;
+}
+.container2 .input {
+    width: 100%;
+}
+
+
 
 ::ng-deep .container-filter mat-form-field {
     padding: 0;
