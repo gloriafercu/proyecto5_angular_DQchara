@@ -53,7 +53,7 @@ mat-grid-tile div {
 
 .icon mat-icon {
   padding-right: 35px;
-  color:var(--primary_color);
+  color: var(--primary_color);
 }
 
 .icon {
@@ -74,7 +74,7 @@ mat-grid-tile div {
 
 .icon-info mat-icon {
   padding-right: 40px;
-  color:var(--primary_color);
+  color: var(--primary_color);
 }
 
 .container-info {
@@ -84,7 +84,7 @@ mat-grid-tile div {
 }
 
 .button {
-  background-color:var(--primary_color);
+  background-color: var(--primary_color);
   max-width: 280px;
   width: 100%;
   color: var(--white_color);
@@ -157,7 +157,7 @@ mat-grid-title div {
 }
 
 .content-rating mat-icon {
-  color:var(--primary_color);
+  color: var(--primary_color);
   padding-right: 35px;
 
 }
@@ -171,19 +171,19 @@ mat-grid-title div {
 
 .mat-mdc-tab-group,
 .mat-mdc-tab-nav-bar {
-  --mdc-tab-indicator-active-indicator-color:var(--primary_color);
+  --mdc-tab-indicator-active-indicator-color: var(--primary_color);
   --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
   --mat-tab-header-pagination-icon-color: #000;
   --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
-  --mat-tab-header-active-label-text-color:var(--primary_color);
-  --mat-tab-header-active-ripple-color:var(--primary_color);
-  --mat-tab-header-inactive-ripple-color:var(--primary_color);
+  --mat-tab-header-active-label-text-color: var(--primary_color);
+  --mat-tab-header-active-ripple-color: var(--primary_color);
+  --mat-tab-header-inactive-ripple-color: var(--primary_color);
   --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
   --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
-  --mat-tab-header-active-focus-label-text-color:var(--primary_color);
-  --mat-tab-header-active-hover-label-text-color:var(--primary_color);
-  --mat-tab-header-active-focus-indicator-color:var(--primary_color);
-  --mat-tab-header-active-hover-indicator-color:var(--primary_color);
+  --mat-tab-header-active-focus-label-text-color: var(--primary_color);
+  --mat-tab-header-active-hover-label-text-color: var(--primary_color);
+  --mat-tab-header-active-focus-indicator-color: var(--primary_color);
+  --mat-tab-header-active-hover-indicator-color: var(--primary_color);
 }
 
 .container-title-restaurant,
