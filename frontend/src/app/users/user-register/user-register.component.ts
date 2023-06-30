@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserRegisterComponent implements OnInit {
   hide = true;
   checked = false;
-  user:IUser|undefined
+  user: IUser | undefined
 
   registerForm = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
