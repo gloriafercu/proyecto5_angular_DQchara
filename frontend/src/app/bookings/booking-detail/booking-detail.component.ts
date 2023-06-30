@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { BookingService } from '../services/booking.service';
 import { IBooking } from '../models/booking.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RestaurantService } from 'src/app/restaurants/restaurant.service';
 import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -17,7 +17,10 @@ export class BookingDetailComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
   booking: IBooking | undefined;
+  dialogRef: any;
 
+  @ViewChild('myInfoDialog') infoDialog = {} as TemplateRef<string>;
+  @ViewChild('myCancelDialog') cancelDialog = {} as TemplateRef<string>;
 
   constructor(
     private bookingService: BookingService,
@@ -25,12 +28,7 @@ export class BookingDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private snackbar: MatSnackBar,
-    config: NgbModalConfig,
-    private modalService: NgbModal) {
-
-    config.backdrop = 'static';
-    config.keyboard = false;
-  }
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -47,8 +45,6 @@ export class BookingDetailComponent implements OnInit {
     });
   }
 
-
-
   deleteBooking(booking: IBooking) {
     this.bookingService.deleteById(booking.id).subscribe({
       next: response => {
@@ -62,8 +58,34 @@ export class BookingDetailComponent implements OnInit {
     });
   }
 
-  open(content: any) {
-    this.modalService.open(content);
+
+  confirmCancelBooking() {
+    this.dialogRef = this.dialog.open(this.cancelDialog,
+      {
+        data:
+          { booking: this.booking, restaurant: this.restaurant },
+        height: '90%', width: '90%', maxWidth: '400px', maxHeight: '300px'
+      });
+    this.dialogRef.afterClosed().subscribe(() => {
+      console.log('La reserva no ha sido cancelada.');
+    });
+
+  }
+
+  confirmBooking() {
+    this.dialogRef = this.dialog.open(this.infoDialog,
+      {
+        data:
+          { booking: this.booking, restaurant: this.restaurant },
+        height: 'auto',
+        width: '90%',
+        maxWidth: '700px',
+        maxHeight: '550px',
+        panelClass: 'modal_cancelation_container'
+      });
+    this.dialogRef.afterClosed().subscribe(() => {
+      console.log('La reserva fue confirmada.');
+    });
   }
 
 }

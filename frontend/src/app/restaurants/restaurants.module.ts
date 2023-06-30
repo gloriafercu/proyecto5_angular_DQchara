@@ -14,20 +14,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatInputModule } from '@angular/material/input';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
-import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 @NgModule({
   declarations: [
     RestaurantListComponent,
     RestaurantDetailComponent,
-    RestaurantFormComponent,
     PaginatePipe,
   ],
   imports: [
@@ -42,6 +41,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatListModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatInputModule,
     MatDatepickerModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -51,8 +51,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   exports: [
     RestaurantListComponent,
     RestaurantDetailComponent,
-    RestaurantFormComponent,
-
   ]
 })
 export class RestaurantsModule { }

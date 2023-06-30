@@ -51,7 +51,8 @@ import { MatCardModule } from '@angular/material/card';
   exports: [
     UserDetailComponent,
     UserListComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserRegisterComponent
   ]
 })
 export class UsersModule { }
