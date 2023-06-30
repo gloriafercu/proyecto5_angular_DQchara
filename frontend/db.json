@@ -189,7 +189,7 @@
       "web": "https://nhs.uk/ac/neque/duis/bibendum/morbi/non.png",
       "mail": "vkerwint@hexun.com",
       "averagePrice": 60,
-      "rating": 9.5,
+      "rating": 5,
       "availability": false,
       "typeFood": "Mediterránea",
       "images": [
@@ -1057,6 +1057,18 @@
       "phone": "665118445",
       "email": "gloria@gloria.com",
       "restaurantId": 26
+    },
+    {
+      "id": 2,
+      "firstName": "Gloria",
+      "lastName": "Fernandez",
+      "peopleNumber": "2 personas",
+      "bookingTime": "20:00",
+      "bookingDate": "2023-06-30T18:36:01.127Z",
+      "notes": "",
+      "phone": "665118445",
+      "email": "GLORIA@GLAORI.COM",
+      "restaurantId": 2
     }
   ]
 }

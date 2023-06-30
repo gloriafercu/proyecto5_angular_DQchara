@@ -17,9 +17,11 @@
                         {{typeFood}}
                     </mat-option>
                 </mat-select>
+                <mat-icon matPrefix>restaurant</mat-icon>
+
             </mat-form-field>
 
-            <mat-form-field class="input">
+            <mat-form-field class="input city">
                 <mat-label>Ciudad</mat-label>
                 <mat-select matNativeControl required>
                     <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
@@ -29,9 +31,10 @@
                         {{city}}
                     </mat-option>
                 </mat-select>
+                <mat-icon matPrefix>location_city</mat-icon>
             </mat-form-field>
 
-            <mat-form-field class="input">
+            <mat-form-field class="input rate">
                 <mat-label>Valoración</mat-label>
                 <mat-select matNativeControl required>
                     <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
@@ -43,6 +46,24 @@
                     <mat-option value="4">4</mat-option>
                     <mat-option value="5">5</mat-option>
                 </mat-select>
+                <mat-icon matPrefix>hotel_class</mat-icon>
+
+            </mat-form-field>
+
+            <mat-form-field class="input price">
+                <mat-label>Precio</mat-label>
+                <mat-select matNativeControl required>
+                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                        Todas
+                    </mat-option>
+                    <mat-option value="1">1</mat-option>
+                    <mat-option value="2">2</mat-option>
+                    <mat-option value="3">3</mat-option>
+                    <mat-option value="4">4</mat-option>
+                    <mat-option value="5">5</mat-option>
+                </mat-select>
+                <mat-icon matPrefix>euro</mat-icon>
+
             </mat-form-field>
         </div>
 
@@ -50,7 +71,7 @@
             <mat-form-field class="input">
                 <mat-label>Escribe el nombre del restaurante...</mat-label>
                 <input matInput maxlength="100">
-                <mat-icon matSuffix>search</mat-icon>
+                <mat-icon matPrefix>search</mat-icon>
             </mat-form-field>
         </div>
     </div>
@@ -69,21 +90,28 @@
                 <img mat-card-image src="{{ restaurant.images[0] }}" alt="foto de {{ restaurant.name }}">
             </div>
             <mat-card-content class="card-content">
-                <div class="contain-info-restaurant">
                 <h2>{{ restaurant.name }}</h2>
-                <p class="card-content-icon">
-                    <mat-icon>
-                        location_city
-                    </mat-icon>
-                    {{ restaurant.city }}
-                </p>
-                <p class="card-content-icon">
-                    <mat-icon>
-                        restaurant
-                    </mat-icon>
-                    {{ restaurant.typeFood }}
-                </p>
-            </div>
+                <div class="contain-info-restaurant">
+
+                    <p class="card-content-icon">
+                        <mat-icon>
+                            location_city
+                        </mat-icon>
+                        {{ restaurant.city }}
+                    </p>
+                    <p class="card-content-icon">
+                        <mat-icon>
+                            restaurant
+                        </mat-icon>
+                        {{ restaurant.typeFood }}
+                    </p>
+                    <p class="card-content-icon">
+                        <mat-icon>
+                            euro
+                        </mat-icon>
+                        {{ restaurant.averagePrice }}
+                    </p>
+                </div>
                 <div class="contain-button-rating">
                     <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
                         <mat-icon class="tab-icon">
