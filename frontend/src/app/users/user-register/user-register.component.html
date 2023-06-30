@@ -11,7 +11,7 @@
     </mat-form-field>
 
     <mat-form-field>
-        <label>Email: </label>
+        <mat-label>Email: </mat-label>
         <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
         <mat-icon matSuffix>email</mat-icon>
         <mat-hint>Te enviaremos un correo para la verificación.</mat-hint>
@@ -28,7 +28,7 @@
     </mat-form-field>
 
     <mat-form-field>
-        <label>Contraseña: </label>
+        <mat-label>Contraseña: </mat-label>
         <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
         <button mat-icon-button matSuffix (click)="hide = !hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -89,8 +89,8 @@
     </div>
 
     <div>
-        <button mat-button diable extended type="submit" [disabled]="registerForm.invalid" class="button-submit">
-            <mat-icon>send</mat-icon>
+        <button mat-button disabled extended type="submit" [disabled]="registerForm.invalid" class="button-submit">
+            <mat-icon class="icon-form">send</mat-icon>
             Enviar
         </button>
     </div>

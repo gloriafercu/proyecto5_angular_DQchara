@@ -58,3 +58,69 @@ h1 {
 .container-login{
     padding-top: 550px;
 }
+
+form {
+    margin-top: 100px;
+}
+
+
+
+mat-form-field {
+    display: block;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.button-submit {
+    background-color: var(--primary_color);
+    max-width: 280px;
+    width: 100%;
+    color: var(--white_color);
+    font-size: 1.2em;
+    height: 50px;
+    font-weight: bold;
+    justify-self: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    align-items: center;
+}
+
+.button-submit:disabled {
+    background-color: rgb(245, 245, 245);
+    color: var(--light_grey_color);
+}
+
+.button-submit .icon-form {
+    color: var(--white_color);
+    margin-right: 12px;
+}
+
+.button-submit:disabled .icon-form {
+    color: var(--light_grey_color);
+    margin-right: 12px;
+}
+
+.input {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.login {
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+.container-login {
+    padding-top: 150px;
+}
