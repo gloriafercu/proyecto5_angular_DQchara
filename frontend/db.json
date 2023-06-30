@@ -1069,6 +1069,18 @@
       "phone": "665118445",
       "email": "GLORIA@GLAORI.COM",
       "restaurantId": 2
+    },
+    {
+      "id": 3,
+      "firstName": "Javier",
+      "lastName": "Pérez de Pedro",
+      "peopleNumber": "6 personas",
+      "bookingTime": "20:00",
+      "bookingDate": "2023-07-28T22:00:00.000Z",
+      "notes": "Alergia al huevo, lácteos, proteína de la leche y la albumina",
+      "phone": "696372121",
+      "email": "javier.perezdepedro@gmail.com",
+      "restaurantId": 3
     }
   ]
 }

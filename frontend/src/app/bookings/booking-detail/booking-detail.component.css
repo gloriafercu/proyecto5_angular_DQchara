@@ -14,6 +14,8 @@
 
 .container-data {
   width: 100%;
+  background-color: rgb(254, 249, 239);
+
 }
 
 .container-data-client,
@@ -25,7 +27,7 @@
 
 .container-data-client h3,
 .container-data-restaurant h3 {
-  color: grey;
+  color: #666;
   font-weight: bold;
 }
 
@@ -60,7 +62,7 @@
 .button-edit {
   /* background-color: rgb(71, 30, 12); */
   background-color: rgb(224, 71, 38);
-  position: absolute; 
+  position: absolute;
   bottom: 8px;
   left: 60px;
 }
@@ -230,7 +232,9 @@
 
   .container-data {
     display: grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: repeat(2,1fr);
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
   }
 
   .container-data-restaurant,
@@ -241,6 +245,8 @@
 
   .container-data-restaurant h2,
   .container-data-client h2 {
+    color: rgb(11, 87, 11);
+    font-weight: bold;
     grid-column: 1/3;
 
   }
