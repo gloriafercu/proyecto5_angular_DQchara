@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Photo } from "src/photos/photos.entity";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class Restaurant {
@@ -34,10 +35,7 @@ export class Restaurant {
     availability: boolean;
 
     @Column()
-    typeFood: string;
-
-    @Column()
-    images: [];
+    typeFood: string; //Saber si hay que ponerlo como la entidad photos
 
     @CreateDateColumn({ name: 'created_date' })
     createdDate: Date;
@@ -45,4 +43,7 @@ export class Restaurant {
     @UpdateDateColumn({ name: 'updated_date' })
     updatedDate: Date;
 
+    @ManyToOne(()=> Photo)
+    @JoinColumn({name: 'id_photo'})
+    photo: Photo;
 }

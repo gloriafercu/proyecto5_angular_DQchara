@@ -31,6 +31,12 @@ npm install --save @nestjs/typeorm typeorm mysql2
 * nest generate service bookings
 * crear bookings.entity.ts a mano
 
+# Modulo Photos
+* nest generate module photos
+* nest generate controller photos
+* nest generate service photos
+* crear photos.entity.ts a mano
+
 
 
 # Ejecutar

@@ -10,5 +10,5 @@ export interface IRestaurant {
     rating: number;
     availability: boolean;
     typeFood: string;
-    images: [];
+    images: []; // como se pone en el fronted este atributo del backend???
 }
