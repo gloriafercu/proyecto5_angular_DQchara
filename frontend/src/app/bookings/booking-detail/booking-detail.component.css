@@ -16,12 +16,13 @@
   display: grid;
   border: 2px solid var(--light_orange_color);
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .container-data {
   display: grid;
   width: 100%;
-  background-color: rgb(254, 249, 239);
+  background-color: var(--extra_light_orange_color);
   border-bottom-left-radius: 17px;
   border-bottom-right-radius: 17px;
 
@@ -34,6 +35,7 @@
   font-weight: bold;
   border-top: 2px solid var(--light_orange_color);
   padding: 15px;
+  column-gap: 30px;
 }
 
 .container-data-client {
@@ -47,13 +49,16 @@
 .container-data-client h2 {
   grid-column: 1/3;
 }
+
 .container-data-restaurant h2 {
   grid-column: 1/4;
 }
+
 .container-data-client h3,
 .container-data-restaurant h3 {
   color: var(--light_grey_color);
   font-weight: bold;
+  margin: 0;
 }
 
 .container-data-restaurant h2,
@@ -65,18 +70,22 @@
 .data {
   margin-bottom: 10px;
 }
+
 .container-data-restaurant .data:nth-child(2) {
   grid-row: 2/3;
   grid-column: 1/4;
- }
+}
 
 .container-data-restaurant .data:nth-child(6) {
- grid-column: 1/4;
- grid-row: 4/5;
+  grid-column: 1/4;
+  grid-row: 4/5;
+
 }
 
 .card-header {
   display: flex;
+  position: relative;
+  min-height: 100px;
 }
 
 .button-actions {
@@ -103,25 +112,59 @@
   width: 40%;
   cursor: pointer;
 }
+
 .button-edit {
-  background-color: rgb(224, 71, 38);
+  background-color: var(--light_brown_color);
   position: absolute;
-  bottom: 19px;
-  left: 53px;
-  cursor: pointer;
+  top: 20px;
+  right: 20px;
 }
 
-
-/* .background-header {
-background: url('../../../assets/detail-booking.png') no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 100%;
+.booking-id {
+  text-align: center;
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: bold;
   position: absolute;
-  background-color: #f3eae0;
+  top: 9px;
+  left: 24px;
+  color: var(--white_color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 73px;
+  height: 74px;
+}
+
+.booking-id span:first-child {
+  font-size: 1.2rem;
+  position: absolute;
+  left: 3px;
+  top: 33px;
+}
+
+.booking-title {
+  position: relative;
+  width: 100%;
+  place-content: center;
+  display: grid;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--brown_color);
+}
+
+.background-header {
+  background: url('../../../assets/detail-booking-mobile.png') no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100%;
+  background-color:  var(--extra_light_brown_color);
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
-} */
+  position: absolute;
+  background-position-x: -30px;
+
+}
 
 
 /* Modal de confirmación */
@@ -202,6 +245,14 @@ background: url('../../../assets/detail-booking.png') no-repeat;
 
 /* Modal de cancelación */
 
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  overflow: hidden;
+}
+
+::ng-deep .modal_custom_container mat-dialog-container .mdc-dialog__container .mdc-dialog__surface {
+  border-radius: 17px;
+
+}
 
 .modal_title .text {
   font-size: 22px;
@@ -213,7 +264,26 @@ background: url('../../../assets/detail-booking.png') no-repeat;
   color: var(--black_color);
 }
 
+
+
 @media screen and (min-width: 768px) {
+
+  .container-data-restaurant .data:nth-child(4),
+  .container-data-restaurant .data:nth-child(5) {
+    justify-content: center;
+    display: grid;
+  }
+
+  .button-edit {
+    top: 270px;
+    right: 53px;
+  }
+
+  .container-data-restaurant,
+  .container-data-client {
+    column-gap: 0;
+  }
+
   .title-booking {
     max-width: 750px;
   }
@@ -223,15 +293,17 @@ background: url('../../../assets/detail-booking.png') no-repeat;
     place-content: flex-start;
     position: relative;
     width: 170px;
+    text-align: center;
   }
 
   .background-header {
     background: url('../../../assets/detail-booking.png') no-repeat;
     background-size: contain;
+    background-position-y: -20px;
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: #f3eae0;
+    background-color: var(--extra_light_brown_color);
     border-top-left-radius: 17px;
     border-bottom-left-radius: 17px;
     border-top-right-radius: 0;
@@ -240,27 +312,32 @@ background: url('../../../assets/detail-booking.png') no-repeat;
   .booking-title {
     text-align: center;
     z-index: 1;
-    position: absolute;
-    color: rgb(71, 30, 12);
-    /* color: rgb(224, 71, 38); */
+    color: var(--brown_color);
     font-size: 1.8rem;
     font-weight: bold;
-    top: 241px;
-    left: 29px;
+    top: 231px;
+    width: 170px;
   }
 
   .booking-id {
-    z-index: 1;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-style: italic;
     font-weight: bold;
     position: absolute;
-    top: 76px;
-    left: 40px;
+    top: 9px;
+    left: 12px;
     color: var(--white_color);
     display: grid;
     place-content: center;
+
+    width: 116px;
+    height: 114px;
+  }
+
+  .booking-id span:first-child {
+    top: 60px;
+    left: 14px;
   }
 
   .container-cards {
@@ -271,6 +348,7 @@ background: url('../../../assets/detail-booking.png') no-repeat;
 
   .content-card {
     grid-template-columns: auto 1fr;
+
   }
 
   .container-data {
@@ -282,28 +360,30 @@ background: url('../../../assets/detail-booking.png') no-repeat;
 
   .container-data-restaurant,
   .container-data-client {
-    border-top: none; 
+    border-top: none;
     padding: 20px 20px 10px;
+    display: grid;
+    align-items: flex-start;
+  }
+
+  .container-data-client .data:nth-child(2) {
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
+
+  .container-data-client .data:nth-child(3) {
+    grid-row: 3/4;
+    grid-column: 1/3;
   }
 
   .container-data-client .data:nth-child(4) {
-    grid-row: 3/4;
-    grid-column: 1/3;
-   }
-
-   .container-data-client .data:nth-child(5) {
     grid-row: 4/5;
     grid-column: 1/3;
-   }
+  }
 
-  
-   
-  
- 
-
-
-
-
-
+  .container-data-client .data:nth-child(5) {
+    grid-row: 5/6;
+    grid-column: 1/3;
+  }
 
 }

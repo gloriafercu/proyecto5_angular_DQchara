@@ -84,7 +84,7 @@ mat-grid-tile div {
 }
 
 .button {
-  background-color: var(--primary_color);
+  background-color: var(--green_color); 
   max-width: 280px;
   width: 100%;
   color: var(--white_color);

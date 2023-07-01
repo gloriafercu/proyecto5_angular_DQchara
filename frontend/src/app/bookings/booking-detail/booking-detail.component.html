@@ -2,9 +2,13 @@
 <section class="container-cards" *ngIf="booking">
   <div class="content-card">
     <div class="card-header">
-      <span class="booking-title">Reserva </span>
-      <span class="booking-id"> #{{ booking.id }}</span>
       <div class="background-header"></div>
+      <span class="booking-title">Reserva </span>
+
+      <div class="booking-id">
+        <span>#</span>
+        <span>{{ booking.id }}</span>
+      </div>
       <button mat-fab class="button-edit" [routerLink]="['/bookings', booking.id, 'edit']">
         <mat-icon class="tab-icon">
           edit
@@ -24,13 +28,13 @@
           <p>{{ booking.lastName }}</p>
         </div>
         <div class="data">
-          <h3>TELÉFONO</h3>
-          <p>{{ booking.phone }}</p>
-        </div>
-        <div class="data">
           <h3>EMAIL</h3>
           <p>{{ booking.email }}</p>
         </div>
+        <div class="data">
+          <h3>TELÉFONO</h3>
+          <p>{{ booking.phone }}</p>
+        </div>  
       </section>
 
       <section class="container-data-restaurant">
@@ -60,13 +64,13 @@
   </div>
 
   <section class="button-actions">
-    <button mat-raised-button  class="button" color="warn" (click)="confirmCancelBooking()">
+    <button mat-raised-button class="button" color="warn" (click)="confirmCancelBooking()">
       <mat-icon class="tab-icon">
         delete
       </mat-icon>
       Cancelar
     </button>
-    <button  mat-raised-button class="button" color="accent" (click)="confirmBooking()" [routerLink]="['/restaurants']">
+    <button mat-raised-button class="button" color="accent" (click)="confirmBooking()" [routerLink]="['/restaurants']">
       <mat-icon class="tab-icon">
         done_outline
       </mat-icon>
@@ -76,7 +80,7 @@
 
   <!-- Modal para confirmar reserva -->
 
-  <ng-template let-data #myInfoDialog class="modal_confirmation_container">
+  <ng-template let-data #myInfoDialog>
     <div class="modal_title">
       <h2 mat-dialog-title>Confirmación de reserva #{{ data.booking.id }}</h2>
       <button mat-mini-fab mat-dialog-close class="button-close">
@@ -108,7 +112,7 @@
 
   <!-- Modal para cancelar reserva -->
 
-  <ng-template let-data #myCancelDialog class="modal_cancelation_container">
+  <ng-template let-data #myCancelDialog>
     <div class="modal_title">
       <h2 mat-dialog-title class="text">Cancelar reserva #{{data.booking.id}}</h2>
       <button mat-mini-fab mat-dialog-close class="button-close">
