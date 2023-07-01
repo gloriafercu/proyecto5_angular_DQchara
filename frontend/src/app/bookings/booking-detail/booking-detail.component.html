@@ -14,7 +14,7 @@
 
     <div class="container-data">
       <section class="container-data-client">
-        <h2>DATOS DEL CLIENTE</h2>
+        <h2>DATOS CLIENTE</h2>
         <div class="data">
           <h3>NOMBRE</h3>
           <p>{{ booking.firstName }}</p>
@@ -34,7 +34,7 @@
       </section>
 
       <section class="container-data-restaurant">
-        <h2>DATOS DEL RESTAURANTE</h2>
+        <h2>DATOS RESTAURANTE</h2>
         <div class="data">
           <h3>RESTAURANTE</h3>
           <p>{{ restaurant?.name }}</p>
@@ -60,18 +60,17 @@
   </div>
 
   <section class="button-actions">
-    <button class="button" mat-raised-button (click)="confirmBooking()" [routerLink]="['/restaurants']">
-      <mat-icon class="tab-icon">
-        check
-      </mat-icon>
-      Confirmar
-    </button>
-
-    <button mat-button class="button" (click)="confirmCancelBooking()">
+    <button mat-raised-button  class="button" color="warn" (click)="confirmCancelBooking()">
       <mat-icon class="tab-icon">
         delete
       </mat-icon>
-      Cancelar reserva
+      Cancelar
+    </button>
+    <button  mat-raised-button class="button" color="accent" (click)="confirmBooking()" [routerLink]="['/restaurants']">
+      <mat-icon class="tab-icon">
+        done_outline
+      </mat-icon>
+      Confirmar
     </button>
   </section>
 
