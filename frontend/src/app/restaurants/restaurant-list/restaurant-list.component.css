@@ -37,10 +37,6 @@
     justify-content: space-between;
 }
 
-/* .container1 .input {
-    width: 25%;
-} */
-
 .container1 .input.city, .container1 .input.price {
     width: 21.5%;
 }

@@ -11,7 +11,7 @@
       "averagePrice": 100,
       "rating": 4.5,
       "availability": false,
-      "typeFood": "Mediterránea",
+      "typeFood": "Brasileña",
       "images": [
         "../assets/restaurants_img/img_1.jpg",
         "../assets/restaurants_img/rest_01.jpg",
@@ -31,7 +31,7 @@
       "averagePrice": 20,
       "rating": 4.5,
       "availability": false,
-      "typeFood": "Colombiano",
+      "typeFood": "Española",
       "images": [
         "../assets/restaurants_img/img_2.jpg",
         "../assets/restaurants_img/rest_02.jpg",
@@ -71,7 +71,7 @@
       "averagePrice": 300,
       "rating": 5,
       "availability": true,
-      "typeFood": "Mediterránea",
+      "typeFood": "Española",
       "images": [
         "../assets/restaurants_img/img_4.jpg",
         "../assets/restaurants_img/rest_04.jpg",
@@ -111,7 +111,7 @@
       "averagePrice": 100,
       "rating": 3.5,
       "availability": true,
-      "typeFood": "Asiática",
+      "typeFood": "Japonesa",
       "images": [
         "../assets/restaurants_img/img_6.jpg",
         "../assets/restaurants_img/rest_06.jpg",
@@ -171,7 +171,7 @@
       "averagePrice": 50,
       "rating": 4,
       "availability": true,
-      "typeFood": "Mediterránea",
+      "typeFood": "Española",
       "images": [
         "../assets/restaurants_img/img_9.jpg",
         "../assets/restaurants_img/rest_33.jpg",
@@ -191,7 +191,7 @@
       "averagePrice": 60,
       "rating": 5,
       "availability": false,
-      "typeFood": "Mediterránea",
+      "typeFood": "Italiana",
       "images": [
         "../assets/restaurants_img/img_10.jpg",
         "../assets/restaurants_img/rest_10.jpg",
@@ -231,7 +231,7 @@
       "averagePrice": 100,
       "rating": 3.5,
       "availability": false,
-      "typeFood": "Asiática",
+      "typeFood": "Japonesa",
       "images": [
         "../assets/restaurants_img/img_12.jpg",
         "../assets/restaurants_img/rest_12.jpg",
@@ -251,7 +251,7 @@
       "averagePrice": 140,
       "rating": 3.7,
       "availability": false,
-      "typeFood": "Venezolana",
+      "typeFood": "Brasileña",
       "images": [
         "../assets/restaurants_img/img_13.jpg",
         "../assets/restaurants_img/rest_13.jpg",
@@ -271,7 +271,7 @@
       "averagePrice": 200,
       "rating": 4.3,
       "availability": false,
-      "typeFood": "China",
+      "typeFood": "Japonesa",
       "images": [
         "../assets/restaurants_img/img_14.jpg",
         "../assets/restaurants_img/rest_14.jpg",
@@ -291,7 +291,7 @@
       "averagePrice": 25,
       "rating": 4.6,
       "availability": false,
-      "typeFood": "Venezolana",
+      "typeFood": "Brasileña",
       "images": [
         "../assets/restaurants_img/img_15.jpg",
         "../assets/restaurants_img/rest_15.jpg",
@@ -371,7 +371,7 @@
       "averagePrice": 70,
       "rating": 2.5,
       "availability": false,
-      "typeFood": "Árabe",
+      "typeFood": "India",
       "images": [
         "../assets/restaurants_img/rest_40.jpg",
         "../assets/restaurants_img/rest_19.jpg",
@@ -471,7 +471,7 @@
       "averagePrice": 25,
       "rating": 3.5,
       "availability": false,
-      "typeFood": "China",
+      "typeFood": "India",
       "images": [
         "../assets/restaurants_img/img_24.jpg",
         "../assets/restaurants_img/rest_24.jpg",
@@ -491,7 +491,7 @@
       "averagePrice": 18,
       "rating": 4.5,
       "availability": true,
-      "typeFood": "China",
+      "typeFood": "Japonesa",
       "images": [
         "../assets/restaurants_img/img_25.jpg",
         "../assets/restaurants_img/rest_25.jpg",
@@ -531,7 +531,7 @@
       "averagePrice": 15,
       "rating": 3.9,
       "availability": true,
-      "typeFood": "Árabe",
+      "typeFood": "Brasileña",
       "images": [
         "../assets/restaurants_img/rest_39.jpg",
         "../assets/restaurants_img/rest_27.jpg",
@@ -1105,6 +1105,18 @@
       "phone": "686385834",
       "email": "asdada@fasdasde",
       "restaurantId": 3
+    },
+    {
+      "id": 6,
+      "firstName": "saSDs",
+      "lastName": "sdsasdrwerqerq",
+      "peopleNumber": "4 personas",
+      "bookingTime": "15:00",
+      "bookingDate": "2023-07-21T22:00:00.000Z",
+      "notes": "dfvgjklñ,´.dlmfaoeijklñnm,dlñ<dkñlfakdlñlkafñdlkfñadkña",
+      "phone": "999999999",
+      "email": "gloria@gljdlajdlafjdl.com",
+      "restaurantId": 2
     }
   ]
 }

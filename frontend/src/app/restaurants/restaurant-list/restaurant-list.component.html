@@ -40,11 +40,9 @@
                     <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
                         Todas
                     </mat-option>
-                    <mat-option value="1">1</mat-option>
-                    <mat-option value="2">2</mat-option>
-                    <mat-option value="3">3</mat-option>
-                    <mat-option value="4">4</mat-option>
-                    <mat-option value="5">5</mat-option>
+                    <mat-option value="desc">Mejor valorados</mat-option>
+                    <mat-option value="asc">Peor valorados</mat-option>
+                   
                 </mat-select>
                 <mat-icon matPrefix>hotel_class</mat-icon>
 
@@ -56,11 +54,9 @@
                     <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
                         Todas
                     </mat-option>
-                    <mat-option value="1">1</mat-option>
-                    <mat-option value="2">2</mat-option>
-                    <mat-option value="3">3</mat-option>
-                    <mat-option value="4">4</mat-option>
-                    <mat-option value="5">5</mat-option>
+                    <mat-option value="desc">Mas caros</mat-option>
+                    <mat-option value="asc">Mas baratos</mat-option>
+                    
                 </mat-select>
                 <mat-icon matPrefix>euro</mat-icon>
 
@@ -70,12 +66,13 @@
         <div class="container2">
             <mat-form-field class="input">
                 <mat-label>Escribe el nombre del restaurante...</mat-label>
-                <input matInput maxlength="100">
+                <input type="text" matInput maxlength="100" name="filterName">
                 <mat-icon matPrefix>search</mat-icon>
             </mat-form-field>
         </div>
     </div>
 </section>
+
 
 <section class="dinamic-title-container">
     <h2 #dinamicTitle class="dinamic-title"></h2>
