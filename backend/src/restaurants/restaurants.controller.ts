@@ -5,7 +5,7 @@ import { Restaurant } from './restaurants.entity';
 @Controller('restaurants')
 export class RestaurantsController {
 
-    constructor(private restaurantService: RestaurantsService) { }
+    constructor(private restaurantService: RestaurantsService) {}
 
     @Get()
     getAll(): Promise<Restaurant[]> {
@@ -42,7 +42,7 @@ export class RestaurantsController {
     }
 
     @Delete(':id')
-    @HttpCode(204) // cambia el status 200 por defecto a 204
+    @HttpCode(204) 
     async deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
       return await this.restaurantService.deleteById(id);
     }
