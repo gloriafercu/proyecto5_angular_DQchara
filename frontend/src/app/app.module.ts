@@ -26,6 +26,7 @@ import { BookingsModule } from './bookings/bookings.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SafePipe } from './pipes/safe.pipe';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     NavbarComponent,
     FooterComponent,
+   
   
   ],
   imports: [
