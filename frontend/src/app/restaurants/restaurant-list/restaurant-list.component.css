@@ -31,27 +31,31 @@
     padding: 0 20px;
 }
 
-.container1{
-    width: 40%;
+.container1 {
+    width: 64%;
     display: flex;
     justify-content: space-between;
 }
-.container1 .input {
-    width: 28%;
-}
 
+.container1 .input.city, .container1 .input.price {
+    width: 21.5%;
+}
 .container1 .input.food {
-    width: 40%;
+    width: 30%;
+}
+.container1 .input.rate{
+    width: 23.5%;
 }
 
 .container2 {
-    width: 58%;
+    width: 36%;
 }
+
 .container2 .input {
     width: 100%;
 }
 
-.container2 .input mat-icon {
+.container1 .input mat-icon, .container2 .input mat-icon {
     color: green;
 }
 
@@ -80,7 +84,6 @@
 }
 
 
-
 :host ::ng-deep .mdc-text-field--filled .mdc-line-ripple,
 :host ::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
     border-bottom-color: rgb(11, 87, 11);
@@ -98,7 +101,7 @@
 .dinamic-title {
     font-size: 30px;
     font-weight: bold;
-    margin: 0 0 50px 50px;
+    margin: 0 0 50px 0;
 }
 
 .wrapper {
@@ -169,7 +172,7 @@
     align-items: center;
 }
 
-.content-ng-rating  p {
+.content-ng-rating p {
     margin: 0 auto;
 }
 
@@ -194,7 +197,7 @@
 }
 
 .button {
-    background-color:var(--green_color);
+    background-color: var(--green_color);
     max-width: 130px;
     width: 100%;
     color: var(--white_color);
@@ -205,23 +208,32 @@
     border-radius: 10px;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
+}
 
-  .contain-button-rating {
+.contain-button-rating {
     display: flex;
     justify-content: space-around;
     width: 100%;
     align-items: center;
-  
-  }
-  .contain-info-restaurant {
+
+}
+
+.contain-info-restaurant {
     margin-bottom: 20px;
-  }
+    display: flex;
+    justify-content: space-between;
+
+}
 
 
 @media screen and (min-width: 1024px) {
     .wrapper {
         grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .dinamic-title-container {
         max-width: 1200px;
         margin: 0 auto;
     }
