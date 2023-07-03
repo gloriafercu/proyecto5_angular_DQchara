@@ -19,13 +19,13 @@ export class RestaurantsService {
             where: { id: id }
         });
     }
-    getALLByCity(city: string): Promise<Restaurant | null> {
-        return this.restaurantRepo.findOne({
+    getALLByCity(city: string): Promise<Restaurant[]> {
+        return this.restaurantRepo.find({
             where: { city: city }
         });
     }
-    getAllByTypeFood(typeFood: string): Promise<Restaurant | null> {
-        return this.restaurantRepo.findOne({
+    getAllByTypeFood(typeFood: string): Promise<Restaurant[]> {
+        return this.restaurantRepo.find({
             where: { typeFood: typeFood }
         });
     }
@@ -52,6 +52,7 @@ export class RestaurantsService {
         try {
             restaurantFromDB.name = restaurant.name;
             restaurantFromDB.address = restaurant.address;
+            restaurantFromDB.iframe = restaurant.iframe;
             restaurantFromDB.city = restaurant.city;
             restaurantFromDB.phone = restaurant.phone;
             restaurantFromDB.web = restaurant.web;

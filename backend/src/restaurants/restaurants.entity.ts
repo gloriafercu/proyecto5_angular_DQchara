@@ -12,6 +12,9 @@ export class Restaurant {
 
     @Column()
     address: string;
+    
+    @Column()
+    iframe: string;
 
     @Column()
     city: string;
