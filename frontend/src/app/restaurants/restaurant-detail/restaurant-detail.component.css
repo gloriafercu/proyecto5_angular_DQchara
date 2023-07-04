@@ -72,6 +72,12 @@ mat-grid-tile div {
 
 }
 
+.info {
+  font-size: 16px;
+  line-height: 1.8
+  ;
+}
+
 .icon-info mat-icon {
   padding-right: 40px;
   color: var(--primary_color);
@@ -79,6 +85,9 @@ mat-grid-tile div {
 
 .container-info {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px 40px 40px 0;
 
 
 }
