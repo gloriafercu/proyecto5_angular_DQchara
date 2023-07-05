@@ -38,4 +38,4 @@ export class BookingsController {
       return await this.bookingsService.deleteById(id);
     }
 }
-}
+
