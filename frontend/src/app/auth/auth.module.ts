@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { UsersRoutingModule } from './users-routing.module';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { AuthRoutingModule } from './auth-routing.module';
+import { RegisterComponent } from './register/register.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,17 +15,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
-
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
-    UserDetailComponent,
-    UserListComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule,
+    AuthRoutingModule,
     MatGridListModule,
     HttpClientModule,
     MatTableModule,
@@ -44,11 +42,6 @@ import { MatCardModule } from '@angular/material/card';
     MatCheckboxModule,
     MatCardModule,
     MatFormFieldModule
-  ],
-
-  exports: [
-    UserDetailComponent,
-    UserListComponent
   ]
 })
-export class UsersModule { }
+export class AuthModule { }
