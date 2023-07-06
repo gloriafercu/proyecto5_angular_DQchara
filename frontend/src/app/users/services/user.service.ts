@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUser } from '../models/user.model';
-import { IComment } from 'src/app/comments/models/comment.model';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ export class UserService {
 
   urlAPI: string = "http://localhost:5000/users";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router:Router) { }
 
   getAllUsers(): Observable<IUser[]> {
     return this.httpClient.get<IUser[]>(this.urlAPI);
@@ -36,6 +36,14 @@ export class UserService {
     return this.httpClient.post(`${this.urlAPI}/register`, user);
   }
 
+  logout() {
+    localStorage.removeItem('jwt_token');
+    this.router.navigate(['/user/login']);
+  }
+
+  isLoggedIn() {
+    return localStorage.getItem('jwt_token') !== null;
+  }
 }
 
 
