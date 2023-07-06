@@ -74,21 +74,8 @@ export class RestaurantListComponent implements OnInit {
     });
   }
 
-
-
-  // getByTypeFood(food: string): void {
-  //   this.router.navigate(['/restaurants/typeFood', food])
-  //   this.restaurantService.getByTypeFood(food).subscribe(data => {
-  //     this.restaurants = data;
-  //     this.results_length = this.restaurants.length;
-  //     const dinamicTitle = this.dinamicTitleInTS.nativeElement;
-  //     this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes de comida ${food}`);
-
-  //   });
-  // }
-
-  getByCity(city: string): void {
-    this.router.navigate(['/restaurants/city', city])
+  onChangeCity(event: MatSelectChange): void {
+    let city = event.value;
     this.restaurantService.getByCity(city).subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
@@ -97,20 +84,20 @@ export class RestaurantListComponent implements OnInit {
     })
   }
 
-  handleEvent(event: PageEvent) {
-    this.page_Size = event.pageSize;
-    this.page_number = event.pageIndex + 1;
-    this.results_length = event.length;
-  }
-
-  onChange(event: MatSelectChange) {
+  onChangeTypeFood(event: MatSelectChange): void {
     let typeFood = event.value;
+
     this.restaurantService.getByTypeFood(typeFood).subscribe(data => {
       this.restaurants = data
       this.results_length = this.restaurants.length;
       const dinamicTitle = this.dinamicTitleInTS.nativeElement;
       this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes de comida ${typeFood}`)
     });
+  }
 
-}
+  handleEvent(event: PageEvent) {
+    this.page_Size = event.pageSize;
+    this.page_number = event.pageIndex + 1;
+    this.results_length = event.length;
+  }
 }
