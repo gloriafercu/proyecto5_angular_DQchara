@@ -21,7 +21,6 @@
         </button>
     </section>
 
-
     <mat-tab-group class="container-tab-group">
         <mat-tab>
             <ng-template mat-tab-label>
@@ -30,34 +29,35 @@
                 </mat-icon>
                 Información
             </ng-template>
-            <mat-grid-list cols="3" rowHeight="225px" class="container-info">
-                <mat-grid-tile colspan="3">
-                    <div>
-                        <div class="icon-info">
-                            <mat-icon>location_on</mat-icon>
-                            <span>{{ restaurant.address }}</span>
-                        </div>
-                        <div class="icon-info">
-                            <mat-icon>phone</mat-icon>
-                            <span>{{ restaurant.phone }}</span>
-                        </div>
-                        <div class="icon-info">
-                            <mat-icon>link</mat-icon>
-                            <a href="{{ restaurant.web }}">
-                                <span>{{ restaurant.web }}</span>
-                            </a>
-
-                        </div>
-                        <div class="icon-info">
-                            <mat-icon>mail</mat-icon>
-                            <span>{{ restaurant.mail }}</span>
-                        </div>
+            <div class="container-info">
+                <div class="info">
+                    <div class="icon-info">
+                        <mat-icon>location_on</mat-icon>
+                        <span>{{ restaurant.address }}</span>
                     </div>
+                    <div class="icon-info">
+                        <mat-icon>phone</mat-icon>
+                        <span>{{ restaurant.phone }}</span>
+                    </div>
+                    <div class="icon-info">
+                        <mat-icon>link</mat-icon>
+                        <a href="{{ restaurant.web }}">
+                            <span>{{ restaurant.web }}</span>
+                        </a>
+                    </div>
+                    <div class="icon-info">
+                        <mat-icon>mail</mat-icon>
+                        <span>{{ restaurant.mail }}</span>
+                    </div>
+                </div>
+                <div class="iframe">
+                    <iframe [src]="restaurant.iframe | safe" width="400" height="300" style="border-radius: 10px;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="location restaurant"></iframe>
+                </div>
 
-                </mat-grid-tile>
-            </mat-grid-list>
-            <div class="iframe">
             </div>
+
         </mat-tab>
 
         <mat-tab>

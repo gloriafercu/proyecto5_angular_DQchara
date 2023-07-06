@@ -12,7 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
@@ -20,6 +20,10 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 import { PaginatePipe } from '../pipes/paginate.pipe';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SafePipe } from '../pipes/safe.pipe';
+// import { FilterPipe } from '../pipes/filter.pipe';
+// import { FilterNamePipe } from '../pipes/filter-name.pipe';
+// import { OrderByPipe } from '../pipes/order-by.pipe'; 
 
 
 
@@ -28,6 +32,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RestaurantListComponent,
     RestaurantDetailComponent,
     PaginatePipe,
+    SafePipe
+
   ],
   imports: [
     CommonModule,
@@ -46,7 +52,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ReactiveFormsModule,
     MatButtonModule,
     NgbRatingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   exports: [
     RestaurantListComponent,

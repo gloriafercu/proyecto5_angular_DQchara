@@ -34,8 +34,17 @@ export class RestaurantListComponent implements OnInit {
     "Española",
     "India",
     "Japonesa",
-    "Mexicana"
+    "Mexicana",
+    "Italiana"
   ];
+
+  properties!: string;
+  filterName = '';
+
+  parameter1 ='price';
+  parameter2 ='asc';
+  parameter3 ='rating';
+  parameter4 ='asc';
 
   results_length: number = 0;
   page_Size: number = 6;

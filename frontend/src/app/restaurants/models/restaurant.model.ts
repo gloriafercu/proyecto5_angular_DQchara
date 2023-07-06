@@ -11,4 +11,6 @@ export interface IRestaurant {
     availability: boolean;
     typeFood: string;
     images: [];
+    iframe: string;
+    [key: string]: any;
 }
