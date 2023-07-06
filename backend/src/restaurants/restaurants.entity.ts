@@ -13,7 +13,7 @@ export class Restaurant {
     @Column()
     address: string;
     
-    @Column()
+    @Column({ length: 500})
     iframe: string;
 
     @Column()
@@ -39,7 +39,6 @@ export class Restaurant {
 
     @Column()
     typeFood: string; //Saber si hay que ponerlo como la entidad photos
-
     
     @Column('simple-array')
     photos: string[]; // ejemplo: img1.png,img2.png,img3.png
