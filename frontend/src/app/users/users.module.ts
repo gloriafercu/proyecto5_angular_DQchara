@@ -6,7 +6,6 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { UserLoginComponent } from './user-login/user-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,7 +15,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
-import { UserRegisterComponent } from './user-register/user-register.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 
@@ -25,9 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     UserDetailComponent,
-    UserListComponent,
-    UserLoginComponent,
-    UserRegisterComponent
+    UserListComponent
   ],
   imports: [
     CommonModule,
@@ -52,9 +48,7 @@ import { MatCardModule } from '@angular/material/card';
 
   exports: [
     UserDetailComponent,
-    UserListComponent,
-    UserLoginComponent,
-    UserRegisterComponent
+    UserListComponent
   ]
 })
 export class UsersModule { }
