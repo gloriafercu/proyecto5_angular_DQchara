@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-login',
-  templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class UserLoginComponent{
-constructor (private router:Router){}
+export class LoginComponent {
+  constructor (private router:Router){}
   hide = true
 
   userLoginForm = new FormGroup({
@@ -27,5 +27,6 @@ constructor (private router:Router){}
     this.router.navigate(['/restaurants'])
 
   }
+
 
 }

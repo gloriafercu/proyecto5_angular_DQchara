@@ -22,12 +22,12 @@
       </mat-icon>
     </button>
     <mat-menu #menuBooks="matMenu">
-      <button mat-menu-item   *ngIf="!userService.isLoggedIn()" routerLink="/users/login">Iniciar sesión
+      <button mat-menu-item  *ngIf="!authService.isLoggedIn()" routerLink="/auth/login">Iniciar sesión
         <mat-icon> account_circle</mat-icon>
       </button>
-      <button mat-menu-item   *ngIf="!userService.isLoggedIn()" routerLink="/users/register">Crea tu cuenta
+      <button mat-menu-item  *ngIf="!authService.isLoggedIn()" routerLink="/auth/register">Crea tu cuenta
         <mat-icon> person_add</mat-icon></button>
-      <button  *ngIf="!userService.isLoggedIn()" (click)="userService.logout()" mat-menu-item>Cerrar sesión
+      <button *ngIf="authService.isLoggedIn()" (click)="authService.logout()" mat-menu-item>Cerrar sesión
         <mat-icon>logout </mat-icon>
       </button>
 

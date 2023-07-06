@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { IUser } from '../models/user.model';
-import { UserService } from '../services/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/users/services/user.service';
 
 @Component({
-  selector: 'app-user-register',
-  templateUrl: './user-register.component.html',
-  styleUrls: ['./user-register.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class UserRegisterComponent {
+export class RegisterComponent {
   registerForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
@@ -35,7 +34,7 @@ export class UserRegisterComponent {
       console.log(data.token);
       // Guardar el token para utilizarlo en las posteriores peticiones
       localStorage.setItem('jwt_token', data.token);
-      this.router.navigate(['/books']);
+      this.router.navigate(['/restaurants']);
 
     });
 

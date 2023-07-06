@@ -27,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SafePipe } from './pipes/safe.pipe';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { SafePipe } from './pipes/safe.pipe';
     MatFormFieldModule,
     NgbModule,
     ReactiveFormsModule,
+    AuthModule,
   ],
   providers: [
     {
