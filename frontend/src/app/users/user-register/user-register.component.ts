@@ -9,116 +9,36 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.css']
 })
-export class UserRegisterComponent implements OnInit {
-  hide = true;
-  checked = false;
-  user: IUser | undefined
-
+export class UserRegisterComponent {
   registerForm = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
-    lastName: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    userName: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]),
-    phone: new FormControl('', [Validators.pattern('^[679]{1}[0-9]{8}$')]),
+    username: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
-    passwordConfirm: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
-    acceptConditions: new FormControl(false, [Validators.requiredTrue]),
-  }, { validators: this.passwordConfirmValidator });
-
-  passwordConfirmValidator(control: AbstractControl) {
-    if (control.get('password')?.value === control.get('passwordConfirm')?.value)
-      return null; // si son iguales no hay error
-    else
-      return { 'confirmError': true }; // si son distintas sí hay error
-  }
+    acceptConditions: new FormControl('', [Validators.required])
+  });
 
   constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private userService: UserService) { }
+    private userService: UserService,
+    private router: Router
+    ) {}
 
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      const idString = params['id'];
+  save() {
 
-      //   if (!idString) return;
-      //   const id = parseInt(idString, 10);
-      //   this.userService.getById(id).subscribe(user =>{
-      //      this.loadUserForm(user)
-      //     this.user=newUser});
-      // });
-
-      if (idString) {
-        const id = parseInt(idString, 10);
-        this.userService.getById(id).subscribe(user => {
-          this.loadUserForm(user);
-          this.user = user;
-        });
-      }
-    })
-  }
-
-  loadUserForm(user: IUser): void {
-
-    this.registerForm.reset({
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      userName: user.userName,
-      password: user.password,
-
-    })
-  }
-
-  save(): void {
-
-    // TODO añadir validación extra de datos, si alguno está mal hacer return y mostrar error y no guardar.
-    let id = this.registerForm.get('id')?.value ?? 0;
-    let firstName = this.registerForm.get('firstName')?.value ?? '';
-    let lastName = this.registerForm.get('lastName')?.value ?? '';
-    let phone = this.registerForm.get('phone')?.value ?? '';
-    let email = this.registerForm.get('email')?.value ?? '';
-    let password = this.registerForm.get('password')?.value ?? '';
-    let userName = this.registerForm.get('userName')?.value ?? '';
-    let avatar = this.registerForm.get('avatar')?.value ?? '';
-
-
-    let newUser: IUser = {
-      id: id,
-      firstName: firstName,
-      lastName: lastName,
-      phone: phone,
-      email: email,
-      password: password,
-      userName: userName,
-      avatar: avatar
+    let register = {
+      username: this.registerForm.get('username')?.value ?? '',
+      email: this.registerForm.get('email')?.value ?? '',
+      password: this.registerForm.get('password')?.value ?? '',
+      acceptConditions: this.registerForm.get('acceptConditions')?.value ?? ''
     }
 
-    console.log(newUser);
+    this.userService.register(register).subscribe(data => {
+      console.log(data.token);
+      // Guardar el token para utilizarlo en las posteriores peticiones
+      localStorage.setItem('jwt_token', data.token);
+      this.router.navigate(['/books']);
 
-    if (id === 0)
-      this.userService.create(newUser).subscribe(newUser =>
-        this.router.navigate(['/newUsers', newUser.id]));
-    else
-      this.userService.update(newUser).subscribe(newUser => {
-        this.router.navigate(['/newUsers', newUser.id, 'edit']);
-        this.router.navigate(['/newUsers', newUser.id]);
-      });
+    });
+
   }
 
-
-  imageSrc: string | undefined;
-
-  uploadFile(event: Event): void {
-    let target = event.target as HTMLInputElement;
-
-    if (target.files !== null && target.files.length > 0) {
-      let fileImg = target.files[0];
-
-      // Opcional: mostrar la imagen al usuario
-      let reader = new FileReader();
-      reader.onload = ev => this.imageSrc = reader.result as string;// qué hacer cuando se lea la imagen
-      reader.readAsDataURL(fileImg); // leer la imagen
-    }
-  }
 }

@@ -32,7 +32,9 @@ export class UserService {
   deleteById(id: number): void {
     this.httpClient.delete(`${this.urlAPI}/${id}`);
   }
-
+  register(user: any): Observable<any> {
+    return this.httpClient.post(`${this.urlAPI}/register`, user);
+  }
 
 }
 
