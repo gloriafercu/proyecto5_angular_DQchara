@@ -78,7 +78,7 @@ export class BookingFormComponent implements OnInit {
       firstName: booking.firstName,
       lastName: booking.lastName,
       peopleNumber: booking.peopleNumber,
-      bookingTime: booking.bookingTime,
+      bookingTime: booking.bookingTime, // "14:00"
       bookingDate: booking.bookingDate,
       notes: booking.notes,
       phone: booking.phone,
@@ -102,12 +102,15 @@ export class BookingFormComponent implements OnInit {
     let email = this.bookingForm.get('email')?.value ?? '';
     let restaurantId = this.restaurant?.id ?? this.booking?.restaurantId ?? 0;
 
+    // let hours = parseInt(bookingTime.split(':')[0], 10);
+    // bookingDate.setHours(hours);
+
     let booking: IBooking = {
       id: id,
       firstName: firstName,
       lastName: lastName,
       peopleNumber: peopleNumber,
-      bookingTime: bookingTime,
+      bookingTime: bookingTime, // ya no hace falta para backend
       bookingDate: bookingDate,
       notes: notes,
       phone: phone,

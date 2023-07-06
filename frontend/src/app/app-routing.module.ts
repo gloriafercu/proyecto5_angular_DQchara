@@ -19,6 +19,9 @@ const routes: Routes = [
     path: 'about-us',
     component: AboutUsComponent
 },
+   { path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
   {
     path: '', redirectTo: 'restaurants', pathMatch: 'full' 
   },

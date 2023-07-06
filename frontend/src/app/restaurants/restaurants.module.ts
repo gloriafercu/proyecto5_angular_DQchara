@@ -22,7 +22,7 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SafePipe } from '../pipes/safe.pipe';
 // import { FilterPipe } from '../pipes/filter.pipe';
-// import { FilterNamePipe } from '../pipes/filter-name.pipe';
+import { FilterNamePipe } from '../pipes/filter-name.pipe';
 // import { OrderByPipe } from '../pipes/order-by.pipe'; 
 
 
@@ -32,7 +32,8 @@ import { SafePipe } from '../pipes/safe.pipe';
     RestaurantListComponent,
     RestaurantDetailComponent,
     PaginatePipe,
-    SafePipe
+    SafePipe,
+    FilterNamePipe
 
   ],
   imports: [

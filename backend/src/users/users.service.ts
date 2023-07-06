@@ -2,7 +2,7 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { User } from './users.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Restaurant } from 'src/restaurants/restaurants.entity';
+
 
 @Injectable()
 export class UsersService {
@@ -19,6 +19,11 @@ export class UsersService {
         return this.userRepo.findOne({
             where: { id: id }
         });
+    }
+    getByEmail(email: string): Promise< User | null> {
+        return this.userRepo.findOne({
+            where: { email: email }
+        });;
     }
     async create(user: User): Promise<User> {
         try {

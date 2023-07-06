@@ -31,6 +31,18 @@ npm install --save @nestjs/typeorm typeorm mysql2
 * nest generate service bookings
 * crear bookings.entity.ts a mano
 
+# Modulo  BORRADO  Photos
+* nest generate module photos
+* nest generate controller photos
+* nest generate service photos
+* crear photos.entity.ts a mano
+
+# Modulo  Auth
+* npx npm install @nestjs/jwt @nestjs/passport passport passport-jwt bcrypt
+* npx nest generate module auth
+* npx nest generate controller auth
+* npx nest generate service auth
+
 
 
 # Ejecutar
