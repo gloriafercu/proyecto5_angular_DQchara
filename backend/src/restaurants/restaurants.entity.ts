@@ -1,4 +1,4 @@
-import { Photo } from "src/photos/photos.entity";
+
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
@@ -40,6 +40,10 @@ export class Restaurant {
     @Column()
     typeFood: string; //Saber si hay que ponerlo como la entidad photos
 
+    
+    @Column('simple-array')
+    photos: string[]; // ejemplo: img1.png,img2.png,img3.png
+
     @CreateDateColumn({ name: 'created_date' })
     createdDate: Date;
 
@@ -50,6 +54,5 @@ export class Restaurant {
     // @JoinColumn({name: 'id_photo'})
     // photo: Photo;
 
-    @Column('simple-array')
-    photos: string[]; // ejemplo: img1.png,img2.png,img3.png
+   
 }
