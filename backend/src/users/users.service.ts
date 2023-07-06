@@ -9,7 +9,7 @@ export class UsersService {
 
     constructor(
         @InjectRepository(User) private userRepo: Repository<User>
-    ) {}
+    ) { }
 
     getAll(): Promise<User[]> {
         return this.userRepo.find();
@@ -20,12 +20,19 @@ export class UsersService {
             where: { id: id }
         });
     }
-    getByEmail(email: string): Promise< User | null> {
+    getByEmail(email: string): Promise<User | null> {
         return this.userRepo.findOne({
             where: { email: email }
-        });;
+        });
     }
+
+    // ¿Tiene sentido tener un método crear en user, no tendría que ser sólo en el auth?
+    // Ocurre lo mismo en restaurants
+
     async create(user: User): Promise<User> {
+
+        // if(this.getById) new ConflictException('Este usuario ya existe')
+        // if(this.getByMail) new ConflictException('Este usuario ya existe')
         try {
             return await this.userRepo.save(user);
         } catch (error) {
@@ -48,8 +55,6 @@ export class UsersService {
             userFromDB.phone = user.phone;
             userFromDB.userName = user.userName;
             userFromDB.avatar = user.avatar;
-        
-          
 
             await this.userRepo.update(userFromDB.id, userFromDB);
             return userFromDB;
@@ -58,6 +63,7 @@ export class UsersService {
             throw new ConflictException('Error actualizando el usuario');
         }
     }
+    
     async deleteById(id: number): Promise<void> {
         let exist = await this.userRepo.exist({
             where: {

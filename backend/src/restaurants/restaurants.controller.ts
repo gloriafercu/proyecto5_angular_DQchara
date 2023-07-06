@@ -19,8 +19,8 @@ export class RestaurantsController {
     @Get('city/:city')
     getAllByCity(@Param('city') city: string): Promise<Restaurant[]> {
         return this.restaurantService.getALLByCity(city);
-    } @Get('city/:city')
-
+    } 
+    
     @Get('typeFood/:typeFood')
     getAllByTypeFood(@Param('typeFood') typeFood: string): Promise<Restaurant[]> {
         return this.restaurantService.getAllByTypeFood(typeFood);

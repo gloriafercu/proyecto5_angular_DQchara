@@ -13,7 +13,7 @@ export class Restaurant {
     @Column()
     address: string;
     
-    @Column({ length: 500})
+    @Column({type: 'text'})
     iframe: string;
 
     @Column()
