@@ -9,11 +9,11 @@
         <div class="container1">
             <mat-form-field class="input food">
                 <mat-label>Tipos de comida</mat-label>
-                <mat-select matNativeControl required>
-                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                <mat-select matNativeControl required (selectionChange)="onChange($event)">
+                    <mat-option value="0">
                         Todas
                     </mat-option>
-                    <mat-option *ngFor="let typeFood of food" value="{{typeFood}}" (click)="getByTypeFood(typeFood)">
+                    <mat-option *ngFor="let typeFood of food" value="{{typeFood}}">
                         {{typeFood}}
                     </mat-option>
                 </mat-select>

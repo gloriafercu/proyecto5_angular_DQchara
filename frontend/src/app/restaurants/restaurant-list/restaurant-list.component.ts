@@ -4,6 +4,7 @@ import { IRestaurant } from '../models/restaurant.model';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { FilterNamePipe } from 'src/app/pipes/filter-name.pipe';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -73,7 +74,6 @@ export class RestaurantListComponent implements OnInit {
     });
   }
 
-  /
 
 
   getByTypeFood(food: string): void {
@@ -101,6 +101,12 @@ export class RestaurantListComponent implements OnInit {
     this.page_Size = event.pageSize;
     this.page_number = event.pageIndex + 1;
     this.results_length = event.length;
+  }
+
+  onChange(event: MatSelectChange) {
+    console.log(event.value);
+    let typeFood = event.value;
+    this.getByTypeFood(typeFood);
   }
 
 }
