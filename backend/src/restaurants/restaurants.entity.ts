@@ -31,7 +31,7 @@ export class Restaurant {
     @Column()
     averagePrice: number;
 
-    @Column()
+    @Column({type: 'decimal', precision: 10, scale: 1})
     rating: number;
 
     @Column()
