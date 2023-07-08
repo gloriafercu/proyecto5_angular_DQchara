@@ -1,7 +1,0 @@
-USE backend_dqchara;
-
--- Restaurants
-
-insert into location (name, address, iframe, city, phone, web, email, averagePrice, rating, typeFood) values ('Carroll Group', 'Calle de Zurbano, 63, 28010, Madrid', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.7619231909653!2d-3.6959165245066545!3d40.436270371436436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228f27cce3a9f%3A0xca298023d1b7c5ad!2sCalle%20de%20Zurbano%2C%2063%2C%2028010%20Madrid!5e0!3m2!1ses!2ses!4v1688397758991!5m2!1ses!2ses','Madrid', '691123456', 'https://etsy.com/ac/diam/cras/pellentesque/volutpat.xml', 'mwegenen0@hatena.ne.jp', 100, 4.5,'Brasileña');
-
-insert into location (name, address, iframe, city, phone, web, email, averagePrice, rating, typeFood) values ('Huels and Aufderhar', 'Calle de Calatrava, 22, 41002, Sevilla', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.486291955141!2d-5.996815824675141!3d37.401979272081675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126bf7fc378a0b%3A0x2d8abb01b270afd2!2sC.%20Calatrava%2C%2022%2C%2041002%20Sevilla!5e0!3m2!1ses!2ses!4v1688400207177!5m2!1ses!2ses','Sevilla', '654789123', 'https://etsy.com/ac/diam/cras/pellentesque/volutpat.xml', 'jtollet1@dagondesign.com', 20, 4.5,'Española');
