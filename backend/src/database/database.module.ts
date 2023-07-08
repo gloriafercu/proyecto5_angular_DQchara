@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from 'src/auth/auth.module';
 import { Booking } from 'src/bookings/bookings.entity';
 import { Comment } from 'src/comments/comments.entity';
 import { Restaurant } from 'src/restaurants/restaurants.entity';
@@ -15,7 +16,7 @@ import { User } from 'src/users/users.entity';
            //password: 'admin',
            password: process.env.NEST_PASSWORD,
            database: 'backend_dqchara',
-           entities: [ Restaurant, User , Comment , Booking],
+           entities: [ Restaurant, User , Comment , Booking, AuthModule],
            synchronize: true,
            logging: true
         })

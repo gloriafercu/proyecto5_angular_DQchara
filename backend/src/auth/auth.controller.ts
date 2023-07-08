@@ -13,6 +13,7 @@ export class AuthController {
 
     @Post('login')
     async login(@Body() login: LoginDto): Promise<TokenDto> {
+        console.log(login);
         return this.authService.login(login);
     }
 

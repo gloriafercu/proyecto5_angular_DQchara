@@ -1,7 +1,8 @@
 <section class="container-detail" *ngIf="restaurant">
     <section class="container-cover">
-        <div class="container-img" *ngFor="let img of restaurant.images">
-            <img src="{{ img }}" alt="foto del restaurante {{ restaurant.name }}">
+        <div class="container-img" *ngFor="let photo of restaurant.photos">
+            <!-- <img src="{{ photo }}" alt="foto del restaurante {{ restaurant.name }}"> -->
+            
         </div>
     </section>
 
@@ -47,7 +48,7 @@
                     </div>
                     <div class="icon-info">
                         <mat-icon>mail</mat-icon>
-                        <span>{{ restaurant.mail }}</span>
+                        <span>{{ restaurant.email }}</span>
                     </div>
                 </div>
                 <div class="iframe">
