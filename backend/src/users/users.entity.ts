@@ -22,7 +22,7 @@ export class User {
     @Column()
     password: string;
 
-    @Column({ length: 11 })
+    @Column({ length: 9 })
     phone: string;
 
     @Column({ unique: true })

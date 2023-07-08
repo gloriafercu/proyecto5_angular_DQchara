@@ -10,10 +10,10 @@ export class Restaurant {
     @Column({ length: 50 })
     name: string;
 
-    @Column()
+    @Column({ unique: true })
     address: string;
-    
-    @Column({type: 'text'})
+
+    @Column({ type: 'text' })
     iframe: string;
 
     @Column()
@@ -39,7 +39,7 @@ export class Restaurant {
 
     @Column()
     typeFood: string; //Saber si hay que ponerlo como la entidad photos
-    
+
     @Column('simple-array')
     photos: string[]; // ejemplo: img1.png,img2.png,img3.png
 
@@ -53,5 +53,5 @@ export class Restaurant {
     // @JoinColumn({name: 'id_photo'})
     // photo: Photo;
 
-   
+
 }

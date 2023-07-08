@@ -17,14 +17,19 @@ export class UsersController {
         return this.userService.getById(id);
     }
 
+    @Get('email/:email')
+    getByEmail(@Param("email") email: string): Promise<User | null> {
+        return this.userService.getByEmail(email);
+    }
+
     @Post()
     async create(@Body() user: User): Promise<User> {
-        return this.userService.create(user);
+        return await this.userService.create(user);
     }
 
     @Put()
     async update(@Body() user: User): Promise<User> {
-        return this.userService.update(user);
+        return await this.userService.update(user);
     }
 
     @Delete(':id')

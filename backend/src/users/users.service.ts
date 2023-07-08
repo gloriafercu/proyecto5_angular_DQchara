@@ -8,8 +8,7 @@ import { Repository } from 'typeorm';
 export class UsersService {
 
     constructor(
-        @InjectRepository(User) private userRepo: Repository<User>
-    ) { }
+        @InjectRepository(User) private userRepo: Repository<User>) { }
 
     getAll(): Promise<User[]> {
         return this.userRepo.find();
@@ -20,9 +19,12 @@ export class UsersService {
             where: { id: id }
         });
     }
+
     getByEmail(email: string): Promise<User | null> {
         return this.userRepo.findOne({
-            where: { email: email }
+            where: {
+                email: email
+            }
         });
     }
 
@@ -30,9 +32,6 @@ export class UsersService {
     // Ocurre lo mismo en restaurants
 
     async create(user: User): Promise<User> {
-
-        // if(this.getById) new ConflictException('Este usuario ya existe')
-        // if(this.getByMail) new ConflictException('Este usuario ya existe')
         try {
             return await this.userRepo.save(user);
         } catch (error) {
@@ -46,7 +45,7 @@ export class UsersService {
                 id: user.id
             }
         });
-        if (!userFromDB) throw new NotFoundException('Usuario no encontrado');
+        if (!userFromDB) throw new NotFoundException('Usuario no encontrado'); //404
         try {
             userFromDB.firstName = user.firstName;
             userFromDB.lastName = user.lastName;
@@ -55,6 +54,7 @@ export class UsersService {
             userFromDB.phone = user.phone;
             userFromDB.userName = user.userName;
             userFromDB.avatar = user.avatar;
+            userFromDB.role = user.role;
 
             await this.userRepo.update(userFromDB.id, userFromDB);
             return userFromDB;
@@ -63,14 +63,14 @@ export class UsersService {
             throw new ConflictException('Error actualizando el usuario');
         }
     }
-    
+
     async deleteById(id: number): Promise<void> {
         let exist = await this.userRepo.exist({
             where: {
                 id: id
             }
         });
-        if (!exist) throw new NotFoundException('Usuario no encontrado');
+        if (!exist) throw new NotFoundException('Usuario no encontrado'); //404
         try {
             await this.userRepo.delete(id);
         } catch (error) {
