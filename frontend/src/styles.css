@@ -4,10 +4,14 @@
 :root {
     --primary_color: #FF9F1C;
     --light_orange_color: #FFBF69;
+    --extra_light_orange_color:rgb(254, 249, 239);
     --white_color: #FFFFFF;
     --green_color: #83a131;
-    --light_grey_color:  #ada6a6;
-    __black_color: #000;
+    --light_grey_color: #ada6a6;
+    --brown_color: rgb(71, 30, 12);
+    --light_brown_color:  rgb(224, 71, 38);
+    --extra_light_brown_color: #f3eae0;
+    --black_color: #000;
     --font: Roboto, "Helvetica Neue", sans-serif
 }
 

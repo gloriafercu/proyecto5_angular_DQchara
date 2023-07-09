@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { RestaurantsModule } from './restaurants/restaurants.module';
-import { UsersModule } from './users/users.module';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
@@ -26,12 +24,19 @@ import { BookingsModule } from './bookings/bookings.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SafePipe } from './pipes/safe.pipe';
+import { AuthModule } from './auth/auth.module';
+import { RestaurantsModule } from './restaurants/restaurants.module';
+import { UsersModule } from './users/users.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
+   
+  
   ],
   imports: [
     BrowserModule,
@@ -56,6 +61,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     NgbModule,
     ReactiveFormsModule,
+    AuthModule,
   ],
   providers: [
     {

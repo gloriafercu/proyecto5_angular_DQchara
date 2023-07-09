@@ -5,10 +5,12 @@ export interface IRestaurant {
     city: string;
     phone: string;
     web: string;
-    mail: string;
+    email: string;
     averagePrice: number;
     rating: number;
     availability: boolean;
     typeFood: string;
-    images: [];
+    photos: [];
+    iframe: string;
+    [key: string]: any;
 }

@@ -8,7 +8,7 @@ import { IBooking } from '../models/booking.model';
 })
 export class BookingService {
 
-  urlAPI: string = "http://localhost:5000/bookings"
+  urlAPI: string = "http://localhost:3000/bookings"
 
   constructor(private httpClient: HttpClient) { }
 

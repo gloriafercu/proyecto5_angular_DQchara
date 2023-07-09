@@ -1,98 +1,131 @@
+<h2 class="title-booking">DETALLE DE LA RESERVA</h2>
 <section class="container-cards" *ngIf="booking">
+  <div class="content-card">
+    <div class="card-header">
+      <div class="background-header"></div>
+      <span class="booking-title">Reserva </span>
 
-  <h2>Detalle de la reserva:</h2>
-
-  <mat-card class="mat-card">
-    <mat-card-title>Datos Cliente:</mat-card-title>
-
-    <p>reserva nº: {{ booking.id }}</p>
-    <strong>Nombre: </strong> <span id="firstName">{{booking.firstName}} </span><br>
-    <strong>Apellido: </strong> <span id="lastName">{{booking.lastName}}</span><br>
-    <strong>Email: </strong> <span id="email">{{booking.email}}</span><br>
-    <strong>Teléfono: </strong> <span id="phone">{{booking.phone}}</span><br>
-
-
-  </mat-card>
-  <mat-card class="mat-card">
-
-    <mat-card-title>Datos Restaurante</mat-card-title>
-    <p>
-      <strong>Restaurante:</strong><span id="restaurantName">{{ restaurant?.name }}</span><br>
-      <strong>Día:</strong> <span id="bookingDate">{{booking.bookingDate | date: 'dd/MM/YYYY' }}</span><br>
-      <strong>Hora:</strong> <span id="bookingTime">{{booking.bookingTime}}</span><br>
-      <strong>Para:</strong> <span id="bookingTime">{{booking.peopleNumber}}</span><br>
-    </p>
-
-    <mat-card-actions>
-      <button mat-button class="button" [routerLink]="['/bookings', booking.id, 'edit']">
+      <div class="booking-id">
+        <span>#</span>
+        <span>{{ booking.id }}</span>
+      </div>
+      <button mat-fab class="button-edit" [routerLink]="['/bookings', booking.id, 'edit']">
         <mat-icon class="tab-icon">
           edit
         </mat-icon>
-        Editar reserva
       </button>
+    </div>
 
-      <button class="button" mat-raised-button (click)="confirmBooking()" [routerLink]="['/restaurants']">
-        <mat-icon class="tab-icon">
-          check
-        </mat-icon>
-        Confirmar
-      </button>
-
-      <button mat-button class="button" (click)="confirmCancelBooking()">
-        <mat-icon class="tab-icon">
-          delete
-        </mat-icon>
-        Cancelar reserva
-      </button>
-    </mat-card-actions>
-
-    <!-- Modal para confirmar reserva -->
-
-    <ng-template let-data #myInfoDialog class="modal_confirmation_container">
-      <div class="modal_title">
-        <h2 mat-dialog-title>Confirmación de reserva #{{ data.booking.id }}</h2>
-        <button mat-mini-fab mat-dialog-close class="button-close">
-          <mat-icon>close</mat-icon>
-        </button>
-      </div>
-      <div mat-dialog-content class="modal_container">
-        <div class="modal_confirmation_content">
-          <div class="cover_modal">
-            <img src="../../../assets/restaurants_img/confirmacionReserva.jpg" style="width: 220px;"
-              alt="imagen de un restaurante">
-          </div>
-          <div class="modal_data">
-            <p>Su reserva <span><strong>#{{ data.booking.id }}</strong></span> está confirmada.</p>
-            <p>Nombre: <span><strong>{{ data.booking.firstName }} {{ data.booking.lastName }}</strong></span></p>
-            <p>Restaurante: <span><strong>{{ data.restaurant?.name }}</strong></span></p>
-            <p>Mesa para: <span><strong>{{ data.booking.peopleNumber }}.</strong></span></p>
-            <p>Día: <span><strong>{{data.booking.bookingDate | date: 'dd/MM/YYYY'}}</strong></span>, a las <span><strong>{{data.booking.bookingTime}} horas</strong></span>.</p>
-          </div>
+    <div class="container-data">
+      <section class="container-data-client">
+        <h2>DATOS CLIENTE</h2>
+        <div class="data">
+          <h3>NOMBRE</h3>
+          <p>{{ booking.firstName }}</p>
         </div>
-        <div class="acknowledgment">
-          <p>Le enviaremos un mail con los datos de su reserva.</p>
-          <p>¡ Gracias con confiar en nosotros !</p>
+        <div class="data">
+          <h3>APELLIDOS</h3>
+          <p>{{ booking.lastName }}</p>
+        </div>
+        <div class="data">
+          <h3>EMAIL</h3>
+          <p>{{ booking.email }}</p>
+        </div>
+        <div class="data">
+          <h3>TELÉFONO</h3>
+          <p>{{ booking.phone }}</p>
+        </div>  
+      </section>
+
+      <section class="container-data-restaurant">
+        <h2>DATOS RESTAURANTE</h2>
+        <div class="data">
+          <h3>RESTAURANTE</h3>
+          <p>{{ restaurant?.name }}</p>
+        </div>
+        <div class="data">
+          <h3>FECHA</h3>
+          <p>{{ booking.bookingDate | date: 'dd/MM/YYYY' }}</p>
+        </div>
+        <div class="data">
+          <h3>HORA</h3>
+          <p>{{ booking.bookingTime }}</p>
+        </div>
+        <div class="data">
+          <h3>Nº PERS. </h3>
+          <p>{{ booking.peopleNumber }}</p>
+        </div>
+        <div class="data">
+          <h3>OBSERVACIONES</h3>
+          <p>{{ booking.notes }}</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="button-actions">
+    <button mat-raised-button class="button" color="warn" (click)="confirmCancelBooking()">
+      <mat-icon class="tab-icon">
+        delete
+      </mat-icon>
+      Cancelar
+    </button>
+    <button mat-raised-button class="button" color="accent" (click)="confirmBooking()" [routerLink]="['/restaurants']">
+      <mat-icon class="tab-icon">
+        done_outline
+      </mat-icon>
+      Confirmar
+    </button>
+  </section>
+
+  <!-- Modal para confirmar reserva -->
+
+  <ng-template let-data #myInfoDialog>
+    <div class="modal_title">
+      <h2 mat-dialog-title>Confirmación de reserva #{{ data.booking.id }}</h2>
+      <button mat-mini-fab mat-dialog-close class="button-close">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div mat-dialog-content class="modal_container">
+      <div class="modal_confirmation_content">
+        <div class="cover_modal">
+          <img src="../../../assets/confirmacionReserva.jpg" style="width: 220px;"
+            alt="imagen de un restaurante">
+        </div>
+        <div class="modal_data">
+          <p>Su reserva <span><strong>#{{ data.booking.id }}</strong></span> está confirmada.</p>
+          <p>Nombre: <span><strong>{{ data.booking.firstName }} {{ data.booking.lastName }}</strong></span></p>
+          <p>Restaurante: <span><strong>{{ data.restaurant?.name }}</strong></span></p>
+          <p>Mesa para: <span><strong>{{ data.booking.peopleNumber }}.</strong></span></p>
+          <p>Día: <span><strong>{{data.booking.bookingDate | date: 'dd/MM/YYYY'}}</strong></span>, a las
+            <span><strong>{{data.booking.bookingTime}} horas</strong></span>.
+          </p>
         </div>
       </div>
-    </ng-template>
-
-    <!-- Modal para cancelar reserva -->
-
-    <ng-template let-data #myCancelDialog class="modal_cancelation_container">
-      <div class="modal_title">
-        <h2 mat-dialog-title class="text">Cancelar reserva #{{data.booking.id}}</h2>
-        <button mat-mini-fab mat-dialog-close class="button-close">
-          <mat-icon>close</mat-icon>
-        </button>
+      <div class="acknowledgment">
+        <p>Le enviaremos un mail con los datos de su reserva.</p>
+        <p>¡ Gracias con confiar en nosotros !</p>
       </div>
-      <div mat-dialog-content class="dialog-content">
-        <p class="text">¿Desea cancelar su reserva en el restaurante <strong>{{ data.restaurant?.name }}</strong>?</p>
-      </div>
-      <div mat-dialog-actions class="button-actions">
-        <button mat-raised-button mat-button color="warn" mat-dialog-close>No</button>
-        <button mat-raised-button mat-button color="accent" mat-dialog-close cdkFocusInitial (click)="deleteBooking(booking)">Si</button>
-      </div>
-    </ng-template>
+    </div>
+  </ng-template>
 
-  </mat-card>
+  <!-- Modal para cancelar reserva -->
+
+  <ng-template let-data #myCancelDialog>
+    <div class="modal_title">
+      <h2 mat-dialog-title class="text">Cancelar reserva #{{data.booking.id}}</h2>
+      <button mat-mini-fab mat-dialog-close class="button-close">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div mat-dialog-content class="dialog-content">
+      <p class="text">¿Desea cancelar su reserva en el restaurante <strong>{{ data.restaurant?.name }}</strong>?</p>
+    </div>
+    <div mat-dialog-actions class="button-actions">
+      <button mat-raised-button mat-button color="warn" mat-dialog-close>No</button>
+      <button mat-raised-button mat-button color="accent" mat-dialog-close cdkFocusInitial
+        (click)="deleteBooking(booking)">Si</button>
+    </div>
+  </ng-template>
 </section>

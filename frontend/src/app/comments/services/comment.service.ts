@@ -8,7 +8,7 @@ import { IComment } from '../models/comment.model';
 })
 export class CommentService {
 
-  urlAPI: string = "http://localhost:5000/comments";
+  urlAPI: string = "http://localhost:3000/comments";
 
   constructor(private httpClient: HttpClient) { }
 

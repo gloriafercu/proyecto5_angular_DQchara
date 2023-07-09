@@ -9,54 +9,72 @@
         <div class="container1">
             <mat-form-field class="input food">
                 <mat-label>Tipos de comida</mat-label>
-                <mat-select matNativeControl required>
-                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                <mat-select matNativeControl required (selectionChange)="onChangeTypeFood($event)">
+                    <mat-option value="0" (click)="getAllRestaurants()">
                         Todas
                     </mat-option>
-                    <mat-option *ngFor="let typeFood of food" value="{{typeFood}}" (click)="getByTypeFood(typeFood)">
+                    <mat-option *ngFor="let typeFood of food" value="{{typeFood}}">
                         {{typeFood}}
                     </mat-option>
                 </mat-select>
+                <mat-icon matPrefix>restaurant</mat-icon>
+
             </mat-form-field>
 
-            <mat-form-field class="input">
+            <mat-form-field class="input city">
                 <mat-label>Ciudad</mat-label>
-                <mat-select matNativeControl required>
-                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                <mat-select matNativeControl required (selectionChange)="onChangeCity($event)">
+                    <mat-option value="0" (click)="getAllRestaurants()">
                         Todas
                     </mat-option>
-                    <mat-option *ngFor="let city of cities" value="{{city}}" (click)="getByCity(city)">
+                    <mat-option *ngFor="let city of cities" value="{{city}}" >
                         {{city}}
                     </mat-option>
                 </mat-select>
+                <mat-icon matPrefix>location_city</mat-icon>
             </mat-form-field>
 
-            <mat-form-field class="input">
+            <mat-form-field class="input rate">
                 <mat-label>Valoración</mat-label>
                 <mat-select matNativeControl required>
                     <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
                         Todas
                     </mat-option>
-                    <mat-option value="1">1</mat-option>
-                    <mat-option value="2">2</mat-option>
-                    <mat-option value="3">3</mat-option>
-                    <mat-option value="4">4</mat-option>
-                    <mat-option value="5">5</mat-option>
+                    <mat-option value="desc">Mejor valorados</mat-option>
+                    <mat-option value="asc">Peor valorados</mat-option>
+                   
                 </mat-select>
+                <mat-icon matPrefix>hotel_class</mat-icon>
+
+            </mat-form-field>
+
+            <mat-form-field class="input price">
+                <mat-label>Precio</mat-label>
+                <mat-select matNativeControl required>
+                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                        Todas
+                    </mat-option>
+                    <mat-option value="desc">Mas caros</mat-option>
+                    <mat-option value="asc">Mas baratos</mat-option>
+                    
+                </mat-select>
+                <mat-icon matPrefix>euro</mat-icon>
+
             </mat-form-field>
         </div>
 
         <div class="container2">
             <mat-form-field class="input">
                 <mat-label>Escribe el nombre del restaurante...</mat-label>
-                <input matInput maxlength="100">
-                <mat-icon matSuffix>search</mat-icon>
+                <input type="text" matInput maxlength="100" name="filterName">
+                <mat-icon matPrefix>search</mat-icon>
             </mat-form-field>
         </div>
     </div>
 </section>
 
-<section>
+
+<section class="dinamic-title-container">
     <h2 #dinamicTitle class="dinamic-title"></h2>
 </section>
 
@@ -66,33 +84,50 @@
         [routerLink]="['/restaurants', restaurant.id]">
         <mat-card class="card-container">
             <div class="image-container">
-                <img mat-card-image src="{{ restaurant.images[0] }}" alt="foto de {{ restaurant.name }}">
+                <img mat-card-image src="{{ restaurant.photos[0] }}" alt="foto de {{ restaurant.name }}">
             </div>
             <mat-card-content class="card-content">
                 <h2>{{ restaurant.name }}</h2>
-                <p class="card-content-icon">
-                    <mat-icon>
-                        location_city
-                    </mat-icon>
-                    {{ restaurant.city }}
-                </p>
-                <p class="card-content-icon">
-                    <mat-icon>
-                        restaurant
-                    </mat-icon>
-                    {{ restaurant.typeFood }}
-                </p>
-                <div class="content-ng-rating">
-                    <p class="rating"><b>{{ restaurant.rating }}</b></p>
-                    <ng-template #t let-fill="fill">
-                        <i class="bi-egg-fill">
-                            <i *ngIf="fill > 0" class="bi-egg-fill filled" [style.width.%]="fill"></i>
-                        </i>
-                    </ng-template>
+                <div class="contain-info-restaurant">
 
-                    <ngb-rating [(rate)]="restaurant.rating" [starTemplate]="t" [readonly]="true" [max]="5"
-                        [ariaValueText]="ariaValueText">
-                    </ngb-rating>
+                    <p class="card-content-icon">
+                        <mat-icon>
+                            location_city
+                        </mat-icon>
+                        {{ restaurant.city }}
+                    </p>
+                    <p class="card-content-icon">
+                        <mat-icon>
+                            restaurant
+                        </mat-icon>
+                        {{ restaurant.typeFood }}
+                    </p>
+                    <p class="card-content-icon">
+                        <mat-icon>
+                            euro
+                        </mat-icon>
+                        {{ restaurant.averagePrice }}
+                    </p>
+                </div>
+                <div class="contain-button-rating">
+                    <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
+                        <mat-icon class="tab-icon">
+                            calendar_month
+                        </mat-icon>
+                        Reservar
+                    </button>
+                    <div class="content-ng-rating">
+                        <p class="rating"><b>{{ restaurant.rating }}</b></p>
+                        <ng-template #t let-fill="fill">
+                            <i class="bi-egg-fill">
+                                <i *ngIf="fill > 0" class="bi-egg-fill filled" [style.width.%]="fill"></i>
+                            </i>
+                        </ng-template>
+
+                        <ngb-rating [(rate)]="restaurant.rating" [starTemplate]="t" [readonly]="true" [max]="5"
+                            [ariaValueText]="ariaValueText">
+                        </ngb-rating>
+                    </div>
                 </div>
             </mat-card-content>
         </mat-card>

@@ -14,6 +14,7 @@ export class PaginatePipe implements PipeTransform {
     if (page_size === 'all') {
       return array;
     }
+  
     page_size = page_size || 10;
     page_number = page_number || 1;
     --page_number;
