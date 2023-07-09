@@ -17,7 +17,7 @@ export class CommentsController {
         return this.commentsService.getById(id);
     }
 
-    @Get('restaurant/:restaurantId') 
+    @Get('restaurantId/:restaurantId') 
     getAllCommentsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
         return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
     }

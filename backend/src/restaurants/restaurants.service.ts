@@ -2,6 +2,7 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { Restaurant } from './restaurants.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { CommentsService } from 'src/comments/comments.service';
 
 @Injectable()
 export class RestaurantsService {
@@ -18,7 +19,7 @@ export class RestaurantsService {
         });
     }
 
-    getALLByCity(city: string): Promise<Restaurant[]> {
+    getAllByCity(city: string): Promise<Restaurant[]> {
         return this.restaurantRepo.find({
             where: { city: city }
         });
@@ -40,6 +41,8 @@ export class RestaurantsService {
             order: { averagePrice: 'ASC' }
         })
     }
+
+   
 
     async create(restaurant: Restaurant): Promise<Restaurant> {
         try {
