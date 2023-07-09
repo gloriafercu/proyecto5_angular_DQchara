@@ -29,7 +29,8 @@ export class CommentsService {
         
         return this.commentRepo.find({
             relations: {
-                restaurant: true
+                restaurant: true,
+                user: true
             },
             where: {
                 restaurant: {
