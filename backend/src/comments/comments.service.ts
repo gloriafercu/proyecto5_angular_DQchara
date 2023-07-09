@@ -7,10 +7,7 @@ import { Booking } from 'src/bookings/bookings.entity';
 @Injectable()
 export class CommentsService {
 
-    constructor(
-        @InjectRepository(Comment) private commentRepo: Repository<Comment>
-    ) {}
-
+    constructor(@InjectRepository(Comment) private commentRepo: Repository<Comment>) {}
 
     getAll(): Promise<Comment[]> {
         return this.commentRepo.find();
@@ -21,7 +18,8 @@ export class CommentsService {
             where: { id: id }
         });
     }
-    getAllByRestaurantId(restaurantId: number): Promise<Comment[]> { 
+
+    getAllCommentsByRestaurantId(restaurantId: number): Promise<Comment[]> { 
         return this.commentRepo.find({
             relations: {
                 restaurant: true
@@ -33,7 +31,8 @@ export class CommentsService {
             }
         })
     }
-    getAllByUserId(userId: number): Promise<Comment[]> { 
+
+    getAllCommentsByUserId(userId: number): Promise<Comment[]> { 
         return this.commentRepo.find({
             relations: {
                 user: true
@@ -45,6 +44,7 @@ export class CommentsService {
             }
         })
     }
+
     async create(comment: Comment): Promise<Comment> {
         try {
             return await this.commentRepo.save(comment);
@@ -52,6 +52,7 @@ export class CommentsService {
             throw new ConflictException('No se ha podido guardar la opinión')
         }
     }
+
     async update(comment: Comment): Promise<Comment> {
         let commentFromDB = await this.commentRepo.findOne({
             where: {
@@ -71,6 +72,7 @@ export class CommentsService {
             throw new ConflictException('Error actualizando la reserva');
         }
     }
+
     async deleteById(id: number): Promise<void> {
         let exist = await this.commentRepo.exist({
             where: {

@@ -6,16 +6,19 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class BookingsService {
 
-    constructor(
-        @InjectRepository(Booking) private bookingRepo: Repository<Booking>
-    ) {}
+    constructor(@InjectRepository(Booking) private bookingRepo: Repository<Booking>) {}
 
+    getAll(): Promise<Booking[]> {
+        return this.bookingRepo.find();
+    }
+    
     getById(id: number): Promise<Booking | null> {
         return this.bookingRepo.findOne({
             where: { id: id }
         });
     }
-    getAllByRestaurantId(restaurantId: number): Promise<Booking[]> { 
+
+    getAllBookingsByRestaurantId(restaurantId: number): Promise<Booking[]> { 
         return this.bookingRepo.find({
             relations: {
                 restaurant: true
@@ -25,9 +28,10 @@ export class BookingsService {
                     id: restaurantId
                 }
             }
-        })
+        });
     }
-    getAllByUserId(userId: number): Promise<Booking[]> {
+
+    getAllBookingsByUserId(userId: number): Promise<Booking[]> {
         return this.bookingRepo.find({
             relations: {
                 user: true
@@ -37,8 +41,9 @@ export class BookingsService {
                     id: userId
                 }
             }
-        })
+        });
     }
+
     async create(booking: Booking): Promise<Booking> {
         try {
             return await this.bookingRepo.save(booking);
@@ -46,12 +51,14 @@ export class BookingsService {
             throw new ConflictException('No se ha podido guardar la reserva')
         }
     }
+
     async update(booking: Booking): Promise<Booking> {
         let bookingFromDB = await this.bookingRepo.findOne({
             where: {
                 id: booking.id
             }
         });
+
         if (!bookingFromDB) throw new NotFoundException('Reserva no encontrada');
         try {
             bookingFromDB.firstName = booking.firstName;
@@ -70,13 +77,16 @@ export class BookingsService {
             throw new ConflictException('Error actualizando la reserva');
         }
     }
+
     async deleteById(id: number): Promise<void> {
         let exist = await this.bookingRepo.exist({
             where: {
                 id: id
             }
         });
+
         if (!exist) throw new NotFoundException('Reserva no encontrada');
+
         try {
             await this.bookingRepo.delete(id);
         } catch (error) {

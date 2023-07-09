@@ -7,25 +7,24 @@ export class CommentsController {
 
     constructor(private commentsService: CommentsService) { }
 
-
     @Get()
     getAll(): Promise<Comment[]> {
         return this.commentsService.getAll();
     }
 
-    @Get('id/:id')
+    @Get(':id')
     getById(@Param("id") id: number): Promise<Comment | null> {
         return this.commentsService.getById(id);
     }
 
-    @Get('restaurant/:id') // preguntar
-    getAllByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
-        return this.commentsService.getAllByRestaurantId(restaurantId);
+    @Get('restaurant/:restaurantId') 
+    getAllCommentsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
+        return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
     }
 
-    @Get('user/:id') // preguntar
-    getAllByUserId(@Param('userId') userId: number): Promise<Comment[]> {
-        return this.commentsService.getAllByUserId(userId);
+    @Get('user/:userId')
+    getAllCommentsByUserId(@Param('userId') userId: number): Promise<Comment[]> {
+        return this.commentsService.getAllCommentsByUserId(userId);
     }
 
     @Post()
