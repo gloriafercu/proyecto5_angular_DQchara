@@ -1,14 +1,4 @@
 <section class="container-login">
-    <div style="float: right;">
-        <button mat-button>
-            <mat-icon>
-                logout
-            </mat-icon>
-            Cerrar sesión
-        </button>
-
-    </div>
-
     <div>
         <h2>Accede a tu cuenta</h2>
         <form [formGroup]="userLoginForm" (ngSubmit)="save()" class="login">

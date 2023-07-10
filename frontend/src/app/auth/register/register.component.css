@@ -1,18 +1,10 @@
-form {
-    margin-top: 100px;
-}
-
-mat-form-field {
-    display: block;
-}
-
 h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
 
 .container-register {
-    padding-top: 150px;
+    padding-top: 120px;
 }
 
 .register {

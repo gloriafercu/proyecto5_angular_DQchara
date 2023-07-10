@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,24 +9,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor (private router:Router){}
-  hide = true
+
+  constructor(private router: Router, private authService: AuthService) { }
+
+  hide = true;
 
   userLoginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]), 
+    email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
   })
 
   save(): void {
-    let email = this.userLoginForm.get('email')?.value ?? 0;
-    let password = this.userLoginForm.get('password')?.value ?? '';
-    console.log(email, password);
 
-//enrutar a la pantalla de inicio. 
-    console.log("te has conectado ok");
-    this.userLoginForm.reset()
-    this.router.navigate(['/restaurants'])
-
+    let login = {
+      email: this.userLoginForm.get('email')?.value ?? '',
+      password: this.userLoginForm.get('password')?.value ?? ''
+    }
+    
+    this.authService.login(login).subscribe(data => {
+      console.log(data.token);
+      // Guardar el token para utilizarlo en las posteriores peticiones
+      this.authService.handleLoginResponse(data.token);
+      this.router.navigate(['/restaurants']);
+    });
   }
 
 
