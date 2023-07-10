@@ -1,6 +1,9 @@
 .about-us{
-    padding-top: 90px;
-    background-color: chocolate;
+    padding-top: 80px;
+    
+    display: inline-block;
+    margin: 1px;
+    border: 10px;
 
     
 
@@ -9,6 +12,9 @@
     width: 300px;
     height: 600px;
     display: flex;
+}
+img{
+  margin: 20px;  
 }
 
 
