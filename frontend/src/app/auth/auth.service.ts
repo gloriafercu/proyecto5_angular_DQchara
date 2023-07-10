@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   
-  urlAPI: string = "http://localhost:5000/auth";
+  urlAPI: string = "http://localhost:3000/auth";
 
 
   constructor(
