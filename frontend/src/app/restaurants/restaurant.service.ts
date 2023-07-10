@@ -19,7 +19,7 @@ export class RestaurantService {
     return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${id}`);
   }
   getByRating(rating: number): Observable<IRestaurant[]> {
-    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?rating=${rating}`);
+    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/rating/${rating}`);
 
   }
   getByTypeFood(typeFood: string): Observable<IRestaurant[]> {
