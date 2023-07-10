@@ -1,16 +1,27 @@
-form {
-    margin-top: 100px;
-}
-
-
-
-mat-form-field {
-    display: block;
-}
-
-h1 {
+h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+}
+
+.container-login {
+    padding-top: 150px;
+}
+
+.login {
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+.input {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .button-submit {
@@ -43,23 +54,11 @@ h1 {
     margin-right: 12px;
 }
 
-.input {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 18px;
+mat-icon {
+    color: var(--primary_color);
 }
 
-.login {
-    max-width: 450px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    flex-direction:column;
-}
 
-.container-login {
-    padding-top: 150px;
-}
+
+
+
