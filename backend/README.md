@@ -43,6 +43,8 @@ npm install --save @nestjs/typeorm typeorm mysql2
 * npx nest generate controller auth
 * npx nest generate service auth
 
+contraseña original: 1234asdf
+
 
 
 # Ejecutar
