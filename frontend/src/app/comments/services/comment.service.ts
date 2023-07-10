@@ -16,7 +16,7 @@ export class CommentService {
     return this.httpClient.get<IComment>(`${this.urlAPI}/${id}`);
   }
   getByRating(rating: number): Observable<IComment[]> {
-    return this.httpClient.get<IComment[]>(`${this.urlAPI}?rating=${rating}`);
+    return this.httpClient.get<IComment[]>(`${this.urlAPI}/rating/${rating}`);
   }
 
   create(comment: IComment): Observable<IComment> {
