@@ -2,7 +2,7 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { Comment } from './comments.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Booking } from 'src/bookings/bookings.entity';
+
 
 @Injectable()
 export class CommentsService {
@@ -20,9 +20,17 @@ export class CommentsService {
     }
 
     getAllCommentsByRestaurantId(restaurantId: number): Promise<Comment[]> { 
+        // let ratingsArray = this.comments.map(comment => comment.rating);
+        // ratingsArray = ratingsArray.map(i => Number(i)); // Array de strings lo pasamos a numbers
+        // let averageValue = ratingsArray.reduce((acc, rate) => acc + rate, 0) / ratingsArray.length;
+        // this.average = parseFloat(averageValue.toFixed(1));
+
+        
+        
         return this.commentRepo.find({
             relations: {
-                restaurant: true
+                restaurant: true,
+                user: true
             },
             where: {
                 restaurant: {
@@ -33,6 +41,7 @@ export class CommentsService {
     }
 
     getAllCommentsByUserId(userId: number): Promise<Comment[]> { 
+        
         return this.commentRepo.find({
             relations: {
                 user: true

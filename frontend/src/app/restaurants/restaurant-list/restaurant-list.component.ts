@@ -40,14 +40,8 @@ export class RestaurantListComponent implements OnInit {
     "Italiana"
   ];
 
-  //properties!: string;
+  
   filterName = '';
-
-
-  // parameter1 ='price';
-  // parameter2 ='asc';
-  // parameter3 ='rating';
-  // parameter4 ='asc';
 
   results_length: number = 0;
   page_Size: number = 6;
@@ -58,7 +52,7 @@ export class RestaurantListComponent implements OnInit {
   @ViewChild('dinamicTitle') dinamicTitleInTS!: ElementRef;
 
 
-  constructor(private restaurantService: RestaurantService, private router: Router, private renderer2: Renderer2) { }
+  constructor(private restaurantService: RestaurantService, private renderer2: Renderer2) { }
 
   ngOnInit(): void {
     this.getAllRestaurants();

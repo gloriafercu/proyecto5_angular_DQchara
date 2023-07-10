@@ -16,9 +16,10 @@ export class RestaurantsController {
     getById(@Param("id") id: number): Promise<Restaurant | null> {
         return this.restaurantService.getById(id);
     }
+    
     @Get('city/:city')
     getAllByCity(@Param('city') city: string): Promise<Restaurant[]> {
-        return this.restaurantService.getALLByCity(city);
+        return this.restaurantService.getAllByCity(city);
     } 
     
     @Get('typeFood/:typeFood')
