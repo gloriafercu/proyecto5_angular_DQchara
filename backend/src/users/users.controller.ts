@@ -12,9 +12,14 @@ export class UsersController {
         return this.userService.getAll();
     }
 
-    @Get('id/:id')
+    @Get(':id')
     getById(@Param("id") id: number): Promise<User | null> {
         return this.userService.getById(id);
+    }
+
+    @Get('email/:email')
+    getByEmail(@Param("email") email: string): Promise<User | null> {
+        return this.userService.getByEmail(email);
     }
 
     @Post()
@@ -24,13 +29,13 @@ export class UsersController {
 
     @Put()
     async update(@Body() user: User): Promise<User> {
-        return this.userService.update(user);
+        return await this.userService.update(user);
     }
 
     @Delete(':id')
-    @HttpCode(204) 
+    @HttpCode(204)
     async deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
-      return await this.userService.deleteById(id);
+        return await this.userService.deleteById(id);
     }
 
 

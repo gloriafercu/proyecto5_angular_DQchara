@@ -9,10 +9,10 @@ export class Comment {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ type: 'decimal', precision: 10, scale: 1 })
     rating: number;
 
-    @Column()
+    @Column({ type: 'text' })
     description: string;
 
     @CreateDateColumn({ name: 'created_date' })
@@ -23,9 +23,9 @@ export class Comment {
     @ManyToOne(() => Restaurant)
     @JoinColumn({ name: 'id_restaurant' })
     restaurant: Restaurant;
-    
-    @ManyToOne(()=> User)
-    @JoinColumn({name: 'id_user'})
+
+    @ManyToOne(() => User)
+    @JoinColumn({ name: 'id_user' })
     user: User;
 
 } 

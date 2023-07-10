@@ -8,7 +8,7 @@ import { IComment } from '../models/comment.model';
 })
 export class CommentService {
 
-  urlAPI: string = "http://localhost:5000/comments";
+  urlAPI: string = "http://localhost:3000/comments";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class CommentService {
     return this.httpClient.get<IComment>(`${this.urlAPI}/${id}`);
   }
   getByRating(rating: number): Observable<IComment[]> {
-    return this.httpClient.get<IComment[]>(`${this.urlAPI}?rating=${rating}`);
+    return this.httpClient.get<IComment[]>(`${this.urlAPI}/rating/${rating}`);
   }
 
   create(comment: IComment): Observable<IComment> {
@@ -35,7 +35,7 @@ export class CommentService {
   }
   
   getAllCommentsByRestaurantId(restaurantId: number): Observable<IComment[]> {
-    return this.httpClient.get<IComment[]>(`${this.urlAPI}?restaurantId=${restaurantId}`)
+    return this.httpClient.get<IComment[]>(`${this.urlAPI}/restaurantId/${restaurantId}`);
   }
 
 

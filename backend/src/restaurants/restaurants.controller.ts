@@ -12,23 +12,29 @@ export class RestaurantsController {
         return this.restaurantService.getAll();
     }
 
-    @Get('id/:id')
+    @Get(':id')
     getById(@Param("id") id: number): Promise<Restaurant | null> {
         return this.restaurantService.getById(id);
     }
+    
     @Get('city/:city')
     getAllByCity(@Param('city') city: string): Promise<Restaurant[]> {
-        return this.restaurantService.getALLByCity(city);
-    } @Get('city/:city')
-
+        return this.restaurantService.getAllByCity(city);
+    } 
+    
     @Get('typeFood/:typeFood')
     getAllByTypeFood(@Param('typeFood') typeFood: string): Promise<Restaurant[]> {
         return this.restaurantService.getAllByTypeFood(typeFood);
     }
 
-    @Get('average/:averageDesc')
+    @Get('averageDesc/:averageDesc')
     getAllOrderByAverageDesc(): Promise<Restaurant[]> {
         return this.restaurantService.getAllOrderByAverageDesc();
+    }
+
+    @Get('averageAsc/:averageAsc')
+    getAllOrderByAverageAsc(): Promise<Restaurant[]> {
+        return this.restaurantService.getAllOrderByAverageAsc();
     }
 
     @Post()
@@ -38,7 +44,7 @@ export class RestaurantsController {
 
     @Put()
     async update(@Body() restaurant: Restaurant): Promise<Restaurant> {
-        return this.restaurantService.update(restaurant);
+        return await this.restaurantService.update(restaurant);
     }
 
     @Delete(':id')

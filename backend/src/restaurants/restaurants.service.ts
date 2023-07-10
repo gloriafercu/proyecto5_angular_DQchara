@@ -2,13 +2,12 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { Restaurant } from './restaurants.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { CommentsService } from 'src/comments/comments.service';
 
 @Injectable()
 export class RestaurantsService {
 
-    constructor(
-        @InjectRepository(Restaurant) private restaurantRepo: Repository<Restaurant>
-    ) {}
+    constructor(@InjectRepository(Restaurant) private restaurantRepo: Repository<Restaurant>) { }
 
     getAll(): Promise<Restaurant[]> {
         return this.restaurantRepo.find();
@@ -19,7 +18,8 @@ export class RestaurantsService {
             where: { id: id }
         });
     }
-    getALLByCity(city: string): Promise<Restaurant[]> {
+
+    getAllByCity(city: string): Promise<Restaurant[]> {
         return this.restaurantRepo.find({
             where: { city: city }
         });
@@ -29,11 +29,21 @@ export class RestaurantsService {
             where: { typeFood: typeFood }
         });
     }
+
     getAllOrderByAverageDesc(): Promise<Restaurant[]> {
         return this.restaurantRepo.find({
             order: { averagePrice: 'DESC' }
         })
     }
+
+    getAllOrderByAverageAsc(): Promise<Restaurant[]> {
+        return this.restaurantRepo.find({
+            order: { averagePrice: 'ASC' }
+        })
+    }
+
+   
+
     async create(restaurant: Restaurant): Promise<Restaurant> {
         try {
             return await this.restaurantRepo.save(restaurant);
@@ -48,7 +58,7 @@ export class RestaurantsService {
                 id: restaurant.id
             }
         });
-        if (!restaurantFromDB) throw new NotFoundException('Restaurante no encontrado');
+        if (!restaurantFromDB) throw new NotFoundException('Restaurante no encontrado'); // 404
         try {
             restaurantFromDB.name = restaurant.name;
             restaurantFromDB.address = restaurant.address;
@@ -61,8 +71,6 @@ export class RestaurantsService {
             restaurantFromDB.rating = restaurant.rating;
             restaurantFromDB.availability = restaurant.availability;
             restaurantFromDB.typeFood = restaurant.typeFood;
-          
-          
 
             await this.restaurantRepo.update(restaurantFromDB.id, restaurantFromDB);
             return restaurantFromDB;
@@ -71,13 +79,14 @@ export class RestaurantsService {
             throw new ConflictException('Error actualizando el restaurante');
         }
     }
+
     async deleteById(id: number): Promise<void> {
         let exist = await this.restaurantRepo.exist({
             where: {
                 id: id
             }
         });
-        if (!exist) throw new NotFoundException('Not Found');
+        if (!exist) throw new NotFoundException('Not Found'); //404
         try {
             await this.restaurantRepo.delete(id);
         } catch (error) {

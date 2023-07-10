@@ -5,21 +5,26 @@ import { Comment } from './comments.entity';
 @Controller('comments')
 export class CommentsController {
 
-    constructor(private commentsService: CommentsService) {}
+    constructor(private commentsService: CommentsService) { }
 
-    @Get('id/:id')
+    @Get()
+    getAll(): Promise<Comment[]> {
+        return this.commentsService.getAll();
+    }
+
+    @Get(':id')
     getById(@Param("id") id: number): Promise<Comment | null> {
         return this.commentsService.getById(id);
     }
 
-    @Get('restaurant/:id') // preguntar
-    getAllByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
-        return this.commentsService.getAllByRestaurantId(restaurantId);
+    @Get('restaurantId/:restaurantId') 
+    getAllCommentsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
+        return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
     }
 
-    @Get('user/:id') // preguntar
-    getAllByUserId(@Param('userId') userId: number): Promise<Comment[]> {
-        return this.commentsService.getAllByUserId(userId);
+    @Get('user/:userId')
+    getAllCommentsByUserId(@Param('userId') userId: number): Promise<Comment[]> {
+        return this.commentsService.getAllCommentsByUserId(userId);
     }
 
     @Post()
@@ -33,8 +38,8 @@ export class CommentsController {
     }
 
     @Delete(':id')
-    @HttpCode(204) 
+    @HttpCode(204)
     async deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
-      return await this.commentsService.deleteById(id);
+        return await this.commentsService.deleteById(id);
     }
 }

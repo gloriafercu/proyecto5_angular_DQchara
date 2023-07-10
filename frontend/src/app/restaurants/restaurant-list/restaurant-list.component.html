@@ -9,8 +9,8 @@
         <div class="container1">
             <mat-form-field class="input food">
                 <mat-label>Tipos de comida</mat-label>
-                <mat-select matNativeControl required (selectionChange)="onChange($event)">
-                    <mat-option value="0">
+                <mat-select matNativeControl required (selectionChange)="onChangeTypeFood($event)">
+                    <mat-option value="0" (click)="getAllRestaurants()">
                         Todas
                     </mat-option>
                     <mat-option *ngFor="let typeFood of food" value="{{typeFood}}">
@@ -23,11 +23,11 @@
 
             <mat-form-field class="input city">
                 <mat-label>Ciudad</mat-label>
-                <mat-select matNativeControl required>
-                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                <mat-select matNativeControl required (selectionChange)="onChangeCity($event)">
+                    <mat-option value="0" (click)="getAllRestaurants()">
                         Todas
                     </mat-option>
-                    <mat-option *ngFor="let city of cities" value="{{city}}" (click)="getByCity(city)">
+                    <mat-option *ngFor="let city of cities" value="{{city}}" >
                         {{city}}
                     </mat-option>
                 </mat-select>
@@ -84,7 +84,7 @@
         [routerLink]="['/restaurants', restaurant.id]">
         <mat-card class="card-container">
             <div class="image-container">
-                <img mat-card-image src="{{ restaurant.images[0] }}" alt="foto de {{ restaurant.name }}">
+                <img mat-card-image src="{{ restaurant.photos[0] }}" alt="foto de {{ restaurant.name }}">
             </div>
             <mat-card-content class="card-content">
                 <h2>{{ restaurant.name }}</h2>

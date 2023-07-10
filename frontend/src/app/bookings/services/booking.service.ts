@@ -8,7 +8,7 @@ import { IBooking } from '../models/booking.model';
 })
 export class BookingService {
 
-  urlAPI: string = "http://localhost:5000/bookings"
+  urlAPI: string = "http://localhost:3000/bookings"
 
   constructor(private httpClient: HttpClient) { }
 
@@ -29,11 +29,11 @@ export class BookingService {
   }
 
   getAllByRestaurantId(restaurantId: number): Observable<IBooking[]> {
-    return this.httpClient.get<IBooking[]>(`${this.urlAPI}?restaurantId=${restaurantId}`);
+    return this.httpClient.get<IBooking[]>(`${this.urlAPI}/restaurantId/{restaurantId}`);
   }
 
   getAllByUserId(userId: number): Observable<IBooking[]> {
-    return this.httpClient.get<IBooking[]>(`${this.urlAPI}?userId=${userId}`);
+    return this.httpClient.get<IBooking[]>(`${this.urlAPI}/userId/{userId}`);
   }
 
   deleteById(id: number): Observable<{}> {

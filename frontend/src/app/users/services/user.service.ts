@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
-  urlAPI: string = "http://localhost:5000/users";
+  urlAPI: string = "http://localhost:3000/users";
 
-  constructor(private httpClient: HttpClient, private router:Router) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   getAllUsers(): Observable<IUser[]> {
     return this.httpClient.get<IUser[]>(this.urlAPI);

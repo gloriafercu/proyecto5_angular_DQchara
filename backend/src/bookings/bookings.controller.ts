@@ -7,19 +7,24 @@ export class BookingsController {
 
     constructor(private bookingsService: BookingsService) {}
 
-    @Get('id/:id')
+    @Get()
+    getAll(): Promise<Booking[]> {
+        return this.bookingsService.getAll();
+    }
+
+    @Get(':id')
     getById(@Param("id") id: number): Promise<Booking | null> {
         return this.bookingsService.getById(id);
     }
 
-    @Get('restaurant/:id') // preguntar
-    getAllByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Booking[]> {
-        return this.bookingsService.getAllByRestaurantId(restaurantId);
+    @Get('restaurant/:restaurantId') 
+    getAllBookingsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Booking[]> {
+        return this.bookingsService.getAllBookingsByRestaurantId(restaurantId);
     }
 
-    @Get('user/:id') // preguntar
-    getAllByUserId(@Param('userId') userId: number): Promise<Booking[]> {
-        return this.bookingsService.getAllByUserId(userId);
+    @Get('user/:userId')
+    getAllBookingsByUserId(@Param('userId') userId: number): Promise<Booking[]> {
+        return this.bookingsService.getAllBookingsByUserId(userId);
     }
 
     @Post()

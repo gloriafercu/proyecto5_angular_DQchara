@@ -14,16 +14,16 @@ export class AuthService {
 
     async login(login: LoginDto): Promise<TokenDto> {
         let user = await this.userService.getByEmail(login.email);
-        if (!user) throw new UnauthorizedException('Credenciales incorrectas');
+        if (!user) throw new UnauthorizedException('Credenciales incorrectas'); // 401
 
- 
 
+        // comprobar contraseña cifrada:
         if (!bcrypt.compareSync(login.password, user.password))
-            throw new UnauthorizedException('Credenciales incorrectas');
+            throw new UnauthorizedException('Credenciales incorrectas'); // 401
 
-        //Crear un token y devolverlo
+        // Crear un token y devolverlo
 
-        let payload = { 
+        let payload = {
             email: user.email,
             sub: user.id,
             role: user.role
@@ -37,13 +37,14 @@ export class AuthService {
     }
 
     async register(user: User): Promise<TokenDto> {
-        
+
         let loginDto: LoginDto = {
             email: user.email,
             password: user.password //contraseña original
         }
-        //cifrar contrazeñas
-        user.password = bcrypt.hashSync(user.password, 10);
+
+        // cifrar contraseñas bcrypt
+        user.password = bcrypt.hashSync(user.password, 10); // contraseña cifrada
         await this.userService.create(user);
 
 

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class RestaurantService {
 
-  urlAPI: string = "http://localhost:5000/restaurants";
+  urlAPI: string = "http://localhost:3000/restaurants";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,18 +19,18 @@ export class RestaurantService {
     return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${id}`);
   }
   getByRating(rating: number): Observable<IRestaurant[]> {
-    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?rating=${rating}`);
+    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/rating/${rating}`);
 
   }
   getByTypeFood(typeFood: string): Observable<IRestaurant[]> {
-    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?typeFood=${typeFood}`);
+    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/typeFood/${typeFood}`);
   }
   getByCity(city: string): Observable<IRestaurant[]> {
-    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?city=${city}`);
+    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/city/${city}`);
   }
-  getAllRestaurantsByName(word: string): Observable<IRestaurant[]> {
-    return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?name=${word}`)
-  }
+  // getAllRestaurantsByName(word: string): Observable<IRestaurant[]> {
+  //   return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}?name=${word}`)
+  // }
 
   create(restaurant: IRestaurant): Observable<IRestaurant> {
     return this.httpClient.post<IRestaurant>(this.urlAPI, restaurant);
