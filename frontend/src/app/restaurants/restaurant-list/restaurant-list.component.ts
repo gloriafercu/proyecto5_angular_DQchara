@@ -89,6 +89,35 @@ export class RestaurantListComponent implements OnInit {
     });
   }
 
+  onChangeRating(event: MatSelectChange): void {
+    let rating = event.value;
+    this.restaurantService.  getAllOrderByRating(rating).subscribe(data => {
+      this.restaurants = data;
+      this.results_length = this.restaurants.length;
+      const dinamicTitle = this.dinamicTitleInTS.nativeElement;
+      this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes ordenados por puntuación ${rating}`)
+    });
+  }
+
+  onChangeAveragePrice(event: MatSelectChange): void {
+    let averagePrice = event.value;
+    this.restaurantService.  getAllOrderByAverage(averagePrice).subscribe(data => {
+      this.restaurants = data;
+      this.results_length = this.restaurants.length;
+      const dinamicTitle = this.dinamicTitleInTS.nativeElement;
+      this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes ordenados por precio ${averagePrice}`)
+    });
+  }
+
+  onChangeName(event: any): void {
+    let name = event.value;
+    console.log('name', name)
+    this.restaurantService.getAllByNameLike(name).subscribe(data => {
+      this.restaurants = data;
+      this.results_length = this.restaurants.length;
+    });
+  }
+
   handleEvent(event: PageEvent) {
     this.page_Size = event.pageSize;
     this.page_number = event.pageIndex + 1;
