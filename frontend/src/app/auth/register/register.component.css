@@ -1,16 +1,39 @@
-form {
-    margin-top: 100px;
-}
-
-
-
-mat-form-field {
-    display: block;
-}
-
-h1 {
+h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+}
+
+.container-register {
+    padding-top: 120px;
+}
+
+.register {
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+.input {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input.password {
+    margin-bottom: 5px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .button-submit {
@@ -26,6 +49,7 @@ h1 {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     align-items: center;
+    margin-top: 20px;
 }
 
 .button-submit:disabled {
@@ -43,23 +67,6 @@ h1 {
     margin-right: 12px;
 }
 
-.input {
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 18px;
-}
 
-.login {
-    max-width: 450px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    flex-direction:column;
-}
 
-.container-login {
-    padding-top: 150px;
-}
