@@ -1,33 +1,23 @@
 <nav>
 
   <mat-toolbar class="navbar">
-    <!-- 
-    <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon style="font-size: 1.6rem;">menu</mat-icon>
-    </button>
-
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/restaurants">Restaurantes</button>
-      <button mat-menu-item>Reservar</button>
-      <button mat-menu-item>Opiniones</button>
-    </mat-menu> -->
-
-    <a routerLink="/comments" title="Inicio">
+    <a routerLink="/restaurants" title="Inicio">
       <img src="\assets\img\D_Qchara_logo-transparente.png" class="logo" alt="logo">
     </a>
 
-    <button mat-button [matMenuTriggerFor]="menuBooks">Tu cuenta
+    <button mat-button [matMenuTriggerFor]="menuAccount">Tu cuenta
       <mat-icon>
         person
       </mat-icon>
     </button>
-    <mat-menu #menuBooks="matMenu">
-      <button mat-menu-item  *ngIf="!authService.isLoggedIn()" routerLink="/auth/login">Iniciar sesión
+    <mat-menu #menuAccount="matMenu">
+      <button mat-menu-item *ngIf="!isLoggedIn" routerLink="/auth/login">Iniciar sesión
         <mat-icon> account_circle</mat-icon>
       </button>
-      <button mat-menu-item  *ngIf="!authService.isLoggedIn()" routerLink="/auth/register">Crea tu cuenta
-        <mat-icon> person_add</mat-icon></button>
-      <button *ngIf="authService.isLoggedIn()" (click)="authService.logout()" mat-menu-item>Cerrar sesión
+      <button mat-menu-item *ngIf="!isLoggedIn" routerLink="/auth/register">Crea tu cuenta
+        <mat-icon> person_add</mat-icon>
+      </button>
+      <button *ngIf="isLoggedIn" (click)="authService.logout()" mat-menu-item>Cerrar sesión
         <mat-icon>logout </mat-icon>
       </button>
 

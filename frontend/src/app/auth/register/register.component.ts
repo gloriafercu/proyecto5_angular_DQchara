@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/users/services/user.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent {
   });
 
   constructor(
-    private userService: UserService,
+    private authService: AuthService,
     private router: Router
     ) {}
 
@@ -30,12 +31,11 @@ export class RegisterComponent {
       acceptConditions: this.registerForm.get('acceptConditions')?.value ?? ''
     }
 
-    this.userService.register(register).subscribe(data => {
+    this.authService.register(register).subscribe(data => {
       console.log(data.token);
       // Guardar el token para utilizarlo en las posteriores peticiones
-      localStorage.setItem('jwt_token', data.token);
+      this.authService.handleLoginResponse(data.token);
       this.router.navigate(['/restaurants']);
-
     });
 
   }
