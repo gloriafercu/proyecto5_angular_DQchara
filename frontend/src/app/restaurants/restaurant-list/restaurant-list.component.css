@@ -69,12 +69,13 @@
 
 .title-block {
     position: absolute;
-    top: 140px;
+    top: 160px;
     left: 40px;
     width: 30%;
-    font-size: 45px;
-    line-height: 1.1;
+    font-size: 55px;
+    line-height: 1.15;
     color: var(--white_color);
+    font-family: 'Courgette', cursive;
 }
 
 :host ::ng-deep .mat-mdc-select-arrow,

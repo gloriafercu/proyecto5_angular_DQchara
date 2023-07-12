@@ -38,7 +38,7 @@ export class Restaurant {
     availability: boolean;
 
     @Column()
-    typeFood: string; //Saber si hay que ponerlo como la entidad photos
+    typeFood: string; 
 
     @Column('simple-array')
     photos: string[]; // ejemplo: img1.png,img2.png,img3.png
@@ -48,10 +48,5 @@ export class Restaurant {
 
     @UpdateDateColumn({ name: 'updated_date' })
     updatedDate: Date;
-
-    // @ManyToOne(()=> Photo)
-    // @JoinColumn({name: 'id_photo'})
-    // photo: Photo;
-
 
 }

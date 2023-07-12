@@ -5,22 +5,23 @@ footer {
   justify-content: center;
   align-items: center;
   height: 60px;
-
 }
 
 .footer-content {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .footer-text {
-  color: #333;
+  color: var(--white_color);
   font-size: 14px;
-  margin-right: 10px;
 }
 
 .footer-icon {
-  color: #333;
-  font-size: 18px;
-  margin-right: 5px;
+  padding: 0 35px;
+}
+
+.footer-content-text{
+  text-decoration: none;
 }

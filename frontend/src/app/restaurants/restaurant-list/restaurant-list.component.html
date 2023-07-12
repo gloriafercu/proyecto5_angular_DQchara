@@ -10,7 +10,7 @@
             <mat-form-field class="input food">
                 <mat-label>Tipos de comida</mat-label>
                 <mat-select matNativeControl required (selectionChange)="onChangeTypeFood($event)">
-                    <mat-option value="0" (click)="getAllRestaurants()">
+                    <mat-option value="default" (click)="getAllRestaurants()">
                         Todas
                     </mat-option>
                     <mat-option *ngFor="let typeFood of food" value="{{typeFood}}">
@@ -24,7 +24,7 @@
             <mat-form-field class="input city">
                 <mat-label>Ciudad</mat-label>
                 <mat-select matNativeControl required (selectionChange)="onChangeCity($event)">
-                    <mat-option value="0" (click)="getAllRestaurants()">
+                    <mat-option value="default" (click)="getAllRestaurants()">
                         Todas
                     </mat-option>
                     <mat-option *ngFor="let city of cities" value="{{city}}" >
@@ -36,12 +36,12 @@
 
             <mat-form-field class="input rate">
                 <mat-label>Valoración</mat-label>
-                <mat-select matNativeControl required>
-                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                <mat-select matNativeControl required (selectionChange)="onChangeRating($event)">
+                    <mat-option value="default" (click)="getAllRestaurants()" routerLink="/restaurants">
                         Todas
                     </mat-option>
-                    <mat-option value="desc">Mejor valorados</mat-option>
-                    <mat-option value="asc">Peor valorados</mat-option>
+                    <mat-option value="DESC">Descendente</mat-option>
+                    <mat-option value="ASC">Ascendente</mat-option>
                    
                 </mat-select>
                 <mat-icon matPrefix>hotel_class</mat-icon>
@@ -50,12 +50,12 @@
 
             <mat-form-field class="input price">
                 <mat-label>Precio</mat-label>
-                <mat-select matNativeControl required>
-                    <mat-option value="0" (click)="getAllRestaurants()" routerLink="/restaurants">
+                <mat-select matNativeControl required (selectionChange)="onChangeAveragePrice($event)">
+                    <mat-option value="default" (click)="getAllRestaurants()" routerLink="/restaurants">
                         Todas
                     </mat-option>
-                    <mat-option value="desc">Mas caros</mat-option>
-                    <mat-option value="asc">Mas baratos</mat-option>
+                    <mat-option value="DESC">Descendente</mat-option>
+                    <mat-option value="ASC">Ascendente</mat-option>
                     
                 </mat-select>
                 <mat-icon matPrefix>euro</mat-icon>
@@ -66,7 +66,7 @@
         <div class="container2">
             <mat-form-field class="input">
                 <mat-label>Escribe el nombre del restaurante...</mat-label>
-                <input type="text" matInput maxlength="100" name="filterName">
+                <input type="text" matInput maxlength="100" name="filterName" [(ngModel)]="filterName">
                 <mat-icon matPrefix>search</mat-icon>
             </mat-form-field>
         </div>
@@ -80,8 +80,7 @@
 
 
 <section class="wrapper">
-    <div *ngFor="let restaurant of restaurants | paginate: page_Size: page_number"
-        [routerLink]="['/restaurants', restaurant.id]">
+    <div *ngFor="let restaurant of restaurants | filterName: filterName | paginate: page_Size: page_number" [routerLink]="['/restaurants', restaurant.id]">
         <mat-card class="card-container">
             <div class="image-container">
                 <img mat-card-image src="{{ restaurant.photos[0] }}" alt="foto de {{ restaurant.name }}">

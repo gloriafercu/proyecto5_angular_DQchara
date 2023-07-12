@@ -24,10 +24,8 @@ export class CommentsService {
         // ratingsArray = ratingsArray.map(i => Number(i)); // Array de strings lo pasamos a numbers
         // let averageValue = ratingsArray.reduce((acc, rate) => acc + rate, 0) / ratingsArray.length;
         // this.average = parseFloat(averageValue.toFixed(1));
-
         
-        
-        return this.commentRepo.find({
+        let arrayCommentsByRestId = this.commentRepo.find({
             relations: {
                 restaurant: true,
                 user: true
@@ -37,10 +35,14 @@ export class CommentsService {
                     id: restaurantId
                 }
             }
-        })
+        });
+        return arrayCommentsByRestId
     }
 
+  
+
     getAllCommentsByUserId(userId: number): Promise<Comment[]> { 
+        
         
         return this.commentRepo.find({
             relations: {

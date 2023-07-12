@@ -1,0 +1,31 @@
+.about-us {
+  padding: 120px 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.about-us-card {
+  display: flex;
+  width: 290px;
+  height: 650px;
+  box-shadow: var(--primary_color) 0px 0px 0px 1px;
+
+}
+
+.icons-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.icons-footer a {
+  padding: 20px;
+}
+
+h3 {
+  color: var(--light_grey_color);
+  font-weight: bold;
+}
