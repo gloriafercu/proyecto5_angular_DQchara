@@ -8,7 +8,6 @@ export interface IBooking {
     notes: string;
     phone: string;
     email: string;
-    restaurantId: number;
-}
+    restaurantId: number;// Aqui habria que guardar el restaurante como IRestaurant?
 
 // TODO: faltaría por meter el userId 

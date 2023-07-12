@@ -42,6 +42,7 @@ ng generate service comments/services/comment
 ng generate module bookings --routing --module app.module
 ng generate component bookings/booking-detail
 ng generate component bookings/booking-form
+ng generate component bookings/booking-list
 ng generate interface bookings/models/booking --type=model --prefix=I
 ng generate service bookings/services/booking
 ```

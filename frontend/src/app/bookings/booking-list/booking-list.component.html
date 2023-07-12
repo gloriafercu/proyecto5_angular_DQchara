@@ -1,0 +1,38 @@
+<h2>Listado de reservas</h2>
+
+<table mat-table [dataSource]="bookings" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="bookingDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha </th>
+        <td mat-cell *matCellDef="let booking">{{ booking.bookingDate | date:'dd/MM/YYYY'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bookingTime">
+        <th mat-header-cell *matHeaderCellDef>Hora </th>
+        <td mat-cell *matCellDef="let booking">{{ booking.bookingTime}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="peopleNumber">
+        <th mat-header-cell *matHeaderCellDef>Para</th>
+        <td mat-cell *matCellDef="let booking" style="width: 80px;">{{ booking.peopleNumber}} €</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let booking" style="width: 300px;">
+
+            <button mat-button color="primary" class="btn-primary" [routerLink]="['/bookings', booking.id, 'edit']">
+                <mat-icon>edit</mat-icon>
+                Editar
+            </button>
+
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+</table>
+<div *ngIf="bookings.length === 0" style="text-align: center; min-height: 100px;">
+    No se han encontrado reservas.
+</div>
