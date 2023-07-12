@@ -21,10 +21,8 @@ import { PaginatePipe } from '../pipes/paginate.pipe';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SafePipe } from '../pipes/safe.pipe';
-// import { FilterPipe } from '../pipes/filter.pipe';
 import { FilterNamePipe } from '../pipes/filter-name.pipe';
 import { SharedModule } from '../shared/shared.module';
-// import { OrderByPipe } from '../pipes/order-by.pipe'; 
 
 
 
