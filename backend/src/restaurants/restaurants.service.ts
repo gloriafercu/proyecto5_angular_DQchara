@@ -1,7 +1,7 @@
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { Restaurant } from './restaurants.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 import { CommentsService } from 'src/comments/comments.service';
 
 @Injectable()
@@ -30,19 +30,25 @@ export class RestaurantsService {
         });
     }
 
-    getAllOrderByAverageDesc(): Promise<Restaurant[]> {
+    getAllOrderByRating(rating): Promise<Restaurant[]> {
         return this.restaurantRepo.find({
-            order: { averagePrice: 'DESC' }
+            order: { rating: rating }
         })
     }
 
-    getAllOrderByAverageAsc(): Promise<Restaurant[]> {
+    getAllOrderByAverage(averagePrice): Promise<Restaurant[]> {
         return this.restaurantRepo.find({
-            order: { averagePrice: 'ASC' }
+            order: { averagePrice: averagePrice}
         })
     }
 
-   
+    getAllByNameLike(name: string): Promise<Restaurant[]> {
+        return this.restaurantRepo.find({
+            where: {
+                name: ILike(`%${name}%`) // contenga una palabra
+            }
+        })
+    }
 
     async create(restaurant: Restaurant): Promise<Restaurant> {
         try {

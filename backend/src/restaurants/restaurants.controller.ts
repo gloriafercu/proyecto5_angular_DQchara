@@ -27,14 +27,19 @@ export class RestaurantsController {
         return this.restaurantService.getAllByTypeFood(typeFood);
     }
 
-    @Get('averageDesc/:averageDesc')
-    getAllOrderByAverageDesc(): Promise<Restaurant[]> {
-        return this.restaurantService.getAllOrderByAverageDesc();
+    @Get('averagePrice/:averagePrice')
+    getAllOrderByAverage(@Param('averagePrice') averagePrice: string): Promise<Restaurant[]> {
+        return this.restaurantService.getAllOrderByAverage(averagePrice);
     }
 
-    @Get('averageAsc/:averageAsc')
-    getAllOrderByAverageAsc(): Promise<Restaurant[]> {
-        return this.restaurantService.getAllOrderByAverageAsc();
+    @Get('rating/:rating')
+    getAllOrderByRating(@Param('rating') rating: string): Promise<Restaurant[]> {
+        return this.restaurantService.getAllOrderByRating(rating);
+    }
+
+    @Get('name-like/:name') 
+    getAllByNameLike(@Param('name') name: string): Promise<Restaurant[]> {
+        return this.restaurantService.getAllByNameLike(name);
     }
 
     @Post()
