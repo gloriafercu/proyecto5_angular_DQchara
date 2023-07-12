@@ -5,23 +5,35 @@
       <img src="\assets\img\D_Qchara_logo-transparente.png" class="logo" alt="logo">
     </a>
 
-    <button mat-button [matMenuTriggerFor]="menuAccount">Tu cuenta
-      <mat-icon>
-        person
-      </mat-icon>
-    </button>
-    <mat-menu #menuAccount="matMenu">
-      <button mat-menu-item *ngIf="!isLoggedIn" routerLink="/auth/login">Iniciar sesión
-        <mat-icon> account_circle</mat-icon>
-      </button>
-      <button mat-menu-item *ngIf="!isLoggedIn" routerLink="/auth/register">Crea tu cuenta
-        <mat-icon> person_add</mat-icon>
-      </button>
-      <button *ngIf="isLoggedIn" (click)="authService.logout()" mat-menu-item>Cerrar sesión
-        <mat-icon>logout </mat-icon>
-      </button>
+  
+      <button mat-button [matMenuTriggerFor]="menuAccount">Tu cuenta
+        <mat-icon>
+          person
+        </mat-icon>
+        </button>
 
-    </mat-menu>
+        <mat-menu #menuAccount="matMenu">
+        <button mat-button *ngIf="!isLoggedIn" routerLink="/auth/login">
+          <mat-icon>login</mat-icon>
+          Iniciar sesión
+        </button>
+
+
+        <button mat-button *ngIf="!isLoggedIn" routerLink="/auth/register">
+          <mat-icon>person_add</mat-icon>
+          Crear cuenta
+        </button>
+
+        <button mat-button *ngIf="isLoggedIn" routerLink="/users/profile">
+          <mat-icon>account_circle</mat-icon>
+          Mi perfil
+        </button>
+
+        <button mat-button *ngIf="isLoggedIn" (click)="authService.logout()">
+          <mat-icon>logout</mat-icon>
+          Cerrar sesión
+        </button>
+      </mat-menu>
 
   </mat-toolbar>
 
