@@ -12,12 +12,12 @@
         </mat-icon>
         </button>
 
-        <mat-menu #menuAccount="matMenu">
+        <mat-menu #menuAccount="matMenu" class="menuCuenta">
+
         <button mat-button *ngIf="!isLoggedIn" routerLink="/auth/login">
           <mat-icon>login</mat-icon>
           Iniciar sesión
         </button>
-
 
         <button mat-button *ngIf="!isLoggedIn" routerLink="/auth/register">
           <mat-icon>person_add</mat-icon>
@@ -33,6 +33,7 @@
           <mat-icon>logout</mat-icon>
           Cerrar sesión
         </button>
+
       </mat-menu>
 
   </mat-toolbar>
