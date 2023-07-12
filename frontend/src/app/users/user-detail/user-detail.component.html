@@ -1,53 +1,37 @@
-<section class="container-cards" *ngIf="user">
+<div class="container-userDetail">
+    <h2>Mi Perfil</h2>
 
-    <mat-card class="mat-card">
-        <h2>Tu perfil </h2>
-        <p>usuario nº {{user.id}}</p>
-        <p>Nombre: {{user.firstName}}</p>
-        <p>Apellido: {{user.lastName}}</p>
-        <p>email:{{user.email}}</p>
-        <p>Teléfono: {{user.phone}}</p>
-        <p>Nombre de usuario:{{user.username}}</p>
-        <p>Avatar:{{user.avatar}}</p>
+    <form [formGroup]="userForm" (ngSubmit)="save()" class="userProfile">
 
-        <mat-card-actions>
-            <button mat-button class="button" [routerLink]="['/register', user.id, 'edit']">
-                <mat-icon class="tab-icon">
-                    edit
-                </mat-icon>
-                Editar registro
-            </button>
+        <input type="hidden" formControlName="id">
 
-            <button mat-button class="button" [routerLink]="['/register']">
-                <mat-icon class="tab-icon">
-                    check
-                </mat-icon>
-                Confirmar registro
-            </button>
-            <button mat-button class="button" (click)="open(content)">
-                <mat-icon class="tab-icon">
-                    delete
-                </mat-icon>
-                Cancelar registro
-            </button>
-        </mat-card-actions>
+        <mat-form-field class="input">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username">
+        </mat-form-field>
 
-        <!-- Modal para cancelar reserva -->
-
-        <ng-template #content let-c="close" let-d="dismiss">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modal-basic-title">Cancelar registro </h3>
-                <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
-            </div>
-            <div class="modal-body">
-                <p>¿Desea cancelar su registro?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">No</button>
-                <button type="button" class="btn btn-outline-dark" (click)="c(deleteUser(user))">Si</button>
-            </div>
-        </ng-template>
+        <mat-form-field class="input">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-hint>Te enviaremos un correo para la verificación.</mat-hint>
+            <mat-error *ngIf="userForm.get('email')?.invalid &&
+                      userForm.get('email')?.touched &&
+                      userForm.get('email')?.getError('required')">
+                Email obligatorio.
+            </mat-error>
+            <mat-error *ngIf="userForm.get('email')?.invalid &&
+                      userForm.get('email')?.touched &&
+                      userForm.get('email')?.getError('email')">
+                Formato email incorrecto.
+            </mat-error>
+        </mat-form-field>
 
 
-    </mat-card>
-</section>
+        <button mat-fab extended type="submit" [disabled]="userForm.invalid">
+            <mat-icon>send</mat-icon>
+            Enviar
+        </button>
+    </form>
+
+</div>

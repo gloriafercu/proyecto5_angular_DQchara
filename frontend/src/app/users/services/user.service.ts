@@ -43,7 +43,13 @@ export class UserService {
 
   isLoggedIn() {
     return localStorage.getItem('jwt_token') !== null;
+
   }
+
+  findCurrentUser(): Observable<IUser> {
+    return this.httpClient.get<IUser>(`${this.urlAPI}/current`);
+  }
+
 }
 
 
