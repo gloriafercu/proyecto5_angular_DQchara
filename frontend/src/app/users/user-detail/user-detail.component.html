@@ -4,10 +4,17 @@
     <form [formGroup]="userForm" (ngSubmit)="save()" class="userProfile">
 
         <input type="hidden" formControlName="id">
-
+        <mat-form-field class="input">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Apellido</mat-label>
+            <input matInput type="text" formControlName="lastName">
+        </mat-form-field>
         <mat-form-field class="input">
             <mat-label>Username</mat-label>
-            <input matInput type="text" formControlName="username">
+            <input matInput type="text" formControlName="userName">
         </mat-form-field>
 
         <mat-form-field class="input">
@@ -26,12 +33,22 @@
                 Formato email incorrecto.
             </mat-error>
         </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Teléfono</mat-label>
+            <input matInput type="text" formControlName="phone">
+        </mat-form-field>
 
+<!-- 
+        <mat-form-field class="input">
+            <mat-label>Avatar</mat-label>
+            <input matInput type="text" formControlName="avatar"> 
+        </mat-form-field> -->
 
-        <button mat-fab extended type="submit" [disabled]="userForm.invalid">
+        <button mat-fab extended type="submit">
             <mat-icon>send</mat-icon>
             Enviar
         </button>
     </form>
 
 </div>
+

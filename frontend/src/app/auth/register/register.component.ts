@@ -11,7 +11,7 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent {
   registerForm = new FormGroup({
-    username: new FormControl('', [Validators.required]),
+    userName: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
     acceptConditions: new FormControl('', [Validators.required])
@@ -25,7 +25,7 @@ export class RegisterComponent {
   save() {
 
     let register = {
-      username: this.registerForm.get('username')?.value ?? '',
+      userName: this.registerForm.get('userName')?.value ?? '',
       email: this.registerForm.get('email')?.value ?? '',
       password: this.registerForm.get('password')?.value ?? '',
       acceptConditions: this.registerForm.get('acceptConditions')?.value ?? ''

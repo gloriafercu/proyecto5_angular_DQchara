@@ -30,6 +30,11 @@
         </button>
 
         <button mat-button *ngIf="isLoggedIn" (click)="authService.logout()">
+          <mat-icon>book</mat-icon>
+          Mis reservas
+        </button>
+
+        <button mat-button *ngIf="isLoggedIn" (click)="authService.logout()">
           <mat-icon>logout</mat-icon>
           Cerrar sesión
         </button>

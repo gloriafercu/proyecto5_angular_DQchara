@@ -53,8 +53,8 @@ export class UsersService {
             userFromDB.password = user.password;
             userFromDB.phone = user.phone;
             userFromDB.userName = user.userName;
-            userFromDB.avatar = user.avatar;
-            userFromDB.role = user.role;
+            // userFromDB.avatar = user.avatar;
+            // userFromDB.role = user.role;
 
             await this.userRepo.update(userFromDB.id, userFromDB);
             return userFromDB;
