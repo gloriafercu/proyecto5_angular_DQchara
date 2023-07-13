@@ -32,7 +32,8 @@ export class BookingsController {
         return await this.bookingsService.create(booking);
     }
 
-    @Put()
+   
+    @Put(':id')
     async update(@Body() booking: Booking): Promise<Booking> {
         return this.bookingsService.update(booking);
     }
