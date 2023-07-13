@@ -5,10 +5,10 @@
   <form [formGroup]="registerForm" (ngSubmit)="save()" class="register">
 
     <mat-form-field class="input">
-      <mat-label>Nombre de usuario (username)</mat-label>
-      <input matInput type="text" formControlName="username">
-      <mat-error *ngIf="registerForm.get('username')?.touched &&
-                        registerForm.get('username')?.getError('required')">
+      <mat-label>Nombre de usuario (userName)</mat-label>
+      <input matInput type="text" formControlName="userName">
+      <mat-error *ngIf="registerForm.get('userName')?.touched &&
+                        registerForm.get('userName')?.getError('required')">
         Usuario obligatorio.
       </mat-error>
     </mat-form-field>

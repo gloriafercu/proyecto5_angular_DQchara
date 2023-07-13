@@ -9,6 +9,10 @@ const routes: Routes = [
     component: UserDetailComponent
   },
   {
+    path: 'profile',
+    component: UserDetailComponent
+  },
+  {
     path: '', redirectTo: 'register', pathMatch: 'full'
   },
   {

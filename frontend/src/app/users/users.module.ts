@@ -18,8 +18,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 
-
-
 @NgModule({
   declarations: [
     UserDetailComponent,
@@ -43,7 +41,7 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatCheckboxModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
 
   exports: [
