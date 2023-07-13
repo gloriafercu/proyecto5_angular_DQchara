@@ -72,6 +72,7 @@ export class BookingsService {
             bookingFromDB.notes = booking.notes;
             bookingFromDB.phone = booking.phone;
             bookingFromDB.email = booking.email;
+            //bookingFromDB.restaurant = booking.restaurant;
           
             await this.bookingRepo.update(bookingFromDB.id, bookingFromDB);
             return bookingFromDB;

@@ -5,7 +5,7 @@ import { Booking } from './bookings.entity';
 @Controller('bookings')
 export class BookingsController {
 
-    constructor(private bookingsService: BookingsService) {}
+    constructor(private bookingsService: BookingsService) { }
 
     @Get()
     getAll(): Promise<Booking[]> {
@@ -17,7 +17,7 @@ export class BookingsController {
         return this.bookingsService.getById(id);
     }
 
-    @Get('restaurant/:restaurantId') 
+    @Get('restaurant/:restaurantId')
     getAllBookingsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Booking[]> {
         return this.bookingsService.getAllBookingsByRestaurantId(restaurantId);
     }
@@ -32,15 +32,15 @@ export class BookingsController {
         return await this.bookingsService.create(booking);
     }
 
-    @Put()
+    @Put(':id')
     async update(@Body() booking: Booking): Promise<Booking> {
         return this.bookingsService.update(booking);
     }
 
     @Delete(':id')
-    @HttpCode(204) 
+    @HttpCode(204)
     async deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
-      return await this.bookingsService.deleteById(id);
+        return await this.bookingsService.deleteById(id);
     }
 }
 

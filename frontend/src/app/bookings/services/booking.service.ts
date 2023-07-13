@@ -29,11 +29,11 @@ export class BookingService {
   }
 
   getAllByRestaurantId(restaurantId: number): Observable<IBooking[]> {
-    return this.httpClient.get<IBooking[]>(`${this.urlAPI}/restaurantId/{restaurantId}`);
+    return this.httpClient.get<IBooking[]>(`${this.urlAPI}/restaurant/${restaurantId}`);
   }
 
   getAllByUserId(userId: number): Observable<IBooking[]> {
-    return this.httpClient.get<IBooking[]>(`${this.urlAPI}/userId/{userId}`);
+    return this.httpClient.get<IBooking[]>(`${this.urlAPI}/user/${userId}`);
   }
 
   deleteById(id: number): Observable<{}> {

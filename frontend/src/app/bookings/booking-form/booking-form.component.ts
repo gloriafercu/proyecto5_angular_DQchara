@@ -101,7 +101,9 @@ export class BookingFormComponent implements OnInit {
     let phone = this.bookingForm.get('phone')?.value ?? '';
     let email = this.bookingForm.get('email')?.value ?? '';
     // let restaurant = this.restaurant?.id ?? this.booking?.restaurant.id ?? 0;
-    let restaurant = this.bookingForm.get('restaurant')?.value ?? this.restaurant;
+    let restaurant = this.bookingForm.get('restaurant')?.value ?? this.restaurant ;
+
+   
 
     // let hours = parseInt(bookingTime.split(':')[0], 10);
     // bookingDate.setHours(hours);
