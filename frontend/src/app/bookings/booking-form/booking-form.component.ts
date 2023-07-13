@@ -39,7 +39,7 @@ export class BookingFormComponent implements OnInit {
     notes: new FormControl<string>('', [Validators.maxLength(300)]),
     phone: new FormControl<string>('', [Validators.required, Validators.pattern('^[679]{1}[0-9]{8}$')]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
-    restaurantId: new FormControl<number>(0)
+    restaurant: new FormControl<any>(null)
   });
 
 
@@ -83,7 +83,7 @@ export class BookingFormComponent implements OnInit {
       notes: booking.notes,
       phone: booking.phone,
       email: booking.email,
-      restaurantId: booking.restaurantId
+      restaurant: booking.restaurant
     });
 
   }
@@ -100,7 +100,8 @@ export class BookingFormComponent implements OnInit {
     let notes = this.bookingForm.get('notes')?.value ?? '';
     let phone = this.bookingForm.get('phone')?.value ?? '';
     let email = this.bookingForm.get('email')?.value ?? '';
-    let restaurantId = this.restaurant?.id ?? this.booking?.restaurantId ?? 0;
+    // let restaurant = this.restaurant?.id ?? this.booking?.restaurant.id ?? 0;
+    let restaurant = this.bookingForm.get('restaurant')?.value ?? this.restaurant;
 
     // let hours = parseInt(bookingTime.split(':')[0], 10);
     // bookingDate.setHours(hours);
@@ -110,14 +111,14 @@ export class BookingFormComponent implements OnInit {
       firstName: firstName,
       lastName: lastName,
       peopleNumber: peopleNumber,
-      bookingTime: bookingTime, // ya no hace falta para backend
+      bookingTime: bookingTime,
       bookingDate: bookingDate,
       notes: notes,
       phone: phone,
       email: email,
-      restaurantId: restaurantId,
+      restaurant: restaurant,
     }
-
+    console.log(booking);
     if (id === 0)
       this.bookingService.create(booking).subscribe(
         booking => this.router.navigate(['/bookings', booking.id])

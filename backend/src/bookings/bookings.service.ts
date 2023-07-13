@@ -14,6 +14,9 @@ export class BookingsService {
     
     getById(id: number): Promise<Booking | null> {
         return this.bookingRepo.findOne({
+            relations: {
+                restaurant: true
+            },
             where: { id: id }
         });
     }

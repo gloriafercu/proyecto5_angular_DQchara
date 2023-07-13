@@ -8,7 +8,7 @@ export class UsersController {
 
     constructor(private userService: UsersService) { }
 
-   
+
     @UseGuards(AuthGuard('jwt'))
     @Get('current')
     findCurrentUser(@Request() request): Promise<User> {
@@ -16,12 +16,14 @@ export class UsersController {
         return request.user;
     }
 
-    // @UseGuards(AuthGuard('jwt'))
+    @UseGuards(AuthGuard('jwt'))
     @Put()
     async update(@Request() request, @Body() user: User): Promise<User> {
 
         // si el id de request.user.id no coincide con user.id
-        if (request.user.id !== user.id && 
+        console.log(request.user);
+        console.log(user);
+        if (request.user.id !== user.id &&
             request.user.role !== UserRole.ADMIN)
             throw new UnauthorizedException('No se puede editar');
 

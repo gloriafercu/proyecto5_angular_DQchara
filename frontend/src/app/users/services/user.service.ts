@@ -26,7 +26,7 @@ export class UserService {
   }
 
   update(user: IUser): Observable<IUser> {
-    return this.httpClient.put<IUser>(`${this.urlAPI}/${user.id}`, user);
+    return this.httpClient.put<IUser>(`${this.urlAPI}`, user);
   }
 
   deleteById(id: number): void {

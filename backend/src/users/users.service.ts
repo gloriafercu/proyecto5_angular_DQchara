@@ -50,12 +50,14 @@ export class UsersService {
             userFromDB.firstName = user.firstName;
             userFromDB.lastName = user.lastName;
             userFromDB.email = user.email;
-            userFromDB.password = user.password;
+            //userFromDB.password = user.password;
             userFromDB.phone = user.phone;
             userFromDB.userName = user.userName;
             // userFromDB.avatar = user.avatar;
             // userFromDB.role = user.role;
 
+            console.log('actualiza el siguiente usaurio:')
+            console.log(userFromDB);
             await this.userRepo.update(userFromDB.id, userFromDB);
             return userFromDB;
 

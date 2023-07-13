@@ -48,8 +48,8 @@ export class UserDetailComponent implements OnInit{
     let lastName = this.userForm.get('lastName')?.value ?? '';
     let userName = this.userForm.get('userName')?.value ?? '';
     let email = this.userForm.get('email')?.value ?? '';
-    let phone = this.userForm.get('email')?.value ?? '';
-    let avatar = this.userForm.get('email')?.value ?? '';
+    let phone = this.userForm.get('phone')?.value ?? '';
+    //let avatar = this.userForm.get('email')?.value ?? '';
 
     let user: IUser = {
       id: id,
@@ -58,7 +58,7 @@ export class UserDetailComponent implements OnInit{
       userName: userName,
       email: email,
       phone:phone,
-      avatar:avatar
+      //avatar:avatar
     }
 
     this.userService.update(user)
