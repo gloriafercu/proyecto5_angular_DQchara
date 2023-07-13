@@ -12,13 +12,8 @@ export class FilterNamePipe implements PipeTransform {
     for (const restaurant of restaurants) {
       if (restaurant.name.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         filterRestaurants.push(restaurant);
-
       };
-
     };
-    
-   
-
     return filterRestaurants;
   }
 

@@ -40,7 +40,7 @@ export class RestaurantListComponent implements OnInit {
     "Italiana"
   ];
 
-  
+
   filterName = '';
 
   results_length: number = 0;
@@ -91,30 +91,32 @@ export class RestaurantListComponent implements OnInit {
 
   onChangeRating(event: MatSelectChange): void {
     let rating = event.value;
-    this.restaurantService.  getAllOrderByRating(rating).subscribe(data => {
+    this.restaurantService.getAllOrderByRating(rating).subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
       const dinamicTitle = this.dinamicTitleInTS.nativeElement;
-      this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes ordenados por puntuación ${rating}`)
+      this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes ordenados por puntuación`)
     });
   }
 
   onChangeAveragePrice(event: MatSelectChange): void {
     let averagePrice = event.value;
-    this.restaurantService.  getAllOrderByAverage(averagePrice).subscribe(data => {
+    this.restaurantService.getAllOrderByAverage(averagePrice).subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
       const dinamicTitle = this.dinamicTitleInTS.nativeElement;
-      this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes ordenados por precio ${averagePrice}`)
+      this.renderer2.setProperty(dinamicTitle, 'innerHTML', `Restaurantes ordenados por precio`)
     });
   }
 
-  onChangeName(event: any): void {
-    let name = event.value;
+  onChangeName(event:any): void {
+    let name = event.target.value.toLowerCase();;
     console.log('name', name)
     this.restaurantService.getAllByNameLike(name).subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
+
+   
     });
   }
 
