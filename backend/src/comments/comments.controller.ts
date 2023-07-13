@@ -27,6 +27,8 @@ export class CommentsController {
         return this.commentsService.getAllCommentsByUserId(userId);
     }
 
+    
+
     @Post()
     async create(@Body() comment: Comment): Promise<Comment> {
         return await this.commentsService.create(comment);

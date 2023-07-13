@@ -10,38 +10,38 @@ export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ length: 10 })
-    firstName: string;
+    @Column({ length: 10,nullable: true })
+    firstName?: string;
 
-    @Column({ length: 15 })
-    lastName: string;
+    @Column({ length: 15,nullable: true })
+    lastName?: string;
 
     @Column({ unique: true })
     email: string;
 
-    @Column()
-    password: string;
+    @Column({nullable: true})
+    password?: string;
 
-    @Column({ length: 9 })
-    phone: string;
+    @Column({ length: 9 ,nullable: true})
+    phone?: string;
 
     @Column({ unique: true })
     userName: string;
 
-    @Column()
-    avatar: string;
+    @Column({nullable: true})
+    avatar?: string;
 
     @Column({
         type: 'enum',
         enum: UserRole,
-        default: UserRole.USER
+        default: UserRole.USER,nullable: true
     })
-    role: UserRole;
+    role?: UserRole;
 
-    @CreateDateColumn({ name: 'created_date' })
-    createdDate: Date;
+    @CreateDateColumn({ name: 'created_date' ,nullable: true})
+    createdDate?: Date;
 
-    @UpdateDateColumn({ name: 'updated_date' })
-    updatedDate: Date;
+    @UpdateDateColumn({ name: 'updated_date',nullable: true })
+    updatedDate?: Date;
 
 }   
