@@ -24,7 +24,8 @@ export class UserDetailComponent implements OnInit{
 
   });
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, 
+    private router:Router) {}
 
   ngOnInit(): void {
     this.userService.findCurrentUser()
@@ -49,7 +50,7 @@ export class UserDetailComponent implements OnInit{
     let userName = this.userForm.get('userName')?.value ?? '';
     let email = this.userForm.get('email')?.value ?? '';
     let phone = this.userForm.get('phone')?.value ?? '';
-    //let avatar = this.userForm.get('email')?.value ?? '';
+    let avatar = this.userForm.get('avatar')?.value ?? '';
 
     let user: IUser = {
       id: id,
@@ -58,12 +59,15 @@ export class UserDetailComponent implements OnInit{
       userName: userName,
       email: email,
       phone:phone,
-      //avatar:avatar
+      avatar:avatar
     }
 
     this.userService.update(user)
-    .subscribe(data => console.log('usuario actualizado'));
-
+    .subscribe(data =>{
+      this.router.navigate(['/users', user.id]);
+      
+    } );
+    
 
   }
 

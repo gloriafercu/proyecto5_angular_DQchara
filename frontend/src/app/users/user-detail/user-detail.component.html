@@ -38,17 +38,23 @@
             <input matInput type="text" formControlName="phone">
         </mat-form-field>
 
-<!-- 
-        <mat-form-field class="input">
-            <mat-label>Avatar</mat-label>
-            <input matInput type="text" formControlName="avatar"> 
-        </mat-form-field> -->
+        <button mat-button routerLink="/users/avatar" class="input">
+            <mat-icon>photo_camera</mat-icon>
+            Mi avatar
+        </button>
+
+        <button mat-button routerLink="/bookings/boking-list">
+            <mat-icon>book</mat-icon>
+            Mis reservas
+        </button>
 
         <button mat-fab extended type="submit">
             <mat-icon>send</mat-icon>
             Enviar
         </button>
+
+
+
     </form>
 
 </div>
-

@@ -29,7 +29,8 @@
           Mi perfil
         </button>
 
-        <button mat-button *ngIf="isLoggedIn" (click)="authService.logout()">
+        <button mat-button *ngIf="isLoggedIn" routerLink="/bookings/boking-list"> 
+          <!-- enrutar a booking-list -->
           <mat-icon>book</mat-icon>
           Mis reservas
         </button>
