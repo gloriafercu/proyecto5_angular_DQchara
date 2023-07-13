@@ -38,32 +38,17 @@
             <input matInput type="text" formControlName="phone">
         </mat-form-field>
 
-        <!-- <button mat-button routerLink="/users/avatar" class="input">
+        <button mat-button routerLink="/users/avatar" class="input">
             <mat-icon>photo_camera</mat-icon>
             Mi avatar
-          </button> -->
-          
-          <div class="container-userDetail">
-            <h2 >Imagen de perfil de usuario</h2>
-            
-            <div>
-              <img *ngIf="imagePreview" [src]="imagePreview" style="max-width: 300px;" alt="user avatar"/>
-            </div>
-            
-            <input type="file" (change)="onFileSelected($event)"/>
-            
-            <div>
-              <button (click)="save()">Enviar</button>
-            </div>
-            </div>
+        </button>
 
         <button mat-fab extended type="submit">
             <mat-icon>send</mat-icon>
             Enviar
         </button>
 
-        
+
     </form>
 
 </div>
-
