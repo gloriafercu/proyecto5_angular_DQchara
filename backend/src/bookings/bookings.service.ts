@@ -37,7 +37,8 @@ export class BookingsService {
     getAllBookingsByUserId(userId: number): Promise<Booking[]> {
         return this.bookingRepo.find({
             relations: {
-                user: true
+                user: true,
+                restaurant:true
             },
             where: {
                 user: {
