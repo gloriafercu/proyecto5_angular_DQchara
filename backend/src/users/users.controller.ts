@@ -1,7 +1,8 @@
-import { Body, Controller, Request, Delete, Get, HttpCode, Param, ParseIntPipe, Post, Put, UseGuards, UnauthorizedException } from '@nestjs/common';
+import { Body, Controller, Request, Delete, Get, HttpCode, Param, ParseIntPipe, Post, Put, UseGuards, UnauthorizedException, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User, UserRole } from './users.entity';
 import { AuthGuard } from '@nestjs/passport';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('users')
 export class UsersController {
@@ -32,6 +33,13 @@ export class UsersController {
         // crear un nuevo token JWT y devolverlo para que se actualice en frontend
     }
 
+    // avatar (se puede separar a un nuevo controlador FilesController o AvatarController)
+    @Post('avatar')
+    @UseInterceptors(FileInterceptor('file'))
+    uploadAvatar(@UploadedFile() file: Express.Multer.File) {
+        console.log(file);
 
-
+        // guardar nombre archivo usando userService
+        // http://localhost:3000/uploads/nombrearchivo.jpg
+    }
 }

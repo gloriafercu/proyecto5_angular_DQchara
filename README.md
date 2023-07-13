@@ -62,3 +62,28 @@ ng update @angular/cli @angular/core
 ```
 
  
+## OpenAPI
+
+npm install @nestjs/swagger
+
+En main.ts:
+
+  const config = new DocumentBuilder()
+    .setTitle('Cats example')
+    .setDescription('The cats API description')
+    .setVersion('1.0')
+    .addTag('cats')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
+
+  
+## subida de imágenes
+
+  Backend:
+
+npm install -D @types/multer
+
+users.controller.ts crear método uploadAvatar()
+
+Configurar carpeta destino en app.module.ts
