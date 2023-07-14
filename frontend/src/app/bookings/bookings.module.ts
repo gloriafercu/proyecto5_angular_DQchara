@@ -19,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
-
+import { LimitLongTextPipe } from './../pipes/limit-long-text.pipe';
 
 
 @NgModule({
@@ -27,6 +27,7 @@ import { MatTableModule } from '@angular/material/table';
     BookingFormComponent,
     BookingDetailComponent,
     BookingListComponent,
+    LimitLongTextPipe
 
   ],
   imports: [

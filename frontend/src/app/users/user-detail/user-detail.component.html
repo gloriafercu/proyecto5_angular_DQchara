@@ -1,8 +1,7 @@
-<div class="container-userDetail">
+<div class="container-user-detail">
     <h2>Mi Perfil</h2>
 
     <form [formGroup]="userForm" (ngSubmit)="save()" class="userProfile">
-
         <input type="hidden" formControlName="id">
         <mat-form-field class="input">
             <mat-label>Nombre</mat-label>
@@ -20,41 +19,24 @@
         <mat-form-field class="input">
             <mat-label>Email</mat-label>
             <input type="email" matInput formControlName="email" placeholder="hola@hola.com">
-            <mat-icon matSuffix>email</mat-icon>
-            <mat-hint>Te enviaremos un correo para la verificación.</mat-hint>
-            <mat-error *ngIf="userForm.get('email')?.invalid &&
-                      userForm.get('email')?.touched &&
-                      userForm.get('email')?.getError('required')">
-                Email obligatorio.
-            </mat-error>
-            <mat-error *ngIf="userForm.get('email')?.invalid &&
-                      userForm.get('email')?.touched &&
-                      userForm.get('email')?.getError('email')">
-                Formato email incorrecto.
-            </mat-error>
+            <mat-icon matSuffix class="icon-form">email</mat-icon>
         </mat-form-field>
         <mat-form-field class="input">
             <mat-label>Teléfono</mat-label>
             <input matInput type="text" formControlName="phone">
+            <mat-icon matSuffix class="icon-form">phone</mat-icon>
         </mat-form-field>
-
         <button mat-button routerLink="/users/avatar" class="input">
             <mat-icon>photo_camera</mat-icon>
-            Mi avatar
+            Añade tu avatar
         </button>
-
-        <button mat-button routerLink="/bookings/booking-list">
+        <!-- <button mat-button routerLink="/bookings/booking-list">
             <mat-icon>book</mat-icon>
             Mis reservas
-        </button>
-
-        <button mat-fab extended type="submit">
+        </button> -->
+        <button mat-button extended type="submit" class="button-submit">
             <mat-icon>send</mat-icon>
             Enviar
         </button>
-
-
-
     </form>
-
 </div>

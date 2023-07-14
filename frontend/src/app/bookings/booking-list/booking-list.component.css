@@ -1,7 +1,18 @@
-.container-userDetail {
-    padding-top: 100px;
+.container-user-detail {
+    padding-top: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.container-user-detail h2 {
+    margin-bottom: 35px;
+
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

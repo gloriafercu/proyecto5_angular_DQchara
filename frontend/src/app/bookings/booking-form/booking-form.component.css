@@ -58,6 +58,9 @@
 }
 
 .button-submit {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   background-color: var(--primary_color);
   max-width: 280px;
   width: 100%;
