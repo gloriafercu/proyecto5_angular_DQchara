@@ -19,7 +19,7 @@
 
         <mat-form-field class="input">
             <mat-label>Email</mat-label>
-            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+            <input type="email" matInput formControlName="email" placeholder="hola@hola.com">
             <mat-icon matSuffix>email</mat-icon>
             <mat-hint>Te enviaremos un correo para la verificación.</mat-hint>
             <mat-error *ngIf="userForm.get('email')?.invalid &&
@@ -43,7 +43,7 @@
             Mi avatar
         </button>
 
-        <button mat-button routerLink="/bookings/boking-list">
+        <button mat-button routerLink="/bookings/booking-list">
             <mat-icon>book</mat-icon>
             Mis reservas
         </button>

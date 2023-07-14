@@ -12,7 +12,23 @@
   color: var(--white_color);
   height: auto;
 }
-.menuCuenta{
+
+.menu-account {}
+
+::ng-deep .mat-mdc-button:not(.mat-mdc-menu-trigger) {
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+
+}
+
+::ng-deep .cdk-overlay-pane .mat-mdc-menu-panel.mat-mdc-menu-panel {
   display: flex;
   flex-direction: column;
+  right: 20px;
+}
+
+.account {
+  font-size: 16px;
+  font-weight: bold;
 }

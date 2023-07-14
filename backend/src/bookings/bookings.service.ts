@@ -8,7 +8,7 @@ export class BookingsService {
 
     constructor(@InjectRepository(Booking) private bookingRepo: Repository<Booking>) { }
 
-    getAll(): Promise<Booking[]> {
+    findAll(): Promise<Booking[]> {
         return this.bookingRepo.find();
     }
 
@@ -38,7 +38,7 @@ export class BookingsService {
         return this.bookingRepo.find({
             relations: {
                 user: true,
-                restaurant:true
+                restaurant: true
             },
             where: {
                 user: {
@@ -58,7 +58,7 @@ export class BookingsService {
 
     async update(booking: Booking): Promise<Booking> {
         let bookingFromDB = await this.bookingRepo.findOne({
-          
+
             where: {
                 id: booking.id
             }
@@ -74,10 +74,10 @@ export class BookingsService {
             bookingFromDB.notes = booking.notes;
             bookingFromDB.phone = booking.phone;
             bookingFromDB.email = booking.email;
-           
 
-            console.log('ESTA RESERVA',booking);
-            
+
+            console.log('ESTA RESERVA', booking);
+
             await this.bookingRepo.update(bookingFromDB.id, bookingFromDB);
             return bookingFromDB;
 

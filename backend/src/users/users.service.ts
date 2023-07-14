@@ -28,9 +28,6 @@ export class UsersService {
         });
     }
 
-    // ¿Tiene sentido tener un método crear en user, no tendría que ser sólo en el auth?
-    // Ocurre lo mismo en restaurants
-
     async create(user: User): Promise<User> {
         try {
             return await this.userRepo.save(user);
@@ -53,7 +50,7 @@ export class UsersService {
             //userFromDB.password = user.password;
             userFromDB.phone = user.phone;
             userFromDB.userName = user.userName;
-            // userFromDB.avatar = user.avatar;
+            userFromDB.avatar = user.avatar;
             // userFromDB.role = user.role;
 
             console.log('actualiza el siguiente usaurio:')

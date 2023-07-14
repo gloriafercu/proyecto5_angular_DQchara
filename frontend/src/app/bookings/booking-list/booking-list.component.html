@@ -4,7 +4,7 @@
     <table mat-table [dataSource]="bookings" class="mat-elevation-z8">
         <ng-container matColumnDef="restaurant">
             <th mat-header-cell *matHeaderCellDef>Restaurante</th>
-            <td mat-cell *matCellDef="let booking" >{{ booking.restaurant}}</td>
+            <td mat-cell *matCellDef="let booking" >{{ booking.restaurant.name}}</td>
         </ng-container>
 
         <ng-container matColumnDef="bookingDate">
