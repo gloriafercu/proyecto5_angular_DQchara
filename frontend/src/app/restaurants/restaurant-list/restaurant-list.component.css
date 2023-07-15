@@ -59,23 +59,20 @@
     color: green;
 }
 
-
-
 ::ng-deep .container-filter mat-form-field {
     padding: 0;
 
 }
 
-
 .title-block {
     position: absolute;
-    top: 160px;
-    left: 40px;
+    top: 130px;
+    left: 30px;
     width: 30%;
-    font-size: 55px;
-    line-height: 1.15;
+    font-size: 54px;
+    line-height: 1.2;
     color: var(--white_color);
-    font-family: 'Courgette', cursive;
+    font-weight: 500;
 }
 
 :host ::ng-deep .mat-mdc-select-arrow,

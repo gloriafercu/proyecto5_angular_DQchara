@@ -28,8 +28,6 @@ export class BookingFormComponent implements OnInit {
 
 
   bookingForm = new FormGroup({
-    // userId: new FormControl<number>(0, [Validators.required]),
-    // restaurantId: new FormControl<number>(0, [Validators.required]),
     id: new FormControl<number>(0),
     firstName: new FormControl<string>('', [Validators.required]),
     lastName: new FormControl<string>('', [Validators.required]),
@@ -41,7 +39,6 @@ export class BookingFormComponent implements OnInit {
     email: new FormControl<string>('', [Validators.required, Validators.email]),
     restaurant: new FormControl<any>(null)
   });
-
 
   constructor(
     private bookingService: BookingService,
