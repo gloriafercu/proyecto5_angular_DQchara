@@ -25,7 +25,7 @@ export class CommentsService {
         // let averageValue = ratingsArray.reduce((acc, rate) => acc + rate, 0) / ratingsArray.length;
         // this.average = parseFloat(averageValue.toFixed(1));
         
-        let arrayCommentsByRestId = this.commentRepo.find({
+        return this.commentRepo.find({
             relations: {
                 restaurant: true,
                 user: true
@@ -36,14 +36,11 @@ export class CommentsService {
                 }
             }
         });
-        return arrayCommentsByRestId
     }
 
   
 
     getAllCommentsByUserId(userId: number): Promise<Comment[]> { 
-        
-        
         return this.commentRepo.find({
             relations: {
                 user: true

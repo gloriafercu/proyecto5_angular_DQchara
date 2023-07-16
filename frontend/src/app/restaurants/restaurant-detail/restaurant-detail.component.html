@@ -87,11 +87,10 @@
                     <mat-card-header>
                         <mat-card-title-group>
                             <div class="container-data-user">
-                                <img class="avatar-img" src="https://material.angular.io/assets/img/examples/shiba1.jpg"
-                                    alt="avatar">
+                                <img class="avatar-img" src="{{comment.user.avatar}}" alt="avatar">
                                 <div class="content-user">
-                                    <mat-card-title>Usuario</mat-card-title>
-                                    <mat-card-subtitle>11 Junio 2023</mat-card-subtitle>
+                                    <mat-card-title>{{ comment.user.userName }}</mat-card-title>
+                                    <mat-card-subtitle>{{ comment.createdDate | date: 'dd/MM/YYYY' }}</mat-card-subtitle>
                                 </div>
                             </div>
                             <div class="content-rating">
