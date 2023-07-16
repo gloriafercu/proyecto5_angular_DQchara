@@ -1,18 +1,31 @@
 .container-user-detail {
-    padding-top: 130px;
-    display: flex;
+    display: grid;
+    /* place-items: center; */
+    min-height: 80vh;
+    margin-top: 120px;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .container-user-detail h2 {
+    font-weight: 600;
+    font-size: 20px;
     margin-bottom: 35px;
-
+    text-align: center;
 }
 
-.container-buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.content-table {
+    max-width: 1000px;
+    margin-bottom: 200px;
+}
+
+
+
+.button {
+    margin: 0 10px;
+}
+
+
+::ng-deep .content-table .mat-mdc-table {
+    max-width: 800px;
+    white-space: nowrap;
 }

@@ -8,6 +8,8 @@
 
 .container-user-detail h2 {
     margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .userProfile {
