@@ -2,7 +2,7 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { Restaurant } from './restaurants.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ILike, Repository } from 'typeorm';
-import { CommentsService } from 'src/comments/comments.service';
+
 
 @Injectable()
 export class RestaurantsService {

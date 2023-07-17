@@ -19,6 +19,9 @@ export class CommentService {
     return this.httpClient.get<IComment[]>(`${this.urlAPI}/rating/${rating}`);
   }
 
+  getAverageByRestaurantId(restaurantId: number): Observable<number> {
+    return this.httpClient.get<number>(`${this.urlAPI}/average/${restaurantId}`)
+  }
   create(comment: IComment): Observable<IComment> {
     return this.httpClient.post<IComment>(this.urlAPI, comment);
   }
@@ -33,7 +36,7 @@ export class CommentService {
   getAll(): Observable<IComment[]> {
     return this.httpClient.get<IComment[]>(this.urlAPI);
   }
-  
+
   getAllCommentsByRestaurantId(restaurantId: number): Observable<IComment[]> {
     return this.httpClient.get<IComment[]>(`${this.urlAPI}/restaurantId/${restaurantId}`);
   }
