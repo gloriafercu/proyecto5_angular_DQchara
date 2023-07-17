@@ -75,5 +75,26 @@ export class UsersService {
         } catch (error) {
             throw new ConflictException('No se puede borrar')
         }
+    } 
+    async updateAvatar(user: User): Promise<User>{
+        let userFromDB = await this.userRepo.findOne({ 
+            where: {
+                id: user.id
+            }
+        });
+        if(!userFromDB) throw new NotFoundException('Usuario no encontrado');
+
+        try {
+           console.log(user);
+           userFromDB.avatar = user.avatar;
+           return await this.userRepo.save(userFromDB);
+
+        } catch (error) {
+           console.log(error);
+           throw new ConflictException('Error actualizando usuario');
+        }
+            
+
+
     }
 }

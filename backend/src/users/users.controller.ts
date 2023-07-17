@@ -34,12 +34,13 @@ export class UsersController {
     }
 
     // avatar (se puede separar a un nuevo controlador FilesController o AvatarController)
-    @Post('avatar')
+    @UseGuards(AuthGuard('jwt'))
+    @Post('avatar') // se puede separar en un avatar.controller.ts para mas archivos
     @UseInterceptors(FileInterceptor('file'))
-    uploadAvatar(@UploadedFile() file: Express.Multer.File) {
+    async uploadAvatar( @Request() request , @UploadedFile()file: Express.Multer.File){
         console.log(file);
 
-        // guardar nombre archivo usando userService
-        // http://localhost:3000/uploads/nombrearchivo.jpg
-    }
+        request.user.avatar= file.filename;
+        console.log(request.user);
+        return await this.userService.updateAvatar(request.user);
 }
