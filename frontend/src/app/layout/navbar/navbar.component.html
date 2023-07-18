@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
 
   <mat-toolbar class="navbar">
     <a routerLink="/restaurants" title="Inicio">
@@ -18,6 +18,61 @@
         <mat-icon>login</mat-icon>
         Iniciar sesión
       </button>
+
+      <button mat-button *ngIf="!isLoggedIn" routerLink="/auth/register">
+        <mat-icon>person_add</mat-icon>
+        Crear cuenta
+      </button>
+
+      <button mat-button *ngIf="isLoggedIn" routerLink="/users/profile">
+        <mat-icon>account_circle</mat-icon>
+        Mi perfil
+      </button>
+
+      <button mat-button *ngIf="isLoggedIn" routerLink="/bookings/booking-list">
+         enrutar a booking-list -->
+<!-- <mat-icon>book</mat-icon>
+        Mis reservas
+      </button>
+
+      <button mat-button *ngIf="isLoggedIn" (click)="authService.logout()">
+        <mat-icon>logout</mat-icon>
+        Cerrar sesión
+      </button>
+
+    </mat-menu>
+
+  </mat-toolbar>
+
+</nav> -->
+
+<nav>
+
+  <mat-toolbar class="navbar">
+    <a routerLink="/restaurants" title="Inicio">
+      <img src="\assets\img\D_Qchara_logo-transparente.png" class="logo" alt="logo">
+    </a>
+
+
+    <button mat-button [matMenuTriggerFor]="menuAccount" class="account" *ngIf="!isLoggedIn"
+      routerLink="/auth/login">Iniciar sesion
+      <mat-icon>
+        login
+      </mat-icon>
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="menuAccount" class="account" *ngIf="isLoggedIn">Hola {{email}}
+      <mat-icon>
+        account_circle
+      </mat-icon>
+    </button>
+
+    <mat-menu #menuAccount="matMenu" class="menu-account">
+
+      <!-- <button mat-button *ngIf="!isLoggedIn" routerLink="/auth/login">
+        <mat-icon>login</mat-icon>
+        Iniciar sesión
+      </button> -->
 
       <button mat-button *ngIf="!isLoggedIn" routerLink="/auth/register">
         <mat-icon>person_add</mat-icon>
