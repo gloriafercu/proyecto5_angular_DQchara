@@ -2,13 +2,13 @@
 <h2 >Imagen de perfil de usuario</h2>
 
 <div *ngIf="user && user.avatar">
-  <h2>Avatar Actual</h2>
+  <h2>Imagen Actual</h2>
   <img  [src]="'http://localhost:3000/uploads/' + user!.avatar" style="max-width: 200px;" alt="user avatar">
 </div>
 
 <div>
-  <h2>Nuevo Avatar</h2>
-  <img *ngIf="imagePreview" [src]="imagePreview" style="max-width: 200px;" alt="user avatar">
+  <h2>Nueva Imagen</h2>
+  <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar">
 </div>
 <input type="file" (change)="onFileSelected($event)">
 

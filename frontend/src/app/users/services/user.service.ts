@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
-  urlAPI: string = "http://localhost:3000/users";
+  urlAPI: string = "http://localhost:3000/users"; //Mirar esto
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 

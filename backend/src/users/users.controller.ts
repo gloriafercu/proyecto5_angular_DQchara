@@ -42,5 +42,6 @@ export class UsersController {
 
         request.user.avatar= file.filename;
         console.log(request.user);
-        return await this.userService.updateAvatar(request.user);
+        return await this.userService.update(request.user);
+}
 }

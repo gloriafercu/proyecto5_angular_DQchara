@@ -21,7 +21,7 @@ export class AvatarComponent implements OnInit {
   };
 
   private loadCurrentUser() {
-    this.httpClient.get<IUser>(`${BASE_URL}/users/current`).subscribe(data => this.user = data);
+    this.httpClient.get<IUser>(`${BASE_URL}/users/current`).subscribe(data => this.user = data); // mirar esta ruta
   }
 
   onFileSelected(event: Event) {
@@ -48,7 +48,7 @@ export class AvatarComponent implements OnInit {
         this.loadCurrentUser(); 
         this.imageFile = undefined;
         this.imagePreview = undefined;
-       
+        console.log(data);
       });
   }
 }
