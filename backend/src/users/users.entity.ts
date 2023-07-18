@@ -12,10 +12,10 @@ export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ length: 10, nullable: true })
+    @Column({ length: 20, nullable: true })
     firstName?: string;
 
-    @Column({ length: 15, nullable: true })
+    @Column({ length: 30, nullable: true })
     lastName?: string;
 
     @Column({ unique: true })
