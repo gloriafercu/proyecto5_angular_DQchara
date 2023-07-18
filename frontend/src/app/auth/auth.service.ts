@@ -27,6 +27,7 @@ export class AuthService {
   // que siempre emite el último valor a sus observadores
   isAdmin = new BehaviorSubject<boolean>(false);
   isLoggedIn = new BehaviorSubject<boolean>(this.hasToken());
+  email = new BehaviorSubject<string>('');
 
   constructor(
     private httpClient: HttpClient,

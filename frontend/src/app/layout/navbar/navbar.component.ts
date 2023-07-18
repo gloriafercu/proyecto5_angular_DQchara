@@ -10,6 +10,7 @@ export class NavbarComponent {
 
   isLoggedIn = false;
   isAdmin = false;
+  email: string = '';
 
   constructor(public authService: AuthService) { }
 

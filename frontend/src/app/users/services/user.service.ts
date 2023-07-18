@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUser } from '../models/user.model';
 import { Router } from '@angular/router';
+import { BASE_URL } from 'src/app/shared/constants';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
-  urlAPI: string = "http://localhost:3000/users";
+  urlAPI: string = `${BASE_URL}/users`; //Mirar esto
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
@@ -32,23 +33,25 @@ export class UserService {
   deleteById(id: number): void {
     this.httpClient.delete(`${this.urlAPI}/${id}`);
   }
-  register(user: any): Observable<any> {
-    return this.httpClient.post(`${this.urlAPI}/register`, user);
-  }
+  
+  // register(user: any): Observable<any> {
+  //   return this.httpClient.post(`${this.urlAPI}/register`, user);
+  // // }
 
-  logout() {
-    localStorage.removeItem('jwt_token');
-    this.router.navigate(['/user/login']);
-  }
+  // logout() {
+  //   localStorage.removeItem('jwt_token');
+  //   this.router.navigate(['/user/login']);
+  // }
 
-  isLoggedIn() {
-    return localStorage.getItem('jwt_token') !== null;
+  // isLoggedIn() {
+  //   return localStorage.getItem('jwt_token') !== null;
 
-  }
+  // }
 
   findCurrentUser(): Observable<IUser> {
     return this.httpClient.get<IUser>(`${this.urlAPI}/current`);
   }
+
 
 }
 
