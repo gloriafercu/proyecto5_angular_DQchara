@@ -12,6 +12,7 @@ export class NavbarComponent {
   isAdmin = false;
   isRestaurant = false;
   userName = '';
+  avatar = '';
 
   constructor(public authService: AuthService) { }
 
@@ -26,5 +27,6 @@ export class NavbarComponent {
     this.authService.isRestaurant.subscribe(restaurant => this.isRestaurant = restaurant);
 
     this.authService.currentUserName.subscribe(currentUserName => this.userName = currentUserName);
+    this.authService.avatar.subscribe(avatar=> this.avatar = avatar);
   }
 }

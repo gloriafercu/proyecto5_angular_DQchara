@@ -27,6 +27,7 @@ export class AuthService {
         let payload = {
             userName: user.userName,
             email: user.email,
+            avatar: user.avatar,
             sub: user.id,
             role: user.role
         }
@@ -38,23 +39,10 @@ export class AuthService {
         return token;
     }
 
-    // async register(user: User): Promise<TokenDto> {
-
-    //     let loginDto: LoginDto = {
-    //         email: user.email,
-    //         password: user.password //contraseña original
-    //     }
-
-    //     // cifrar contraseñas bcrypt
-    //     user.password = bcrypt.hashSync(user.password, 10); // contraseña cifrada
-    //     await this.userService.create(user);
-
-    //     return await this.login(loginDto);
-    // }
+   
     async register(register: RegisterDTO): Promise<TokenDTO> {
 
         let loginDTO: LoginDto = {
-         
             email: register.email,
             password: register.password
         }
