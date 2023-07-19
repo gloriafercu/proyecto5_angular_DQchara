@@ -10,7 +10,7 @@ const routes: Routes = [
     component: CommentListComponent
   },
   {
-    path: 'comment-form',
+    path: 'comment-form/restaurant/:restaurantId',
     component: CommentFormComponent
   },
   {

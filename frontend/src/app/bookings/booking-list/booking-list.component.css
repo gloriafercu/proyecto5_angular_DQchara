@@ -12,20 +12,20 @@
     text-align: center;
 }
 
-/* .content-table {
-    max-width: 1000px;
-    margin-bottom: 200px;
-} */
-
-
-
 .button {
-    margin: 0 10px;
+    margin: 5px;
     box-shadow: none;
 }
 
 
 ::ng-deep .content-table .mat-mdc-table {
-    max-width: 800px;
+    max-width: 900px;
     white-space: nowrap;
+}
+
+ng-container td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
