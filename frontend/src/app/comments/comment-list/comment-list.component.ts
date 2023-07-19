@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class CommentListComponent implements OnInit {
 
   comments: IComment[] = [];
-  displayedColumns: string[] = ['description', 'rating', 'actions'];
+  displayedColumns: string[] = ['restaurant','description', 'rating', 'actions'];
 
 
 
@@ -19,8 +19,9 @@ export class CommentListComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    console.log("EEEEEE")
-    this.commentService.getAll().subscribe(data => this.comments = data);
+    this.commentService.getAll().subscribe(data => {
+      console.log(data);
+      this.comments = data});
 
     //this.commentService.getAllCommentsByUserId(userId).subscribe(data => this.comments = data); 
   }
