@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { CommentFormComponent } from './comment-form/comment-form.component';
 
 
 
@@ -23,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
   declarations: [
     CommentListComponent,
     CommentDetailComponent,
+    CommentFormComponent,
   ],
   imports: [
     CommonModule,

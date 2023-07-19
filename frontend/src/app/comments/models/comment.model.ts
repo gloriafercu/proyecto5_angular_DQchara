@@ -6,5 +6,5 @@ export interface IComment {
     description: string;
     restaurant: Partial<IRestaurant>;
     user?: any;
-    createdDate: Date;
+    createdDate?: Date;
 }

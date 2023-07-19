@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BookingService } from '../services/booking.service';
 import { RestaurantService } from 'src/app/restaurants/restaurant.service';
 import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
-import { IUser } from 'src/app/users/models/user.model';
+//import { IUser } from 'src/app/users/models/user.model';
 import { IBooking } from '../models/booking.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -20,7 +20,7 @@ export class BookingFormComponent implements OnInit {
   restaurant: IRestaurant | undefined;
   booking: IBooking | undefined;
   restaurants: IRestaurant[] = [];
-  users: IUser[] = [];
+  //users: IUser[] = [];
 
   times: string[] = ["13:00", "14:00", "15:00", "19:00", "20:00", "21:00", "22:00"];
   numPeople: string[] = ["1 persona", "2 personas", "3 personas", "4 personas", "5 personas", "6 personas"];
