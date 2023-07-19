@@ -14,8 +14,10 @@
     </button>
 
     <button mat-button [matMenuTriggerFor]="menuAccount" class="account" *ngIf="isLoggedIn">
-      <img class="avatar-img"[src]="'http://localhost:3000/uploads/' + avatar" alt="user avatar"/>
+      
+      <img *ngIf="avatar" class="avatar-img"[src]="'http://localhost:3000/uploads/' + avatar" alt="user avatar"/>
       Hola {{userName}}!
+    
 
     </button>
 
