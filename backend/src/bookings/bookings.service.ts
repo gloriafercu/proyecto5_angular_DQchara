@@ -6,19 +6,26 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class BookingsService {
 
-    constructor(@InjectRepository(Booking) private bookingRepo: Repository<Booking>) {}
+    constructor(@InjectRepository(Booking) private bookingRepo: Repository<Booking>) { }
 
     getAll(): Promise<Booking[]> {
-        return this.bookingRepo.find();
+        return this.bookingRepo.find({
+            relations: {
+                restaurant: true
+            }
+        });
     }
-    
+
     getById(id: number): Promise<Booking | null> {
         return this.bookingRepo.findOne({
+            relations: {
+                restaurant: true
+            },
             where: { id: id }
         });
     }
 
-    getAllBookingsByRestaurantId(restaurantId: number): Promise<Booking[]> { 
+    getAllBookingsByRestaurantId(restaurantId: number): Promise<Booking[]> {
         return this.bookingRepo.find({
             relations: {
                 restaurant: true
@@ -34,7 +41,8 @@ export class BookingsService {
     getAllBookingsByUserId(userId: number): Promise<Booking[]> {
         return this.bookingRepo.find({
             relations: {
-                user: true
+                user: true,
+                restaurant: true
             },
             where: {
                 user: {
@@ -54,6 +62,7 @@ export class BookingsService {
 
     async update(booking: Booking): Promise<Booking> {
         let bookingFromDB = await this.bookingRepo.findOne({
+
             where: {
                 id: booking.id
             }
@@ -69,7 +78,10 @@ export class BookingsService {
             bookingFromDB.notes = booking.notes;
             bookingFromDB.phone = booking.phone;
             bookingFromDB.email = booking.email;
-          
+
+
+            console.log('ESTA RESERVA', booking);
+
             await this.bookingRepo.update(bookingFromDB.id, bookingFromDB);
             return bookingFromDB;
 

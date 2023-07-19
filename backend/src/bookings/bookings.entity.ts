@@ -21,7 +21,7 @@ export class Booking {
     bookingDate: Date;
 
     @Column()
-    bookingTime: string;// pasar a bookingDate????
+    bookingTime: string;
 
     @Column()
     notes: string;

@@ -1,3 +1,6 @@
+import { IRestaurant } from "src/app/restaurants/models/restaurant.model";
+import { IUser } from "src/app/users/models/user.model";
+
 export interface IBooking {
     id: number;
     firstName: string;
@@ -8,7 +11,6 @@ export interface IBooking {
     notes: string;
     phone: string;
     email: string;
-    restaurantId: number;
+    restaurant: Partial<IRestaurant>;
+    user?: any;
 }
-
-// TODO: faltaría por meter el userId 

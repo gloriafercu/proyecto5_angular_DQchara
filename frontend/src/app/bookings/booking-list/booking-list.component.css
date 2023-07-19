@@ -1,0 +1,31 @@
+.container-user-detail {
+    display: grid;
+    min-height: 80vh;
+    margin-top: 120px;
+    justify-content: center;
+}
+
+.container-user-detail h2 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.button {
+    margin: 5px;
+    box-shadow: none;
+}
+
+
+::ng-deep .content-table .mat-mdc-table {
+    max-width: 900px;
+    white-space: nowrap;
+}
+
+ng-container td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

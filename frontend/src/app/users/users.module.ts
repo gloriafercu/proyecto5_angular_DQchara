@@ -17,13 +17,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
-
-
+import { AvatarComponent } from './avatar/avatar.component';
 
 @NgModule({
   declarations: [
     UserDetailComponent,
-    UserListComponent
+    UserListComponent,
+    AvatarComponent
   ],
   imports: [
     CommonModule,

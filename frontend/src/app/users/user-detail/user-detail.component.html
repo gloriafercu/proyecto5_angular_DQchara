@@ -1,53 +1,45 @@
-<section class="container-cards" *ngIf="user">
+<div class="container-user-detail">
+    <h2>Mi Perfil</h2>
 
-    <mat-card class="mat-card">
-        <h2>Tu perfil </h2>
-        <p>usuario nº {{user.id}}</p>
-        <p>Nombre: {{user.firstName}}</p>
-        <p>Apellido: {{user.lastName}}</p>
-        <p>email:{{user.email}}</p>
-        <p>Teléfono: {{user.phone}}</p>
-        <p>Nombre de usuario:{{user.userName}}</p>
-        <p>Avatar:{{user.avatar}}</p>
+    <form [formGroup]="userForm" (ngSubmit)="save()" class="userProfile">
+        <input type="hidden" formControlName="id">
+        <mat-form-field class="input">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Apellido</mat-label>
+            <input matInput type="text" formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="userName">
+        </mat-form-field>
 
-        <mat-card-actions>
-            <button mat-button class="button" [routerLink]="['/register', user.id, 'edit']">
-                <mat-icon class="tab-icon">
-                    edit
-                </mat-icon>
-                Editar registro
-            </button>
-
-            <button mat-button class="button" [routerLink]="['/register']">
-                <mat-icon class="tab-icon">
-                    check
-                </mat-icon>
-                Confirmar registro
-            </button>
-            <button mat-button class="button" (click)="open(content)">
-                <mat-icon class="tab-icon">
-                    delete
-                </mat-icon>
-                Cancelar registro
-            </button>
-        </mat-card-actions>
-
-        <!-- Modal para cancelar reserva -->
-
-        <ng-template #content let-c="close" let-d="dismiss">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modal-basic-title">Cancelar registro </h3>
-                <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
-            </div>
-            <div class="modal-body">
-                <p>¿Desea cancelar su registro?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">No</button>
-                <button type="button" class="btn btn-outline-dark" (click)="c(deleteUser(user))">Si</button>
-            </div>
-        </ng-template>
-
-
-    </mat-card>
-</section>
+        <mat-form-field class="input">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="hola@hola.com">
+            <mat-icon matSuffix class="icon-form">email</mat-icon>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Teléfono</mat-label>
+            <input matInput type="text" formControlName="phone">
+            <mat-icon matSuffix class="icon-form">phone</mat-icon>
+        </mat-form-field>
+        <div *ngIf="user && user.avatar">
+            <img  [src]="'http://localhost:3000/uploads/' + user!.avatar" style="max-width: 200px;" alt="user avatar">
+         </div>
+        <button mat-button routerLink="/users/avatar" class="input">
+            <mat-icon>photo_camera</mat-icon>
+            Cambia tu avatar
+        </button>
+        <!-- <button mat-button routerLink="/bookings/booking-list">
+            <mat-icon>book</mat-icon>
+            Mis reservas
+        </button> -->
+        <button mat-button extended type="submit" class="button-submit">
+            <mat-icon>send</mat-icon>
+            Enviar
+        </button>
+    </form>
+</div>

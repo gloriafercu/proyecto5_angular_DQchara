@@ -4,7 +4,7 @@
 
 <form [formGroup]="bookingForm" (ngSubmit)="save()" class="bookingForm">
   <input type="hidden" formControlName="id">
-  <!-- ¿¿Quizás haya que hacerlo también con userId?? -->
+
   <div class="inputs-data-booking">
     <mat-form-field class="input-people">
       <mat-label>Nº de Personas</mat-label>
@@ -13,10 +13,11 @@
           {{ num }}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="bookingForm.get('peopleNumber')?.invalid && bookingForm.get('peopleNumber')?.touched">Debes elegir nº personas</mat-error>
+      <mat-error *ngIf="bookingForm.get('peopleNumber')?.invalid && bookingForm.get('peopleNumber')?.touched">Debes
+        elegir nº personas</mat-error>
       <mat-hint>Elige nº personas</mat-hint>
     </mat-form-field>
-  
+
     <div class="inputs-container datetime">
       <mat-form-field class="input">
         <mat-label>Elige fecha</mat-label>
@@ -25,7 +26,7 @@
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-  
+
       <mat-form-field class="input">
         <mat-label>Selecciona hora</mat-label>
         <mat-select formControlName="bookingTime" name="bookingTime">
@@ -33,11 +34,11 @@
             {{ time }}
           </mat-option>
         </mat-select>
-        <mat-error *ngIf="bookingForm.get('bookingTime')?.invalid && bookingForm.get('bookingTime')?.touched">Debes elegir una hora</mat-error>
+        <mat-error *ngIf="bookingForm.get('bookingTime')?.invalid && bookingForm.get('bookingTime')?.touched">Debes
+          elegir una hora</mat-error>
       </mat-form-field>
     </div>
   </div>
-  
 
   <div class="inputs-container">
     <mat-form-field class="input">
@@ -84,14 +85,12 @@
     </mat-form-field>
   </div>
 
-  
-    <mat-form-field class="input-textarea">
-      <mat-label>Observaciones</mat-label>
-      <textarea matInput #message maxlength="300" rows="2" placeholder="Escribe si tienes alguna observación..."
-        formControlName="notes"></textarea>
-      <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
-    </mat-form-field>
-  
+  <mat-form-field class="input-textarea">
+    <mat-label>Observaciones</mat-label>
+    <textarea matInput #message maxlength="300" rows="2" placeholder="Escribe si tienes alguna observación..."
+      formControlName="notes"></textarea>
+    <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
+  </mat-form-field>
 
   <button mat-button disabled extended type="submit" [disabled]="bookingForm.invalid" class="button-submit">
     <mat-icon class="icon-form">send</mat-icon>

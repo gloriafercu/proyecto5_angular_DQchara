@@ -2,9 +2,8 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 import { RestaurantService } from '../restaurant.service';
 import { IRestaurant } from '../models/restaurant.model';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { Router } from '@angular/router';
-import { FilterNamePipe } from 'src/app/pipes/filter-name.pipe';
 import { MatSelectChange } from '@angular/material/select';
+
 
 @Component({
   selector: 'app-restaurant-list',

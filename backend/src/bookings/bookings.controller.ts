@@ -1,23 +1,25 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, Request, Controller, Delete, Get, HttpCode, Param, ParseIntPipe, Post, Put, UseGuards } from '@nestjs/common';
 import { BookingsService } from './bookings.service';
 import { Booking } from './bookings.entity';
+import { AuthGuard } from '@nestjs/passport';
+import { UserRole } from 'src/users/users.entity';
 
 @Controller('bookings')
 export class BookingsController {
 
-    constructor(private bookingsService: BookingsService) {}
+    constructor(private bookingsService: BookingsService) { }
 
-    @Get()
-    getAll(): Promise<Booking[]> {
-        return this.bookingsService.getAll();
-    }
+    // @Get()
+    // getAll(): Promise<Booking[]> {
+    //     return this.bookingsService.getAll();
+    // }
 
     @Get(':id')
     getById(@Param("id") id: number): Promise<Booking | null> {
         return this.bookingsService.getById(id);
     }
 
-    @Get('restaurant/:restaurantId') 
+    @Get('restaurant/:restaurantId')
     getAllBookingsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Booking[]> {
         return this.bookingsService.getAllBookingsByRestaurantId(restaurantId);
     }
@@ -27,20 +29,46 @@ export class BookingsController {
         return this.bookingsService.getAllBookingsByUserId(userId);
     }
 
-    @Post()
-    async create(@Body() booking: Booking): Promise<Booking> {
-        return await this.bookingsService.create(booking);
-    }
 
-    @Put()
+    @Put(':id')
     async update(@Body() booking: Booking): Promise<Booking> {
         return this.bookingsService.update(booking);
     }
 
     @Delete(':id')
-    @HttpCode(204) 
+    @HttpCode(204)
     async deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
-      return await this.bookingsService.deleteById(id);
+        return await this.bookingsService.deleteById(id);
+    }
+    
+    @UseGuards(AuthGuard('jwt'))
+    @Get()
+    getAll(@Request() request): Promise<Booking[]> {
+
+        if (request.user.role === UserRole.ADMIN) {
+            return this.bookingsService.getAll();
+        } else if (request.user.role === UserRole.REST) {
+            // TODO Extraer el restaurantID del usuario con rol REST
+            // Agregarlo en la llamada this.bookingsService.getAllBookingsByRestaurantId(restaurantID);
+            // EJEMPLO: this.bookingsService.getAllBookingsByRestaurantId(1);
+            // Muestra todas las reservas del restaurante "Los Torreznos"
+            
+            return this.bookingsService.getAllBookingsByRestaurantId(request.restaurant.id);
+        } else {
+            return this.bookingsService.getAllBookingsByUserId(request.user.id);
+        }
+
+    }
+    
+
+    @UseGuards(AuthGuard('jwt'))
+    @Post()
+    async create(
+        @Request() request,
+        @Body() booking: Booking): Promise<Booking> {
+        console.log(request.user);
+        booking.user = request.user;
+        return await this.bookingsService.create(booking);
     }
 }
 

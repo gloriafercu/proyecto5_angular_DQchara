@@ -93,6 +93,9 @@ mat-grid-tile div {
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--green_color); 
   max-width: 280px;
   width: 100%;

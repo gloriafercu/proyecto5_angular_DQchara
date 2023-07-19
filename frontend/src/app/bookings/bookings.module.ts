@@ -4,6 +4,7 @@ import { BookingsRoutingModule } from './bookings-routing.module';
 
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
+import { BookingListComponent } from './booking-list/booking-list.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -17,12 +18,16 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { LimitLongTextPipe } from './../pipes/limit-long-text.pipe';
 
 
 @NgModule({
   declarations: [
     BookingFormComponent,
     BookingDetailComponent,
+    BookingListComponent,
+    LimitLongTextPipe
 
   ],
   imports: [
@@ -38,7 +43,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatSnackBarModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   exports: [
     BookingFormComponent,

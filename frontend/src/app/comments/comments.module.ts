@@ -7,18 +7,40 @@ import { CommentDetailComponent } from './comment-detail/comment-detail.componen
 
 import{MatGridListModule} from '@angular/material/grid-list'
 import{MatIconModule} from '@angular/material/icon'
-import{} from '@angular/material/'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { CommentFormComponent } from './comment-form/comment-form.component';
+
+
 
 @NgModule({
   declarations: [
     CommentListComponent,
     CommentDetailComponent,
+    CommentFormComponent,
   ],
   imports: [
     CommonModule,
     CommentsRoutingModule,
     MatGridListModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatTableModule,
+
 
   ],
   exports:[

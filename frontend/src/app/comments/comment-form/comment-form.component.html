@@ -1,0 +1,25 @@
+<section class="container-comment-form">
+
+    <div class="title-form">
+        <h2>Deja Tu Comentario</h2>
+    </div>
+
+    <form [formGroup]="commentForm" (ngSubmit)="save()" class="commentForm">
+        <input type="hidden" formControlName="id">
+
+        <mat-form-field class="input-textarea">
+            <mat-label>Tu Opinión</mat-label>
+            <textarea matInput #message maxlength="300" rows="2" placeholder="Escribe aqui tu opinión..."
+                formControlName="description"></textarea>
+            <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
+        </mat-form-field>
+
+        <button mat-button disabled extended type="submit" [disabled]="commentForm.invalid" class="button-submit">
+            <mat-icon class="icon-form">send</mat-icon>
+            Enviar
+        </button>
+
+    </form>
+
+
+</section>

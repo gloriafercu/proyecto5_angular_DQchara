@@ -1,7 +1,10 @@
+import { IRestaurant } from "src/app/restaurants/models/restaurant.model";
+
 export interface IComment {
     id: number;
     rating: number;
     description: string;
-    restaurantId: number;
-    userId: number;
+    restaurant: Partial<IRestaurant>;
+    user?: any;
+    createdDate?: Date;
 }

@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BookingService } from '../services/booking.service';
 import { RestaurantService } from 'src/app/restaurants/restaurant.service';
 import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
-import { IUser } from 'src/app/users/models/user.model';
+//import { IUser } from 'src/app/users/models/user.model';
 import { IBooking } from '../models/booking.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -20,7 +20,7 @@ export class BookingFormComponent implements OnInit {
   restaurant: IRestaurant | undefined;
   booking: IBooking | undefined;
   restaurants: IRestaurant[] = [];
-  users: IUser[] = [];
+  //users: IUser[] = [];
 
   times: string[] = ["13:00", "14:00", "15:00", "19:00", "20:00", "21:00", "22:00"];
   numPeople: string[] = ["1 persona", "2 personas", "3 personas", "4 personas", "5 personas", "6 personas"];
@@ -28,8 +28,6 @@ export class BookingFormComponent implements OnInit {
 
 
   bookingForm = new FormGroup({
-    // userId: new FormControl<number>(0, [Validators.required]),
-    // restaurantId: new FormControl<number>(0, [Validators.required]),
     id: new FormControl<number>(0),
     firstName: new FormControl<string>('', [Validators.required]),
     lastName: new FormControl<string>('', [Validators.required]),
@@ -39,9 +37,8 @@ export class BookingFormComponent implements OnInit {
     notes: new FormControl<string>('', [Validators.maxLength(300)]),
     phone: new FormControl<string>('', [Validators.required, Validators.pattern('^[679]{1}[0-9]{8}$')]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
-    restaurantId: new FormControl<number>(0)
+    restaurant: new FormControl<any>(null)
   });
-
 
   constructor(
     private bookingService: BookingService,
@@ -83,7 +80,7 @@ export class BookingFormComponent implements OnInit {
       notes: booking.notes,
       phone: booking.phone,
       email: booking.email,
-      restaurantId: booking.restaurantId
+      restaurant: booking.restaurant
     });
 
   }
@@ -100,7 +97,10 @@ export class BookingFormComponent implements OnInit {
     let notes = this.bookingForm.get('notes')?.value ?? '';
     let phone = this.bookingForm.get('phone')?.value ?? '';
     let email = this.bookingForm.get('email')?.value ?? '';
-    let restaurantId = this.restaurant?.id ?? this.booking?.restaurantId ?? 0;
+    // let restaurant = this.restaurant?.id ?? this.booking?.restaurant.id ?? 0;
+    let restaurant = this.bookingForm.get('restaurant')?.value ?? this.restaurant ;
+
+   
 
     // let hours = parseInt(bookingTime.split(':')[0], 10);
     // bookingDate.setHours(hours);
@@ -110,14 +110,14 @@ export class BookingFormComponent implements OnInit {
       firstName: firstName,
       lastName: lastName,
       peopleNumber: peopleNumber,
-      bookingTime: bookingTime, // ya no hace falta para backend
+      bookingTime: bookingTime,
       bookingDate: bookingDate,
       notes: notes,
       phone: phone,
       email: email,
-      restaurantId: restaurantId,
+      restaurant: restaurant,
     }
-
+    console.log(booking);
     if (id === 0)
       this.bookingService.create(booking).subscribe(
         booking => this.router.navigate(['/bookings', booking.id])

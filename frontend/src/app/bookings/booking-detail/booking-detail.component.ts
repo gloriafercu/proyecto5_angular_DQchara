@@ -39,8 +39,9 @@ export class BookingDetailComponent implements OnInit {
       this.bookingService.getById(bookingId).subscribe(data => {
         this.booking = data;
         console.log('this booking en detail', this.booking);
-        this.restaurantService.getById(this.booking.restaurantId).subscribe(data =>
-          this.restaurant = data);
+        if(this.booking.restaurant && this.booking.restaurant.id)
+          this.restaurantService.getById(this.booking.restaurant.id).subscribe(data =>
+            this.restaurant = data);
       });
     });
   }
