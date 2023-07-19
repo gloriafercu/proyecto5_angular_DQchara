@@ -10,7 +10,8 @@ export class NavbarComponent {
 
   isLoggedIn = false;
   isAdmin = false;
-  email: string = '';
+  isRestaurant = false;
+  userName = '';
 
   constructor(public authService: AuthService) { }
 
@@ -22,5 +23,8 @@ export class NavbarComponent {
     this.authService.isAdmin.subscribe(admin => {
       this.isAdmin = admin;
     });
-}
+    this.authService.isRestaurant.subscribe(restaurant => this.isRestaurant = restaurant);
+
+    this.authService.currentUserName.subscribe(currentUserName => this.userName = currentUserName);
+  }
 }
