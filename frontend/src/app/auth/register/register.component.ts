@@ -10,11 +10,13 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+
   registerForm = new FormGroup({
     userName: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
-    acceptConditions: new FormControl('', [Validators.required])
+    acceptConditions: new FormControl('', [Validators.required]),
+    isRestaurant: new FormControl(false)
   });
 
   constructor(
