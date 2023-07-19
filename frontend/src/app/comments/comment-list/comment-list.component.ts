@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class CommentListComponent implements OnInit {
 
   comments: IComment[] = [];
-  // displayedColumns: string[] = ['id', 'description', 'actions'];
+  // displayedColumns: string[] = ['id', 'description','rating', 'actions'];
 
 
   

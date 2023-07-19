@@ -28,7 +28,8 @@ export class RegisterComponent {
       userName: this.registerForm.get('userName')?.value ?? '',
       email: this.registerForm.get('email')?.value ?? '',
       password: this.registerForm.get('password')?.value ?? '',
-      acceptConditions: this.registerForm.get('acceptConditions')?.value ?? ''
+      acceptConditions: this.registerForm.get('acceptConditions')?.value ?? '',
+      isRestaurant: this.registerForm.get('isRestaurant')?.value ?? false
     }
 
     this.authService.register(register).subscribe(data => {

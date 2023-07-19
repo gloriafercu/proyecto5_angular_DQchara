@@ -40,12 +40,10 @@ export class BookingsController {
     async deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
         return await this.bookingsService.deleteById(id);
     }
-    // 
+    
     @UseGuards(AuthGuard('jwt'))
     @Get()
     findAll(@Request() request): Promise<Booking[]> {
-
-
 
         if (request.user.role === UserRole.ADMIN) {
             return this.bookingsService.findAll();
@@ -60,9 +58,8 @@ export class BookingsController {
             return this.bookingsService.getAllBookingsByUserId(request.user.id);
         }
 
-
-
     }
+    
 
     @UseGuards(AuthGuard('jwt'))
     @Post()

@@ -9,6 +9,7 @@ import { BASE_URL, TOKEN } from '../shared/constants';
 
 export interface Token {
   sub: number; // id del usuario
+  userName: string;
   email: string;
   role: string;
   exp: number; // timestamp con la fecha de expiración
@@ -20,19 +21,20 @@ export interface Token {
 })
 export class AuthService {
 
-  
+
   urlAPI: string = `${BASE_URL}/auth`;
 
   // BehaviorSubject emite valores a suscriptores, es un Observable especializado
   // que siempre emite el último valor a sus observadores
   isAdmin = new BehaviorSubject<boolean>(false);
   isLoggedIn = new BehaviorSubject<boolean>(this.hasToken());
-  email = new BehaviorSubject<string>('');
+  isRestaurant = new BehaviorSubject<boolean>(this.hasRestaurantToken());
+  currentUserName = new BehaviorSubject<string>(this.getCurrentUserName());
 
   constructor(
     private httpClient: HttpClient,
     private router: Router
-    ) { }
+  ) { }
 
   login(login: any): Observable<any> {
     return this.httpClient.post(`${this.urlAPI}/login`, login);
@@ -48,11 +50,27 @@ export class AuthService {
     // Cuando el usuario cierra la sesión, emitimos false para isAdmin y isLoggedIn
     this.isAdmin.next(false);
     this.isLoggedIn.next(false);
+    this.isRestaurant.next(false);
+    this.currentUserName.next('');
   }
 
   hasToken() {
     console.log('checking hasToken()');
     return localStorage.getItem(TOKEN) !== null;
+  }
+  hasRestaurantToken(): boolean {
+    let token = localStorage.getItem(TOKEN);
+    if (!token) return false;
+
+    let decoded_token: Token = jwt_decode(token);
+    return decoded_token.role === 'rest';
+  }
+  getCurrentUserName(): string{
+    let token = localStorage.getItem(TOKEN);
+    if (!token) return '';
+
+    let decoded_token: Token = jwt_decode(token);
+    return decoded_token.userName;
   }
 
   handleLoginResponse(token: any) {
@@ -61,6 +79,8 @@ export class AuthService {
     let decoded_token: Token = jwt_decode(token);
     this.isAdmin.next(decoded_token.role === 'admin');
     this.isLoggedIn.next(true);
+    this.isRestaurant.next(decoded_token.role === 'rest');
+    this.currentUserName.next(decoded_token.userName);
   }
 
 }
