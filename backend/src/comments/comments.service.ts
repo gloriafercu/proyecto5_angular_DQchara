@@ -59,6 +59,7 @@ export class CommentsService {
         return this.commentRepo.find({
             relations: {
                 user: true
+
             },
             where: {
                 user: {

@@ -8,8 +8,12 @@ export class BookingsService {
 
     constructor(@InjectRepository(Booking) private bookingRepo: Repository<Booking>) { }
 
-    findAll(): Promise<Booking[]> {
-        return this.bookingRepo.find();
+    getAll(): Promise<Booking[]> {
+        return this.bookingRepo.find({
+            relations: {
+                restaurant: true
+            }
+        });
     }
 
     getById(id: number): Promise<Booking | null> {

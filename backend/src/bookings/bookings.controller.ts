@@ -43,17 +43,17 @@ export class BookingsController {
     
     @UseGuards(AuthGuard('jwt'))
     @Get()
-    findAll(@Request() request): Promise<Booking[]> {
+    getAll(@Request() request): Promise<Booking[]> {
 
         if (request.user.role === UserRole.ADMIN) {
-            return this.bookingsService.findAll();
+            return this.bookingsService.getAll();
         } else if (request.user.role === UserRole.REST) {
             // TODO Extraer el restaurantID del usuario con rol REST
             // Agregarlo en la llamada this.bookingsService.getAllBookingsByRestaurantId(restaurantID);
             // EJEMPLO: this.bookingsService.getAllBookingsByRestaurantId(1);
             // Muestra todas las reservas del restaurante "Los Torreznos"
             
-            return this.bookingsService.getAllBookingsByRestaurantId(1);
+            return this.bookingsService.getAllBookingsByRestaurantId(request.restaurant.id);
         } else {
             return this.bookingsService.getAllBookingsByUserId(request.user.id);
         }

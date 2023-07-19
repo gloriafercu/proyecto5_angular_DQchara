@@ -19,25 +19,25 @@ export class CommentsController {
         return this.commentsService.getById(id);
     }
 
-    @Get('restaurantId/:restaurantId')
-    getAllCommentsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
-        return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
-    }
+    // @Get('restaurantId/:restaurantId')
+    // getAllCommentsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
+    //     return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
+    // }
 
-    @Get('userId/:userId')
-    getAllCommentsByUserId(@Param('userId') userId: number): Promise<Comment[]> {
-        return this.commentsService.getAllCommentsByUserId(userId);
-    }
+    // @Get('userId/:userId')
+    // getAllCommentsByUserId(@Param('userId') userId: number): Promise<Comment[]> {
+    //     return this.commentsService.getAllCommentsByUserId(userId);
+    // }
 
     @Get('average/:restaurantId')
     getAverageByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<number> {
         return this.commentsService.getAverageByRestaurantId(restaurantId);
     }
 
-    @Post()
-    async create(@Body() comment: Comment): Promise<Comment> {
-        return await this.commentsService.create(comment);
-    }
+    // @Post()
+    // async create(@Body() comment: Comment): Promise<Comment> {
+    //     return await this.commentsService.create(comment);
+    // }
 
     @Put()
     async update(@Body() comment: Comment): Promise<Comment> {
@@ -58,10 +58,20 @@ export class CommentsController {
             return this.commentsService.getAll();
         } else if (request.user.role === UserRole.REST) {
             
-            return this.commentsService.getAllCommentsByRestaurantId(1);
+            return this.commentsService.getAllCommentsByRestaurantId(request.restaurant.id);
         } else {
             return this.commentsService.getAllCommentsByUserId(request.user.id);
         }
 
+    }
+    
+    @UseGuards(AuthGuard('jwt'))
+    @Post()
+    async create(
+        @Request() request,
+        @Body() comment: Comment): Promise<Comment> {
+        console.log(request.user);
+        comment.user = request.user;
+        return await this.commentsService.create(comment);
     }
 }
