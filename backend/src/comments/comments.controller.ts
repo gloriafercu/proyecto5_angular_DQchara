@@ -19,10 +19,10 @@ export class CommentsController {
         return this.commentsService.getById(id);
     }
 
-    // @Get('restaurantId/:restaurantId')
-    // getAllCommentsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
-    //     return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
-    // }
+    @Get('restaurantId/:restaurantId')
+    getAllCommentsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
+        return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
+    }
 
     // @Get('userId/:userId')
     // getAllCommentsByUserId(@Param('userId') userId: number): Promise<Comment[]> {
