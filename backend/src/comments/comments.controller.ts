@@ -17,7 +17,7 @@ export class CommentsController {
         return this.commentsService.getById(id);
     }
 
-    @Get('restaurantId/:restaurantId') 
+    @Get('restaurantId/:restaurantId')
     getAllCommentsByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<Comment[]> {
         return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
     }
@@ -27,7 +27,10 @@ export class CommentsController {
         return this.commentsService.getAllCommentsByUserId(userId);
     }
 
-    
+    @Get('average/:restaurantId')
+    getAverageByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<number> {
+        return this.commentsService.getAverageByRestaurantId(restaurantId);
+    }
 
     @Post()
     async create(@Body() comment: Comment): Promise<Comment> {
