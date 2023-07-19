@@ -58,7 +58,8 @@ export class CommentsService {
     getAllCommentsByUserId(userId: number): Promise<Comment[]> {
         return this.commentRepo.find({
             relations: {
-                user: true
+                user: true,
+                restaurant: true
 
             },
             where: {
