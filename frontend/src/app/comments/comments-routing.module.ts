@@ -5,7 +5,7 @@ import { CommentDetailComponent } from './comment-detail/comment-detail.componen
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'comment-list',
     component: CommentListComponent
   },
   {
@@ -13,7 +13,10 @@ const routes: Routes = [
     component: CommentDetailComponent
   },
   {
-    path: '**', redirectTo: '', pathMatch: 'full'
+    path: '', redirectTo: 'comments', pathMatch: 'full'
+  },
+  {
+    path: '**', redirectTo: 'comments', pathMatch: 'full'
   }
 ];
 

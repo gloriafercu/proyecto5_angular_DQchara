@@ -22,7 +22,7 @@ export class CommentsController {
         return this.commentsService.getAllCommentsByRestaurantId(restaurantId);
     }
 
-    @Get('user/:userId')
+    @Get('userId/:userId')
     getAllCommentsByUserId(@Param('userId') userId: number): Promise<Comment[]> {
         return this.commentsService.getAllCommentsByUserId(userId);
     }

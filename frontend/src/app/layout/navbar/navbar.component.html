@@ -83,9 +83,13 @@
       </button>
 
       <button mat-button *ngIf="isLoggedIn" routerLink="/bookings/booking-list">
-        <!-- enrutar a booking-list -->
         <mat-icon>book</mat-icon>
         Mis reservas
+      </button>
+
+      <button mat-button *ngIf="isLoggedIn" routerLink="/comments/comment-list">
+        <mat-icon>add_comment</mat-icon>
+        Mis opiniones
       </button>
 
       <button mat-button *ngIf="isLoggedIn" (click)="authService.logout()">

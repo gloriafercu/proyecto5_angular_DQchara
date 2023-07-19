@@ -22,7 +22,6 @@ const routes: Routes = [
     path: ':bookingId',
     component: BookingDetailComponent
   },
-  
   {
     path: '', redirectTo: 'bookings', pathMatch: 'full'
   },

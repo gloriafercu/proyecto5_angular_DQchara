@@ -1,6 +1,5 @@
 .container-user-detail {
     display: grid;
-    /* place-items: center; */
     min-height: 80vh;
     margin-top: 120px;
     justify-content: center;
@@ -13,15 +12,16 @@
     text-align: center;
 }
 
-.content-table {
+/* .content-table {
     max-width: 1000px;
     margin-bottom: 200px;
-}
+} */
 
 
 
 .button {
     margin: 0 10px;
+    box-shadow: none;
 }
 
 
