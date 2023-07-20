@@ -5,6 +5,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CommentService } from '../services/comment.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RestaurantService } from 'src/app/restaurants/restaurant.service';
+// import { IUser } from 'src/app/users/models/user.model';
+// import { UserService } from 'src/app/users/services/user.service';
 
 @Component({
   selector: 'app-comment-form',
@@ -16,19 +18,23 @@ export class CommentFormComponent implements OnInit{
   restaurant: IRestaurant | undefined;
   comment: IComment | undefined;
   restaurants: IRestaurant[] = [];
+  // user: IUser| undefined;
 
   commentForm = new FormGroup({
     id: new FormControl<number>(0),
     description: new FormControl<string>('', [Validators.required]),
     rating: new FormControl<number>(0, [Validators.required]),
-    restaurant: new FormControl<any>(null)
+    restaurant: new FormControl<any>(null),
+    // user: new FormControl<any>(null)
   })
 
   constructor(
     private commentService: CommentService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private restaurantService: RestaurantService) { }
+    private restaurantService: RestaurantService,
+    // private userService: UserService
+    ) { }
 
 
     ngOnInit(): void {
@@ -57,7 +63,8 @@ export class CommentFormComponent implements OnInit{
         id: comment.id,
         description: comment.description,
         rating: comment.rating,
-        restaurant: comment.restaurant
+        restaurant: comment.restaurant,
+        // user: comment.user
         
       });
   
@@ -71,6 +78,7 @@ export class CommentFormComponent implements OnInit{
      
       // let restaurant = this.restaurant?.id ?? this.booking?.restaurant.id ?? 0;
       let restaurant = this.commentForm.get('restaurant')?.value ?? this.restaurant ;
+      // let user = this.commentForm.get('restauruserant')?.value ?? this.user ;
 
 
 let comment: IComment = {
@@ -78,6 +86,7 @@ let comment: IComment = {
   description: description,
   rating: rating,
   restaurant: restaurant,
+  // user: user
 }
 
 if (id === 0)

@@ -17,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { CommentFormComponent } from './comment-form/comment-form.component';
-
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -40,6 +40,7 @@ import { CommentFormComponent } from './comment-form/comment-form.component';
     ReactiveFormsModule,
     MatDialogModule,
     MatTableModule,
+    NgbRatingModule
 
 
   ],
