@@ -1,7 +1,26 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 .container-comment-form {
-    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: cemter;
+    padding-top: 130px;
+
+
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.commentForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .button-submit {
@@ -18,5 +37,31 @@
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     align-items: center;
-    
+    margin: 10px auto 0;
 }
+
+
+i {
+    font-size: 1.3rem;
+    padding-right: 0.1rem;
+    color: var(--light_grey_color);
+
+}
+
+.filled {
+    color: var(--primary_color);
+}
+
+.rating-comment {
+    display: flex;
+    flex: column;
+    justify-content: space-between;
+    margin: 30px 0;
+    font-size: 19px;
+}
+.rating {
+    font-weight: bold;
+    font-size: 21px;
+    padding-right: 15px;
+}
+
