@@ -2,27 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
+import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 
 
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     component: RestaurantListComponent
   },
   {
-    path: ':id', 
+    path: 'my-restaurant',
+    component: RestaurantFormComponent
+  },
+  {
+    path: ':id',
     component: RestaurantDetailComponent
   },
   {
-    path: 'typeFood/:typeFood', 
-    component: RestaurantListComponent
-  },
-  {
-    path: 'city/:city', 
-    component: RestaurantListComponent
-  },
-  {
-    path: '**', redirectTo:'', pathMatch: 'full' }
+    path: '**', redirectTo: '', pathMatch: 'full'
+  }
 ];
 
 @NgModule({
