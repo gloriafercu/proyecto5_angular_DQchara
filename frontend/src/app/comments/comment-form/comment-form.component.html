@@ -14,21 +14,13 @@
             <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
         </mat-form-field>
 
-        <!-- <ngb-rating [(rate)]="comment?.rating">
+        <ngb-rating [(rate)]="currentRate" [max]="5">
             <ng-template let-fill="fill" let-index="index">
-                <i class="bi-egg-fill{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100" [class.low]="index < 3"></i>
+                <i class="bi-egg{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"></i>
             </ng-template>
         </ngb-rating>
-        <hr />
-        <pre>Valoracion: <b>{{comment?.rating}}</b></pre> -->
-
-        <div class="container-data-user">
-
-            <div class="content-user">
-                <mat-card-title>{{ comment?.user?.userName }}</mat-card-title>
-                <mat-card-subtitle>{{ comment?.createdDate | date: 'dd/MM/YYYY' }}</mat-card-subtitle>
-            </div>
-        </div>
+        <pre>Rate: <b>{{currentRate}}</b></pre>
+       
 
         <button mat-button disabled extended type="submit" [disabled]="commentForm.invalid" class="button-submit">
             <mat-icon class="icon-form">send</mat-icon>
