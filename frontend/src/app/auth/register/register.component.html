@@ -43,6 +43,10 @@
       </mat-error>
     </mat-form-field>
 
+    <div>
+      <mat-checkbox formControlName="isRestaurant">¿Eres Restaurante?</mat-checkbox>
+    </div>
+
     <mat-checkbox formControlName="acceptConditions" class="checkbox">He leído y acepto los términos y
       condiciones.</mat-checkbox>
     <mat-error *ngIf="registerForm.get('acceptConditions')?.invalid && registerForm.get('acceptConditions')?.touched">
@@ -50,7 +54,8 @@
     </mat-error>
 
     <button mat-fab extended type="submit" [disabled]="registerForm.invalid" class="button-submit">
-      Enviar
+      <mat-icon class="icon-form">send</mat-icon>
+                Enviar
     </button>
   </form>
 

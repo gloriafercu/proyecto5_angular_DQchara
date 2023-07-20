@@ -11,21 +11,25 @@ import { Router } from '@angular/router';
 export class CommentListComponent implements OnInit {
 
   comments: IComment[] = [];
-  displayedColumns: string[] = ['id', 'description', 'actions'];
+  displayedColumns: string[] = ['restaurant','description', 'rating', 'actions'];
 
 
-  
+
   constructor(private commentService: CommentService,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.commentService.getAll().subscribe(data => this.comments = data); 
+    this.commentService.getAll().subscribe(data => {
+      console.log(data);
+      this.comments = data});
+
+    //this.commentService.getAllCommentsByUserId(userId).subscribe(data => this.comments = data); 
   }
 
-  view(comment: IComment) {
-    this.router.navigate(['/comments', comment.id]);
-  }
+  // view(comment: IComment) {
+  //   this.router.navigate(['/comments', comment.id]);
+  // }
 
-  
+
 
 }

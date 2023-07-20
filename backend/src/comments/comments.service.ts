@@ -39,6 +39,7 @@ export class CommentsService {
         });
     }
 
+
     // async getAverageByRestaurantId(restaurantId: number): Promise<number> {
     //     const resultArray = await this.commentRepo.query(`SELECT avg(rating) as avg FROM backend_dqchara.comment where id_restaurant=${restaurantId}`);
     //     return resultArray.map(result => result.avg)
@@ -54,11 +55,12 @@ export class CommentsService {
 
     }
 
-
     getAllCommentsByUserId(userId: number): Promise<Comment[]> {
         return this.commentRepo.find({
             relations: {
-                user: true
+                user: true,
+                restaurant: true
+
             },
             where: {
                 user: {

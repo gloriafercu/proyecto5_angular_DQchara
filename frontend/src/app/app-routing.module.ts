@@ -16,17 +16,22 @@ const routes: Routes = [
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   },
   {
+    path: 'comments',
+    loadChildren: () => import('./comments/comments.module').then(m => m.CommentsModule)
+  },
+  {
     path: 'about-us',
     component: AboutUsComponent
-},
-   { path: 'auth',
+  },
+  {
+    path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: '', redirectTo: 'restaurants', pathMatch: 'full' 
+    path: '', redirectTo: 'restaurants', pathMatch: 'full'
   },
   {
-    path: '**', redirectTo: 'restaurants', pathMatch: 'full' 
+    path: '**', redirectTo: 'restaurants', pathMatch: 'full'
   }
 ];
 

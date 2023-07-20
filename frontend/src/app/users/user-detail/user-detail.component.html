@@ -26,9 +26,12 @@
             <input matInput type="text" formControlName="phone">
             <mat-icon matSuffix class="icon-form">phone</mat-icon>
         </mat-form-field>
+        <div *ngIf="user && user.avatar">
+            <img  [src]="'http://localhost:3000/uploads/' + user!.avatar" style="max-width: 200px;" alt="user avatar">
+         </div>
         <button mat-button routerLink="/users/avatar" class="input">
             <mat-icon>photo_camera</mat-icon>
-            Añade tu avatar
+            Cambia tu avatar
         </button>
         <!-- <button mat-button routerLink="/bookings/booking-list">
             <mat-icon>book</mat-icon>

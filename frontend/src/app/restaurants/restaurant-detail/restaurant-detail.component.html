@@ -87,7 +87,8 @@
                     <mat-card-header>
                         <mat-card-title-group>
                             <div class="container-data-user">
-                                <img class="avatar-img" src="{{comment.user.avatar}}" alt="avatar">
+                                <img class="avatar-img"[src]="'http://localhost:3000/uploads/' + comment.user!.avatar" alt="user avatar"/>
+                                
                                 <div class="content-user">
                                     <mat-card-title>{{ comment.user.userName }}</mat-card-title>
                                     <mat-card-subtitle>{{ comment.createdDate | date: 'dd/MM/YYYY' }}</mat-card-subtitle>

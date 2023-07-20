@@ -32,13 +32,18 @@
                 <ng-container matColumnDef="actions" class="container-buttons">
                     <th mat-header-cell *matHeaderCellDef style="font-weight: 600;">Acciones</th>
                     <td mat-cell *matCellDef="let booking">
-                        <button mat-mini-fab color="accent" class="btn-primary"
+                        <button mat-mini-fab color="accent" class="button"
                             [routerLink]="['/bookings', booking.id, 'edit']">
                             <mat-icon>edit</mat-icon>
                         </button>
                         <button mat-mini-fab class="button" color="warn" (click)="deleteBooking(booking)">
                             <mat-icon class="tab-icon">
                                 delete
+                            </mat-icon>
+                        </button>
+                        <button mat-mini-fab class="button" color="primary" [routerLink]="['/comments/comment-form/restaurant', booking.restaurant.id]">
+                            <mat-icon class="tab-icon">
+                                add_comment
                             </mat-icon>
                         </button>
                     </td>
