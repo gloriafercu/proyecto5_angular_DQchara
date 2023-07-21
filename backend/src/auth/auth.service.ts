@@ -46,6 +46,7 @@ export class AuthService {
             email: register.email,
             password: register.password
         }
+        
         //Crear Usuario
         let user = new User();
         user.userName = register.userName;

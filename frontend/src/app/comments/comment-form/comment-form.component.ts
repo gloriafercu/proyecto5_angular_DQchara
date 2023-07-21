@@ -48,7 +48,7 @@ export class CommentFormComponent implements OnInit {
         const commentId = parseInt(idCommentStr, 10);
         this.commentService.getById(commentId).subscribe(comment => {
           this.loadCommentForm(comment);
-          this.comment = comment; // Guarda la reserva para luego recuperar los datos en la edición
+          this.comment = comment;
         });
       }
 
@@ -66,13 +66,10 @@ export class CommentFormComponent implements OnInit {
   }
   save(): void {
 
-    // TODO añadir validación extra de datos, si alguno está mal hacer return y mostrar error y no guardar.
     let id = this.commentForm.get('id')?.value ?? 0;
     let description = this.commentForm.get('description')?.value ?? '';
-    let rating = this.currentRate?? 0;
+    let rating = this.currentRate ?? 0;
     let restaurant = this.commentForm.get('restaurant')?.value ?? this.restaurant;
-
-
 
     let comment: IComment = {
       id: id,

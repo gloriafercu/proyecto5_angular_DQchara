@@ -16,7 +16,6 @@ h2 {
 }
 
 .input {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -37,8 +36,7 @@ h2 {
     border-radius: 10px;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .button-submit:disabled {

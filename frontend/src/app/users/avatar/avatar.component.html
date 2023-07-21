@@ -10,8 +10,8 @@
     <h2>Nueva Imagen</h2>
     <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar">
   </div>
+  
   <input type="file" (change)="onFileSelected($event)">
-
 
   <div>
     <button (click)="save()" routerLink="/users/detail">Enviar</button>

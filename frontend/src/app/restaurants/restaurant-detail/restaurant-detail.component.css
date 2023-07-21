@@ -88,8 +88,6 @@ mat-grid-tile div {
   align-items: center;
   justify-content: space-around;
   padding: 40px 40px 40px 0;
-
-
 }
 
 .button {
@@ -165,7 +163,6 @@ mat-grid-title div {
 .content-rating {
   display: flex;
   align-items: center;
-
 }
 
 .content-rating mat-icon {

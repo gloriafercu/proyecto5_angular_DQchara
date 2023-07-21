@@ -29,15 +29,12 @@ import { AuthModule } from './auth/auth.module';
 import { RestaurantsModule } from './restaurants/restaurants.module';
 import { UsersModule } from './users/users.module';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
     AboutUsComponent
-  
   ],
   imports: [
     BrowserModule,

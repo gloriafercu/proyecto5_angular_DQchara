@@ -10,7 +10,7 @@ import { RestaurantService } from '../restaurant.service';
   templateUrl: './restaurant-form-images.component.html',
   styleUrls: ['./restaurant-form-images.component.css']
 })
-export class RestaurantFormImagesComponent implements OnInit{
+export class RestaurantFormImagesComponent implements OnInit {
 
   restaurant: IRestaurant | undefined;
   imagePreviews: string[] = [];
@@ -20,7 +20,7 @@ export class RestaurantFormImagesComponent implements OnInit{
     private activatedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
     private httpClient: HttpClient
-    ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadRestaurant();
@@ -29,16 +29,16 @@ export class RestaurantFormImagesComponent implements OnInit{
     this.activatedRoute.params.subscribe(params => {
       const id = parseInt(params['id'], 10);
       this.restaurantService.getById(id)
-                    .subscribe(data => {
-        this.restaurant = data;
-      });
+        .subscribe(data => {
+          this.restaurant = data;
+        });
     });
   }
   onFileSelected(event: Event) {
     let target = event.target as HTMLInputElement;
     if (target.files === null) return;
 
-    for(let i = 0; i < target.files.length; i++) {
+    for (let i = 0; i < target.files.length; i++) {
       this.imageFiles.push(target.files[i]);
       let reader = new FileReader();
       reader.onload = ev => this.imagePreviews.push(reader.result as string);
@@ -47,7 +47,7 @@ export class RestaurantFormImagesComponent implements OnInit{
   }
 
   save() {
-    if(this.imageFiles.length === 0) return;
+    if (this.imageFiles.length === 0) return;
 
     // Cargar las imágenes en un objeto FormData
     let formData = new FormData();

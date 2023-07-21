@@ -11,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css']
 })
-export class UserDetailComponent implements OnInit{
+export class UserDetailComponent implements OnInit {
   user: IUser | undefined;
   userForm = new FormGroup({
     id: new FormControl<number>(0),
@@ -24,23 +24,23 @@ export class UserDetailComponent implements OnInit{
 
   });
 
-  constructor(private userService: UserService, 
-    private router:Router) {}
+  constructor(private userService: UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.userService.findCurrentUser()
-                    .subscribe(data => {
-                      this.user = data;
-                      this.userForm.reset({
-                        id: this.user.id,
-                        firstName: this.user.firstName,
-                        lastName: this.user.lastName,
-                        userName: this.user.userName,
-                        email: this.user.email,
-                        phone:this.user.phone,
-                        avatar:this.user.avatar
-                      });
-                    });
+      .subscribe(data => {
+        this.user = data;
+        this.userForm.reset({
+          id: this.user.id,
+          firstName: this.user.firstName,
+          lastName: this.user.lastName,
+          userName: this.user.userName,
+          email: this.user.email,
+          phone: this.user.phone,
+          avatar: this.user.avatar
+        });
+      });
   }
 
   save(): void {
@@ -54,21 +54,19 @@ export class UserDetailComponent implements OnInit{
 
     let user: IUser = {
       id: id,
-      firstName:firstName,
-      lastName:lastName,
+      firstName: firstName,
+      lastName: lastName,
       userName: userName,
       email: email,
-      phone:phone,
-      avatar:avatar
+      phone: phone,
+      avatar: avatar
     }
 
     this.userService.update(user)
-    .subscribe(data =>{
-      this.router.navigate(['/users', user.id]);
-      
-    } );
-    
-
+      .subscribe(data => {
+        console.log(data);
+        this.router.navigate(['/users', user.id]);
+      });
   }
 
 }
