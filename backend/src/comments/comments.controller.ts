@@ -4,6 +4,7 @@ import { Comment } from './comments.entity';
 import { AuthGuard } from '@nestjs/passport';
 import { UserRole } from 'src/users/users.entity';
 
+
 @Controller('comments')
 export class CommentsController {
 
@@ -31,7 +32,10 @@ export class CommentsController {
 
     @Get('average/:restaurantId')
     getAverageByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<number> {
-        return this.commentsService.getAverageByRestaurantId(restaurantId);
+        let average= this.commentsService.getAverageByRestaurantId(restaurantId);
+                 // TDOO actualizar restaurante con avegare antes de devolverlo
+            // this.restaurantService.update(restaurant);
+                 return average;
     }
 
     // @Post()

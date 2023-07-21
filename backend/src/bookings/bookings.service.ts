@@ -38,6 +38,41 @@ export class BookingsService {
         });
     }
 
+    // devuelve un array con las reservas
+    getAllBookingsByRestaurantIdAndBookingDate(restaurantId: number, bookingDate: Date): Promise<Booking[]> {
+        return this.bookingRepo.find({
+            relations: {
+                restaurant: true
+            },
+            where: {
+                restaurant: {
+                    id: restaurantId
+                },
+                bookingDate: bookingDate,
+
+            }
+        });
+    }
+
+    // Devuelve el número de reservas
+    countBookingsByRestaurantIdAndBookingDate(restaurantId: number, bookingDate: Date): Promise<number> {
+        return this.bookingRepo.count({
+            where: {
+                restaurant: {
+                    id: restaurantId
+                },
+                bookingDate: bookingDate,
+
+            }
+        });
+    }
+
+    // devuelve si hay (true) o no hay (false) alguna reserva
+    async existAnyBooking(restaurantId: number, bookingDate: Date): Promise<boolean>{
+        let numero_reservas = await this.countBookingsByRestaurantIdAndBookingDate(restaurantId, bookingDate);
+        return numero_reservas > 0;
+    }
+
     getAllBookingsByUserId(userId: number): Promise<Booking[]> {
         return this.bookingRepo.find({
             relations: {

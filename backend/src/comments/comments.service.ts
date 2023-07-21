@@ -51,6 +51,7 @@ export class CommentsService {
         ratingsArray = ratingsArray.map(i => Number(i)); // Array de strings lo pasamos a numbers
         let averageValue = ratingsArray.reduce((acc, rate) => acc + rate, 0) / ratingsArray.length;
          const average = parseFloat(averageValue.toFixed(1));
+
          return average;
 
     }

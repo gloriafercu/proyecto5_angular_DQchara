@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IRestaurant } from '../models/restaurant.model';
 import { RestaurantService } from '../restaurant.service';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-restaurant-form',
@@ -10,6 +11,8 @@ import { RestaurantService } from '../restaurant.service';
   styleUrls: ['./restaurant-form.component.css']
 })
 export class RestaurantFormComponent {
+
+  restaurants: IRestaurant[] = [];
 
   cities: string[] = [
     "Barcelona",
@@ -50,28 +53,36 @@ export class RestaurantFormComponent {
   
   constructor(private restaurantService: RestaurantService, private router: Router) {}
 
+  // onChangeCity(event: MatSelectChange): void {
+  //   let city = event.value;
+  //   this.restaurantService.getByCity(city).subscribe(data =>  this.restaurants = data)
+  // }
+  // onChangeTypeFood(event: MatSelectChange): void {
+  //   let typeFood = event.value;
+
+  //   this.restaurantService.getByTypeFood(typeFood).subscribe(data => this.restaurants = data);
+  // }
+
   //ngOnInit(): void {
    
-
-    // // CONDICIONAL (/books/3/edit): BUSCA UN LIBRO Y LO CARGA EN EL FORMULARIO PARA EDITARLO
     // this.activatedRoute.params.subscribe(params => {
     //   const idString = params['id'];
     //   if (!idString) return;
     //   const id = parseInt(idString, 10);
-    //   this.bookService.findById(id).subscribe(book => this.loadBookForm(book));
+    //   this.restaurantService.getById(id).subscribe(restaurant => this.loadRestaurantForm(restaurant));
     // });
 
-    // // CONDICIONAL (/books/owner): SI ES OWNER TRAER EL LIBRO ASOCIADO AL OWNER
+    // // CONDICIONAL (/restaurants/rest): SI ES Rest TRAER EL Restaurante ASOCIADO AL rest
     // this.activatedRoute.url.subscribe(url => {
     //   console.log(url[0].path);
     //   // comprueba si en la url pone la palabra owner
-    //   if(url[0].path !== 'owner') return;
+    //   if(url[0].path !== 'rest') return;
 
-    //   this.bookService.findBookByAuthenticatedUser().subscribe(book => this.loadBookForm(book));
+    //   this.restaurantService.getRestaurantByAuthenticatedRest().subscribe(rest => this.loadRestaurantForm(restaurant));
     // });
   //}
 
-  loadBookForm(restaurant: IRestaurant): void {
+  loadRestaurantForm(restaurant: IRestaurant): void {
 
     this.restaurantForm.reset({
       id: restaurant.id,
@@ -118,9 +129,9 @@ export class RestaurantFormComponent {
       photos: []
     }
 
-    if (id === 0) // crear nuevo libro
+    if (id === 0) // nuevo
       this.restaurantService.create(restaurant).subscribe(restaurant => console.log(restaurant));
-    // else // editar libro existente
+    // else // editar restaurante existente
     //   this.restaurantService.update(restaurant).subscribe(restaurant => this.router.navigate(['/restaurants', restaurant.id]));
   }
 
