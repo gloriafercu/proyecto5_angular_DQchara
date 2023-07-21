@@ -1,7 +1,7 @@
 <section class="container-comment-form">
 
     <div class="title-form">
-        <h2>Deja Tu Comentario</h2>
+        <h2>Deja tu comentario sobre {{ restaurant?.name }}</h2>
     </div>
 
     <form [formGroup]="commentForm" (ngSubmit)="save()" class="commentForm">
@@ -9,26 +9,23 @@
 
         <mat-form-field class="input-textarea">
             <mat-label>Tu Opinión</mat-label>
-            <textarea matInput #message maxlength="300" rows="2" placeholder="Escribe aqui tu opinión..."
+            <textarea class="textarea" matInput #message maxlength="300" rows="2" placeholder="Escribe aqui tu opinión..."
                 formControlName="description"></textarea>
             <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
         </mat-form-field>
 
-        <!-- <ngb-rating [(rate)]="comment?.rating">
-            <ng-template let-fill="fill" let-index="index">
-                <i class="bi-egg-fill{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100" [class.low]="index < 3"></i>
-            </ng-template>
-        </ngb-rating>
-        <hr />
-        <pre>Valoracion: <b>{{comment?.rating}}</b></pre> -->
-<!-- 
-        <div class="container-data-user">
-
-            <div class="content-user">
-                <mat-card-title>{{ comment?.user?.userName }}</mat-card-title>
-                <mat-card-subtitle>{{ comment?.createdDate | date: 'dd/MM/YYYY' }}</mat-card-subtitle>
+        <div class="rating-comment">
+            <span>Puntuación: </span>
+            <div>
+                <span class="rating">{{currentRate}}</span>
+                <ngb-rating [(rate)]="currentRate" [max]="5">
+                    <ng-template let-fill="fill" let-index="index">
+                        <i class="bi-egg{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"></i>
+                    </ng-template>
+                </ngb-rating>
             </div>
         </div> -->
+
 
         <button mat-button disabled extended type="submit" [disabled]="commentForm.invalid" class="button-submit">
             <mat-icon class="icon-form">send</mat-icon>

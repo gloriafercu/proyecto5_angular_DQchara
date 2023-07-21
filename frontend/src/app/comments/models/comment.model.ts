@@ -5,7 +5,7 @@ export interface IComment {
     rating: number;
     description: string;
     restaurant: Partial<IRestaurant>;
-    user?: any;
-    //user?: Partial<IUser>;
+    // user?: any;
+    user?: Partial<IUser>;
     createdDate?: Date;
 }

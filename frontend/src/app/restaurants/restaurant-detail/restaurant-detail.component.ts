@@ -37,6 +37,7 @@ export class RestaurantDetailComponent implements OnInit {
         // this.average = parseFloat(averageValue.toFixed(1));
     
       });
+      if (!id) return;
       this.commentService.getAverageByRestaurantId(id).subscribe(data=>this.average = data);
       
      
