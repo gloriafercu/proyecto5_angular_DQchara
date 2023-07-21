@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
+import { RestaurantFormImagesComponent } from './restaurant-form-images/restaurant-form-images.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,11 @@ const routes: Routes = [
   {
     path: 'my-restaurant',
     component: RestaurantFormComponent
+  },
+  
+  {
+    path: ':id/images',
+    component: RestaurantFormImagesComponent
   },
   {
     path: ':id',

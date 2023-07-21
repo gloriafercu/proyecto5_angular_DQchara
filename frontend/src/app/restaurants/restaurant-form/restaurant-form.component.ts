@@ -50,8 +50,9 @@ export class RestaurantFormComponent {
     iframe: new FormControl<string>('')
   });
 
-  
-  constructor(private restaurantService: RestaurantService, private router: Router) {}
+
+
+  constructor(private restaurantService: RestaurantService, private router: Router, private activatedRoute: ActivatedRoute ) { }
 
   // onChangeCity(event: MatSelectChange): void {
   //   let city = event.value;
@@ -63,24 +64,24 @@ export class RestaurantFormComponent {
   //   this.restaurantService.getByTypeFood(typeFood).subscribe(data => this.restaurants = data);
   // }
 
-  //ngOnInit(): void {
-   
-    // this.activatedRoute.params.subscribe(params => {
-    //   const idString = params['id'];
-    //   if (!idString) return;
-    //   const id = parseInt(idString, 10);
-    //   this.restaurantService.getById(id).subscribe(restaurant => this.loadRestaurantForm(restaurant));
-    // });
+  ngOnInit(): void {
 
-    // // CONDICIONAL (/restaurants/rest): SI ES Rest TRAER EL Restaurante ASOCIADO AL rest
-    // this.activatedRoute.url.subscribe(url => {
-    //   console.log(url[0].path);
-    //   // comprueba si en la url pone la palabra owner
-    //   if(url[0].path !== 'rest') return;
+    this.activatedRoute.params.subscribe(params => {
+      const idString = params['id'];
+      if (!idString) return;
+      const id = parseInt(idString, 10);
+      this.restaurantService.getById(id).subscribe(restaurant => this.loadRestaurantForm(restaurant));
+    });
 
-    //   this.restaurantService.getRestaurantByAuthenticatedRest().subscribe(rest => this.loadRestaurantForm(restaurant));
-    // });
-  //}
+    // CONDICIONAL (/restaurants/rest): SI ES Rest TRAER EL Restaurante ASOCIADO AL rest
+    this.activatedRoute.url.subscribe(url => {
+      console.log(url[0].path);
+      // comprueba si en la url pone la palabra rest
+      if (url[0].path !== 'rest') return;
+
+      this.restaurantService.getRestaurantByAuthenticatedRest().subscribe(restaurant => this.loadRestaurantForm(restaurant));
+    });
+  }
 
   loadRestaurantForm(restaurant: IRestaurant): void {
 
@@ -90,7 +91,7 @@ export class RestaurantFormComponent {
       address: restaurant.address,
       city: restaurant.city,
       phone: restaurant.phone,
-      web:restaurant.web,
+      web: restaurant.web,
       email: restaurant.email,
       averagePrice: restaurant.averagePrice,
       availability: restaurant.availability,
@@ -111,7 +112,7 @@ export class RestaurantFormComponent {
     let availability = this.restaurantForm.get('availability')?.value ?? true;
     let typeFood = this.restaurantForm.get('typeFood')?.value ?? '';
     let iframe = this.restaurantForm.get('iframe')?.value ?? '';
-    
+
 
     let restaurant: IRestaurant = {
       id: id,

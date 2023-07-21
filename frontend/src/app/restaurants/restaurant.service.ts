@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class RestaurantService {
 
+
+
   urlAPI: string = "http://localhost:3000/restaurants";
 
   constructor(private httpClient: HttpClient) { }
@@ -31,6 +33,10 @@ export class RestaurantService {
 
   getAllByNameLike(name: string): Observable<IRestaurant[]> {
     return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/name-like/${name}`)
+  }
+
+  getRestaurantByAuthenticatedRest(): Observable<IRestaurant> {
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/current`);
   }
 
 

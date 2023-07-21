@@ -24,6 +24,7 @@ import { SafePipe } from '../pipes/safe.pipe';
 import { FilterNamePipe } from '../pipes/filter-name.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
+import { RestaurantFormImagesComponent } from './restaurant-form-images/restaurant-form-images.component';
 
 
 
@@ -34,7 +35,8 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
     RestaurantFormComponent,
     PaginatePipe,
     SafePipe,
-    FilterNamePipe
+    FilterNamePipe,
+    RestaurantFormImagesComponent
   ],
   imports: [
     CommonModule,
