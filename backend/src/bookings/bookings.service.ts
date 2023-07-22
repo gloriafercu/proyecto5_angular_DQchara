@@ -114,7 +114,6 @@ export class BookingsService {
             bookingFromDB.phone = booking.phone;
             bookingFromDB.email = booking.email;
 
-
             console.log('ESTA RESERVA', booking);
 
             await this.bookingRepo.update(bookingFromDB.id, bookingFromDB);

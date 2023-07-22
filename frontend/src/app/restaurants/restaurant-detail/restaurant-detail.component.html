@@ -55,7 +55,6 @@
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                         title="location restaurant"></iframe>
                 </div>
-
             </div>
 
         </mat-tab>
@@ -87,11 +86,13 @@
                     <mat-card-header>
                         <mat-card-title-group>
                             <div class="container-data-user">
-                                <img class="avatar-img"[src]="'http://localhost:3000/uploads/' + comment.user!.avatar" alt="user avatar"/>
-                                
+                                <img class="avatar-img" [src]="'http://localhost:3000/uploads/' + comment.user!.avatar"
+                                    alt="user avatar" />
+
                                 <div class="content-user">
                                     <mat-card-title>{{ comment.user?.userName }}</mat-card-title>
-                                    <mat-card-subtitle>{{ comment.createdDate | date: 'dd/MM/YYYY' }}</mat-card-subtitle>
+                                    <mat-card-subtitle>{{ comment.createdDate | date: 'dd/MM/YYYY'
+                                        }}</mat-card-subtitle>
                                 </div>
                             </div>
                             <div class="content-rating">

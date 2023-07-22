@@ -45,11 +45,6 @@ export class RestaurantsController {
         return this.restaurantService.getAllByNameLike(name);
     }
 
-    // @Post()
-    // async create(@Body() restaurant: Restaurant): Promise<Restaurant> {
-    //     return await this.restaurantService.create(restaurant);
-    // }
-
     @Put()
     async update(@Body() restaurant: Restaurant): Promise<Restaurant> {
         return await this.restaurantService.update(restaurant);
@@ -101,7 +96,7 @@ export class RestaurantsController {
           @Param('restaurantId', ParseIntPipe) restaurantId: number,
           @UploadedFiles() files: Express.Multer.File[]
           ){
-              // obtener el libro y si no existe lanzar excepción
+              // obtener el restaurante y si no existe lanzar excepción
               let restaurant = await this.restaurantService.getById(restaurantId);
               if(!restaurant) throw new NotFoundException('Restaurant not found');
               

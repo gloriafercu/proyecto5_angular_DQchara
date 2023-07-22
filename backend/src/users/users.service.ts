@@ -55,7 +55,7 @@ export class UsersService {
 
             console.log('actualiza el siguiente usaurio:')
             console.log(userFromDB);
-            await this.userRepo.save(userFromDB);// Alan utiliza el save()
+            await this.userRepo.save(userFromDB);
             return userFromDB;
 
         } catch (error) {
@@ -76,6 +76,7 @@ export class UsersService {
             throw new ConflictException('No se puede borrar')
         }
     } 
+
     async updateAvatar(user: User): Promise<User>{
         let userFromDB = await this.userRepo.findOne({ 
             where: {
@@ -93,9 +94,6 @@ export class UsersService {
            console.log(error);
            throw new ConflictException('Error actualizando usuario');
         }
-            
-
-
     }
 
 }
