@@ -10,10 +10,6 @@ export class CommentsController {
 
     constructor(private commentsService: CommentsService) { }
 
-    // @Get()
-    // getAll(): Promise<Comment[]> {
-    //     return this.commentsService.getAll();
-    // }
 
     @Get(':id')
     getById(@Param("id") id: number): Promise<Comment | null> {
@@ -32,10 +28,10 @@ export class CommentsController {
 
     @Get('average/:restaurantId')
     getAverageByRestaurantId(@Param('restaurantId') restaurantId: number): Promise<number> {
-        let average= this.commentsService.getAverageByRestaurantId(restaurantId);
-                 // TDOO actualizar restaurante con avegare antes de devolverlo
-            // this.restaurantService.update(restaurant);
-                 return average;
+        let average = this.commentsService.getAverageByRestaurantId(restaurantId);
+        // TDOO actualizar restaurante con avegare antes de devolverlo
+        // this.restaurantService.update(restaurant);
+        return average;
     }
 
     // @Post()
@@ -53,7 +49,7 @@ export class CommentsController {
     async deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
         return await this.commentsService.deleteById(id);
     }
-    
+
     @UseGuards(AuthGuard('jwt'))
     @Get()
     getAll(@Request() request): Promise<Comment[]> {
@@ -67,7 +63,7 @@ export class CommentsController {
         }
 
     }
-    
+
     @UseGuards(AuthGuard('jwt'))
     @Post()
     async create(

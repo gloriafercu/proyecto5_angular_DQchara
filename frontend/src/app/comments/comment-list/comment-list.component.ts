@@ -15,12 +15,7 @@ export class CommentListComponent implements OnInit {
   constructor(private commentService: CommentService) { }
 
   ngOnInit(): void {
-    this.commentService.getAll().subscribe(data => {
-
-      this.comments = data
-      // this.comments.map(comment => console.log(comment.restaurant?.photos.map(photo=>console.log(photo))));
-
-    });
+    this.commentService.getAll().subscribe(data =>this.comments = data);
   }
 
 }
