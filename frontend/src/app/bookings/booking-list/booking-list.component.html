@@ -1,9 +1,9 @@
 <div class="container-user-detail">
     <div>
-        <h2>Tu lista de reservas</h2>
+        <h2>Tus reservas</h2>
 
         <div class="content-table">
-            <table mat-table [dataSource]="bookings" class="mat-elevation-z8 table custom_table">
+            <table mat-table [dataSource]="bookings" class="mat-elevation-z8 custom_table">
                 <ng-container matColumnDef="restaurant">
                     <th mat-header-cell *matHeaderCellDef style="font-weight: 600;">Restaurante</th>
                     <td mat-cell *matCellDef="let booking">{{ booking.restaurant.name}}</td>
@@ -33,16 +33,16 @@
                     <th mat-header-cell *matHeaderCellDef style="font-weight: 600;">Acciones</th>
                     <td mat-cell *matCellDef="let booking">
                         <button mat-mini-fab color="accent" class="button"
-                            [routerLink]="['/bookings', booking.id, 'edit']">
+                            [routerLink]="['/bookings', booking.id, 'edit']" title="editar reserva">
                             <mat-icon>edit</mat-icon>
                         </button>
-                        <button mat-mini-fab class="button" color="warn" (click)="deleteBooking(booking)">
+                        <button mat-mini-fab class="button" color="warn" (click)="deleteBooking(booking)" title="borrar reserva">
                             <mat-icon class="tab-icon">
                                 delete
                             </mat-icon>
                         </button>
                         <button mat-mini-fab class="button" color="primary"
-                            [routerLink]="['/comments/comment-form/restaurant', booking.restaurant.id]">
+                            [routerLink]="['/comments/comment-form/restaurant', booking.restaurant.id]" title="añadir opinión">
                             <mat-icon class="tab-icon">
                                 add_comment
                             </mat-icon>

@@ -10,12 +10,17 @@ import { CommentService } from '../services/comment.service';
 export class CommentListComponent implements OnInit {
 
   comments: IComment[] = [];
-  displayedColumns: string[] = ['restaurant', 'description', 'rating'];
+  displayedColumns: string[] = ['photo', 'restaurant', 'description', 'rating'];
 
   constructor(private commentService: CommentService) { }
 
   ngOnInit(): void {
-    this.commentService.getAll().subscribe(data => this.comments = data);
+    this.commentService.getAll().subscribe(data => {
+
+      this.comments = data
+      // this.comments.map(comment => console.log(comment.restaurant?.photos.map(photo=>console.log(photo))));
+
+    });
   }
 
 }
