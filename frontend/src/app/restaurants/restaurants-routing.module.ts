@@ -25,6 +25,10 @@ const routes: Routes = [
     component: RestaurantDetailComponent
   },
   {
+    path: ':id',
+    component: RestaurantDetailComponent
+  },
+  {
     path: '**', redirectTo: '', pathMatch: 'full'
   }
 ];

@@ -4,11 +4,12 @@ import { Restaurant } from './restaurants.entity';
 import { AuthGuard } from '@nestjs/passport';
 import { UserRole } from 'src/users/users.entity';
 import { FilesInterceptor } from '@nestjs/platform-express';
+import { UsersService } from 'src/users/users.service';
 
 @Controller('restaurants')
 export class RestaurantsController {
 
-    constructor(private restaurantService: RestaurantsService) {}
+    constructor(private restaurantService: RestaurantsService, private usersService: UsersService) {}
 
     @Get()
     getAll(): Promise<Restaurant[]> {
@@ -73,7 +74,7 @@ export class RestaurantsController {
             restaurant = await this.restaurantService.create(restaurant);
            
             request.user.restaurant = restaurant;
-            await this.restaurantService.update(request.user);
+            await this.usersService.update(request.user);
             return restaurant;
         }
 
@@ -96,12 +97,12 @@ export class RestaurantsController {
       @UseGuards(AuthGuard('jwt'))
       @Post(':restaurantId/images')
       @UseInterceptors(FilesInterceptor('file'))
-      async uploadBookImages(
+      async uploadRestaurantImages(
           @Request() request, 
           @Param('restaurantId', ParseIntPipe) restaurantId: number,
           @UploadedFiles() files: Express.Multer.File[]
           ){
-              // obtener el libro y si no existe lanzar excepción
+              // obtener el restaurante y si no existe lanzar excepción
               let restaurant = await this.restaurantService.getById(restaurantId);
               if(!restaurant) throw new NotFoundException('Restaurant not found');
               

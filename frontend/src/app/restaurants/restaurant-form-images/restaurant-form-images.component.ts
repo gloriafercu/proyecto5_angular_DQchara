@@ -57,7 +57,7 @@ export class RestaurantFormImagesComponent implements OnInit{
 
     // http://localhost:3000/restaurants/2/images
     this.httpClient
-      .post(`${BASE_URL}/books/${this.restaurant?.id}/images`, formData)
+      .post(`${BASE_URL}/restaurants/${this.restaurant?.id}/images`, formData)
       .subscribe(data => {
         console.log(data);
         this.loadRestaurant();

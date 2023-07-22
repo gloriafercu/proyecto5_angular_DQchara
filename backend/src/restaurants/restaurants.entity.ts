@@ -40,8 +40,8 @@ export class Restaurant {
     @Column()
     typeFood: string; 
 
-    @Column('simple-array')
-    photos: string[]; // ejemplo: img1.png,img2.png,img3.png
+    @Column('simple-array', { nullable: true })
+    photos?: string[]; // ejemplo: img1.png,img2.png,img3.png
 
     @CreateDateColumn({ name: 'created_date' })
     createdDate: Date;
