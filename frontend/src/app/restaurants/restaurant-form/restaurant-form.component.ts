@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IRestaurant } from '../models/restaurant.model';
 import { RestaurantService } from '../restaurant.service';
-import { MatSelectChange } from '@angular/material/select';
+
 
 @Component({
   selector: 'app-restaurant-form',
@@ -38,13 +38,13 @@ export class RestaurantFormComponent {
 
   restaurantForm = new FormGroup({
     id: new FormControl<number>(0),
-    name: new FormControl<string>('', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]),
-    address: new FormControl<string>('', [Validators.maxLength(100)]),
+    name: new FormControl<string>('', [Validators.required]),
+    address: new FormControl<string>('', [Validators.required]),
     city: new FormControl<string>('', [Validators.required]),
     phone: new FormControl<string>('', [Validators.required, Validators.pattern('^[679]{1}[0-9]{8}$')]),
     web: new FormControl<string>(''),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
-    averagePrice: new FormControl<number>(0),
+    averagePrice: new FormControl<number>(0, [Validators.required, Validators.min(5), Validators.max(500)]),
     availability: new FormControl<boolean>(true),
     typeFood: new FormControl<string>(''),
     iframe: new FormControl<string>('')
@@ -53,16 +53,6 @@ export class RestaurantFormComponent {
 
 
   constructor(private restaurantService: RestaurantService, private router: Router, private activatedRoute: ActivatedRoute ) { }
-
-  // onChangeCity(event: MatSelectChange): void {
-  //   let city = event.value;
-  //   this.restaurantService.getByCity(city).subscribe(data =>  this.restaurants = data)
-  // }
-  // onChangeTypeFood(event: MatSelectChange): void {
-  //   let typeFood = event.value;
-
-  //   this.restaurantService.getByTypeFood(typeFood).subscribe(data => this.restaurants = data);
-  // }
 
   ngOnInit(): void {
 

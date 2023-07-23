@@ -3,7 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BookingService } from '../services/booking.service';
 import { RestaurantService } from 'src/app/restaurants/restaurant.service';
 import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
-//import { IUser } from 'src/app/users/models/user.model';
 import { IBooking } from '../models/booking.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -62,7 +61,6 @@ export class BookingFormComponent implements OnInit {
           this.booking = booking; // Guarda la reserva para luego recuperar los datos en la edición
         });
       }
-
     });
 
   }
@@ -86,7 +84,6 @@ export class BookingFormComponent implements OnInit {
 
   save(): void {
 
-    // TODO añadir validación extra de datos, si alguno está mal hacer return y mostrar error y no guardar.
     let id = this.bookingForm.get('id')?.value ?? 0;
     let firstName = this.bookingForm.get('firstName')?.value ?? '';
     let lastName = this.bookingForm.get('lastName')?.value ?? '';
@@ -96,10 +93,7 @@ export class BookingFormComponent implements OnInit {
     let notes = this.bookingForm.get('notes')?.value ?? '';
     let phone = this.bookingForm.get('phone')?.value ?? '';
     let email = this.bookingForm.get('email')?.value ?? '';
-    // let restaurant = this.restaurant?.id ?? this.booking?.restaurant.id ?? 0;
     let restaurant = this.bookingForm.get('restaurant')?.value ?? this.restaurant ;
-
-   
 
     // let hours = parseInt(bookingTime.split(':')[0], 10);
     // bookingDate.setHours(hours);
