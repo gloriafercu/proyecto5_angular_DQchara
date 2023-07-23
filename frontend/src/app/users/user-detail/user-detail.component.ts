@@ -13,6 +13,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UserDetailComponent implements OnInit {
   user: IUser | undefined;
+
+  
   userForm = new FormGroup({
     id: new FormControl<number>(0),
     firstName: new FormControl<string>(''),
@@ -21,6 +23,7 @@ export class UserDetailComponent implements OnInit {
     email: new FormControl<string>('', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]),
     phone: new FormControl<string>(''),
     avatar: new FormControl<string>(''),
+    restaurantId: new FormControl<number>(0)
 
   });
 
@@ -38,7 +41,8 @@ export class UserDetailComponent implements OnInit {
           userName: this.user.userName,
           email: this.user.email,
           phone: this.user.phone,
-          avatar: this.user.avatar
+          avatar: this.user.avatar,
+          restaurantId: this.user.restaurant?.id
         });
       });
   }

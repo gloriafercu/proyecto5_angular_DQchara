@@ -13,5 +13,5 @@ export interface IRestaurant {
     photos: [];
     iframe: string;
     [key: string]: any;
-    restaurant?: Partial<IRestaurant>;
+//    restaurant?: Partial<IRestaurant>;
 }

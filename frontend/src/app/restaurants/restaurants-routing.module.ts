@@ -15,9 +15,14 @@ const routes: Routes = [
     path: 'my-restaurant',
     component: RestaurantFormComponent
   },
+
+  {
+    path: 'my-restaurant/:id',
+    component: RestaurantFormComponent
+  },
   
   {
-    path: ':id/images',
+    path: ':id/photos',
     component: RestaurantFormImagesComponent
   },
   {

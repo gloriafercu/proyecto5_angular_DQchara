@@ -59,5 +59,10 @@ export class RestaurantService {
     this.httpClient.delete(`${this.urlAPI}/${id}`);
   }
 
+  
+  findCurrentRestaurant(id: number): Observable<IRestaurant> {
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${id}/my-restaurant`);
+  }
+
 
 }

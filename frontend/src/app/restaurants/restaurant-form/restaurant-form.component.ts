@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IRestaurant } from '../models/restaurant.model';
 import { RestaurantService } from '../restaurant.service';
+import { UserService } from 'src/app/users/services/user.service';
+import { IUser } from 'src/app/users/models/user.model';
 
 
 @Component({
@@ -10,9 +12,12 @@ import { RestaurantService } from '../restaurant.service';
   templateUrl: './restaurant-form.component.html',
   styleUrls: ['./restaurant-form.component.css']
 })
-export class RestaurantFormComponent {
+export class RestaurantFormComponent implements OnInit{
 
   restaurants: IRestaurant[] = [];
+  restaurant: IRestaurant | undefined;
+  user: IUser | undefined;
+  userId: number = 0;
 
   cities: string[] = [
     "Barcelona",
@@ -52,24 +57,36 @@ export class RestaurantFormComponent {
 
 
 
-  constructor(private restaurantService: RestaurantService, private router: Router, private activatedRoute: ActivatedRoute ) { }
+  constructor(private restaurantService: RestaurantService, private router: Router, 
+    private activatedRoute: ActivatedRoute, private userService: UserService ) { }
 
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe(params => {
-      const idString = params['id'];
-      if (!idString) return;
-      const id = parseInt(idString, 10);
-      this.restaurantService.getById(id).subscribe(restaurant => this.loadRestaurantForm(restaurant));
-    });
+
+    // this.activatedRoute.params.subscribe(params => {
+    //   const idString = params['id'];
+    //   if (!idString) return;
+    //   const id = parseInt(idString, 10);;
+    //   this.restaurantService.getById(id).subscribe(restaurant => this.loadRestaurantForm(restaurant));
+    // });
 
     // CONDICIONAL (/restaurants/rest): SI ES Rest TRAER EL Restaurante ASOCIADO AL rest
-    this.activatedRoute.url.subscribe(url => {
-      console.log(url[0].path);
+    this.activatedRoute.url.subscribe(urlAPI => {
+      
+      console.log(urlAPI[0].path);
       // comprueba si en la url pone la palabra rest
-      if (url[0].path !== 'rest') return;
+      if (urlAPI[0].path !== 'rest') return;
 
-      this.restaurantService.getRestaurantByAuthenticatedRest().subscribe(restaurant => this.loadRestaurantForm(restaurant));
+    this.userService.findCurrentUser().subscribe(data => {
+        this.user = data;
+        console.log(data); 
+      });
+     
+    //let userId = this.user?.id;
+    if (!this.user?.restaurant?.id) return;
+    let id = this.user.restaurant.id;
+    console.log(id);
+      this.restaurantService.findCurrentRestaurant(id).subscribe(restaurant => this.loadRestaurantForm(restaurant));
     });
   }
 

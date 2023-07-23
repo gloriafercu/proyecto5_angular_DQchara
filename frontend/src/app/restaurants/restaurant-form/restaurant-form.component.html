@@ -3,7 +3,8 @@
     <h2>Resgistra tu restaurante</h2>
 
     <form [formGroup]="restaurantForm" (ngSubmit)="save()" class="restaurantForm">
-        <input type="hidden" formControlName="id">
+        <input type="text" formControlName="id">
+
 
         <mat-form-field class="input-name">
             <mat-label>Nombre de tu Restaurante</mat-label>
@@ -101,6 +102,11 @@
             <mat-label>Localización en GoogleMaps</mat-label>
             <input matInput type="textarea" formControlName="iframe">
         </mat-form-field>
+
+        <button mat-fab extended style="margin-bottom: 10px;" [routerLink]="['/restaurants', restaurant?.id, 'photos']">
+            <mat-icon>photo_library</mat-icon>
+             Cambiar Imagenes
+        </button>
 
         <button mat-fab extended type="submit" class="button-submit">
             <mat-icon class="icon-form">send</mat-icon>
