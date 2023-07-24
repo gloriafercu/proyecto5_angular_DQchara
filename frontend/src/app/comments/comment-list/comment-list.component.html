@@ -6,7 +6,7 @@
     <h2>Tus opiniones</h2>
 
     <mat-card class="comment-card" *ngFor="let comment of comments">
-        <img mat-card-image [src]="comment.restaurant.photos?.slice(0,1)" alt="foto de {{ comment.restaurant.name }}" class="image">
+        <img mat-card-image [src]="'http://localhost:3000/uploads/' + comment.restaurant.photos?.slice(0,1)" alt="foto de {{ comment.restaurant.name }}" class="image">
 
         <div class="content-card">
             <mat-card-header class="header-card">
@@ -27,9 +27,7 @@
             </mat-card-content>
         </div>
     </mat-card>
-    <!-- <div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
-        No hay opiniones disponibles en este momento.
-    </div>  -->
+
 </section>
 
 
