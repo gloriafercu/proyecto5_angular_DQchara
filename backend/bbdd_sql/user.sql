@@ -6,4 +6,3 @@ insert into `backend_dqchara`.`user` (`firstName`, `lastName`, `email`, `passwor
 
 insert into `backend_dqchara`.`user` (`firstName`, `lastName`, `email`, `password`,`phone`, `userName`, `avatar`, `role`) values ('Gloria','Fernández','gloriafc@hola.com','$2a$10$lfkeTt1dCfE6yYkTBfpk1.K28CKxlNqQYluReHQJPF1jVhz0zyKwa','662288981','gloriafc','0dc51584-8b6a-4010-a59f-fe9f2c1d4bb4.png','user');
 
-

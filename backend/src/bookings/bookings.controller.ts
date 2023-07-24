@@ -52,6 +52,8 @@ export class BookingsController {
             // Agregarlo en la llamada this.bookingsService.getAllBookingsByRestaurantId(restaurantID);
             // EJEMPLO: this.bookingsService.getAllBookingsByRestaurantId(1);
             // Muestra todas las reservas del restaurante "Los Torreznos"
+
+            console.log('usuario rest', request.restaurant.id)
             
             return this.bookingsService.getAllBookingsByRestaurantId(request.restaurant.id);
         } else {

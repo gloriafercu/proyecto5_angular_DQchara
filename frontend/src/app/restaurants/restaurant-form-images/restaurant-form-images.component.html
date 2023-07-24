@@ -15,6 +15,6 @@
 
 <input type="file" (change)="onFileSelected($event)" multiple />
 <div>
-  <button (click)="save()" routerLink="/restaurants/detail">Enviar</button>
+  <button (click)="save()" [routerLink]="['/restaurants', restaurant?.id]">Enviar</button>
 </div>
 </div>
