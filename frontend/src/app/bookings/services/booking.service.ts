@@ -36,6 +36,19 @@ export class BookingService {
     return this.httpClient.get<IBooking[]>(`${this.urlAPI}/user/${userId}`);
   }
 
+  getAllBookingsByRestaurantIdAndBookingDate(restaurantId: number, bookingDate: Date): Observable<IBooking[]> { 
+    return this.httpClient.get<IBooking[]>(`${this.urlAPI}/allbookings/${restaurantId}/${bookingDate}`)
+  }
+
+  countBookingsByRestaurantIdAndBookingDate(restaurantId: number, bookingDate: Date): Observable<number> { 
+    return this.httpClient.get<number>(`${this.urlAPI}/countBookings/${restaurantId}/${bookingDate}`)
+  }
+
+
+  existAnyBooking(restaurantId: number, bookingDate: Date): Observable<boolean> {
+    return this.httpClient.get<boolean>(`${this.urlAPI}/existAnyBooking/${restaurantId}/${bookingDate}`);
+  }
+
   deleteById(id: number): Observable<{}> {
     return this.httpClient.delete(`${this.urlAPI}/${id}`);
   }

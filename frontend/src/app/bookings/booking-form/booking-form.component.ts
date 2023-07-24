@@ -82,6 +82,8 @@ export class BookingFormComponent implements OnInit {
 
   }
 
+
+
   save(): void {
 
     let id = this.bookingForm.get('id')?.value ?? 0;
@@ -93,7 +95,7 @@ export class BookingFormComponent implements OnInit {
     let notes = this.bookingForm.get('notes')?.value ?? '';
     let phone = this.bookingForm.get('phone')?.value ?? '';
     let email = this.bookingForm.get('email')?.value ?? '';
-    let restaurant = this.bookingForm.get('restaurant')?.value ?? this.restaurant ;
+    let restaurant = this.bookingForm.get('restaurant')?.value ?? this.restaurant;
 
     // let hours = parseInt(bookingTime.split(':')[0], 10);
     // bookingDate.setHours(hours);
@@ -111,6 +113,31 @@ export class BookingFormComponent implements OnInit {
       restaurant: restaurant,
     }
     console.log(booking);
+
+    // let allbookings = this.bookingService.getAllBookingsByRestaurantIdAndBookingDate(id, bookingDate);
+    // console.log('allbookings', allbookings);
+
+    // let countBookings = this.bookingService.countBookingsByRestaurantIdAndBookingDate(id, bookingDate);
+    // console.log('countBookings', countBookings);
+
+
+    // let exist = this.bookingService.existAnyBooking(id, bookingDate);
+    // console.log('exist', exist);
+
+    // if (!exist) {
+    //   if (id === 0)
+    //     this.bookingService.create(booking).subscribe(
+    //       booking => this.router.navigate(['/bookings', booking.id])
+    //     );
+    //   else
+    //     this.bookingService.update(booking).subscribe(booking => {
+    //       this.router.navigate(['/bookings', booking.id, '/edit']);
+    //       this.router.navigate(['/bookings', booking.id]);
+    //     });
+
+    // }
+
+
     if (id === 0)
       this.bookingService.create(booking).subscribe(
         booking => this.router.navigate(['/bookings', booking.id])
@@ -120,6 +147,7 @@ export class BookingFormComponent implements OnInit {
         this.router.navigate(['/bookings', booking.id, '/edit']);
         this.router.navigate(['/bookings', booking.id]);
       });
+
   }
 
 }

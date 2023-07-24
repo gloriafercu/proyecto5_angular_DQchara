@@ -29,6 +29,21 @@ export class BookingsController {
         return this.bookingsService.getAllBookingsByUserId(userId);
     }
 
+    @Get('allbookings/:restaurantId/:bookingDate')
+    getAllBookingsByRestaurantIdAndBookingDate(@Param('restaurantId') restaurantId: number, @Param('bookingDate') bookingDate: Date): Promise<Booking[]> {
+        return this.bookingsService.getAllBookingsByRestaurantIdAndBookingDate(restaurantId, bookingDate);
+    }
+
+    @Get('countBookings/:restaurantId/:bookingDate')
+    countBookingsByRestaurantIdAndBookingDate(@Param('restaurantId') restaurantId: number, @Param('bookingDate') bookingDate: Date): Promise<number> {
+        return this.bookingsService.countBookingsByRestaurantIdAndBookingDate(restaurantId, bookingDate);
+    }
+
+    @Get('existAnyBooking/:restaurantId/:bookingDate')
+    existAnyBooking(@Param('restaurantId') restaurantId: number, @Param('bookingDate') bookingDate: Date): Promise<boolean> {
+        return this.bookingsService.existAnyBooking(restaurantId, bookingDate);
+    }
+
 
     @Put(':id')
     async update(@Body() booking: Booking): Promise<Booking> {
@@ -40,7 +55,7 @@ export class BookingsController {
     async deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
         return await this.bookingsService.deleteById(id);
     }
-    
+
     @UseGuards(AuthGuard('jwt'))
     @Get()
     getAll(@Request() request): Promise<Booking[]> {
@@ -54,14 +69,14 @@ export class BookingsController {
             // Muestra todas las reservas del restaurante "Los Torreznos"
 
             console.log('usuario rest', request.restaurant.id)
-            
+
             return this.bookingsService.getAllBookingsByRestaurantId(request.restaurant.id);
         } else {
             return this.bookingsService.getAllBookingsByUserId(request.user.id);
         }
 
     }
-    
+
     @UseGuards(AuthGuard('jwt'))
     @Post()
     async create(
