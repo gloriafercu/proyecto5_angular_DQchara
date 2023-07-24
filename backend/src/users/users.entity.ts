@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { RestaurantsController } from "src/restaurants/restaurants.controller";
+import { Restaurant } from "src/restaurants/restaurants.entity";
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 export enum UserRole {
     USER = 'user',
@@ -46,4 +48,10 @@ export class User {
     @UpdateDateColumn({ name: 'updated_date', nullable: true })
     updatedDate?: Date;
 
+    @OneToOne(() => Restaurant,
+        { nullable: true, cascade: true, eager: true })
+    @JoinColumn({ name: 'id_restaurant' })
+    restaurant: Restaurant;
+
+    
 }   

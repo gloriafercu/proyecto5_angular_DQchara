@@ -1,0 +1,28 @@
+.container-user-detail {
+    display: grid;
+    min-height: 80vh;
+    margin-top: 120px;
+    justify-content: center;
+}
+
+.container-user-detail h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.button {
+    margin: 5px;
+    box-shadow: none;
+}
+
+
+::ng-deep .content-table .mat-mdc-table {
+    max-width: 900px;
+    white-space: nowrap;
+}
+
+.custom_table td.mdc-data-table__cell {
+    vertical-align: middle;
+}

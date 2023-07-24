@@ -53,9 +53,12 @@ export class UsersService {
             //userFromDB.avatar = user.avatar;
             // userFromDB.role = user.role;
 
-            console.log('actualiza el siguiente usaurio:')
+            if (user.restaurant)
+                userFromDB.restaurant = user.restaurant;
+
+            console.log('actualiza el siguiente usaurio:');
             console.log(userFromDB);
-            await this.userRepo.save(userFromDB);// Alan utiliza el save()
+            await this.userRepo.save(userFromDB);
             return userFromDB;
 
         } catch (error) {
@@ -75,27 +78,24 @@ export class UsersService {
         } catch (error) {
             throw new ConflictException('No se puede borrar')
         }
-    } 
-    async updateAvatar(user: User): Promise<User>{
-        let userFromDB = await this.userRepo.findOne({ 
+    }
+    async updateAvatar(user: User): Promise<User> {
+        let userFromDB = await this.userRepo.findOne({
             where: {
                 id: user.id
             }
         });
-        if(!userFromDB) throw new NotFoundException('Usuario no encontrado');
+        if (!userFromDB) throw new NotFoundException('Usuario no encontrado');
 
         try {
-           console.log(user);
-           userFromDB.avatar = user.avatar;
-           return await this.userRepo.save(userFromDB);
+            console.log(user);
+            userFromDB.avatar = user.avatar;
+            return await this.userRepo.save(userFromDB);
 
         } catch (error) {
-           console.log(error);
-           throw new ConflictException('Error actualizando usuario');
+            console.log(error);
+            throw new ConflictException('Error actualizando usuario');
         }
-            
-
-
     }
 
 }

@@ -18,7 +18,6 @@
       <img *ngIf="avatar" class="avatar-img"[src]="'http://localhost:3000/uploads/' + avatar" alt="user avatar"/>
       Hola {{userName}}!
     
-
     </button>
 
     <mat-menu #menuAccount="matMenu" class="menu-account">
@@ -33,14 +32,26 @@
       </button>
 
       <button mat-button *ngIf="isLoggedIn" routerLink="/bookings/booking-list">
-        <mat-icon>book</mat-icon>
+        <mat-icon>restaurant_menu</mat-icon>
         Mis reservas
+      </button>
+
+      <button mat-button *ngIf="isRestaurant" routerLink="/restaurants/my-restaurant">
+        <mat-icon>dining</mat-icon>
+        Mi Restaurante
       </button>
 
       <button mat-button *ngIf="isLoggedIn" routerLink="/comments/comment-list">
         <mat-icon>add_comment</mat-icon>
         Mis opiniones
       </button>
+
+      <button mat-button *ngIf="isAdmin" routerLink="/users/user/user-list">
+        <mat-icon>group</mat-icon>
+          Listado de Usuarios
+      </button>
+
+
 
       <button mat-button *ngIf="isLoggedIn" (click)="authService.logout()">
         <mat-icon>logout</mat-icon>

@@ -1,0 +1,54 @@
+.container-comment-list {
+    padding-top: 120px;
+    margin: 0 40px 30px;
+}
+
+.container-comment-list h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.comment-card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.content-card {
+    padding: 15px;
+    width: 100%;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    flex-direction: row;
+}
+
+.header-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.image {
+    width: 200px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: black;
+}
+
+.icon mat-icon {
+    color: var(--primary_color);
+    margin-right: 10px;
+}

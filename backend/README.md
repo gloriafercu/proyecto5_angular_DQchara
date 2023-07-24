@@ -4,6 +4,10 @@ nest generate --help
 
 npm install --save @nestjs/typeorm typeorm mysql2
 
+npm install @nestjs/swagger
+
+npm install -D @types/multer
+
 # Modulo DataBase
 * nest generate module database
 

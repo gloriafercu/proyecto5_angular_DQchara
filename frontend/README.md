@@ -13,6 +13,8 @@ ng generate interface restaurants/models/restaurant --type=model --prefix=I
 ng generate component restaurants/restaurant-list
 ng generate component restaurants/restaurant-detail
 ng generate service restaurants/restaurant
+ng generate component restaurants/restaurant-form
+ng generate component restaurants/restaurant-form-images
 ```
 
 ## Módulo: users

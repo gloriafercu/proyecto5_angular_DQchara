@@ -114,8 +114,6 @@ export class RestaurantListComponent implements OnInit {
     this.restaurantService.getAllByNameLike(name).subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
-
-   
     });
   }
 

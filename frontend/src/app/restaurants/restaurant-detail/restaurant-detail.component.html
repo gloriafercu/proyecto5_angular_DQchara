@@ -1,7 +1,7 @@
 <section class="container-detail" *ngIf="restaurant">
     <section class="container-cover">
         <div class="container-img" *ngFor="let photo of restaurant.photos">
-            <img src="{{ photo }}" alt="foto del restaurante {{ restaurant.name }}">
+            <img [src]="'http://localhost:3000/uploads/' + photo" alt="foto de {{ restaurant.name }}">
         </div>
     </section>
 
@@ -14,12 +14,24 @@
             </div>
         </div>
         <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
+            <!-- *ngIf="restaurant.id !== user.restaurant.id " -->
             <mat-icon class="tab-icon">
                 calendar_month
             </mat-icon>
             Haz tu Reserva
         </button>
     </section>
+
+    <!-- <button mat-button class="button" [routerLink]="['/restaurant/my-restaurant']">
+             *ngIf="restaurant.id === user.restaurant.id " 
+            <mat-icon class="tab-icon">
+               wifi_home
+            </mat-icon>
+            Edita tu Restaurante
+        </button>
+    </section> -->
+
+
 
     <mat-tab-group class="container-tab-group">
         <mat-tab>
@@ -55,7 +67,6 @@
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                         title="location restaurant"></iframe>
                 </div>
-
             </div>
 
         </mat-tab>
@@ -73,7 +84,7 @@
             </div>
             <div *ngIf="comments.length > 0" class="restaurant-overview-header">
                 <span class="icon">
-                    <mat-icon>star</mat-icon>
+                    <mat-icon>egg</mat-icon>
                     {{ average }}
                 </span>
                 <span class="icon">
@@ -87,15 +98,17 @@
                     <mat-card-header>
                         <mat-card-title-group>
                             <div class="container-data-user">
-                                <img class="avatar-img"[src]="'http://localhost:3000/uploads/' + comment.user!.avatar" alt="user avatar"/>
-                                
+                                <img class="avatar-img" [src]="'http://localhost:3000/uploads/' + comment.user!.avatar"
+                                    alt="user avatar" />
+
                                 <div class="content-user">
-                                    <mat-card-title>{{ comment.user.userName }}</mat-card-title>
-                                    <mat-card-subtitle>{{ comment.createdDate | date: 'dd/MM/YYYY' }}</mat-card-subtitle>
+                                    <mat-card-title>{{ comment.user?.userName }}</mat-card-title>
+                                    <mat-card-subtitle>{{ comment.createdDate | date: 'dd/MM/YYYY'
+                                        }}</mat-card-subtitle>
                                 </div>
                             </div>
                             <div class="content-rating">
-                                <mat-icon>star</mat-icon>
+                                <mat-icon>egg</mat-icon>
                                 <span>{{ comment.rating }}</span>
                             </div>
                         </mat-card-title-group>
