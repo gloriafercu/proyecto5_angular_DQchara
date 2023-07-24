@@ -57,7 +57,7 @@ export class CommentsController {
         if (request.user.role === UserRole.ADMIN) {
             return this.commentsService.getAll();
         } else if (request.user.role === UserRole.REST) {
-            return this.commentsService.getAllCommentsByRestaurantId(request.restaurant.id);
+            return this.commentsService.getAllCommentsByRestaurantId(request.user.restaurant.id);
         } else {
             return this.commentsService.getAllCommentsByUserId(request.user.id);
         }

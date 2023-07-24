@@ -14,12 +14,24 @@
             </div>
         </div>
         <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
+            <!-- *ngIf="restaurant.id !== user.restaurant.id " -->
             <mat-icon class="tab-icon">
                 calendar_month
             </mat-icon>
             Haz tu Reserva
         </button>
     </section>
+
+        <!-- <button mat-button class="button" [routerLink]="['/restaurant/my-restaurant']">
+             *ngIf="restaurant.id === user.restaurant.id " 
+            <mat-icon class="tab-icon">
+               wifi_home
+            </mat-icon>
+            Edita tu Restaurante
+        </button>
+    </section> -->
+    
+
 
     <mat-tab-group class="container-tab-group">
         <mat-tab>

@@ -22,7 +22,7 @@ const routes: Routes = [
   // },
   
   {
-    path: 'my-restaurant/photos',
+    path: 'my-restaurant/:restaurantId/photos',
     component: RestaurantFormImagesComponent
   },
   {

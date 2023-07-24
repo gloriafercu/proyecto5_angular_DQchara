@@ -16,6 +16,7 @@ export class RestaurantFormImagesComponent implements OnInit {
   imagePreviews: string[] = [];
   imageFiles: File[] = [];
 
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
@@ -23,6 +24,7 @@ export class RestaurantFormImagesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log('RestaurantFormImagesComponent')
     this.loadRestaurant();
   }
   loadRestaurant() {
@@ -32,6 +34,7 @@ export class RestaurantFormImagesComponent implements OnInit {
         .subscribe(data => {
           this.restaurant = data;
         });
+
     });
   }
   onFileSelected(event: Event) {
@@ -57,7 +60,7 @@ export class RestaurantFormImagesComponent implements OnInit {
 
     // http://localhost:3000/restaurants/2/images
     this.httpClient
-      .post(`${BASE_URL}/restaurants/${this.restaurant?.id}/images`, formData)
+      .post(`${BASE_URL}/restaurants/${this.restaurant?.id}/photos`, formData)
       .subscribe(data => {
         console.log(data);
         this.loadRestaurant();
@@ -68,3 +71,7 @@ export class RestaurantFormImagesComponent implements OnInit {
   }
 
 }
+
+
+
+

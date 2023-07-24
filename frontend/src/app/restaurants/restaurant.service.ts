@@ -36,7 +36,7 @@ export class RestaurantService {
   }
 
   getRestaurantByAuthenticatedRest(): Observable<IRestaurant> {
-    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/current`);
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/my-restaurant`);
   }
 
   getAllOrderByRating(rating: string): Observable<IRestaurant[]> {

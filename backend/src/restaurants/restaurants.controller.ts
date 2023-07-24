@@ -92,7 +92,7 @@ export class RestaurantsController {
 
     // http://localhost:3000/restaurants/2/images
     @UseGuards(AuthGuard('jwt'))
-    @Post(':restaurantId/images')
+    @Post(':restaurantId/photos')
     @UseInterceptors(FilesInterceptor('file'))
     async uploadRestaurantImages(
         @Request() request,

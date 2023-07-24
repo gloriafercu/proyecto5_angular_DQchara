@@ -87,7 +87,10 @@ export class RestaurantFormComponent implements OnInit {
       // let id = this.user.restaurant.id;
       // console.log(id);
 
-      this.restaurantService.findCurrentRestaurant().subscribe(restaurant => this.loadRestaurantForm(restaurant));
+      this.restaurantService.findCurrentRestaurant().subscribe(restaurant => {
+        this.restaurant = restaurant;
+        this.loadRestaurantForm(restaurant)
+      });
 
     });
   }

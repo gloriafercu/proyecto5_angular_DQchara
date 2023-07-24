@@ -46,6 +46,13 @@
         Mis opiniones
       </button>
 
+      <button mat-button *ngIf="isAdmin" routerLink="/users/user/user-list">
+        <mat-icon>group</mat-icon>
+          Listado de Usuarios
+      </button>
+
+
+
       <button mat-button *ngIf="isLoggedIn" (click)="authService.logout()">
         <mat-icon>logout</mat-icon>
         Cerrar sesión

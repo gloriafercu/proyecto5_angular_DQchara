@@ -103,10 +103,15 @@
             <input matInput type="textarea" formControlName="iframe">
         </mat-form-field>
 
-        <button mat-fab extended style="margin-bottom: 10px;" [routerLink]="['/restaurants/my-restaurant/photos']">
+        <div *ngFor="let photo of restaurant?.photos">
+            <img [src]="'http://localhost:3000/uploads/' + photo" style="max-width: 150px;" alt="{{restaurant?.photos}}" />
+          </div>
+        <button *ngIf="restaurant" mat-fab extended style="margin-bottom: 10px;" [routerLink]="['/restaurants/my-restaurant', restaurant.id, 'photos']">
             <mat-icon>photo_library</mat-icon>
              Cambiar Imagenes
         </button>
+
+      
 
         <button mat-fab extended type="submit" class="button-submit">
             <mat-icon class="icon-form">send</mat-icon>
