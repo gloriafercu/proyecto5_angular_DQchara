@@ -31,15 +31,9 @@ export class RestaurantDetailComponent implements OnInit {
       this.restaurantService.getById(id).subscribe(data => this.restaurant = data);
       this.commentService.getAllCommentsByRestaurantId(id).subscribe(data => {
         this.comments = data;
-        // let ratingsArray = this.comments.map(comment => comment.rating);
-        // ratingsArray = ratingsArray.map(i => Number(i)); // Array de strings lo pasamos a numbers
-        // let averageValue = ratingsArray.reduce((acc, rate) => acc + rate, 0) / ratingsArray.length;
-        // this.average = parseFloat(averageValue.toFixed(1));
-    
+        if (this.comments.length === 0) return;
+        this.commentService.getAverageByRestaurantId(id).subscribe(data => this.average = data);
       });
-      this.commentService.getAverageByRestaurantId(id).subscribe(data=>this.average = data);
-      
-     
     });
   };
 }

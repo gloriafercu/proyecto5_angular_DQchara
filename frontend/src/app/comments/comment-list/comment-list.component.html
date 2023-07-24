@@ -1,35 +1,36 @@
-<h2>Listado de comentarios</h2>
+<div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
+    No hay opiniones disponibles en este momento.
+</div>
+
+<section class="container-comment-list" *ngIf="comments.length > 0">
+    <h2>Tus opiniones</h2>
+
+    <mat-card class="comment-card" *ngFor="let comment of comments">
+        <img mat-card-image [src]="comment.restaurant.photos?.slice(0,1)" alt="foto de {{ comment.restaurant.name }}" class="image">
+
+        <div class="content-card">
+            <mat-card-header class="header-card">
+                <div class="content-header">
+                    <mat-card-title style="font-weight: bold; font-size: 22px;">{{ comment.restaurant.name }}</mat-card-title>
+                    <mat-card-subtitle>
+                        <span class="icon">
+                            <mat-icon>star</mat-icon>
+                            {{ comment.rating }}
+                        </span>
+                       
+                    </mat-card-subtitle>
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{ comment.description }}</p>
+                <p style="color: grey">{{ comment.createdDate | date: 'dd/MM/YYYY' }}</p>
+            </mat-card-content>
+        </div>
+    </mat-card>
+    <!-- <div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
+        No hay opiniones disponibles en este momento.
+    </div>  -->
+</section>
 
 
-<table mat-table class="mat-elevation-z8" [dataSource]="comments" style="margin-top:100px;">
-    <ng-container matColumnDef="restaurant">
-        <th mat-header-cell *matHeaderCellDef>Restaurante:</th>
-        <td mat-cell *matCellDef="let comment">{{ comment.restaurant.name }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="description">
-        <th mat-header-cell *matHeaderCellDef>Comentario:</th>
-        <td mat-cell *matCellDef="let comment">{{ comment.description}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="rating">
-        <th mat-header-cell *matHeaderCellDef>Valoracion:</th>
-        <td mat-cell *matCellDef="let comment">{{ comment.rating }}</td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef>Acciones</th>
-        <td mat-cell *matCellDef="let comment">
-            <button mat-fab extended color="primary" class="btn-primary" [routerLink]="['/comments', comment.id]">
-                <mat-icon>visibility</mat-icon>
-                Ver
-            </button>
-        </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
-</table>
 

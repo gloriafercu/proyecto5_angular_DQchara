@@ -27,7 +27,7 @@
                     <mat-option value="default" (click)="getAllRestaurants()">
                         Todas
                     </mat-option>
-                    <mat-option *ngFor="let city of cities" value="{{city}}" >
+                    <mat-option *ngFor="let city of cities" value="{{city}}">
                         {{city}}
                     </mat-option>
                 </mat-select>
@@ -42,7 +42,7 @@
                     </mat-option>
                     <mat-option value="DESC">Descendente</mat-option>
                     <mat-option value="ASC">Ascendente</mat-option>
-                   
+
                 </mat-select>
                 <mat-icon matPrefix>hotel_class</mat-icon>
 
@@ -56,7 +56,7 @@
                     </mat-option>
                     <mat-option value="DESC">Descendente</mat-option>
                     <mat-option value="ASC">Ascendente</mat-option>
-                    
+
                 </mat-select>
                 <mat-icon matPrefix>euro</mat-icon>
 
@@ -80,7 +80,8 @@
 
 
 <section class="wrapper">
-    <div *ngFor="let restaurant of restaurants | filterName: filterName | paginate: page_Size: page_number" [routerLink]="['/restaurants', restaurant.id]">
+    <div *ngFor="let restaurant of restaurants | filterName: filterName | paginate: page_Size: page_number"
+        [routerLink]="['/restaurants', restaurant.id]">
         <mat-card class="card-container">
             <div class="image-container">
                 <img mat-card-image src="{{ restaurant.photos[0] }}" alt="foto de {{ restaurant.name }}">

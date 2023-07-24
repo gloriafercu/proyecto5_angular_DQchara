@@ -1,0 +1,124 @@
+<section class="container-form-restaurant">
+
+    <h2>Resgistra tu restaurante</h2>
+
+    <form [formGroup]="restaurantForm" (ngSubmit)="save()" class="restaurantForm">
+        <input type="hidden" formControlName="id">
+
+
+        <mat-form-field class="input-name">
+            <mat-label>Nombre de tu Restaurante</mat-label>
+            <input matInput type="text" formControlName="name">
+            <mat-error *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched">Nombre obligatorio</mat-error>
+        </mat-form-field>
+
+        <div class="inputs-container">
+            <mat-form-field class="input">
+                <mat-label>Dirección:</mat-label>
+                <input matInput type="text" formControlName="address">
+                <mat-error *ngIf="restaurantForm.get('address')?.invalid && restaurantForm.get('address')?.touched">Dirección obligatoria</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input">
+                <mat-label>Ciudad</mat-label>
+                <mat-select matNativeControl required formControlName="city">
+                    <mat-option value="default">
+                        Todas
+                    </mat-option>
+                    <mat-option *ngFor="let city of cities" value="{{city}}">
+                        {{city}}
+                    </mat-option>
+                </mat-select>
+                <mat-icon matPrefix class="icon-form">location_city</mat-icon>
+                <mat-error *ngIf="restaurantForm.get('city')?.invalid && restaurantForm.get('city')?.touched">
+                    Debe seleccionar una ciudad
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="inputs-container">
+            <mat-form-field class="input">
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="phone" required>
+                <mat-icon matPrefix class="icon-form">phone</mat-icon>
+                <mat-hint>Tfnos. empiezan: 6, 7 o 9</mat-hint>
+                <mat-error *ngIf="restaurantForm.get('phone')?.getError('pattern')">
+                    Formato Tfno. incorrecto
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+                <mat-icon matSuffix class="icon-form">email</mat-icon>
+                <mat-hint>Indique email verificación</mat-hint>
+                <mat-error *ngIf="restaurantForm.get('email')?.invalid &&
+                        restaurantForm.get('email')?.touched &&
+                        restaurantForm.get('email')?.getError('required')">
+                    Email obligatorio
+                </mat-error>
+                <mat-error *ngIf="restaurantForm.get('email')?.invalid &&
+                        restaurantForm.get('email')?.touched &&
+                        restaurantForm.get('email')?.getError('email')">
+                    Formato email incorrecto
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="inputs-container">
+            <mat-form-field floatLabel="always" class="input">
+                <mat-label>Precio Medio</mat-label>
+                <input matInput type="number" class="example-right-align" placeholder="0" step="1" min="5" max="500"
+                    formControlName="averagePrice">
+                <span matTextPrefix>&euro;&nbsp;</span>
+                <mat-error *ngIf="restaurantForm.get('price')?.invalid && restaurantForm.get('price')?.touched">
+                    El precio medio debe estar comprendido en un rango de 5 y 500 €.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input">
+                <mat-label>Tipos de comida</mat-label>
+                <mat-select matNativeControl required formControlName="typeFood">
+                    <mat-option value="default">
+                        Todas
+                    </mat-option>
+                    <mat-option *ngFor="let typeFood of food" value="{{typeFood}}">
+                        {{typeFood}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="restaurantForm.get('typeFood')?.invalid && restaurantForm.get('typeFood')?.touched">
+                   Es obligatorio seleccionar tipo de comida
+                </mat-error>
+
+            </mat-form-field>
+        </div>
+
+        <mat-form-field class="input-web">
+            <mat-label>Web</mat-label>
+            <input matInput type="text" formControlName="web">
+        </mat-form-field>
+
+        <mat-form-field class="input-location">
+            <mat-label>Localización en GoogleMaps</mat-label>
+            <input matInput type="textarea" formControlName="iframe">
+        </mat-form-field>
+
+        <div *ngFor="let photo of restaurant?.photos">
+            <img [src]="'http://localhost:3000/uploads/' + photo" style="max-width: 150px;" alt="{{restaurant?.photos}}" />
+          </div>
+        <button *ngIf="restaurant" mat-fab extended style="margin-bottom: 10px;" [routerLink]="['/restaurants/my-restaurant', restaurant.id, 'photos']">
+            <mat-icon>photo_library</mat-icon>
+             Cambiar Imagenes
+        </button>
+
+      
+
+        <button mat-fab extended type="submit" class="button-submit">
+            <mat-icon class="icon-form">send</mat-icon>
+            Enviar
+        </button>
+
+    </form>
+
+</section>
+

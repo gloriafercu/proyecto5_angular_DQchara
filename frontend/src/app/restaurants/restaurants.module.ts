@@ -23,6 +23,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SafePipe } from '../pipes/safe.pipe';
 import { FilterNamePipe } from '../pipes/filter-name.pipe';
 import { SharedModule } from '../shared/shared.module';
+import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
+import { RestaurantFormImagesComponent } from './restaurant-form-images/restaurant-form-images.component';
 
 
 
@@ -30,10 +32,11 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     RestaurantListComponent,
     RestaurantDetailComponent,
+    RestaurantFormComponent,
     PaginatePipe,
     SafePipe,
-    FilterNamePipe
-
+    FilterNamePipe,
+    RestaurantFormImagesComponent
   ],
   imports: [
     CommonModule,
@@ -59,6 +62,7 @@ import { SharedModule } from '../shared/shared.module';
   exports: [
     RestaurantListComponent,
     RestaurantDetailComponent,
+    RestaurantFormComponent
   ]
 })
 export class RestaurantsModule { }

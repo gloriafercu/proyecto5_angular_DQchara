@@ -11,17 +11,20 @@ export class UserListComponent implements OnInit {
 
 
   users: IUser[] = [];
+  displayedColumns: string[] = ['userName', 'role', 'restaurant'];
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.getAllUsers();
+    this.userService.getAllUsers().subscribe(data => this.users = data);
     
   }
 
-  getAllUsers(): void {
-    this.userService.getAllUsers().subscribe(data => this.users = data);
-  }
-
 }
+
+
+ 
+
+
+
 

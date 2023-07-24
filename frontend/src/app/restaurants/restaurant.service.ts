@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class RestaurantService {
 
+
+
   urlAPI: string = "http://localhost:3000/restaurants";
 
   constructor(private httpClient: HttpClient) { }
@@ -16,7 +18,7 @@ export class RestaurantService {
     return this.httpClient.get<IRestaurant[]>(this.urlAPI);
   }
   getById(id: number): Observable<IRestaurant> {
-    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${id}`);
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/id/${id}`);
   }
   getByRating(rating: number): Observable<IRestaurant[]> {
     return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/rating/${rating}`);
@@ -33,6 +35,9 @@ export class RestaurantService {
     return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/name-like/${name}`)
   }
 
+  getRestaurantByAuthenticatedRest(): Observable<IRestaurant> {
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/my-restaurant`);
+  }
 
   getAllOrderByRating(rating: string): Observable<IRestaurant[]> {
     return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/rating/${rating}`)
@@ -52,6 +57,11 @@ export class RestaurantService {
 
   deleteById(id: number): void {
     this.httpClient.delete(`${this.urlAPI}/${id}`);
+  }
+
+  
+  findCurrentRestaurant(): Observable<IRestaurant> {
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/my-restaurant`);
   }
 
 

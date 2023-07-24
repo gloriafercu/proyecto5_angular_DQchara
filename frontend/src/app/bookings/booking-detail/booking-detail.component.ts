@@ -38,8 +38,7 @@ export class BookingDetailComponent implements OnInit {
       if (!bookingId) return;
       this.bookingService.getById(bookingId).subscribe(data => {
         this.booking = data;
-        console.log('this booking en detail', this.booking);
-        if(this.booking.restaurant && this.booking.restaurant.id)
+        if (this.booking.restaurant && this.booking.restaurant.id)
           this.restaurantService.getById(this.booking.restaurant.id).subscribe(data =>
             this.restaurant = data);
       });
@@ -66,7 +65,6 @@ export class BookingDetailComponent implements OnInit {
         data:
           { booking: this.booking, restaurant: this.restaurant },
         panelClass: ['modal_custom_container', 'modal_cancelation_container'],
-
       });
     this.dialogRef.afterClosed().subscribe(() => {
       console.log('La reserva no ha sido cancelada.');

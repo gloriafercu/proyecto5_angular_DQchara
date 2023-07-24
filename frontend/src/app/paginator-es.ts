@@ -6,7 +6,6 @@ import { Subject } from 'rxjs';
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
     changes = new Subject<void>();
 
-
     firstPageLabel = `Primera página`;
     itemsPerPageLabel = `Restaurantes por página`;
     lastPageLabel = `Última página`;

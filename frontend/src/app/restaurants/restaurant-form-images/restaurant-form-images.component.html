@@ -1,0 +1,20 @@
+<div class="container-restaurantForm">
+<div *ngIf="restaurant && restaurant.photos">
+  <h2>Imágenes actuales</h2>
+  <div *ngFor="let photo of restaurant.photos">
+    <img [src]="'http://localhost:3000/uploads/' + photo" style="max-width: 200px;" alt="restaurant photo" />
+  </div>
+</div>
+
+<div *ngIf="imagePreviews && imagePreviews.length > 0">
+  <h2>Nuevas imágenes</h2>
+  <div *ngFor="let imagePreview of imagePreviews">
+    <img [src]="imagePreview" style="max-width: 200px;" alt="restaurant preview" />
+  </div>
+</div>
+
+<input type="file" (change)="onFileSelected($event)" multiple />
+<div>
+  <button (click)="save()" routerLink="/restaurants/detail">Enviar</button>
+</div>
+</div>

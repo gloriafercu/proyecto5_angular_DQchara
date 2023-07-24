@@ -1,0 +1,78 @@
+.container-form-restaurant {
+    padding-top: 120px;
+    margin-bottom: 20px;
+}
+
+.container-form-restaurant h2 {
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.restaurantForm {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px 35px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.inputs-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.input {
+    width: 49%;
+}
+
+.icon-form {
+    color: var(--primary_color);
+}
+
+
+.input-name,
+.input-web,
+.input-location {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.button-submit {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--primary_color);
+    max-width: 280px;
+    width: 100%;
+    color: var(--white_color);
+    font-size: 1.2em;
+    height: 50px;
+    font-weight: bold;
+    justify-self: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.button-submit:disabled {
+    background-color: rgb(245, 245, 245);
+    color: var(--light_grey_color);
+}
+
+.button-submit .icon-form {
+    color: var(--white_color);
+    margin-right: 12px;
+}
+
+.button-submit:disabled .icon-form {
+    color: var(--light_grey_color);
+    margin-right: 12px;
+}

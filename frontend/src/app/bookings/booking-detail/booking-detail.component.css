@@ -154,7 +154,7 @@
 }
 
 .background-header {
-  background: url('../../../assets/detail-booking-mobile.png') no-repeat;
+  background: url('../../../assets/img/detail-booking-mobile.png') no-repeat;
   background-size: contain;
   height: 100px;
   width: 100%;
@@ -213,7 +213,6 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 20px;
-
 }
 
 .modal_data p {
@@ -297,7 +296,7 @@
   }
 
   .background-header {
-    background: url('../../../assets/detail-booking.png') no-repeat;
+    background: url('../../../assets/img/detail-booking.png') no-repeat;
     background-size: contain;
     background-position-y: -20px;
     width: 100%;

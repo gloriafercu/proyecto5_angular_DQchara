@@ -60,7 +60,6 @@ export class BookingsController {
 
     }
     
-
     @UseGuards(AuthGuard('jwt'))
     @Post()
     async create(
