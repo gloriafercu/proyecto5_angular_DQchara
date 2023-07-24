@@ -18,7 +18,7 @@ export class RestaurantService {
     return this.httpClient.get<IRestaurant[]>(this.urlAPI);
   }
   getById(id: number): Observable<IRestaurant> {
-    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${id}`);
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/id/${id}`);
   }
   getByRating(rating: number): Observable<IRestaurant[]> {
     return this.httpClient.get<IRestaurant[]>(`${this.urlAPI}/rating/${rating}`);
@@ -60,8 +60,8 @@ export class RestaurantService {
   }
 
   
-  findCurrentRestaurant(id: number): Observable<IRestaurant> {
-    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/${id}/my-restaurant`);
+  findCurrentRestaurant(): Observable<IRestaurant> {
+    return this.httpClient.get<IRestaurant>(`${this.urlAPI}/my-restaurant`);
   }
 
 

@@ -27,8 +27,8 @@ export class RestaurantFormImagesComponent implements OnInit {
   }
   loadRestaurant() {
     this.activatedRoute.params.subscribe(params => {
-      const id = parseInt(params['id'], 10);
-      this.restaurantService.getById(id)
+      // const id = parseInt(params['id'], 10);
+      this.restaurantService.getRestaurantByAuthenticatedRest()
         .subscribe(data => {
           this.restaurant = data;
         });

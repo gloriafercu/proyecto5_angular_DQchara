@@ -3,7 +3,7 @@
     <h2>Resgistra tu restaurante</h2>
 
     <form [formGroup]="restaurantForm" (ngSubmit)="save()" class="restaurantForm">
-        <input type="text" formControlName="id">
+        <input type="hidden" formControlName="id">
 
 
         <mat-form-field class="input-name">
@@ -103,7 +103,7 @@
             <input matInput type="textarea" formControlName="iframe">
         </mat-form-field>
 
-        <button mat-fab extended style="margin-bottom: 10px;" [routerLink]="['/restaurants', restaurant?.id, 'photos']">
+        <button mat-fab extended style="margin-bottom: 10px;" [routerLink]="['/restaurants/my-restaurant/photos']">
             <mat-icon>photo_library</mat-icon>
              Cambiar Imagenes
         </button>

@@ -11,7 +11,11 @@ export class CommentsService {
     constructor(@InjectRepository(Comment) private commentRepo: Repository<Comment>) { }
 
     getAll(): Promise<Comment[]> {
-        return this.commentRepo.find();
+        return this.commentRepo.find({
+            relations: {
+                restaurant: true
+            }
+        });
     }
 
     getById(id: number): Promise<Comment | null> {

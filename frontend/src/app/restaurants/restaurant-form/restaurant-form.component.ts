@@ -12,7 +12,7 @@ import { IUser } from 'src/app/users/models/user.model';
   templateUrl: './restaurant-form.component.html',
   styleUrls: ['./restaurant-form.component.css']
 })
-export class RestaurantFormComponent implements OnInit{
+export class RestaurantFormComponent implements OnInit {
 
   restaurants: IRestaurant[] = [];
   restaurant: IRestaurant | undefined;
@@ -57,8 +57,8 @@ export class RestaurantFormComponent implements OnInit{
 
 
 
-  constructor(private restaurantService: RestaurantService, private router: Router, 
-    private activatedRoute: ActivatedRoute, private userService: UserService ) { }
+  constructor(private restaurantService: RestaurantService, private router: Router,
+    private activatedRoute: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit(): void {
 
@@ -72,21 +72,23 @@ export class RestaurantFormComponent implements OnInit{
 
     // CONDICIONAL (/restaurants/rest): SI ES Rest TRAER EL Restaurante ASOCIADO AL rest
     this.activatedRoute.url.subscribe(urlAPI => {
-      
+
       console.log(urlAPI[0].path);
       // comprueba si en la url pone la palabra rest
-      if (urlAPI[0].path !== 'rest') return;
+      if (urlAPI[0].path !== 'my-restaurant') return;
 
-    this.userService.findCurrentUser().subscribe(data => {
-        this.user = data;
-        console.log(data); 
-      });
-     
-    //let userId = this.user?.id;
-    if (!this.user?.restaurant?.id) return;
-    let id = this.user.restaurant.id;
-    console.log(id);
-      this.restaurantService.findCurrentRestaurant(id).subscribe(restaurant => this.loadRestaurantForm(restaurant));
+      // this.userService.findCurrentUser().subscribe(data => {
+      //     this.user = data;
+      //     console.log(data); 
+      //   });
+
+      //let userId = this.user?.id;
+      // if (!this.user?.restaurant?.id) return;
+      // let id = this.user.restaurant.id;
+      // console.log(id);
+
+      this.restaurantService.findCurrentRestaurant().subscribe(restaurant => this.loadRestaurantForm(restaurant));
+
     });
   }
 
@@ -142,8 +144,8 @@ export class RestaurantFormComponent implements OnInit{
         console.log(restaurant);
         this.router.navigate(['/restaurants', restaurant.id]);
       });
-     else // editar restaurante existente
-     this.restaurantService.update(restaurant).subscribe(restaurant => this.router.navigate(['/restaurants', restaurant.id]));
+    else // editar restaurante existente
+      this.restaurantService.update(restaurant).subscribe(restaurant => this.router.navigate(['/restaurants', restaurant.id]));
   }
 
 }

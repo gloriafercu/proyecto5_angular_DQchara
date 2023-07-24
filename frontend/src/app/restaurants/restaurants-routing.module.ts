@@ -16,13 +16,13 @@ const routes: Routes = [
     component: RestaurantFormComponent
   },
 
-  {
-    path: 'my-restaurant/:id',
-    component: RestaurantFormComponent
-  },
+  // {
+  //   path: 'my-restaurant/:id',
+  //   component: RestaurantFormComponent
+  // },
   
   {
-    path: ':id/photos',
+    path: 'my-restaurant/photos',
     component: RestaurantFormImagesComponent
   },
   {
