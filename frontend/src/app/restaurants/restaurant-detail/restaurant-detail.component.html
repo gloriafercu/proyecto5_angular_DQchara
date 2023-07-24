@@ -22,7 +22,7 @@
         </button>
     </section>
 
-        <!-- <button mat-button class="button" [routerLink]="['/restaurant/my-restaurant']">
+    <!-- <button mat-button class="button" [routerLink]="['/restaurant/my-restaurant']">
              *ngIf="restaurant.id === user.restaurant.id " 
             <mat-icon class="tab-icon">
                wifi_home
@@ -30,7 +30,7 @@
             Edita tu Restaurante
         </button>
     </section> -->
-    
+
 
 
     <mat-tab-group class="container-tab-group">
@@ -84,7 +84,7 @@
             </div>
             <div *ngIf="comments.length > 0" class="restaurant-overview-header">
                 <span class="icon">
-                    <mat-icon>star</mat-icon>
+                    <mat-icon>egg</mat-icon>
                     {{ average }}
                 </span>
                 <span class="icon">
@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                             <div class="content-rating">
-                                <mat-icon>star</mat-icon>
+                                <mat-icon>egg</mat-icon>
                                 <span>{{ comment.rating }}</span>
                             </div>
                         </mat-card-title-group>

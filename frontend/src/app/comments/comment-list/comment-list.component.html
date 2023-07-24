@@ -6,18 +6,20 @@
     <h2>Tus opiniones</h2>
 
     <mat-card class="comment-card" *ngFor="let comment of comments">
-        <img mat-card-image [src]="'http://localhost:3000/uploads/' + comment.restaurant.photos?.slice(0,1)" alt="foto de {{ comment.restaurant.name }}" class="image">
+        <img mat-card-image [src]="'http://localhost:3000/uploads/' + comment.restaurant.photos?.slice(0,1)"
+            alt="foto de {{ comment.restaurant.name }}" class="image">
 
         <div class="content-card">
             <mat-card-header class="header-card">
                 <div class="content-header">
-                    <mat-card-title style="font-weight: bold; font-size: 22px;">{{ comment.restaurant.name }}</mat-card-title>
+                    <mat-card-title style="font-weight: bold; font-size: 22px;">{{ comment.restaurant.name
+                        }}</mat-card-title>
                     <mat-card-subtitle>
                         <span class="icon">
-                            <mat-icon>star</mat-icon>
+                            <mat-icon>egg</mat-icon>
                             {{ comment.rating }}
                         </span>
-                       
+
                     </mat-card-subtitle>
                 </div>
             </mat-card-header>
@@ -29,6 +31,3 @@
     </mat-card>
 
 </section>
-
-
-
