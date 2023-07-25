@@ -9,7 +9,7 @@ export class UsersController {
 
     constructor(private userService: UsersService) { };
 
-    @Get('user/user-list')
+    @Get('')
     getAll(): Promise<User[]> {
         return this.userService.getAll();
     }

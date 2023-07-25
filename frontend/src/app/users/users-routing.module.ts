@@ -19,7 +19,7 @@ const routes: Routes = [
     component: AvatarComponent // http://localhost:4200/users/avatar
   },
   {
-    path:'user/user-list',
+    path:'',
     component: UserListComponent
   },
   {
