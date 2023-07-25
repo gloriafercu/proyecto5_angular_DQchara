@@ -7,17 +7,24 @@
                 <ng-container matColumnDef="userName">
                     <th mat-header-cell *matHeaderCellDef style="font-weight: 600;">Usuario</th>
                     <td mat-cell *matCellDef="let user">{{ user.userName}}</td>
+                    <!-- <mat-header-cell *matHeaderCellDef style="font-weight: 600;"> Usuario </mat-header-cell>
+                    <mat-cell *matCellDef="let user"> {{ user.userName }} </mat-cell> -->
                 </ng-container>
                 <ng-container matColumnDef="role">
                     <th mat-header-cell *matHeaderCellDef style="font-weight: 600;">Tipo de usuario</th>
                     <td mat-cell *matCellDef="let user">{{ user.role}}</td>
+                    <!-- <mat-header-cell *matHeaderCellDef style="font-weight: 600;"> Rol </mat-header-cell>
+                    <mat-cell *matCellDef="let user"> {{ user.role }} </mat-cell> -->
                 </ng-container>
 
                 <ng-container matColumnDef="restaurant">
                     <th mat-header-cell *matHeaderCellDef style="font-weight: 600;">Restaurante Asociado</th>
-                    <td mat-cell *matCellDef="let user">{{ user.restaurant.id}}</td>
+                    <td mat-cell *matCellDef="let user">{{ user.restaurant?.id}}</td>
+                    <!-- <mat-header-cell *matHeaderCellDef style="font-weight: 600;"> Restaurante</mat-header-cell>
+                    <mat-cell *matCellDef="let user"> {{ user.restaurant?.id}} </mat-cell> -->
                 </ng-container>
 
+          
 <!-- 
                 <ng-container matColumnDef="actions" class="container-buttons">
                     <th mat-header-cell *matHeaderCellDef style="font-weight: 600;">Acciones</th>

@@ -11,23 +11,24 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent {
 
-  hide = true;
+ hideRegister: boolean = true;
 
   registerForm = new FormGroup({
     userName: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
     acceptConditions: new FormControl('', [Validators.required]),
-    isRestaurant: new FormControl(false),
-    passwordConfirm: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')])
-  }, { validators: this.passwordConfirmValidator });
+    isRestaurant: new FormControl(false)
+  //   passwordConfirm: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')])
+  // }, { validators: this.passwordConfirmValidator
+   });
 
-  passwordConfirmValidator(control: AbstractControl) {
-    if (control.get('password')?.value === control.get('passwordConfirm')?.value)
-      return null; 
-    else
-      return {'confirmError': true};
-  }
+  // passwordConfirmValidator(control: AbstractControl) {
+  //   if (control.get('password')?.value === control.get('passwordConfirm')?.value)
+  //     return null; 
+  //   else
+  //     return {'confirmError': true};
+  // }
 
   constructor(
     private authService: AuthService,
