@@ -1,22 +1,21 @@
 <div class="container-restaurantForm">
+
   <div *ngIf="restaurant && restaurant.photos" class="container">
     <h2>Imágenes actuales</h2>
     <div class="photos">
-
-
       <div *ngFor="let photo of restaurant.photos">
         <img [src]="'http://localhost:3000/uploads/' + photo" alt="restaurant photo" />
       </div>
     </div>
-  </div>
-
-  <div *ngIf="imagePreviews && imagePreviews.length > 0">
     <h2>Nuevas imágenes</h2>
-    <div *ngFor="let imagePreview of imagePreviews">
-      <img [src]="imagePreview" alt="restaurant preview" />
-    </div>
+    <div *ngIf="imagePreviews && imagePreviews.length > 0" class="photos">
 
+      <div *ngFor="let imagePreview of imagePreviews">
+        <img [src]="imagePreview" alt="restaurant preview" />
+      </div>
+    </div>
   </div>
+
   <div class="content-buttons">
     <input class="upload-button" type="file" (change)="onFileSelected($event)" multiple />
 
