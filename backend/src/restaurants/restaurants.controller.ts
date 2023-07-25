@@ -50,7 +50,6 @@ export class RestaurantsController {
     @UseGuards(AuthGuard('jwt'))
     @Get('my-restaurant')
     findRestaurantByAuthenticatedUser(@Request() request): Promise<Restaurant | null> {
-        console.log('SOLICITANDO RESTAURANTE OWNER');
         // comprobar si no es rest se termina el método
         if (request.user.role !== UserRole.REST)
             throw new UnauthorizedException('Cant find restaurant');
@@ -101,6 +100,7 @@ export class RestaurantsController {
     ) {
         // obtener el restaurante y si no existe lanzar excepción
         let restaurant = await this.restaurantService.getById(restaurantId);
+        console.log('upload', restaurant);
         if (!restaurant) throw new NotFoundException('Restaurant not found');
 
         // asociar los nombres de los archivos en el atributo images del objeto restaurante

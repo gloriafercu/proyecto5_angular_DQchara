@@ -77,6 +77,7 @@ export class RestaurantsService {
             restaurantFromDB.rating = restaurant.rating;
             restaurantFromDB.availability = restaurant.availability;
             restaurantFromDB.typeFood = restaurant.typeFood;
+            restaurantFromDB.photos = restaurant.photos;
 
             await this.restaurantRepo.update(restaurantFromDB.id, restaurantFromDB);
             return restaurantFromDB;

@@ -1,6 +1,8 @@
 h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 40px;
 }
 
 .container-register {

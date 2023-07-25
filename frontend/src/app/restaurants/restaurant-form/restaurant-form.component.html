@@ -9,14 +9,17 @@
         <mat-form-field class="input-name">
             <mat-label>Nombre de tu Restaurante</mat-label>
             <input matInput type="text" formControlName="name">
-            <mat-error *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched">Nombre obligatorio</mat-error>
+            <mat-error *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched">Nombre
+                obligatorio</mat-error>
         </mat-form-field>
 
         <div class="inputs-container">
             <mat-form-field class="input">
                 <mat-label>Dirección:</mat-label>
                 <input matInput type="text" formControlName="address">
-                <mat-error *ngIf="restaurantForm.get('address')?.invalid && restaurantForm.get('address')?.touched">Dirección obligatoria</mat-error>
+                <mat-error
+                    *ngIf="restaurantForm.get('address')?.invalid && restaurantForm.get('address')?.touched">Dirección
+                    obligatoria</mat-error>
             </mat-form-field>
 
             <mat-form-field class="input">
@@ -87,7 +90,7 @@
                     </mat-option>
                 </mat-select>
                 <mat-error *ngIf="restaurantForm.get('typeFood')?.invalid && restaurantForm.get('typeFood')?.touched">
-                   Es obligatorio seleccionar tipo de comida
+                    Es obligatorio seleccionar tipo de comida
                 </mat-error>
 
             </mat-form-field>
@@ -102,23 +105,25 @@
             <mat-label>Localización en GoogleMaps</mat-label>
             <input matInput type="textarea" formControlName="iframe">
         </mat-form-field>
+        <div class="photos">
+            <div *ngFor="let photo of restaurant?.photos">
+                <img [src]="'http://localhost:3000/uploads/' + photo" alt="{{restaurant?.name}}" />
+            </div>
+        </div>
 
-        <div *ngFor="let photo of restaurant?.photos">
-            <img [src]="'http://localhost:3000/uploads/' + photo" style="max-width: 150px;" alt="{{restaurant?.photos}}" />
-          </div>
-        <button *ngIf="restaurant" mat-fab extended style="margin-bottom: 10px;" [routerLink]="['/restaurants/my-restaurant', restaurant.id, 'photos']">
+        <button *ngIf="restaurant" mat-fab extended style="margin-bottom: 10px; font-weight:600; font-size: 16px;"
+            [routerLink]="['/restaurants/my-restaurant', restaurant.id, 'photos']">
             <mat-icon>photo_library</mat-icon>
-             Cambiar Imagenes
+            Cambiar Imagenes
         </button>
-
-      
 
         <button mat-fab extended type="submit" class="button-submit">
             <mat-icon class="icon-form">send</mat-icon>
             Enviar
         </button>
 
+
+
     </form>
 
 </section>
-
