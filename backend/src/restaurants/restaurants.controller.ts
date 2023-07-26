@@ -58,7 +58,7 @@ export class RestaurantsController {
         return request.user.restaurant;
     }
 
-    @Put()
+    @Put(':id')
     async update(@Body() restaurant: Restaurant): Promise<Restaurant> {
         return await this.restaurantService.update(restaurant);
     }

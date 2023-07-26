@@ -146,8 +146,8 @@ export class RestaurantFormComponent implements OnInit {
     if (id === 0) // nuevo
       this.restaurantService.create(restaurant).subscribe(restaurant => {
         console.log(restaurant);
-        this.router.navigate(['/restaurants/my-restaurant', restaurant.id, 'photos'])
-        // this.router.navigate(['/restaurants', restaurant.id]);
+        //this.router.navigate(['/restaurants/my-restaurant', restaurant.id, 'photos'])
+        this.router.navigate(['/restaurants', restaurant.id]);
       });
     else // editar restaurante existente
       this.restaurantService.update(restaurant).subscribe(restaurant => {
