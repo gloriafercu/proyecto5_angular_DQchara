@@ -13,111 +13,112 @@
                 <span>{{ restaurant.typeFood }}</span>
             </div>
         </div>
-        <button *ngIf="restaurant?.id !== myRestaurant?.id" mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
+        <button *ngIf="restaurant?.id !== myRestaurant?.id" mat-button class="button"
+            [routerLink]="['/bookings/restaurant', restaurant.id]">
             <!-- *ngIf="restaurant.id !== user.restaurant.id " -->
             <mat-icon class="tab-icon">
                 calendar_month
             </mat-icon>
             Haz tu Reserva
         </button>
+        <button *ngIf="restaurant?.id === myRestaurant?.id" mat-button class="button"
+                routerLink="/restaurants/my-restaurant">
+            <mat-icon class="tab-icon">
+                add_business
+            </mat-icon>
+            Actualiza tu Restaurante
+        </button>
+
     </section>
 
-    <!-- <button mat-button class="button" [routerLink]="['/restaurant/my-restaurant']">
-             *ngIf="restaurant.id === user.restaurant.id " 
-            <mat-icon class="tab-icon">
-               wifi_home
-            </mat-icon>
-            Edita tu Restaurante
-        </button>
-    </section> -->
+    <section>
 
-
-
-    <mat-tab-group class="container-tab-group">
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <mat-icon class="tab-icon">
-                    info
-                </mat-icon>
-                Información
-            </ng-template>
-            <div class="container-info">
-                <div class="info">
-                    <div class="icon-info">
-                        <mat-icon>location_on</mat-icon>
-                        <span>{{ restaurant.address }}</span>
+        <mat-tab-group class="container-tab-group">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="tab-icon">
+                        info
+                    </mat-icon>
+                    Información
+                </ng-template>
+                <div class="container-info">
+                    <div class="info">
+                        <div class="icon-info">
+                            <mat-icon>location_on</mat-icon>
+                            <span>{{ restaurant.address }}</span>
+                        </div>
+                        <div class="icon-info">
+                            <mat-icon>phone</mat-icon>
+                            <span>{{ restaurant.phone }}</span>
+                        </div>
+                        <div class="icon-info">
+                            <mat-icon>link</mat-icon>
+                            <a href="{{ restaurant.web }}">
+                                <span>{{ restaurant.web }}</span>
+                            </a>
+                        </div>
+                        <div class="icon-info">
+                            <mat-icon>mail</mat-icon>
+                            <span>{{ restaurant.email }}</span>
+                        </div>
                     </div>
-                    <div class="icon-info">
-                        <mat-icon>phone</mat-icon>
-                        <span>{{ restaurant.phone }}</span>
-                    </div>
-                    <div class="icon-info">
-                        <mat-icon>link</mat-icon>
-                        <a href="{{ restaurant.web }}">
-                            <span>{{ restaurant.web }}</span>
-                        </a>
-                    </div>
-                    <div class="icon-info">
-                        <mat-icon>mail</mat-icon>
-                        <span>{{ restaurant.email }}</span>
+                    <div class="iframe">
+                        <iframe [src]="restaurant.iframe | safe" width="400" height="300" style="border-radius: 10px;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="location restaurant"></iframe>
                     </div>
                 </div>
-                <div class="iframe">
-                    <iframe [src]="restaurant.iframe | safe" width="400" height="300" style="border-radius: 10px;"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        title="location restaurant"></iframe>
+
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="tab-icon">
+                        reviews
+                    </mat-icon>
+                    Opiniones
+                </ng-template>
+
+                <div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
+                    No hay opiniones disponibles en este momento.
                 </div>
-            </div>
+                <div *ngIf="comments.length > 0" class="restaurant-overview-header">
+                    <span class="icon">
+                        <mat-icon>egg</mat-icon>
+                        {{ average }}
+                    </span>
+                    <span class="icon">
+                        <mat-icon>mode_comment</mat-icon>
+                        {{ comments.length}} opiniones
+                    </span>
+                </div>
 
-        </mat-tab>
+                <section class="container-comments">
+                    <mat-card *ngFor="let comment of comments" class="card-item">
+                        <mat-card-header>
+                            <mat-card-title-group>
+                                <div class="container-data-user">
+                                    <img class="avatar-img"
+                                        [src]="'http://localhost:3000/uploads/' + comment.user!.avatar"
+                                        alt="user avatar" />
 
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <mat-icon class="tab-icon">
-                    reviews
-                </mat-icon>
-                Opiniones
-            </ng-template>
-
-            <div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
-                No hay opiniones disponibles en este momento.
-            </div>
-            <div *ngIf="comments.length > 0" class="restaurant-overview-header">
-                <span class="icon">
-                    <mat-icon>egg</mat-icon>
-                    {{ average }}
-                </span>
-                <span class="icon">
-                    <mat-icon>mode_comment</mat-icon>
-                    {{ comments.length}} opiniones
-                </span>
-            </div>
-
-            <section class="container-comments">
-                <mat-card *ngFor="let comment of comments" class="card-item">
-                    <mat-card-header>
-                        <mat-card-title-group>
-                            <div class="container-data-user">
-                                <img class="avatar-img" [src]="'http://localhost:3000/uploads/' + comment.user!.avatar"
-                                    alt="user avatar" />
-
-                                <div class="content-user">
-                                    <mat-card-title>{{ comment.user?.userName }}</mat-card-title>
-                                    <mat-card-subtitle>{{ comment.createdDate | date: 'dd/MM/YYYY'
-                                        }}</mat-card-subtitle>
+                                    <div class="content-user">
+                                        <mat-card-title>{{ comment.user?.userName }}</mat-card-title>
+                                        <mat-card-subtitle>{{ comment.createdDate | date: 'dd/MM/YYYY'
+                                            }}</mat-card-subtitle>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="content-rating">
-                                <mat-icon>egg</mat-icon>
-                                <span>{{ comment.rating }}</span>
-                            </div>
-                        </mat-card-title-group>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p class="description">{{ comment.description }}</p>
-                    </mat-card-content>
-                </mat-card>
-            </section>
-        </mat-tab>
-    </mat-tab-group>
-</section>
+                                <div class="content-rating">
+                                    <mat-icon>egg</mat-icon>
+                                    <span>{{ comment.rating }}</span>
+                                </div>
+                            </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p class="description">{{ comment.description }}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </section>
+            </mat-tab>
+        </mat-tab-group>
+    </section>
