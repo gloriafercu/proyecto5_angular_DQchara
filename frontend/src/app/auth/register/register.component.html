@@ -47,7 +47,7 @@
         Contraseña debe ser entre 8 y 20 caracteres utilizando letras, números.
       </mat-error>
     </mat-form-field>
-<!-- 
+    <!-- 
     <mat-form-field class="input passwordConfirm">
       <mat-label> Confirmar Contraseña</mat-label>
       <input matInput type="password" formControlName="passwordConfirm">
@@ -67,6 +67,18 @@
       </mat-error>
 
     </mat-form-field> -->
+    <mat-form-field class="input password">
+      <mat-label>Contraseña confirm</mat-label>
+      <input matInput type="password" formControlName="passwordConfirm">
+      <!-- <button mat-icon-button matSuffix (click)="hideRegister = !hideRegister">
+        <mat-icon>{{hideRegister? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button> -->
+      <small style="color:red; font-size:10px;" *ngIf="
+     
+      registerForm?.getError('confirmError')">
+        La contraseña no coincide.
+    </small>
+    </mat-form-field>
 
 
     <div>

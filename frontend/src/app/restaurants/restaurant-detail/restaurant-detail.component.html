@@ -13,7 +13,7 @@
                 <span>{{ restaurant.typeFood }}</span>
             </div>
         </div>
-        <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
+        <button *ngIf="restaurant?.id !== myRestaurant?.id" mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
             <!-- *ngIf="restaurant.id !== user.restaurant.id " -->
             <mat-icon class="tab-icon">
                 calendar_month

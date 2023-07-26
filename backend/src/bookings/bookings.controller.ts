@@ -62,15 +62,15 @@ export class BookingsController {
 
         if (request.user.role === UserRole.ADMIN) {
             return this.bookingsService.getAll();
-        } else if (request.user.role === UserRole.REST) {
+        } else if (request.user.role === UserRole.REST && request.user.restaurant) {
             // TODO Extraer el restaurantID del usuario con rol REST
             // Agregarlo en la llamada this.bookingsService.getAllBookingsByRestaurantId(restaurantID);
             // EJEMPLO: this.bookingsService.getAllBookingsByRestaurantId(1);
             // Muestra todas las reservas del restaurante "Los Torreznos"
 
-            console.log('usuario rest', request.restaurant.id)
+            console.log('usuario rest', request.user.restaurant.id)
 
-            return this.bookingsService.getAllBookingsByRestaurantId(request.restaurant.id);
+            return this.bookingsService.getAllBookingsByRestaurantId(request.user.restaurant.id);
         } else {
             return this.bookingsService.getAllBookingsByUserId(request.user.id);
         }
