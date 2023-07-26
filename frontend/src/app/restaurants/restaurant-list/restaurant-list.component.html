@@ -84,7 +84,8 @@
         [routerLink]="['/restaurants', restaurant.id]">
         <mat-card class="card-container">
             <div class="image-container">
-                <img mat-card-image [src]="'http://localhost:3000/uploads/' + restaurant.photos[0]" alt="foto de {{ restaurant.name }}">
+                <img mat-card-image [src]="'http://localhost:3000/uploads/' + restaurant.photos[0]"
+                    alt="foto de {{ restaurant.name }}">
             </div>
             <mat-card-content class="card-content">
                 <h2>{{ restaurant.name }}</h2>
@@ -110,12 +111,23 @@
                     </p>
                 </div>
                 <div class="contain-button-rating">
-                    <button mat-button class="button" [routerLink]="['/bookings/restaurant', restaurant.id]">
+
+                    <button *ngIf="restaurant?.id !== myRestaurant?.id" mat-button class="button"
+                        [routerLink]="['/bookings/restaurant', restaurant.id]">
+
                         <mat-icon class="tab-icon">
                             calendar_month
                         </mat-icon>
                         Reservar
                     </button>
+                    <button *ngIf="restaurant?.id === myRestaurant?.id" mat-button class="button"
+                        routerLink="/restaurants/my-restaurant">
+                        <mat-icon class="tab-icon">
+                            add_business
+                        </mat-icon>
+                        Actualizar
+                    </button>
+
                     <div class="content-ng-rating">
                         <p class="rating"><b>{{ restaurant.rating }}</b></p>
                         <ng-template #t let-fill="fill">

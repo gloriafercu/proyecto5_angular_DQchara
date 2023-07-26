@@ -16,8 +16,7 @@ export class RestaurantListComponent implements OnInit {
     return `${current} out of ${max} eggs`;
   }
 
- 
-
+  myRestaurant: IRestaurant | undefined;
   restaurants: IRestaurant[] = [];
   cities: string[] = [
     "Barcelona",
@@ -60,6 +59,9 @@ export class RestaurantListComponent implements OnInit {
   }
 
   getAllRestaurants(): void {
+
+    this.restaurantService.findCurrentRestaurant().subscribe(data => this.myRestaurant = data);
+    
     this.restaurantService.getAllRestaurants().subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
