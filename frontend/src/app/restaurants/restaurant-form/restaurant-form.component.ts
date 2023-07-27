@@ -139,8 +139,8 @@ export class RestaurantFormComponent implements OnInit {
       availability: availability,
       typeFood: typeFood,
       iframe: iframe,
-      photos: [],
-      ratings: []
+      photos: []
+      // ratings: []
     }
 
     if (id === 0) // nuevo

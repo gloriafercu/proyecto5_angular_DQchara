@@ -47,26 +47,7 @@
         Contraseña debe ser entre 8 y 20 caracteres utilizando letras, números.
       </mat-error>
     </mat-form-field>
-    <!-- 
-    <mat-form-field class="input passwordConfirm">
-      <mat-label> Confirmar Contraseña</mat-label>
-      <input matInput type="password" formControlName="passwordConfirm">
-     
-      <mat-error *ngIf="registerForm.get('passwordConfirm')?.invalid &&
-              registerForm.get('passwordConfirm')?.touched &&
-              registerForm.get('passwordConfirm')?.getError('required')">
-        Contraseña obligatoria.
-      </mat-error>
-      <mat-error *ngIf="registerForm.get('passwordConfirm')?.invalid &&
-              registerForm.get('passwordConfirm')?.touched &&
-              registerForm.get('passwordConfirm')?.getError('pattern')">
-        Contraseña debe ser entre 8 y 20 caracteres utilizando letras, números.
-      </mat-error>
-      <mat-error *ngIf="registerForm.getError('confirmError') && registerForm.get('passwordConfirm')?.touched">
-        Las contraseñas no coinciden
-      </mat-error>
-
-    </mat-form-field> -->
+  
     <mat-form-field class="input password">
       <mat-label>Contraseña confirm</mat-label>
       <input matInput type="password" formControlName="passwordConfirm">
