@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IRestaurant } from '../models/restaurant.model';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BASE_URL } from 'src/app/shared/constants';
 import { RestaurantService } from '../restaurant.service';
 
@@ -20,7 +20,8 @@ export class RestaurantFormImagesComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private restaurantService: RestaurantService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -63,9 +64,10 @@ export class RestaurantFormImagesComponent implements OnInit {
       .post(`${BASE_URL}/restaurants/${this.restaurant?.id}/photos`, formData)
       .subscribe(data => {
         console.log(data);
-        this.loadRestaurant();
-        this.imageFiles = [];
-        this.imagePreviews = [];
+        // this.loadRestaurant();
+        // this.imageFiles = [];
+        // this.imagePreviews = [];
+        this.router.navigate(['/restaurants', this.restaurant?.id])
       });
 
   }

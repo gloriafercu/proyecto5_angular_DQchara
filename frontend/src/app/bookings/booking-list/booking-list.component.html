@@ -41,7 +41,7 @@
                                 delete
                             </mat-icon>
                         </button>
-                        <button mat-mini-fab class="button" color="primary"
+                        <button mat-mini-fab class="button" color="primary"  *ngIf="restaurant?.id === myRestaurant?.id"
                             [routerLink]="['/comments/comment-form/restaurant', booking.restaurant.id]" title="añadir opinión">
                             <mat-icon class="tab-icon">
                                 add_comment

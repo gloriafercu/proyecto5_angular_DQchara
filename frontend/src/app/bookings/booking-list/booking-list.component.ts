@@ -4,6 +4,7 @@ import { BookingService } from '../services/booking.service';
 import { IUser } from 'src/app/users/models/user.model';
 import { IRestaurant } from 'src/app/restaurants/models/restaurant.model';
 import { Router } from '@angular/router';
+import { RestaurantService } from 'src/app/restaurants/restaurant.service';
 
 @Component({
   selector: 'app-booking-list',
@@ -22,14 +23,16 @@ export class BookingListComponent implements OnInit {
   ];
   bookings: IBooking[] = [];
   restaurant: IRestaurant | undefined;
+  myRestaurant: IRestaurant | undefined;
   
-  constructor(private bookingService: BookingService,  private router: Router) { }
+  constructor(private bookingService: BookingService,  private router: Router,private restaurantService: RestaurantService) { }
 
   ngOnInit(): void {
     this.bookingService.getAll()
       .subscribe(data =>{ 
         this.bookings = data;
       });
+      this.restaurantService.findCurrentRestaurant().subscribe(data => this.myRestaurant = data);  
   }
 
   deleteBooking(booking: IBooking) {

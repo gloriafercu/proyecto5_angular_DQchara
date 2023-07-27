@@ -21,8 +21,11 @@
             </mat-icon>
             Haz tu Reserva
         </button>
+        <!-- routerLink="/restaurants/my-restaurant" -->
         <button *ngIf="restaurant?.id === myRestaurant?.id" mat-button class="button"
-                routerLink="/restaurants/my-restaurant">
+                
+           [routerLink]="['/restaurants/my-restaurant', restaurant.id,'edit']">
+                
             <mat-icon class="tab-icon">
                 add_business
             </mat-icon>
