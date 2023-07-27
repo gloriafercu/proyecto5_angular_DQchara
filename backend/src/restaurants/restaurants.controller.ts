@@ -108,7 +108,7 @@ export class RestaurantsController {
         files.forEach(file => restaurant.photos.push(file.filename));
 
         // guardar el restaurante en base de datos
-        return await this.restaurantService.update(restaurant);
+        return await this.restaurantService.updatePhotos(restaurant);
     }
 
 
