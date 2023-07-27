@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { IUser } from '../models/user.model';
 import { UserService } from '../services/user.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

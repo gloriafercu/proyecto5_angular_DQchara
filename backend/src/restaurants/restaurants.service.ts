@@ -77,11 +77,26 @@ export class RestaurantsService {
             restaurantFromDB.rating = restaurant.rating;
             restaurantFromDB.availability = restaurant.availability;
             restaurantFromDB.typeFood = restaurant.typeFood;
-            restaurantFromDB.photos = restaurant.photos;
 
             await this.restaurantRepo.update(restaurantFromDB.id, restaurantFromDB);
             return restaurantFromDB;
 
+        } catch (error) {
+            throw new ConflictException('Error actualizando el restaurante');
+        }
+    }
+
+    async updatePhotos(restaurant: Restaurant): Promise<Restaurant> {
+        let restaurantFromDB = await this.restaurantRepo.findOne({
+            where: {
+                id: restaurant.id
+            }
+        });
+        if (!restaurantFromDB) throw new NotFoundException('Restaurante no encontrado'); // 404
+        try {
+            restaurantFromDB.photos = restaurant.photos;
+            await this.restaurantRepo.update(restaurantFromDB.id, restaurantFromDB);
+            return restaurantFromDB;
         } catch (error) {
             throw new ConflictException('Error actualizando el restaurante');
         }
