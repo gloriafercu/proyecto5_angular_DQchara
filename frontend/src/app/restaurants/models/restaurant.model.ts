@@ -8,7 +8,7 @@ export interface IRestaurant {
     email: string;
     averagePrice: number;
     rating: number ;
-    ratings: number[];
+    // ratings: number[];
     availability: boolean;
     typeFood: string;
     photos: [];
