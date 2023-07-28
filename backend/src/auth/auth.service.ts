@@ -10,6 +10,9 @@ import { RegisterDTO } from './dto/register.dto';
 
 @Injectable()
 export class AuthService {
+    updateUserAvatar(user: any) {
+        throw new Error('Method not implemented.');
+    }
 
     constructor(private userService: UsersService, private jwtService: JwtService) { }
 
@@ -23,23 +26,26 @@ export class AuthService {
         if (!bcrypt.compareSync(login.password, user.password))
             throw new UnauthorizedException('Credenciales incorrectas'); // 401
 
-        // Crear un token y devolverlo
+        return await this.generateToken(user);
+    }
+
+   
+    async generateToken(user: User): Promise<TokenDTO> {
         let payload = {
             userName: user.userName,
             email: user.email,
             avatar: user.avatar,
             sub: user.id,
             role: user.role
-        }
+        };
 
         let token: TokenDTO = {
             token: await this.jwtService.signAsync(payload)
-        }
+        };
 
         return token;
     }
 
-   
     async register(register: RegisterDTO): Promise<TokenDTO> {
 
         let loginDTO: LoginDto = {

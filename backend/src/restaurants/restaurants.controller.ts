@@ -46,10 +46,12 @@ export class RestaurantsController {
         return this.restaurantService.getAllByNameLike(name);
     }
 
-    
+
     @UseGuards(AuthGuard('jwt'))
     @Get('my-restaurant')
     findRestaurantByAuthenticatedUser(@Request() request): Promise<Restaurant | null> {
+        console.log("LLAMADA A MY-RESTAURANT")
+        console.log(request.user);
         // comprobar si no es rest se termina el método
         if (request.user.role !== UserRole.REST)
             throw new UnauthorizedException('Cant find restaurant');
