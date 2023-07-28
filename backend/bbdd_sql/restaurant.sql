@@ -71,6 +71,8 @@ INSERT INTO `backend_dqchara`.`restaurant` (`name`, `address`, `city`, `phone`, 
 
 
 
+--https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.729814021528!2d-7.556026924960486!3d43.005023494112926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405bc92c9994dfb3%3A0xe0a15ce91f5ae327!2sRestaurante%20La%20Oca!5e0!3m2!1ses!2ses!4v1690536647647!5m2!1ses!2ses
 
 
+--https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3052.704567014671!2d-2.128022125143031!3d40.08200157594604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5d670b2ea17b3d%3A0xa8fde4238da10472!2sRestaurante%20El%20Torre%C3%B3n!5e0!3m2!1ses!2ses!4v1690537557873!5m2!1ses!2ses
 

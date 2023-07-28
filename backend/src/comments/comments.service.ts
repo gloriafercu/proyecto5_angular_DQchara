@@ -67,6 +67,11 @@ export class CommentsService {
     async create(comment: Comment): Promise<Comment> {
         try {
             return await this.commentRepo.save(comment);
+            // TODO actualizar rating de restaurante
+            // let newRating = getAverageByRestaurantId()
+            // Restaurant.rating = newRating;
+            // this.restaurantService.update(restaurant)
+
         } catch (error) {
             throw new ConflictException('No se ha podido guardar la opinión')
         }
@@ -82,7 +87,10 @@ export class CommentsService {
         try {
             commentFromDB.rating = comment.rating;
             commentFromDB.description = comment.description;
-
+            // TODO actualizar rating de restaurante
+            // let newRating = getAverageByRestaurantId()
+            // Restaurant.rating = newRating;
+            // this.restaurantService.update(restaurant)
 
             await this.commentRepo.update(commentFromDB.id, commentFromDB);
             return commentFromDB;
