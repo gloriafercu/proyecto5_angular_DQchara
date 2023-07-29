@@ -46,10 +46,12 @@ export class RestaurantsController {
         return this.restaurantService.getAllByNameLike(name);
     }
 
-    
+
     @UseGuards(AuthGuard('jwt'))
     @Get('my-restaurant')
     findRestaurantByAuthenticatedUser(@Request() request): Promise<Restaurant | null> {
+        console.log("LLAMADA A MY-RESTAURANT")
+        console.log(request.user);
         // comprobar si no es rest se termina el método
         if (request.user.role !== UserRole.REST)
             throw new UnauthorizedException('Cant find restaurant');
@@ -58,7 +60,7 @@ export class RestaurantsController {
         return request.user.restaurant;
     }
 
-    @Put()
+    @Put(':id')
     async update(@Body() restaurant: Restaurant): Promise<Restaurant> {
         return await this.restaurantService.update(restaurant);
     }
@@ -108,7 +110,7 @@ export class RestaurantsController {
         files.forEach(file => restaurant.photos.push(file.filename));
 
         // guardar el restaurante en base de datos
-        return await this.restaurantService.update(restaurant);
+        return await this.restaurantService.updatePhotos(restaurant);
     }
 
 

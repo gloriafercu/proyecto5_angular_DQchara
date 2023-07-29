@@ -1,6 +1,8 @@
 h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 40px;
 }
 
 .container-register {
@@ -66,4 +68,7 @@ h2 {
 .button-submit:disabled .icon-form {
     color: var(--light_grey_color);
     margin-right: 12px;
+}
+mat-icon {
+    color: var(--primary_color);
 }

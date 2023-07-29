@@ -16,6 +16,7 @@ export class RestaurantListComponent implements OnInit {
     return `${current} out of ${max} eggs`;
   }
 
+  myRestaurant: IRestaurant | undefined;
   restaurants: IRestaurant[] = [];
   cities: string[] = [
     "Barcelona",
@@ -58,11 +59,22 @@ export class RestaurantListComponent implements OnInit {
   }
 
   getAllRestaurants(): void {
+
+    this.restaurantService.findCurrentRestaurant().subscribe(data => this.myRestaurant = data);
+    
     this.restaurantService.getAllRestaurants().subscribe(data => {
       this.restaurants = data;
       this.results_length = this.restaurants.length;
       const dinamicTitle = this.dinamicTitleInTS.nativeElement;
       this.renderer2.setProperty(dinamicTitle, 'innerHTML', "Todos los restaurantes");
+
+      // this.restaurants.forEach((restaurant) => {
+      //   restaurant.rating= 0; 
+      //   if (restaurant.ratings.length > 0) {
+      //     const sum = restaurant.ratings.reduce((total, rating) => total + rating, 0);
+      //     restaurant.rating = sum / restaurant.ratings.length;
+      //   }
+      // });
 
     });
   }

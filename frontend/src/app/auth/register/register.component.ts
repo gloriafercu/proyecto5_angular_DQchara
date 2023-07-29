@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/users/services/user.service';
 import { AuthService } from '../auth.service';
@@ -11,18 +11,31 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent {
 
+  hideRegister: boolean = true;
+
   registerForm = new FormGroup({
     userName: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
     acceptConditions: new FormControl('', [Validators.required]),
-    isRestaurant: new FormControl(false)
+    isRestaurant: new FormControl(false),
+    passwordConfirm: new FormControl('', [Validators.required])
+  }, {
+    validators: this.passwordConfirmValidator
   });
+
+  passwordConfirmValidator(control: AbstractControl) {
+    console.log(`${control.get('password')?.value} === ${control.get('passwordConfirm')?.value} `)
+    if (control.get('password')?.value === control.get('passwordConfirm')?.value)
+      return null;
+    else
+      return { 'confirmError': true };
+  }
 
   constructor(
     private authService: AuthService,
     private router: Router
-    ) {}
+  ) { }
 
   save() {
 

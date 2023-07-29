@@ -9,7 +9,7 @@
 .container-user-detail h2 {
     margin-bottom: 30px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .userProfile {
@@ -71,4 +71,12 @@
 .button-submit:disabled .icon-form {
     color: var(--light_grey_color);
     margin-right: 12px;
+}
+
+.button {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    max-width: 250px;
+    margin: 20px 0;
 }

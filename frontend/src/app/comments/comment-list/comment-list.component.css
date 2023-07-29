@@ -10,6 +10,20 @@
     margin-bottom: 30px;
 }
 
+.no-comments {
+    text-align: center;
+    min-height: 100px;
+    padding-top: 120px;
+    font-size: 16px;
+}
+
+.no-comments h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px
+}
+
 .comment-card {
     display: flex;
     flex-direction: row;

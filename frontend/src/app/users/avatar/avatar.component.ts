@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BASE_URL } from 'src/app/shared/constants';
 import { IUser } from '../models/user.model';
+import { Router } from '@angular/router';
+import { AuthService, Token } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-avatar',
@@ -14,7 +16,7 @@ export class AvatarComponent implements OnInit {
   imageFile: File | undefined; // para subir
   user: IUser | undefined;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.loadCurrentUser();
@@ -43,12 +45,15 @@ export class AvatarComponent implements OnInit {
     formData.append('file', this.imageFile);
 
     this.httpClient
-      .post(`${BASE_URL}/users/avatar`, formData)
+      .post<any>(`${BASE_URL}/auth/avatar`, formData)
       .subscribe(data => {
-        this.loadCurrentUser(); 
-        this.imageFile = undefined;
-        this.imagePreview = undefined;
         console.log(data);
+        // this.loadCurrentUser(); 
+        // this.imageFile = undefined;
+        // this.imagePreview = undefined;
+        // console.log(data);
+        this.authService.handleLoginResponse(data.token);
+        this.router.navigate(['/users/profile']);
       });
   }
 }

@@ -9,7 +9,7 @@ export class UsersController {
 
     constructor(private userService: UsersService) { };
 
-    @Get('user/user-list')
+    @Get('')
     getAll(): Promise<User[]> {
         return this.userService.getAll();
     }
@@ -38,15 +38,5 @@ export class UsersController {
         // crear un nuevo token JWT y devolverlo para que se actualice en frontend
     }
 
-    // avatar (se puede separar a un nuevo controlador FilesController o AvatarController)
-    @UseGuards(AuthGuard('jwt'))
-    @Post('avatar') // se puede separar en un avatar.controller.ts para mas archivos
-    @UseInterceptors(FileInterceptor('file'))
-    async uploadAvatar( @Request() request , @UploadedFile()file: Express.Multer.File){
-        console.log(file);
 
-        request.user.avatar= file.filename;
-        console.log(request.user);
-        return await this.userService.updateAvatar(request.user);
-}
 }

@@ -105,12 +105,13 @@
             <mat-label>Localización en GoogleMaps</mat-label>
             <input matInput type="textarea" formControlName="iframe">
         </mat-form-field>
-
-        <div *ngFor="let photo of restaurant?.photos">
-            <img [src]="'http://localhost:3000/uploads/' + photo" style="max-width: 150px;"
-                alt="{{restaurant?.photos}}" />
+        <div class="photos">
+            <div *ngFor="let photo of restaurant?.photos">
+                <img [src]="'http://localhost:3000/uploads/' + photo" alt="{{restaurant?.name}}" />
+            </div>
         </div>
-        <button *ngIf="restaurant" mat-fab extended style="margin-bottom: 10px;"
+
+        <button *ngIf="restaurant" mat-fab extended style="margin-bottom: 10px; font-weight:600; font-size: 16px;"
             [routerLink]="['/restaurants/my-restaurant', restaurant.id, 'photos']">
             <mat-icon>photo_library</mat-icon>
             Cambiar Imagenes
@@ -120,6 +121,8 @@
             <mat-icon class="icon-form">send</mat-icon>
             Enviar
         </button>
+
+
 
     </form>
 

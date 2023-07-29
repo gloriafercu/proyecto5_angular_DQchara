@@ -1,19 +1,24 @@
 <div class="container-userDetail">
   <h2>Imagen de perfil de usuario</h2>
 
-  <div *ngIf="user && user.avatar">
-    <h2>Imagen Actual</h2>
-    <img [src]="'http://localhost:3000/uploads/' + user!.avatar" style="max-width: 200px;" alt="user avatar">
+  <div class="content-avatar">
+    <div *ngIf="user && user.avatar">
+      <h2>Imagen Actual</h2>
+      <img [src]="'http://localhost:3000/uploads/' + user!.avatar" alt="user avatar">
+    </div>
+
+    <div>
+      <h2>Nueva Imagen</h2>
+      <img [src]="imagePreview" alt="user avatar">
+    </div>
   </div>
 
-  <div>
-    <h2>Nueva Imagen</h2>
-    <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar">
-  </div>
-  
-  <input type="file" (change)="onFileSelected($event)">
+  <div class="content-buttons">
+    <input class="upload-button" type="file" (change)="onFileSelected($event)">
 
-  <div>
-    <button (click)="save()" routerLink="/users/detail">Enviar</button>
+    <div>
+      <button mat-button extended class="button-submit" (click)="save()" routerLink="/users/detail">Enviar</button>
+    </div>
   </div>
+
 </div>
