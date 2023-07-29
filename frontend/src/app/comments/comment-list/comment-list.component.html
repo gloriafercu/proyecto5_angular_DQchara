@@ -1,10 +1,10 @@
-<div *ngIf="comments.length === 0" style="text-align: center; min-height: 100px; margin-top: 50px;">
+<div class="no-comments" *ngIf="comments.length === 0">
+    <h2>Tus opiniones</h2>
     No hay opiniones disponibles en este momento.
 </div>
 
 <section class="container-comment-list" *ngIf="comments.length > 0">
     <h2>Tus opiniones</h2>
-
     <mat-card class="comment-card" *ngFor="let comment of comments.reverse()">
         <img mat-card-image [src]="'http://localhost:3000/uploads/' + comment.restaurant.photos?.slice(0,1)"
             alt="foto de {{ comment.restaurant.name }}" class="image">

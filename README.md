@@ -1,8 +1,16 @@
+<!--
+
+    ___   _     ____     _                     
+   /   \ ( )   /___ \___| |__   __ _ _ __ __ _ 
+  / /\ / |/   //  / / __| '_ \ / _` | '__/ _` |
+ / /_//      / \_/ / (__| | | | (_| | | | (_| |
+/___,'       \___,_\\___|_| |_|\__,_|_|  \__,_|
+
+
+-->
+
+
 # PROYECTO 5: D'Qchara
-
-## 1. FRONTEND
-
-D'Chara is developed with Angular 16 and Node 16.14.0
 
 ## Git clone
 
@@ -10,50 +18,27 @@ D'Chara is developed with Angular 16 and Node 16.14.0
 git clone https://github.com/gloriafercu/proyecto5_angular_DQchara.git
 ```
 
+## 1. FRONTEND
+
+D'Chara Frontend is developed with Angular 16 and Node 16.14.0
+
+
 ## Install
 
 ```
 npm install
-```
-
-## Run API server
-
-To install json-server for the first time in the project:
 
 ```
-npm install json-server --save-dev
+
+## Run Frontend
+```
+ng serve
 ```
 
-There are two ways to run server:
-
-1. First way
-
-```
-json-server --watch --port 5000 db.js
-```
-
-2. Second way
-
-If you add in scripts of package.json
-
-```
-"scripts": {
-    "serverAPI": "json-server --port 5000 --watch db.js"
-  }
-```
-then: 
-
-```
-npm run serverAPI
-```
-
-It works with json-server in https://localhost:5000/restaurants
+It works in https://localhost:4200/restaurants
 
 
-
-
-
-# Si no funciona el proyecto por @angular/core o @angular/cli :
+### Si no funciona el proyecto por @angular/core o @angular/cli :
 
 ```
 npm install 
@@ -62,7 +47,7 @@ ng update @angular/cli @angular/core
 ```
 
  
-## OpenAPI
+### OpenAPI
 
 npm install @nestjs/swagger
 
@@ -78,7 +63,7 @@ En main.ts:
   SwaggerModule.setup('api', app, document);
 
   
-## subida de imágenes
+### Subida de imágenes
 
   Backend:
 
@@ -87,3 +72,19 @@ npm install -D @types/multer
 users.controller.ts crear método uploadAvatar()
 
 Configurar carpeta destino en app.module.ts
+
+## 2. BACKEND
+
+D'Chara Backend is developed with NestJS 10.0.5
+
+## Install
+
+```
+npm install
+
+```
+
+## Run Backend
+```
+npm run start:dev
+```

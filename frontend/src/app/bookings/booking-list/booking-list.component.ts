@@ -39,7 +39,9 @@ export class BookingListComponent implements OnInit {
     this.bookingService.deleteById(booking.id).subscribe({
       next: response => {
         console.log(response);
-        this.router.navigate(['/restaurants']);
+        // this.router.navigate(['/restaurants']);
+        this.router.navigate(['/bookings/booking-list']);
+        this.ngOnInit();
       },
       error: error => console.log(error) 
     });
