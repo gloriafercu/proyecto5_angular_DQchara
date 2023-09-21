@@ -69,6 +69,7 @@
 }
 
 .cdk-overlay-pane {
+    background-color: white;
     position: absolute;
     pointer-events: auto;
     box-sizing: border-box;
@@ -665,11 +666,11 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 }
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
-    border-bottom-color: rgba(0, 0, 0, 0.42)
+    border-bottom-color: var(--mdc-theme-primary, #ff9f1c)
 }
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled):hover .mdc-line-ripple::before {
-    border-bottom-color: rgba(0, 0, 0, 0.87)
+    border-bottom-color: var(--mdc-theme-primary, #ff9f1c)
 }
 
 .mdc-text-field--filled .mdc-line-ripple::after {
@@ -1817,6 +1818,7 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 }
 
 .mat-mdc-menu-content {
+    background-color: white;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-family: var(--mdc-typography-subtitle1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
@@ -2077,15 +2079,15 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 
 .mat-mdc-paginator .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
     padding-top: 8px;
-    padding-bottom: 8px
+    padding-bottom: 8px;
 }
 
 .mat-mdc-paginator .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-floating-label {
-    display: none
+    display: none;
 }
 
 .mat-mdc-paginator-container {
-    min-height: 56px
+    min-height: 56px;
 }
 
 .mat-mdc-paginator {
@@ -3846,3 +3848,19 @@ html {
     letter-spacing: .0073529412em;
     margin: 0 0 64px
 }
+
+.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-mdc-text-field-wrapper {
+    background-color: white;
+}
+
+:root .mat-mdc-form-field-has-icon-prefix .mat-mdc-text-field-wrapper {
+    background-color: white;
+}
+
+/* :root .mdc-text-field--filled {
+    --mdc-filled-text-field-active-indicator-height: -1px;
+    --mdc-filled-text-field-focus-active-indicator-height: 1px;
+    --mdc-filled-text-field-container-shape: 1px;
+    /* border-bottom: 1px solid var(--primary_color); 
+} 
+*/
