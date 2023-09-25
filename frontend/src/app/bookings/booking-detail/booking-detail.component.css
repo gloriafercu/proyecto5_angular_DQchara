@@ -107,6 +107,13 @@
   cursor: pointer;
 }
 
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 .button-actions button {
   width: 40%;
@@ -158,7 +165,7 @@
   background-size: contain;
   height: 100px;
   width: 100%;
-  background-color:  var(--extra_light_brown_color);
+  background-color: var(--extra_light_brown_color);
   border-top-left-radius: 17px;
   border-top-right-radius: 17px;
   position: absolute;

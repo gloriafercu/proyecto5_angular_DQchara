@@ -122,9 +122,9 @@
       <p class="text">¿Desea cancelar su reserva en el restaurante <strong>{{ data.restaurant?.name }}</strong>?</p>
     </div>
     <div mat-dialog-actions class="button-actions">
-      <button mat-raised-button mat-button color="warn" mat-dialog-close>No</button>
+      <button mat-raised-button mat-button color="warn" mat-dialog-close class="center">No</button>
       <button mat-raised-button mat-button color="accent" mat-dialog-close cdkFocusInitial
-        (click)="deleteBooking(booking)">Si</button>
+        (click)="deleteBooking(booking)" class="center">Si</button>
     </div>
   </ng-template>
 </section>
